@@ -116,3 +116,14 @@ tasks.matching { it.name.contains("merge") && it.name.contains("JniLibFolders") 
 tasks.named("preBuild").configure {
     dependsOn("copyAndroidNatives")
 }
+
+// A public package may not silently include art with unconfirmed commercial rights.
+val verifyCommercialAssetRights by tasks.registering(Exec::class) {
+    group = "verification"
+    description = "Verify commercial rights for every packaged asset; fail closed when evidence is missing."
+    workingDir(rootProject.projectDir)
+    commandLine("node", "scripts/check-commercial-rights.mjs")
+}
+tasks.matching { it.name == "preReleaseBuild" }.configureEach {
+    dependsOn(verifyCommercialAssetRights)
+}

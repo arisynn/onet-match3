@@ -1,0 +1,1166 @@
+[
+  {
+    "source": "assets/tiles/alpine_winter/0.webp",
+    "path": "assets/tiles-native/alpine_winter/0.png",
+    "sourceSha256": "b77d1359dd0010be9bcdbb256380a19385c584162659c7dedbfb519a6574ba26",
+    "sha256": "8f833018c6cf2c946954f5224b9aefaa3af563388fca992053c35890c808c013"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/1.webp",
+    "path": "assets/tiles-native/alpine_winter/1.png",
+    "sourceSha256": "52d4e55ebda2b826912b43e7c642240a91a0596fbd9826b6f34bc1abef68b6e6",
+    "sha256": "c9c89076fde543df0a7ae1e26650f3d2f6a24a8e7cdbab47ea09c4d28fd90765"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/10.webp",
+    "path": "assets/tiles-native/alpine_winter/10.png",
+    "sourceSha256": "06c0bab770a05d0f872b4b10bd88d08505bb9b9d20d75bac17f3e57d9d522ee1",
+    "sha256": "89ef926c774e90ee6a1a5dc7e1d5bc598c7b21d01b28669e380d6b6a334803ea"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/11.webp",
+    "path": "assets/tiles-native/alpine_winter/11.png",
+    "sourceSha256": "8bb210776b24260531c38bf05b1f0ad1c1c667544bc2109e2895da4210286f87",
+    "sha256": "5fddeee27cf39fd92de46b1fec43a3dd0ad07432746ed40bc7aa1d3347825eb7"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/12.webp",
+    "path": "assets/tiles-native/alpine_winter/12.png",
+    "sourceSha256": "4a882c3f4e3fb190a1fc51fc929cac08686c20ba1ebc3f5318d5add08e440bef",
+    "sha256": "03f22770c6bfe8fe76c37be9d8647c7a329dd59e49276899a88692d090afb811"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/13.webp",
+    "path": "assets/tiles-native/alpine_winter/13.png",
+    "sourceSha256": "ee72ebb84a1bff6a791bd4169cf56aa7fd0efda44eb2fd011534ec1150a55920",
+    "sha256": "801eae7242a4ecc0965789706768af00fb285051dd02727f18b57037333bcbfb"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/14.webp",
+    "path": "assets/tiles-native/alpine_winter/14.png",
+    "sourceSha256": "634874a1c6492e067ed600e28c45000a0619defb70e50e1b2d9edcf90d4aa85b",
+    "sha256": "cb24b3836c1a83c3e7e1a3901dcb52d56b298337faf47417a39c438077e0f8ff"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/15.webp",
+    "path": "assets/tiles-native/alpine_winter/15.png",
+    "sourceSha256": "3d944ec0c0637b34e747917cd77460907349acc021250ca59f74d458b8e3a95f",
+    "sha256": "8aa0a99c83b695ab010d19865c1f2dad817ff03426ce87f7b24b825a9ec56df8"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/2.webp",
+    "path": "assets/tiles-native/alpine_winter/2.png",
+    "sourceSha256": "eb0b85ca6550780b0780ecc7fc1006770599a82d16802264a071e76f20d3467b",
+    "sha256": "2ae8bc39eb9589d8b569e96ff65541e0444def34f1c6f4cf4250ec64cf4b3e20"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/3.webp",
+    "path": "assets/tiles-native/alpine_winter/3.png",
+    "sourceSha256": "2a46cecec5b683b5b183375ded794a5c94078f0d9d62934b6da885e6c2846a12",
+    "sha256": "d6e4c018b40831cf9c7dec736d7b21a002969a4224995bfc8bb2566a83a78f01"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/4.webp",
+    "path": "assets/tiles-native/alpine_winter/4.png",
+    "sourceSha256": "81161d016ebfc8e4852e1a58c2bc494adb31aa307158ff64ec2c75cc3673fb41",
+    "sha256": "b4897ea60e08ba194c8431328798573a00dc74edc62b3a9c0b1da513e184cc50"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/5.webp",
+    "path": "assets/tiles-native/alpine_winter/5.png",
+    "sourceSha256": "91a83fe8af989cef3633881ed9ef9edffaae2f569fc0bea01c1ae34ec50d5d31",
+    "sha256": "537a13feafe1a269699c9f471a8cce2b79037e772a79721573c55750f33c1be9"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/6.webp",
+    "path": "assets/tiles-native/alpine_winter/6.png",
+    "sourceSha256": "8422e7fd04a74ca9606b3fbf9698ef92a7310ace9a6890a1428ef11307745d9f",
+    "sha256": "ca8679895cf641c131ec5d787f4c0959374e159cbfd1027c10cd5ac2643dcadc"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/7.webp",
+    "path": "assets/tiles-native/alpine_winter/7.png",
+    "sourceSha256": "ba4d97eadb284a2443e0420b53bc688df9d9b7d6e26a044997a5a2d14fcada53",
+    "sha256": "8cc73dc59b97797d4e4ead2aa72c2186e2e2df6183d202ecbe4e2515ad5d9d04"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/8.webp",
+    "path": "assets/tiles-native/alpine_winter/8.png",
+    "sourceSha256": "f290f60301e4b61e6160fa699730e48fe099967553076dd417dc5660c6a510e8",
+    "sha256": "1f0cbd859b3ef1d0d0faca86fadae776f40b85c8c56eccca2610f04c3b8b20fe"
+  },
+  {
+    "source": "assets/tiles/alpine_winter/9.webp",
+    "path": "assets/tiles-native/alpine_winter/9.png",
+    "sourceSha256": "fff21662d62183bcff255701cc1222d77754bf5cb6897954ba1293a1650d2550",
+    "sha256": "c631ba260f1bdb2dc22c8919353faccbb0b8afeea294bf7a1fad8b3fec7d3f86"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/0.webp",
+    "path": "assets/tiles-native/autumn_harvest/0.png",
+    "sourceSha256": "f0663738ed70549bd3f0019350bb7b7c68af2802bc5cf32564db51e49c26fe1f",
+    "sha256": "bb556dc9072ec7d5986f832c4faa138c270b86466e7e44f0f993aaac9da7d09e"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/1.webp",
+    "path": "assets/tiles-native/autumn_harvest/1.png",
+    "sourceSha256": "84a98ad89f57432a7d0f87c1dbeb4db84d036358d213a1ac78e55d52cc0fb2e6",
+    "sha256": "bbcbc7699ae52992203d3e5873093cdfef26ca98e0ff48298fe0a5b962a0a0d4"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/10.webp",
+    "path": "assets/tiles-native/autumn_harvest/10.png",
+    "sourceSha256": "1c1911c59779350e85b72de88e97c6f05a23008555ea60ba9d0cbf2e5797587a",
+    "sha256": "430b39b894c2243a33f85ff03ff7394ff834e113ebc5d4cb958bd916feb2c889"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/11.webp",
+    "path": "assets/tiles-native/autumn_harvest/11.png",
+    "sourceSha256": "7086c10a0b6d3735e562dd0bedc7ffb8c96f3fe598d6fbc1c441e009a5950104",
+    "sha256": "be993512a32cf413e2a96f69a973a59beb8b090bb479d4139db9077666b64106"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/12.webp",
+    "path": "assets/tiles-native/autumn_harvest/12.png",
+    "sourceSha256": "4d1b16615646a1b7c17ba67f65b2294ba97835cd4a6e22f2efdcd7c15e7ab594",
+    "sha256": "c1da68c6cf15f6d9ac30509a3ac9938c5f08068009d2b20c0cca75cdf7b14523"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/13.webp",
+    "path": "assets/tiles-native/autumn_harvest/13.png",
+    "sourceSha256": "8b3da92bf7c24b21852fba2732851b5f4515a2f545e8ef39fc36800e7714622b",
+    "sha256": "1f7e043a6aace389a87be60a54079f320e8d31f9e4b5d36226b52bc282293554"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/14.webp",
+    "path": "assets/tiles-native/autumn_harvest/14.png",
+    "sourceSha256": "76c6b01054f00d91995ec3e6abb128a733ffd30ac90a8afe1639325ef0857594",
+    "sha256": "5a292c8ef3aca2553b87341cbb9513019229abba12d4efba6d570c409cc8d5f2"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/15.webp",
+    "path": "assets/tiles-native/autumn_harvest/15.png",
+    "sourceSha256": "21a25da08f06021d5af805f7ba8476fbf80a7b4455cc0ef2d5f416fc652be35a",
+    "sha256": "b6c9c754dfc9837d0473575166fd5ee0ff1d26d295b8ac08e156e78ab2270d76"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/2.webp",
+    "path": "assets/tiles-native/autumn_harvest/2.png",
+    "sourceSha256": "d670460386e43bf2d32df7fffb18d5b9715f718788adeb11f4d1a54c745afb4b",
+    "sha256": "85e7259fa09177e8a4350dc69abc1d3c3d2e1cdb183d0f47a7c73e4f74d64f60"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/3.webp",
+    "path": "assets/tiles-native/autumn_harvest/3.png",
+    "sourceSha256": "1ff865d2a3832cbd0ed24ceb6fd20946f35cc257b332e9b4104d3866d9aed9cf",
+    "sha256": "27d813c3b046d60dd6ef53f73df7cdb2c5c2a181e5a269903096b7fb0ef60432"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/4.webp",
+    "path": "assets/tiles-native/autumn_harvest/4.png",
+    "sourceSha256": "f440b33b76a3be39d0606cb69bd4da901684e4c832e8efcc53a889994bad42f2",
+    "sha256": "53d2abefb8e918dd448b9aa15f7b8b66d763e5aa5fd7012f5ac5cfcdf397f135"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/5.webp",
+    "path": "assets/tiles-native/autumn_harvest/5.png",
+    "sourceSha256": "08674f100a592a37d5d0aeb919a77b713b12e921639c83867eb814625a91a2e1",
+    "sha256": "41cca599258016eb6eba827035a647bd23355b5683d208c7ca07515ab6769671"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/6.webp",
+    "path": "assets/tiles-native/autumn_harvest/6.png",
+    "sourceSha256": "6897cb3bc8173e8b8a8fc4f71db08c7d149697d6cdeaabea3499597a7ecbe09f",
+    "sha256": "d8f8edb13cf22b595f496d49c943e08d3ce6c471fffef8965b1819396a2dfc0f"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/7.webp",
+    "path": "assets/tiles-native/autumn_harvest/7.png",
+    "sourceSha256": "fcadff66c61d774e8d1542ddd5653953bf65f47456b935570e353a9b422145a3",
+    "sha256": "695a1184b48d8259103087f9f59e81fe2dcda19d224b4107a6af9bad6773d6f6"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/8.webp",
+    "path": "assets/tiles-native/autumn_harvest/8.png",
+    "sourceSha256": "7432212624ed204bc49a67abbcfc031b0d610c9cb3f28e5fcf043993136a6428",
+    "sha256": "e25a2425ef61d5be9dd7084f986762cf44e7d63f42f8f3f1b0c9e9ce36f4ba56"
+  },
+  {
+    "source": "assets/tiles/autumn_harvest/9.webp",
+    "path": "assets/tiles-native/autumn_harvest/9.png",
+    "sourceSha256": "83ef077b2a93b5f599d5090e4550402d73d75fef7b28237ff83e942e6d4aa051",
+    "sha256": "5042482422f693b2a1e996a2593164321fe3090418d90f9917a5fbd30ee1fa60"
+  },
+  {
+    "source": "assets/tiles/bakery/0.webp",
+    "path": "assets/tiles-native/bakery/0.png",
+    "sourceSha256": "09004013067aa88d7f779c5b3bb94783c8c8fb1d3c593b29f510ad5aba4306c8",
+    "sha256": "a53fb370e5291380f216bbe2d0e1b9739ef946f093a686e081fd8d34d4cb114f"
+  },
+  {
+    "source": "assets/tiles/bakery/1.webp",
+    "path": "assets/tiles-native/bakery/1.png",
+    "sourceSha256": "381cd7f318a4bf134dbcd80153c775cde6a92398a312ac9d4b1e2a436666290a",
+    "sha256": "80888267b1bb09f4ceab90f65058e2d03a7a6d148fb2b7e6d1a4065146bd7559"
+  },
+  {
+    "source": "assets/tiles/bakery/10.webp",
+    "path": "assets/tiles-native/bakery/10.png",
+    "sourceSha256": "7d97d15f957f3816d0418e6a5028e918e7bfa6aae89fbee1e314287422e778f6",
+    "sha256": "f3d8e7ce7f80fee80108049eb1810e7dc094e5391cb4532558ac683647606cc6"
+  },
+  {
+    "source": "assets/tiles/bakery/11.webp",
+    "path": "assets/tiles-native/bakery/11.png",
+    "sourceSha256": "ea4474d531a6adca8927c9dbd4d73994204cfd900aac834378dfdcd18c299da5",
+    "sha256": "5a9a6dfff321073e53ea114f9391fc9d524f0e909be0f8ffed96e6032475619d"
+  },
+  {
+    "source": "assets/tiles/bakery/12.webp",
+    "path": "assets/tiles-native/bakery/12.png",
+    "sourceSha256": "26d918e93726e982679cf159d681cbc8d6366f46a3fc12f0c496c23c772dbb98",
+    "sha256": "e1756013674a6638152f6fabad5ddc3607ee477f7cff4356acd3c8b31201792a"
+  },
+  {
+    "source": "assets/tiles/bakery/13.webp",
+    "path": "assets/tiles-native/bakery/13.png",
+    "sourceSha256": "dcf75e84127edefdffae0aadee4973ec00bf21a50334f74c8674e9d91a988bb4",
+    "sha256": "5122fa9053839ebe9d3000c099da53a36cced00256858da49a4c8044052d2a11"
+  },
+  {
+    "source": "assets/tiles/bakery/14.webp",
+    "path": "assets/tiles-native/bakery/14.png",
+    "sourceSha256": "7b4e75e4d029fd29e7c29c1434e889000816ac05432854bb8fca782517e45c5f",
+    "sha256": "94e9b2e795945764cc120d0a6633fdf80cfd2f52192f181ee78238b890830bd8"
+  },
+  {
+    "source": "assets/tiles/bakery/15.webp",
+    "path": "assets/tiles-native/bakery/15.png",
+    "sourceSha256": "28ed81ebe449e4406e2095936cb5fb23344d56acfdb904bef3392d87a11db012",
+    "sha256": "06dbf5375d1c94647a7e3dc910d69935cc948c7208634972daf927b5f20f8d14"
+  },
+  {
+    "source": "assets/tiles/bakery/2.webp",
+    "path": "assets/tiles-native/bakery/2.png",
+    "sourceSha256": "82f61b3da417e98c80bec6c6065dfc25b191aa30890f158c08545897d41274c4",
+    "sha256": "b5afbb539865c92dff6335042c4da23e5c1184fa227664645c11e08cf3f1177b"
+  },
+  {
+    "source": "assets/tiles/bakery/3.webp",
+    "path": "assets/tiles-native/bakery/3.png",
+    "sourceSha256": "d49881ee6b4925a96a694eaf89b6193ef9901fe4b1deab6c0106c9226295daae",
+    "sha256": "9a40ec01498b975bbc5500f49faaecc7431cfa03d75526b7fb91fa88e3644208"
+  },
+  {
+    "source": "assets/tiles/bakery/4.webp",
+    "path": "assets/tiles-native/bakery/4.png",
+    "sourceSha256": "a8de16f1a123cc0383c71ae828b828f6839375c045e66039f67ec91e9ab70903",
+    "sha256": "0fc688a3de01807d4e4e1c92e87621078e93feb9db3abdff07bc07c638d985eb"
+  },
+  {
+    "source": "assets/tiles/bakery/5.webp",
+    "path": "assets/tiles-native/bakery/5.png",
+    "sourceSha256": "62b9aaefcc057e421be37e90b6e4e30a3b237b4e0dc726fe9a1de722735c3c6b",
+    "sha256": "99a7e40f2d82134b23f39113a0b07676e06d57d734a1d679c4ee840ed8348246"
+  },
+  {
+    "source": "assets/tiles/bakery/6.webp",
+    "path": "assets/tiles-native/bakery/6.png",
+    "sourceSha256": "d50c3bf90be9f1044e9b1aa4f71b156b046a9eff21b44950e490760233ea05c9",
+    "sha256": "0381875a117e05895b5f4890cc3830cab109b1e02ab7b7961d5f99b2c6293c1e"
+  },
+  {
+    "source": "assets/tiles/bakery/7.webp",
+    "path": "assets/tiles-native/bakery/7.png",
+    "sourceSha256": "b2f987583313dec0baa5dd0989fecc27c45dcbd44cdee9c95416519e52a45e60",
+    "sha256": "cbadb4a0df5f6996d13b8a0c61b0db3e57a77f43a1932f522df7406ec280b8ac"
+  },
+  {
+    "source": "assets/tiles/bakery/8.webp",
+    "path": "assets/tiles-native/bakery/8.png",
+    "sourceSha256": "36123e7e4be679a0f44c957f8cde2dc51e415cb98624907dcbbff29e502b4a44",
+    "sha256": "b5ab88d02c681ad4c69b66a68dabb280d7592195fed2545c3f6cd7068616bbac"
+  },
+  {
+    "source": "assets/tiles/bakery/9.webp",
+    "path": "assets/tiles-native/bakery/9.png",
+    "sourceSha256": "6d3ec9e19f1378b7712b88d52d57f38575d66ce356bafd4e4eb1af689ed417c4",
+    "sha256": "c56f8168d54b259348431c191c6f72f8f369c20cb9ec1f1420365123f8df83d3"
+  },
+  {
+    "source": "assets/tiles/fruit/0.webp",
+    "path": "assets/tiles-native/fruit/0.png",
+    "sourceSha256": "d29ec5aa74bc97e6545669133016e2632ddc610da89bd3d49c7dfb84655a8e77",
+    "sha256": "47f8dfbb250625893db909424b12119d3779e27188cf0d86c5e6d94ff51f3f79"
+  },
+  {
+    "source": "assets/tiles/fruit/1.webp",
+    "path": "assets/tiles-native/fruit/1.png",
+    "sourceSha256": "1489e5198af597bd8e35aadbea72960ae036159204771da99ff8b4b09437e98f",
+    "sha256": "89b2fc81e8a56f0c1fa2935ddeb1cb91c40fb551af492bf0c4a25d7671ff3c0c"
+  },
+  {
+    "source": "assets/tiles/fruit/10.webp",
+    "path": "assets/tiles-native/fruit/10.png",
+    "sourceSha256": "9059824d0a90f03d809113509aa296f523295688933be1e460901d228a3fd19f",
+    "sha256": "f47e009a9cdfff3b086b5c1f3a4f1a64b1edab2dce0ceed995cbd654eed6c304"
+  },
+  {
+    "source": "assets/tiles/fruit/11.webp",
+    "path": "assets/tiles-native/fruit/11.png",
+    "sourceSha256": "0de012b9f5164d979dddff37a7f55e41aa82aa8cea433aa860b9bbef10dff318",
+    "sha256": "826533a3796d0332d8dbb5c39cb1e446fba79a4d0649a3769dede9db038dcb67"
+  },
+  {
+    "source": "assets/tiles/fruit/12.webp",
+    "path": "assets/tiles-native/fruit/12.png",
+    "sourceSha256": "d2641ad48f3c08b9700eee7f2a1c22c7f06e781309b943cbac93b057bc525c3e",
+    "sha256": "b4470f37b8136e11a52e649a8e06f0c94019ca5f02d74ba52052cea9dfb0abfc"
+  },
+  {
+    "source": "assets/tiles/fruit/13.webp",
+    "path": "assets/tiles-native/fruit/13.png",
+    "sourceSha256": "7f856ac2f6a55732f4f0ffd6c692af9f8b6614ef622ad57f596212cb06e7e545",
+    "sha256": "fa091937b85bf81215b2fbd1bdbe5e1e517352c452fec60451c7ac99f3f881e2"
+  },
+  {
+    "source": "assets/tiles/fruit/14.webp",
+    "path": "assets/tiles-native/fruit/14.png",
+    "sourceSha256": "6b24cb64042ee724e92ea92e36f42fbb59b27ac91208298e3d52ac93c3e369b2",
+    "sha256": "2cc1358ce46f5d8f26292a723b313dfa2ec920d848c0635fb595d949b35f41ba"
+  },
+  {
+    "source": "assets/tiles/fruit/15.webp",
+    "path": "assets/tiles-native/fruit/15.png",
+    "sourceSha256": "6f8a9630a50a19e35d5e7583caad854e743eb176de6dd075d2dcd093eb55ce2d",
+    "sha256": "05d5ecb8df7967b66b9e4b8f790c3f9dca3458737c8053376e3c5aeaa117f602"
+  },
+  {
+    "source": "assets/tiles/fruit/2.webp",
+    "path": "assets/tiles-native/fruit/2.png",
+    "sourceSha256": "59044e0f5ead69ae3189d9322a6df18ae4416933e789e6cd83ff0bf099078017",
+    "sha256": "45232c8578db49c631a0f19182e7752edec1f95130ca8b854d4dea1287a66e7f"
+  },
+  {
+    "source": "assets/tiles/fruit/3.webp",
+    "path": "assets/tiles-native/fruit/3.png",
+    "sourceSha256": "6495e96e6efe18945ebc4abb16c36a86edb4a1287a83e70ba1a6b5fa83894256",
+    "sha256": "0afdcca4bc847a909c43e5b5ebf3f09a3edba778e1f4a0640c37599e9b71630a"
+  },
+  {
+    "source": "assets/tiles/fruit/4.webp",
+    "path": "assets/tiles-native/fruit/4.png",
+    "sourceSha256": "81e1a8739b4049491be47f7eac87b11e4fb9cbdd7a21d7bc4e1cf7578718e6a3",
+    "sha256": "576d4ec418368a69919ac580734283ac32068e1e12dc81613e2adc57755378af"
+  },
+  {
+    "source": "assets/tiles/fruit/5.webp",
+    "path": "assets/tiles-native/fruit/5.png",
+    "sourceSha256": "614350b1d68802085119496f885c13089a768184b660ab8ed501a5965d8020f1",
+    "sha256": "176b6bba67f0fd44488350e72924b089f98a59980ee066d477f5e646452a6ba5"
+  },
+  {
+    "source": "assets/tiles/fruit/6.webp",
+    "path": "assets/tiles-native/fruit/6.png",
+    "sourceSha256": "86926669d26a5fe788c34b7a47be618f23ecd8f8bac680080d995394299cb05b",
+    "sha256": "a329288c73b1e0905f217be2cd8547be4cbd2a300134fe85adf91ea10791c062"
+  },
+  {
+    "source": "assets/tiles/fruit/7.webp",
+    "path": "assets/tiles-native/fruit/7.png",
+    "sourceSha256": "fef82fcc462ab668795268b4fd8455b7355ea6c6da39210f2d04826919fbacb2",
+    "sha256": "a76f0fd090c2eb0c9b03aec5f7ca94dbc2c7558d3a4d056f939f3e2298c6ae58"
+  },
+  {
+    "source": "assets/tiles/fruit/8.webp",
+    "path": "assets/tiles-native/fruit/8.png",
+    "sourceSha256": "3ba095e9f4d89fb21328a9d3e72b7521662ede9a68ae04bf86dbd11500060ebf",
+    "sha256": "8b41319ad8b593856213b2b38de4bf1ebbf556a7f6642b8c322f87f9a99f60dd"
+  },
+  {
+    "source": "assets/tiles/fruit/9.webp",
+    "path": "assets/tiles-native/fruit/9.png",
+    "sourceSha256": "50b23d7880a472f679b9446a833362c59e62873ffd4b9760212d1b74a8d6eecb",
+    "sha256": "cd0b152df483bf8ed5d1562c7464521c26f21287983c9cca0c8f5438779d4a5f"
+  },
+  {
+    "source": "assets/tiles/galaxy/0.webp",
+    "path": "assets/tiles-native/galaxy/0.png",
+    "sourceSha256": "e83f3523aeca00066e5c8d01bbb72ef2b29c62bf696aeb38437e60ec056172b6",
+    "sha256": "36a02c287ad1c4a6fa37f3e6a25dac9492c3057e770d1b023b93f2da62572f70"
+  },
+  {
+    "source": "assets/tiles/galaxy/1.webp",
+    "path": "assets/tiles-native/galaxy/1.png",
+    "sourceSha256": "5078043da3a47f3c536e3796c9af9e9ee803d441cb401f1394519c3537645483",
+    "sha256": "5ec91dc36e0b33444c2d6258873bb60374e2b36f93374f3e0686867cec64d892"
+  },
+  {
+    "source": "assets/tiles/galaxy/10.webp",
+    "path": "assets/tiles-native/galaxy/10.png",
+    "sourceSha256": "c6d375be21110dd1aa2c5e66d46c3d8b03ab14d9e996ec1810bf2c1a8592d18e",
+    "sha256": "c0454bf1bf9bac15ebed5135d51f84d972c1cd6ba100d5aad1b853309ee45548"
+  },
+  {
+    "source": "assets/tiles/galaxy/11.webp",
+    "path": "assets/tiles-native/galaxy/11.png",
+    "sourceSha256": "620af38375d0db2936837c012919d1106b4c1c373b5bec739037e3c0fa7d3d10",
+    "sha256": "24c71776c65e031f8718a486e6db0926f10cc6f81c94fa297e0be01f183c6259"
+  },
+  {
+    "source": "assets/tiles/galaxy/12.webp",
+    "path": "assets/tiles-native/galaxy/12.png",
+    "sourceSha256": "eff14f451fdbd21e7a6758ba41c67e12165ae8c55d0bc7eef977681ea9556593",
+    "sha256": "ad1175678faaf2c61c81b8963d66cb1c79072b1bc397a3eae79f0d3b32483c59"
+  },
+  {
+    "source": "assets/tiles/galaxy/13.webp",
+    "path": "assets/tiles-native/galaxy/13.png",
+    "sourceSha256": "b1ab9b64aa753ac07e9cb0bfab3212d8b60acec61253b8afff5040d3ee66a88a",
+    "sha256": "7860028436964cdece2d1dadb38c102a5a6e0d517c9eb73ff181bd5712344c84"
+  },
+  {
+    "source": "assets/tiles/galaxy/14.webp",
+    "path": "assets/tiles-native/galaxy/14.png",
+    "sourceSha256": "91425e8cc8cda8ef8253f1c906dfccf3d2920a006b83875680dca361a26e33cc",
+    "sha256": "f442a3e58eb92b225759892877d830e0657f1136967e3f8bfcf9e7fda9ad3d67"
+  },
+  {
+    "source": "assets/tiles/galaxy/15.webp",
+    "path": "assets/tiles-native/galaxy/15.png",
+    "sourceSha256": "a2950e26cf2000eee2bb9cd45f6e0af5b63eb82bbb7da8dbd1d0066b1ed4026c",
+    "sha256": "cd7073447014738154e5a8dae1cd6a73301c7d1e5c25a5decdc84bed0e2bafbb"
+  },
+  {
+    "source": "assets/tiles/galaxy/2.webp",
+    "path": "assets/tiles-native/galaxy/2.png",
+    "sourceSha256": "a5c6c964b30d46039c4200061b8998d45ad42d63880254e92b9dde9c44ec0968",
+    "sha256": "e8ebb87c1738fc1c97de0821f6c54191800d81092e6fa8e5e965afb31168951c"
+  },
+  {
+    "source": "assets/tiles/galaxy/3.webp",
+    "path": "assets/tiles-native/galaxy/3.png",
+    "sourceSha256": "910c1ada8a43c4dacc1a59ed8a3f0bda1ced1353b01a952f70b6085b472708a9",
+    "sha256": "df20a7793d9db4c828805c33eafc55f3214631ad2ad793db8913121cea2af4f8"
+  },
+  {
+    "source": "assets/tiles/galaxy/4.webp",
+    "path": "assets/tiles-native/galaxy/4.png",
+    "sourceSha256": "952079ee3bc026a51235b07083491664ed1b2fd8c1f3f650b0e2de05687bb3dd",
+    "sha256": "f5ba1e25d6fd2b9f22cca5969d5cf6bf54dae7356928f8dd4ceae25e82defe1d"
+  },
+  {
+    "source": "assets/tiles/galaxy/5.webp",
+    "path": "assets/tiles-native/galaxy/5.png",
+    "sourceSha256": "92bfee30217e4c263dd6f889c38b91d04c99c4fab64e01140c44fa3c55fbee53",
+    "sha256": "1cc38e683d1ec49596556482f0f955b3e30e3ca1c9bb0148b2b9a3bf28f40619"
+  },
+  {
+    "source": "assets/tiles/galaxy/6.webp",
+    "path": "assets/tiles-native/galaxy/6.png",
+    "sourceSha256": "1ac6134dba423eaabaad151517f2c69482a36cedf1c52987d6013c89846a220e",
+    "sha256": "3651d689733f9d88826691b2d77139a7fe95259dcc5de2a56742d20fe9023836"
+  },
+  {
+    "source": "assets/tiles/galaxy/7.webp",
+    "path": "assets/tiles-native/galaxy/7.png",
+    "sourceSha256": "5015c67a2ca0ede22580fdefa5cb48738c1a2656bab1289122be2d79ded38189",
+    "sha256": "ea6fa0364ad511fee1798d98d6bafa5c3c00c2add826829cc934b6e87ee9bb62"
+  },
+  {
+    "source": "assets/tiles/galaxy/8.webp",
+    "path": "assets/tiles-native/galaxy/8.png",
+    "sourceSha256": "9fd26f91d92f2723e6b74eab7ae862d0696377a9027e8eac2efb4fd31feb85e4",
+    "sha256": "3eebe5df6a260d7b0e2dacb334594b911c2d7f1e3c91f5699f9b3a684711b8ba"
+  },
+  {
+    "source": "assets/tiles/galaxy/9.webp",
+    "path": "assets/tiles-native/galaxy/9.png",
+    "sourceSha256": "729e14c4739d348fe7b7fe99b4280d3e2e7408ec4d54a8761e61fd1b9c31685d",
+    "sha256": "06d6d8df714a4511912e94ec20113dd1e131a8d4bd2b55d9f7c78fb034fac1ed"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/0.webp",
+    "path": "assets/tiles-native/magic_atelier/0.png",
+    "sourceSha256": "c877956b2f410e483c7d8988e8ed43e1cc3b8ef80dad599fabe6cc15a3d554c1",
+    "sha256": "cfe1f01354b1d961b154667281f25100a50411fe19639b00351f01b6b46dbdcd"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/1.webp",
+    "path": "assets/tiles-native/magic_atelier/1.png",
+    "sourceSha256": "465ec302fc1f9033b5af6d769f8da2b194d404fe98dfa4089bd1f0197f59998c",
+    "sha256": "0561a9e92f234acb8678a67ce026c99d21d2433837435dc9a778d95ebb1dc274"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/10.webp",
+    "path": "assets/tiles-native/magic_atelier/10.png",
+    "sourceSha256": "e786f7f7d8a53d3cf05fb7f5706194c78f079c18944d3c80c41afd3d0be220a3",
+    "sha256": "c0bb9c50f6adc71937cd1c6a35675cb457d20371f3bdd229c72d6cc0be0bec58"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/11.webp",
+    "path": "assets/tiles-native/magic_atelier/11.png",
+    "sourceSha256": "062cd6757f546133210b3c923078fa2b330562c26c239fbebac811b0e0041089",
+    "sha256": "9f7786110f50a46eb9fcddf38968c12d2fd7b0236acabbd092c477960abab2e8"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/12.webp",
+    "path": "assets/tiles-native/magic_atelier/12.png",
+    "sourceSha256": "6f4292010ab9e1b1f171978b37201bb555e2bf1ed616f5892eee9e3b8d1b2352",
+    "sha256": "3af11be273659f8f2f04725651fe9e9748777eb47a10529544c643c7b14fe418"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/13.webp",
+    "path": "assets/tiles-native/magic_atelier/13.png",
+    "sourceSha256": "5bc45a06ac581cd3e78eea65d7f95e576377d79d25d443206dd9d50629f2f112",
+    "sha256": "f0c1575341918f120027ecdd794c2f03c4e55574fcee08e4526c9d74d3ffb01f"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/14.webp",
+    "path": "assets/tiles-native/magic_atelier/14.png",
+    "sourceSha256": "a95712083e23ec21652b7537d270b8633a43029651626acc939eed991def261c",
+    "sha256": "3ab81f17f4f481f9671f136754dfc5e056335f879e7ff18408314095125a6a9c"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/15.webp",
+    "path": "assets/tiles-native/magic_atelier/15.png",
+    "sourceSha256": "e1b336ddf1f8a7910f19e4da045a76e6fdc98ccc7f2c4b06f67e5cb35ebccdf1",
+    "sha256": "da67ae07ef64da54cce311e0892a8c26d4f681b604cb7c85fe755248a9f1d887"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/2.webp",
+    "path": "assets/tiles-native/magic_atelier/2.png",
+    "sourceSha256": "95d2f8a7f874db240f0d5f012879977e1206278fbcdf8fa6815af3717be42e5b",
+    "sha256": "3d203a8a4d98e0fa0f446f642aa63be7b68926ffc403b68e111d9ef5aa04416e"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/3.webp",
+    "path": "assets/tiles-native/magic_atelier/3.png",
+    "sourceSha256": "07b40d83e1234c15737c760ff889075bca4a5e8524131732464cb9594d3f1949",
+    "sha256": "b1cf43b8a03aa867b3e4fefe3d14a5ffa0ec476e9581288411da7c4c4bde43d5"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/4.webp",
+    "path": "assets/tiles-native/magic_atelier/4.png",
+    "sourceSha256": "479a1bfb7a84452ebe81f1b6c5ea28d43f34dfacef2dab654f3fe31420df3f2a",
+    "sha256": "6ded7c7b0528e75b742e81fea584c89f8d66e4f28c3517cfe9d2a0be543e16f0"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/5.webp",
+    "path": "assets/tiles-native/magic_atelier/5.png",
+    "sourceSha256": "ce8f978562413be0c8e67923a7930ce5fe61624d99a518dc3ae4a6690ac118c2",
+    "sha256": "447dd4de593c27163b9d73db5520685c0c88153ed487c67058409a3c6db3119d"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/6.webp",
+    "path": "assets/tiles-native/magic_atelier/6.png",
+    "sourceSha256": "9f8092ded028250cb7bfd11bcb9888c7f00c63ee4f5a7436b4819d3c4ee40176",
+    "sha256": "044a3adca4a906c9131c8f89866ba917c4b235de18cf1e7f18179f2d98f80e19"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/7.webp",
+    "path": "assets/tiles-native/magic_atelier/7.png",
+    "sourceSha256": "eb21c6f15b600891bdab20a2a97e75b90c3155f7addc7b6252312ccf6d3d0472",
+    "sha256": "f5ba07dffee5fda8fc40923c41081bdc5eef534cb72dca5dff0c55c3e506579d"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/8.webp",
+    "path": "assets/tiles-native/magic_atelier/8.png",
+    "sourceSha256": "1ab5b343ca346db74e86d50f2c0a6e95661a0d4f4d09eaf704734c3e35911e98",
+    "sha256": "fe7b0a9129110e5f07f4fe4ced83f029d0cb9def2732d66039ed32a7fa02de63"
+  },
+  {
+    "source": "assets/tiles/magic_atelier/9.webp",
+    "path": "assets/tiles-native/magic_atelier/9.png",
+    "sourceSha256": "d31443bfccc8179a23a34cb01d59e6ecc401a52bb928d4c3eb18518c5b02ab90",
+    "sha256": "b295741b6a41cbf04c5cae4bdd37c3446684dfb71cbf631ab6847b92f4d5c415"
+  },
+  {
+    "source": "assets/tiles/meadow/0.webp",
+    "path": "assets/tiles-native/meadow/0.png",
+    "sourceSha256": "743fb04797ee0a054a9feba22e6e518de89680ebc6a824e3f7bdeb53f7d1ad50",
+    "sha256": "1fbf82c827276c84902ffca237fab0aaddd0d1dab2ed518e94548722270aa77d"
+  },
+  {
+    "source": "assets/tiles/meadow/1.webp",
+    "path": "assets/tiles-native/meadow/1.png",
+    "sourceSha256": "ab5a35a7c167a840c2bbfea7270a58d8dc5189b4ea18e8770a7d252acfec5ccf",
+    "sha256": "1c8cb1741a96d06c857af2834b189883f650f6cda07311818a0bbfbf67845de4"
+  },
+  {
+    "source": "assets/tiles/meadow/10.webp",
+    "path": "assets/tiles-native/meadow/10.png",
+    "sourceSha256": "bcdad3dbf161ee3e2654fce271a561161f5df221d0abf082045cbcd52e8fcbb2",
+    "sha256": "23c1f5938740ff6dc1447d85917ce8e37274b093ff224ae13d3684a23eb3b7b3"
+  },
+  {
+    "source": "assets/tiles/meadow/11.webp",
+    "path": "assets/tiles-native/meadow/11.png",
+    "sourceSha256": "d13e992757679ff1a8e980c759e5c43f045c8694d553a0a90b8fd806ba4d0d29",
+    "sha256": "20ee5843de77869d1e7fb4a192bef688a011a1d8e9ae215b3faa363e5dfe7ff7"
+  },
+  {
+    "source": "assets/tiles/meadow/12.webp",
+    "path": "assets/tiles-native/meadow/12.png",
+    "sourceSha256": "2c3767e671b78fb9041934eaeda3425c401b9bd5159f8c10072f7852578bb814",
+    "sha256": "e5f26eb1f361c4bd326db3903795e5458be9c2e9966745b65f74e2878cd279e5"
+  },
+  {
+    "source": "assets/tiles/meadow/13.webp",
+    "path": "assets/tiles-native/meadow/13.png",
+    "sourceSha256": "c3fdad695f86fbd5c7cd800d09c2ef4b14f07d6d74eeb7b04950965cb256c4b3",
+    "sha256": "e4d463a07663917551218bfd44e9839bc7594778bb3c28840405b2b88066ae5e"
+  },
+  {
+    "source": "assets/tiles/meadow/14.webp",
+    "path": "assets/tiles-native/meadow/14.png",
+    "sourceSha256": "af874192ea404372a5d2138a8d803c0676aeaa4c481ebe7a6a6f3151cd6602bb",
+    "sha256": "6a480f4255f5314420f280242d25c01b648fb2976d15d9d5ee4a0626f62c2a10"
+  },
+  {
+    "source": "assets/tiles/meadow/15.webp",
+    "path": "assets/tiles-native/meadow/15.png",
+    "sourceSha256": "02134c043490fce4a0e0a27d6cb4c8d60745813ed0ec479152ce76c0b9cdac0e",
+    "sha256": "88084ea52884f405be963ef45ed1f9482853d33410d913fa2d757842f41f7d19"
+  },
+  {
+    "source": "assets/tiles/meadow/2.webp",
+    "path": "assets/tiles-native/meadow/2.png",
+    "sourceSha256": "727b847c6665c11c1d76692a1fdee6dc631d8c2c441d6ac40ce66e5a5b2e1f28",
+    "sha256": "2d1cd516e133a9d85f963ca317d117cfcf3cb73146ec26d2e5a6c1bea9b80dc2"
+  },
+  {
+    "source": "assets/tiles/meadow/3.webp",
+    "path": "assets/tiles-native/meadow/3.png",
+    "sourceSha256": "027441e33207769433667410fcc013c54322cc6ae37665e1d960b5a2aa6cca27",
+    "sha256": "420bf412b68d91b938bcce755dee8239a30b54f5af90d5bfa356dbaddce48e7a"
+  },
+  {
+    "source": "assets/tiles/meadow/4.webp",
+    "path": "assets/tiles-native/meadow/4.png",
+    "sourceSha256": "c099407718e08c96c061d14d96321ec43466e738061bb6e4b164e638ce9f467e",
+    "sha256": "c03762c78fc2d723c395605152e795e5df9f86152def85ca1da3e8c3c47dd215"
+  },
+  {
+    "source": "assets/tiles/meadow/5.webp",
+    "path": "assets/tiles-native/meadow/5.png",
+    "sourceSha256": "fbc467c0a521c695363af67e60f2014c811191007a7312a1c4c0b3143a8dcf5a",
+    "sha256": "21c076f6f0f05e338495cfb73b1df3917099daa28439c4fbfef5ecda738bff1a"
+  },
+  {
+    "source": "assets/tiles/meadow/6.webp",
+    "path": "assets/tiles-native/meadow/6.png",
+    "sourceSha256": "c96e0a22e8b9e8e45b06b096a356ddc016d8292133eed4894b326ab9451334a2",
+    "sha256": "6b9fb1c9b8402150a8cc6a4217b55a978e936cb300104545263c10980467b0cf"
+  },
+  {
+    "source": "assets/tiles/meadow/7.webp",
+    "path": "assets/tiles-native/meadow/7.png",
+    "sourceSha256": "7c31d3316367e32b5523ef672f0a5e43d438c88cc49b79f37c3d2d49b34d286f",
+    "sha256": "f70ce3b1e0533c3aae72d21afb7f6de5f6dcf194889fba0f621ad1230a3b536d"
+  },
+  {
+    "source": "assets/tiles/meadow/8.webp",
+    "path": "assets/tiles-native/meadow/8.png",
+    "sourceSha256": "dcbb25300a834d3370db43bab5d9b523775c2c844661c040fb9891365863aa47",
+    "sha256": "1314ae5ef0aad1042af95f7f42f612b706aaa7222c9cf78b497189f87f57f2d6"
+  },
+  {
+    "source": "assets/tiles/meadow/9.webp",
+    "path": "assets/tiles-native/meadow/9.png",
+    "sourceSha256": "239a5ed8d8a8a7933ded008a3e3e3f5e916c9e16cef9a0a5f727f167fe7daca5",
+    "sha256": "4113f1fde146615c6eb9ba3433c52a00d0144c30b71d5c70aebc43d5e420cb0a"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/0.webp",
+    "path": "assets/tiles-native/retro_arcade/0.png",
+    "sourceSha256": "cbfe4123369647cfd8bce439004181c555376a90208cb0eaaf26e8077e367544",
+    "sha256": "bc3a9f62ee08781738469edb6c42e594b79ef17a640b1e4ecc72a8853fdbb530"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/1.webp",
+    "path": "assets/tiles-native/retro_arcade/1.png",
+    "sourceSha256": "31e68be281bab38108c2b54203f242f95c8a0eb17e6ab7c952f65a6ea23c0bde",
+    "sha256": "92ce771cba198043206c2363a3ee372ea474440d8874a73ca590cfb6d257e657"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/10.webp",
+    "path": "assets/tiles-native/retro_arcade/10.png",
+    "sourceSha256": "19d82103e622983a2d1c38198868345c6cb14ffc686bb19bf205eb1fde95fe2b",
+    "sha256": "c23c1c90c246968821102a76931818695d6bd054c159e4507a5ec341e3f393b8"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/11.webp",
+    "path": "assets/tiles-native/retro_arcade/11.png",
+    "sourceSha256": "cb9ca14da6d17383af5aee073bcb020bf1ba2bb67e962e47892773f56e636356",
+    "sha256": "d4097e93ee8386e9bf4544c1e9eba40717ae7521d7e244ee6bff5fddc2568ab0"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/12.webp",
+    "path": "assets/tiles-native/retro_arcade/12.png",
+    "sourceSha256": "b59bda41447b4f2fe9154ae61129b68d57146c41fc15fb6918bf6ef0008c32d5",
+    "sha256": "420ee4279ab5d1f6cc0f976225c22c94f089382c66e9557b9dd1bc791b09e20d"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/13.webp",
+    "path": "assets/tiles-native/retro_arcade/13.png",
+    "sourceSha256": "b491dd2ecaab55986b2d7d0991b74a8ea6b8c2d74d77a5b810a137f4bdc801db",
+    "sha256": "00658b9705ac98eaad56e1721f3fef8577ad5d751dd473d0807837c9a2f17883"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/14.webp",
+    "path": "assets/tiles-native/retro_arcade/14.png",
+    "sourceSha256": "d98f33533b33fa115c1048d93dac42480871d18c6241b5c6ba03692eac9f1af9",
+    "sha256": "8e3e8587500d4bfeafef2a1c1644b5dba744336e25729a991edf6682f2d93656"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/15.webp",
+    "path": "assets/tiles-native/retro_arcade/15.png",
+    "sourceSha256": "8bd8f2a5311037784149573d8b0d973b5493c55edb0d29771ed4f19101e45a4f",
+    "sha256": "21ea372acf86b3e6d3b99c7be127f9598171eb1c55f352f12e11de9bc9c141ac"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/2.webp",
+    "path": "assets/tiles-native/retro_arcade/2.png",
+    "sourceSha256": "9cb86a1825011fa7c22dd51fca91372ca7fd03af54ec11e4e2d69f1a384cf8fd",
+    "sha256": "85769d29af15c772d5832363e4d5c7df179c630cc2c5e396414075743618afea"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/3.webp",
+    "path": "assets/tiles-native/retro_arcade/3.png",
+    "sourceSha256": "580bc86f527527a7668b9f8086a117b68eb47057115cfd7b8a2389e06ef01092",
+    "sha256": "7267a20959e7f9487cfaadcb806da2e429f96e326ec0e34622ddafc956458625"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/4.webp",
+    "path": "assets/tiles-native/retro_arcade/4.png",
+    "sourceSha256": "790ba64f7dda57aebcc887e7570486888cfe206e69d5e8af6f2666f7cd20a39d",
+    "sha256": "7df01d6035af153835f6894c8c1f47da2757ab08ac07412d068e4ec96c9b7556"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/5.webp",
+    "path": "assets/tiles-native/retro_arcade/5.png",
+    "sourceSha256": "e29b3ada1efea771acf5071efc6536ff83284aeeba6b240f2f2a8fe79828c0c1",
+    "sha256": "a986efa28b26286a9755ddb31f7cf2b057d5e07238a32d8345481d68e4d5d72f"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/6.webp",
+    "path": "assets/tiles-native/retro_arcade/6.png",
+    "sourceSha256": "6ec83d56337a7b7c7d2970ec51e2843ee360c3571ff36bd4dbfbd3d3f50ee86d",
+    "sha256": "e73f19cd6fc1322a27e923ce2deae8de95c7890e50a893331bf37de489e2066d"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/7.webp",
+    "path": "assets/tiles-native/retro_arcade/7.png",
+    "sourceSha256": "fdc35438f227e07fb24aa8852f09948f2da0952219a5b4529a4d4ada967bb535",
+    "sha256": "a7ba24899e626988fc21fdb49ee8139df8d825b2161ddba1ac2fbaaced3f41d7"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/8.webp",
+    "path": "assets/tiles-native/retro_arcade/8.png",
+    "sourceSha256": "ff2a2b11ff9960b4b7e293cc05bd360e2a22c12fb0aedcef29536b858fa7c4b6",
+    "sha256": "18294ddeda6954d5cfe5241f9f17c590da9ea9cc6425a33d9a1fe288575aca2a"
+  },
+  {
+    "source": "assets/tiles/retro_arcade/9.webp",
+    "path": "assets/tiles-native/retro_arcade/9.png",
+    "sourceSha256": "7ad5b903fd4804811783f5342cb29015d1260b483088020e99549ddef800a045",
+    "sha256": "d8d446b6786e6d8ec3fe1d8f18908dc931ee483e1a6d450f81b19d765aa7d066"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/0.webp",
+    "path": "assets/tiles-native/reward_bakery/0.png",
+    "sourceSha256": "8cc07f09c0ddca08b91c1f055f9a15a19aebb6af350f36ce7da4e2aab211113b",
+    "sha256": "22de575b3046460195ee2a0de0a23deec194c1d750c61945654c10b433c3fdc1"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/1.webp",
+    "path": "assets/tiles-native/reward_bakery/1.png",
+    "sourceSha256": "de6e87e36d0d934e7ac14cd765fb8f3e47d338feabbe4e736ada0b59ef08ee7a",
+    "sha256": "c27faec36d1270395721fc7f251a9264e7ebd7c6e1cbdd3fd6536c9250b2b0e7"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/2.webp",
+    "path": "assets/tiles-native/reward_bakery/2.png",
+    "sourceSha256": "19bc51c10c5fb517dc785d71242a850b4e4bf73e748afeef62583e9ba5c820d4",
+    "sha256": "4a30474d34a6a7afb9c8b64ab0090f21cdac2e58ae5cabaeb637109c0cf4e273"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/3.webp",
+    "path": "assets/tiles-native/reward_bakery/3.png",
+    "sourceSha256": "7486ad01bc373db464b7c6285562f5f58f1648202aaae1df346e63def46543e0",
+    "sha256": "e9bd5e9442ff2165727706ac74e5975a8565c24d789e2cf4bac4915a155eaf57"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/4.webp",
+    "path": "assets/tiles-native/reward_bakery/4.png",
+    "sourceSha256": "230f0afd5e01491ec01447e024fcd6d27043a869274f2d46bf6156029b173bb5",
+    "sha256": "f94da4bef31399ea5f837170a162e6f2e176807dfdffc7ff54297734f188d4bb"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/5.webp",
+    "path": "assets/tiles-native/reward_bakery/5.png",
+    "sourceSha256": "73d07642f29649a73d63458f84f1f62d82dec242cde0615f937687ea6f64b903",
+    "sha256": "35b7d61a25821ca89fe096f04b343c0f2c5d8900d88a4fb770277d939dcdc830"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/6.webp",
+    "path": "assets/tiles-native/reward_bakery/6.png",
+    "sourceSha256": "cb371ae5ccf4dc083eb2f1c705c143aa2b224dfaa06d6878a0999b5364d7a708",
+    "sha256": "89533121321f921dcbfdbe30c49890fe0f39925e4d967cce163035dcd461fe45"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/7.webp",
+    "path": "assets/tiles-native/reward_bakery/7.png",
+    "sourceSha256": "e196d19d51dfad088f295d5b1dc116aaa46c6b2e8c85e772ba8bbbd8fd6a648c",
+    "sha256": "333b64e950a04b0866837f3d7a42492280e9a8ef9e1011649a6920be26de69d3"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/8.webp",
+    "path": "assets/tiles-native/reward_bakery/8.png",
+    "sourceSha256": "c0294a068d6905629217a85890269b63bb4fb10d44b6b79dbb15f53ed899133b",
+    "sha256": "7b9914b14ec4115e337ab7dab2d585e22958f69c116d63f5d380b5698bb5e75e"
+  },
+  {
+    "source": "assets/tiles/reward_bakery/9.webp",
+    "path": "assets/tiles-native/reward_bakery/9.png",
+    "sourceSha256": "2c03e1a036e4d1943a911d3cc675e7863fec2a34f9615f2f6f9c18e7e179c23c",
+    "sha256": "9dd30890653d3c6202244f6e0cbf77b4f4fe8097100ca6c4f736f11f4f7f1528"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/0.webp",
+    "path": "assets/tiles-native/reward_fruit/0.png",
+    "sourceSha256": "1a02f17ab595f5e318d3bdd82e856f424a7033c096f0d3c9aa2c5f657d130b55",
+    "sha256": "4b91b486419b61918ccce19249c29d3d9ce59cbab474c0d55f7e26e190816665"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/1.webp",
+    "path": "assets/tiles-native/reward_fruit/1.png",
+    "sourceSha256": "a546b5e5d9f801554dfdf6040599c751586efea434b8edd59e55c9cbc1317202",
+    "sha256": "88a0c7c2b2cc56bb263de8fac01c656da36e7af076c06338c06cfd82316b62ac"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/2.webp",
+    "path": "assets/tiles-native/reward_fruit/2.png",
+    "sourceSha256": "bd4f8ff05db55ac9d262ae9e690b4bef9d835d98ba7eefdcfd68343a38b78052",
+    "sha256": "a0cfe243c3ad2c6acf54d9cdded99c782c12cfde70647472b9fbbe878b1b8b5e"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/3.webp",
+    "path": "assets/tiles-native/reward_fruit/3.png",
+    "sourceSha256": "bd254530357461f3f502cf2495dfdbf705e01f4ccc8548cf1126a268b4aa4ff1",
+    "sha256": "ef018521d9d35d95c3174f9d0e1d99cc82b2986db6d2b1751107b0a0ab72c589"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/4.webp",
+    "path": "assets/tiles-native/reward_fruit/4.png",
+    "sourceSha256": "b0dc68854395b0120814fc2c485c61b2f44b73a9435769ba42177ca37ec1bbb4",
+    "sha256": "8cccbbd781e45b5f0a520f215cd49bad7fd87c763b738e10180670e7955c9276"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/5.webp",
+    "path": "assets/tiles-native/reward_fruit/5.png",
+    "sourceSha256": "7c0144b02dec5ab35433be0242329887db55f9b00387714dd08739a2814eee54",
+    "sha256": "6080dfab9e5df058e0462feaf4079c294b27d41b9904f0545b44b79a3e6d85f1"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/6.webp",
+    "path": "assets/tiles-native/reward_fruit/6.png",
+    "sourceSha256": "d584d99585669c0459fab9bf55d50c1e144c7d58b02d4251dd01d792b31dba53",
+    "sha256": "9ead27db4de9100821fe0c6a9f4dd3d03f317c3778b1ffcdad482a9b8c684396"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/7.webp",
+    "path": "assets/tiles-native/reward_fruit/7.png",
+    "sourceSha256": "8a63c204c27dab8274bfafa29fe7261eea0eabffdb1d7240fef1b4768a88268c",
+    "sha256": "76fe93351444681c045e771cd05338ee0fd16406c4b7a63dac826a8c4b765b88"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/8.webp",
+    "path": "assets/tiles-native/reward_fruit/8.png",
+    "sourceSha256": "6cb7191fff07003e8070ea16a24eb5f466f1ea04f694386c7bfe8f2970c80d17",
+    "sha256": "ff2a4bfb1d39a7736a326a66198acfa2df1c9d2067952e3accc1b6aa4a2b2928"
+  },
+  {
+    "source": "assets/tiles/reward_fruit/9.webp",
+    "path": "assets/tiles-native/reward_fruit/9.png",
+    "sourceSha256": "7cf17dc0ce74a0853720c9ee226797eaaa606644199dd361fa316f600ee915a1",
+    "sha256": "337fdcc1b60bd717b4f2ef0d9443b0ac834e7bf3feea4560e67c773db5eab5ad"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/0.webp",
+    "path": "assets/tiles-native/reward_galaxy/0.png",
+    "sourceSha256": "565c9bbf4be559d8ae14644224ec4c3bb8e5603b851bf84e559474b8c4c72bc0",
+    "sha256": "f899b2ce47d262192c62d6424970b07a0935e4130bdac1b3cf290e400fb6c7c6"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/1.webp",
+    "path": "assets/tiles-native/reward_galaxy/1.png",
+    "sourceSha256": "fa4e67c7764ae5319828a5d2b5750d104a52b8684a85facf0975d2b291c5b995",
+    "sha256": "0b9cc842beedafef5a702ef3326ae375aa4583d6d29efede73ccff5050b90fa7"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/2.webp",
+    "path": "assets/tiles-native/reward_galaxy/2.png",
+    "sourceSha256": "2d97a192d30e3d4af1661087d2ca630f2556f760e51c839cf573c1437c052b62",
+    "sha256": "89647c21b8ababd154f92c794e88047b6d511ca61ed5f1e5178e7d571a6bc823"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/3.webp",
+    "path": "assets/tiles-native/reward_galaxy/3.png",
+    "sourceSha256": "2fe46f90d0ccfaa06e8bfde6e4aa70ddac6c2432c4def39e985a6c433fed1d81",
+    "sha256": "19bf0807235f80e2fc926124ed2d4f2fa2bfe74e1e0050aad17c18ff7dc0af54"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/4.webp",
+    "path": "assets/tiles-native/reward_galaxy/4.png",
+    "sourceSha256": "b49fada3c10b7b33e15d1c69ba788c92d6c2469bcbaf230558426f158ade3f61",
+    "sha256": "f500dc6840a8caac098c012a8699f75e709985fa9010bf90684b77c92d0ae516"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/5.webp",
+    "path": "assets/tiles-native/reward_galaxy/5.png",
+    "sourceSha256": "8c9c49d828831151003a414c403879ba53f03bfb4c9c85085c78958fbaf3b262",
+    "sha256": "efec0cb566d0ef061e8a8422323a2cd8ce8f4c1a3eed11d7efef8311f09ca855"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/6.webp",
+    "path": "assets/tiles-native/reward_galaxy/6.png",
+    "sourceSha256": "13e03f4578ddc6c335e0fd7c69675eb1733082ce553c4e25ea18a2a79e681ab7",
+    "sha256": "7941cbbaa42b06e658769d0f95a8c2f203eec759f749413111ef636016805871"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/7.webp",
+    "path": "assets/tiles-native/reward_galaxy/7.png",
+    "sourceSha256": "8f38698b6613171ad3a09e41ee026a67925b76a52f24c1a276ec0501fdbd3560",
+    "sha256": "d5d0da4e24329f63d9dfcdf0cd2794c3e2b81f769f05d60abf03abc8c106ec3e"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/8.webp",
+    "path": "assets/tiles-native/reward_galaxy/8.png",
+    "sourceSha256": "25a1bbc57e062b1a76988f0d5bd55265538cc71e9d22b9533c5846d4924d26e3",
+    "sha256": "1519f88006d4c66aa7a1b827090f1d7fa10175793faa50bdf4617090111e9dbc"
+  },
+  {
+    "source": "assets/tiles/reward_galaxy/9.webp",
+    "path": "assets/tiles-native/reward_galaxy/9.png",
+    "sourceSha256": "e1c10aaca94491dde52faafda71d90447ea44d2d648a4e0d378ff95f4f2894c5",
+    "sha256": "2bdbbe62102088e0f987ff4014779e01b68d91b84c1378b07fe09a76fb792216"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/0.webp",
+    "path": "assets/tiles-native/reward_meadow/0.png",
+    "sourceSha256": "37b688565dded7accbc0efa2c9399a38021ea35d3270e0587b3ca54696ea694e",
+    "sha256": "913c81ade1513d9d6cdebc2c0c6ab969f5e3554d4b406a7a37a1c875e06d0b6b"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/1.webp",
+    "path": "assets/tiles-native/reward_meadow/1.png",
+    "sourceSha256": "c2ef085590a11c8931de678aee665aaaf237d52730a3ffe8efb9bfeb44cc7d8e",
+    "sha256": "da6ccc4d4543639f453b5c30a5003982d64fe052fdc0a10ba77ad7c2078a5a60"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/2.webp",
+    "path": "assets/tiles-native/reward_meadow/2.png",
+    "sourceSha256": "022ad0a1fbec4d61be1cc36fae11ede1bf09447e8b014b90d22328978ce84700",
+    "sha256": "93990b0767241031ed13afdfd9e25568dc082ee1ba142a8a38f2c2a746d5ad80"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/3.webp",
+    "path": "assets/tiles-native/reward_meadow/3.png",
+    "sourceSha256": "4f608b7a636ca2767880c997edbf8f6f2546e37758dfbd194e2541de5a064943",
+    "sha256": "df6fccd15e83b158101b2a02395faf9666cbb9ff77dc5845176c775d3e19167a"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/4.webp",
+    "path": "assets/tiles-native/reward_meadow/4.png",
+    "sourceSha256": "e629754e927f0519620b9ffb54e105914c34d94f12578152093b0cc44f7d46b4",
+    "sha256": "980b6cd8d9dcad0386fdd79b77bf77f08afe6ab36d6450810e50983ca60a18c3"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/5.webp",
+    "path": "assets/tiles-native/reward_meadow/5.png",
+    "sourceSha256": "d362246dfa61474dfed3fcfc31c4d856b05b5548521aacddacd14625cdb26cee",
+    "sha256": "63517e4135dd3ba5edb77c209e3d538e8824d7808bd60b2fc47c07b5d88a1906"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/6.webp",
+    "path": "assets/tiles-native/reward_meadow/6.png",
+    "sourceSha256": "54ea7bef147bff81e906b9db151e3d76b385d73dde3a74dd4359c9cb589b18ec",
+    "sha256": "3036747fa29d1a561415ddc75398baed673a0e3a490b4402195454a92488c64c"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/7.webp",
+    "path": "assets/tiles-native/reward_meadow/7.png",
+    "sourceSha256": "562fcb19fe5209536ddf09a1d001454ceacac5ad7566d75e4a0852f49c99e0eb",
+    "sha256": "825df287ec18968d9a16a6b4bc5e7e4cb0dd98c7e569cd3a16dd6ccd20001e02"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/8.webp",
+    "path": "assets/tiles-native/reward_meadow/8.png",
+    "sourceSha256": "c584a6aa009a5b49ffafd9dfbe26d8914a54653a0cddd91afe616be0bb3052b1",
+    "sha256": "658962a915f35ea8958e17cca667482cfe4e182daf0b938295a09cc5b34a4672"
+  },
+  {
+    "source": "assets/tiles/reward_meadow/9.webp",
+    "path": "assets/tiles-native/reward_meadow/9.png",
+    "sourceSha256": "f11c83a2a138786cd63bd0d155fb1c21cf502197f56f1b06f5159e83a640d21d",
+    "sha256": "d9f0da6338d69264303b5ff5a709425616551af9da1ab20bf76a2bb2f98b89e8"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/0.webp",
+    "path": "assets/tiles-native/reward_sakura/0.png",
+    "sourceSha256": "0de7bb7ab5745d324f3b3e5ff6120e0549c78901cfdca8724b5729905c2c3b22",
+    "sha256": "03a5d4c07c43e229c0c2954133fab792c4a0edcc231f7d0c1d15852e72a607cc"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/1.webp",
+    "path": "assets/tiles-native/reward_sakura/1.png",
+    "sourceSha256": "dcad0d96be5fab302cf649d07919aff9b2f7d3ab7016f95024c057cde8398f2b",
+    "sha256": "b90bf6cfeeea3be571a2c46b25fd6d985bf8f518dfcfcab38fed3b4becf83e49"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/2.webp",
+    "path": "assets/tiles-native/reward_sakura/2.png",
+    "sourceSha256": "0a41893382706c06cb7e127e03ab90d5970fe35191b5133ccfb21eef3d8d2518",
+    "sha256": "a6113059b410ae36189f91ba8171d4cdbe1379a0af359913f9202982fff7bbea"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/3.webp",
+    "path": "assets/tiles-native/reward_sakura/3.png",
+    "sourceSha256": "79c79d0f24d027c66f62bd458c3720a168267dfa3385721747b9b35382e5ac28",
+    "sha256": "8b6b8f234386c1e2c14d4c7095b864da7d0c266dce033bc02a9b4851d4adedf1"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/4.webp",
+    "path": "assets/tiles-native/reward_sakura/4.png",
+    "sourceSha256": "d3f09d771233981db231d80c083a97e9059b678c10284d071bc14a7dda01044d",
+    "sha256": "07a6c74b3422a5e1cc31ef52aa734046268bde3a4e33755b5cb7738cb3840e05"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/5.webp",
+    "path": "assets/tiles-native/reward_sakura/5.png",
+    "sourceSha256": "6b5ba605e9762c6a493ef4f1cbe07905a841f76a1406e58efa4510f49c99e0f0",
+    "sha256": "6867ccf680dd043b2380bb694fd7c921ee86729014028342e2b44b6e4db0a9d4"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/6.webp",
+    "path": "assets/tiles-native/reward_sakura/6.png",
+    "sourceSha256": "839027e74c10c6a923facec6f6319bb2c4351673289538ed41c60ddf90c93619",
+    "sha256": "ad005f52e94c2f17c9d1da2c5f6f4a167a7f9dadf5b28009c23db6dd5846a8d8"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/7.webp",
+    "path": "assets/tiles-native/reward_sakura/7.png",
+    "sourceSha256": "2079d1ecf9fd62d2451a92b50a420cbea212a22c77f74a2deaf9fee57b31b386",
+    "sha256": "ad3b72cc2b2298c784f4c85ca53a21800e83bbc8ab84359a29c9575746d85014"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/8.webp",
+    "path": "assets/tiles-native/reward_sakura/8.png",
+    "sourceSha256": "89763f423e5259d5d9062817dafe3de53e6974f4c751458f7e5ade27cb9c027f",
+    "sha256": "c94b75ecd846ba084844179a88af1d31cda9d74f4225f62a61baa78f5b8996db"
+  },
+  {
+    "source": "assets/tiles/reward_sakura/9.webp",
+    "path": "assets/tiles-native/reward_sakura/9.png",
+    "sourceSha256": "7a65ab958637957fd31f8c79f68c8bc94b47403d6fdf621271976c453e4e5187",
+    "sha256": "9ba307218824a5841c8461c90069a31f9f8eaf98d748929c879a6fab0d236983"
+  },
+  {
+    "source": "assets/tiles/sakura/0.webp",
+    "path": "assets/tiles-native/sakura/0.png",
+    "sourceSha256": "11ebdd83a088bdca59ccf5b9216f801f645240388a36ad5fda1a6357377c6f4c",
+    "sha256": "258549472372a46f236eee312e9423fec2d6675ea68b454224c11ac29318c3f7"
+  },
+  {
+    "source": "assets/tiles/sakura/1.webp",
+    "path": "assets/tiles-native/sakura/1.png",
+    "sourceSha256": "9bad1f152c8ee99bdfb05df4a0e388236ce5f363cc4340fdcb84e947ab2f1010",
+    "sha256": "81367e053dcf7d420b2291e419e24b4d4e83afa3da56b3ddc5019d43cd7f3e9b"
+  },
+  {
+    "source": "assets/tiles/sakura/10.webp",
+    "path": "assets/tiles-native/sakura/10.png",
+    "sourceSha256": "7f9387213120c05deb97b775cf2f454bb5dd9d80993cbd9d7cddb9cbc89a60d3",
+    "sha256": "b961d51406d50f1d34eae2ebefb3a9b7dbbe02b9c3dc8aa8f0a921fe1abc2cf2"
+  },
+  {
+    "source": "assets/tiles/sakura/11.webp",
+    "path": "assets/tiles-native/sakura/11.png",
+    "sourceSha256": "90aed20096698b19743feb047d966114b025f92afbbdb2edaa3808af10f2ffc3",
+    "sha256": "7f1e3cadaf1b50e1f40fae4f999c0b5daa354728c75584297351d79925ab4684"
+  },
+  {
+    "source": "assets/tiles/sakura/12.webp",
+    "path": "assets/tiles-native/sakura/12.png",
+    "sourceSha256": "e7fc9c7c03712af92605c9374b8276c977f4404bfc17229ab6ea80e6e855921d",
+    "sha256": "1156f1808d6ec00c6f9853d4b2e5466f64ec3de2da1653eff7eefa0792548b75"
+  },
+  {
+    "source": "assets/tiles/sakura/13.webp",
+    "path": "assets/tiles-native/sakura/13.png",
+    "sourceSha256": "716d931d39a27911dfbb0c23a04d3f8bdf3ffb79695946ea69f69d44128cf758",
+    "sha256": "5f11d653a0b0f8676ffa823113425770f23a4ab302a86cffe4e7b6b908a9c321"
+  },
+  {
+    "source": "assets/tiles/sakura/14.webp",
+    "path": "assets/tiles-native/sakura/14.png",
+    "sourceSha256": "1b99e98443eb3594c7c22dcc05a890412e902c6616e387337242622b0e77c9de",
+    "sha256": "8af4b7f48871f428dc7f991f26f02b6e5b73e187914b9ee9942145bf71597ec2"
+  },
+  {
+    "source": "assets/tiles/sakura/15.webp",
+    "path": "assets/tiles-native/sakura/15.png",
+    "sourceSha256": "fbf23c0ad7ad19ccb508fa9e41a97b6c87accdb9b46fd089f22a4a561b1f04b4",
+    "sha256": "c6d267ab53558dd5958b67a4513110da94a9cae08cc96f696dae05c915243010"
+  },
+  {
+    "source": "assets/tiles/sakura/2.webp",
+    "path": "assets/tiles-native/sakura/2.png",
+    "sourceSha256": "6fd4ba7c5299b6738e93d61a2e90efdce270237bd419751731d8b13abcd782ee",
+    "sha256": "b635e0729d204345bcf00dc9ab5d4b058d2aa2fd8adf8e57f935cac8c0080528"
+  },
+  {
+    "source": "assets/tiles/sakura/3.webp",
+    "path": "assets/tiles-native/sakura/3.png",
+    "sourceSha256": "d85ff7d86fe7b1967aff2602b40747c51f255256d24e954a337e4486bb7bd838",
+    "sha256": "3ed97d95cdfc3cc67cec6ebb5eb79ed7388e365e6fe8ded60b794f63b379dbf0"
+  },
+  {
+    "source": "assets/tiles/sakura/4.webp",
+    "path": "assets/tiles-native/sakura/4.png",
+    "sourceSha256": "e69448ecee3c1037e82b31a97a48f147eae7a23f6e728c94a3b58814b2d063c2",
+    "sha256": "3ec1cd6de4435d0640f3a79e1a35a7a33db7a39081ec48c64a659c4dc65299c0"
+  },
+  {
+    "source": "assets/tiles/sakura/5.webp",
+    "path": "assets/tiles-native/sakura/5.png",
+    "sourceSha256": "34d27dbebb3869ba9f82eba84b6dc250217a0b82c7c98fb8b37fa71691c98929",
+    "sha256": "2ebbabecdb39be180bc0e074ad5a83dcc9a15cb037c673a4aa2e6146bcb048a6"
+  },
+  {
+    "source": "assets/tiles/sakura/6.webp",
+    "path": "assets/tiles-native/sakura/6.png",
+    "sourceSha256": "91b3a415d7f81d34c2978ef62550600b6f0e6ac707f27759740ab9f15c508b77",
+    "sha256": "cbf7ed1fd650557bf739738574b10eb007386b24decb5c3d6a588ca9bbb7ce6f"
+  },
+  {
+    "source": "assets/tiles/sakura/7.webp",
+    "path": "assets/tiles-native/sakura/7.png",
+    "sourceSha256": "23b25b7cf4f293c17c8ae15e47aad348c7396cbf854b9dc64c1764bf208a7150",
+    "sha256": "888efebffd023d8bbb4ea8dd5ecc6dd776cff1af408970e602a3b5781fba1c18"
+  },
+  {
+    "source": "assets/tiles/sakura/8.webp",
+    "path": "assets/tiles-native/sakura/8.png",
+    "sourceSha256": "cb451388996218ab26e41289e3468a114376a58c237f8d7fb3076a784693096d",
+    "sha256": "776c2812ff273b2d40b1a05e5b8b7e5b1e3d8cb22e6e87146b2490033d771b43"
+  },
+  {
+    "source": "assets/tiles/sakura/9.webp",
+    "path": "assets/tiles-native/sakura/9.png",
+    "sourceSha256": "315a64a3646a9891b8a7f9012b416a6d4ea8107125625f92031fc9774f725291",
+    "sha256": "a8093c23c836c1b168ea4d6cbf1aacc1d5d71bf888df90e848801c38a01f92de"
+  }
+]
