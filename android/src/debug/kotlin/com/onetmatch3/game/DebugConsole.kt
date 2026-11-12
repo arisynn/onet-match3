@@ -52,7 +52,7 @@ class DebugConsole(private val activity: Activity, root: ViewGroup) {
         }
         button("Copy") { (activity.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager).setPrimaryClip(ClipData.newPlainText("Startup diagnostics", report())) }
         button("Export") { share() }
-        button("Clear") { synchronized(lines) { lines.clear() }; renderLogs() }
+        button("Clear") { synchronized(lines) { lines.clear() }; crashFile.delete(); renderLogs() }
         button("Close") { panel.visibility = View.GONE }
         panel.addView(buttons)
         panel.addView(ScrollView(activity).apply { addView(text) }, LinearLayout.LayoutParams(-1, 0, 1f))

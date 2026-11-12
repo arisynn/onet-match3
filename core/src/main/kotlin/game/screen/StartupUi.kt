@@ -9,7 +9,10 @@ import com.badlogic.gdx.graphics.Color
 internal class StartupUi(private val screen: BaseScreen) {
     private val font = BitmapFont().apply { data.setScale(2f) }
     private val stage = Stage(screen.viewport)
-    init { screen.addInputProcessor(stage) }
+    init {
+        screen.addInputProcessor(stage)
+        screen.game.diagnostics("Startup UI ${screen.javaClass.simpleName}: Stage and SpriteBatch initialized; default BitmapFont loaded")
+    }
     fun text(value: String, x: Float, y: Float) {
         stage.addActor(Label(value, Label.LabelStyle(font, Color.WHITE)).apply { setPosition(x, y) })
     }
