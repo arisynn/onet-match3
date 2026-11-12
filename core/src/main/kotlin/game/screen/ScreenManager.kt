@@ -29,6 +29,7 @@ class ScreenManager(
     private var nextScreen: BaseScreen? = null
     private var nextScreenType: ScreenType? = null
     private var isTransitioning: Boolean = false
+    private var disposeAfterTransition: Boolean = true
 
     private var transitionBatch: SpriteBatch? = null
     private var transitionShapes: ShapeRenderer? = null
@@ -70,6 +71,7 @@ class ScreenManager(
             completeScreenSwitch(type, newScreen, disposePrevious)
         } else {
             // Animated transition setup
+            this.disposeAfterTransition = disposePrevious
             this.transition = transition
             this.nextScreen = newScreen
             this.nextScreenType = type
@@ -84,6 +86,7 @@ class ScreenManager(
      * Current screen is paused and hidden, but NOT disposed.
      */
     fun pushScreen(type: ScreenType, transition: ScreenTransition = InstantTransition) {
+        if (isTransitioning) return
         currentScreen?.let {
             it.pause()
             it.hide()
@@ -149,7 +152,7 @@ class ScreenManager(
                     currentScreen = nextScreen
                     currentScreenType = nextScreenType
                     old?.hide()
-                    old?.dispose()
+                    if (disposeAfterTransition) old?.dispose()
 
                     game.diagnostics("Screen active: $currentScreenType")
                     currentScreen?.show()
