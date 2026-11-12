@@ -101,6 +101,10 @@ abstract class BaseScreen(
     abstract fun draw(delta: Float)
 
     override fun resize(width: Int, height: Int) {
+        if (width <= 0 || height <= 0) {
+            game.diagnostics("WARN ignored zero surface resize: ${width}x$height")
+            return
+        }
         if (Gdx.gl != null) {
             viewport.update(width, height, true)
         }

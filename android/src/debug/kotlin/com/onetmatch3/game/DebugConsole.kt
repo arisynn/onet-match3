@@ -36,6 +36,7 @@ class DebugConsole(private val activity: Activity, root: ViewGroup) {
         runCatching { crashFile.writeText(report() + "\n" + error.stackTraceToString()) }
         previousHandler?.uncaughtException(thread, error) ?: android.os.Process.killProcess(android.os.Process.myPid())
     }
+    @Volatile private var rendered = false
     private val refresh = object : Runnable {
         override fun run() {
             if (panel.visibility == View.VISIBLE) renderLogs()
@@ -68,9 +69,17 @@ class DebugConsole(private val activity: Activity, root: ViewGroup) {
             panel.visibility = View.VISIBLE
         }
         handler.post(refresh)
+        handler.postDelayed({
+            if (!rendered) {
+                log("WARN no render heartbeat after 15 seconds. Inspect Logcat for GL initialization failure or an ANR.")
+                panel.visibility = View.VISIBLE
+                renderLogs()
+            }
+        }, 15000)
     }
     private fun Int.dp() = (this * activity.resources.displayMetrics.density).toInt()
     fun log(message: String) {
+        if (message.startsWith("Render:")) rendered = true
         android.util.Log.println(if (message.contains("ERROR")) android.util.Log.ERROR else if (message.contains("WARN")) android.util.Log.WARN else android.util.Log.INFO, "OnetDiagnostics", message)
         synchronized(lines) {
             lines.addLast("${System.currentTimeMillis()} ${message.take(16000)}")
@@ -102,12 +111,12 @@ class DebugConsole(private val activity: Activity, root: ViewGroup) {
     }
     fun failure(error: Throwable) {
         log("ERROR startup: ${error.stackTraceToString()}")
-        crashFile.writeText(report())
+        crashFile.writeText(report() + "\n" + error.stackTraceToString())
         handler.post { panel.visibility = View.VISIBLE; renderLogs() }
         // Caller must rethrow: recording diagnostics must not suppress a fatal exception.
     }
     fun close() {
-        handler.removeCallbacks(refresh)
+        handler.removeCallbacksAndMessages(null)
         if (Thread.getDefaultUncaughtExceptionHandler() === crashHandler) Thread.setDefaultUncaughtExceptionHandler(previousHandler)
     }
 }

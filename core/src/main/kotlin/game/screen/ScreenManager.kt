@@ -165,6 +165,10 @@ class ScreenManager(
                 val shapes = getShapes()
                 Gdx.gl.glEnable(GL20.GL_BLEND)
                 Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA)
+                Gdx.gl.glViewport(0, 0, Gdx.graphics.width, Gdx.graphics.height)
+                shapes.projectionMatrix = com.badlogic.gdx.math.Matrix4().setToOrtho2D(
+                    0f, 0f, Gdx.graphics.width.toFloat(), Gdx.graphics.height.toFloat()
+                )
                 shapes.begin(ShapeRenderer.ShapeType.Filled)
                 transition.render(
                     batch,

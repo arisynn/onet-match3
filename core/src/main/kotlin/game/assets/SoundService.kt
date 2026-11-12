@@ -26,18 +26,20 @@ class SoundService(
     private var currentMusic: Music? = null
 
     fun playSound(path: String, volumeScale: Float = 1.0f, pitch: Float = 1.0f): Long? {
-        if (isSfxMuted || !assetService.isLoaded(path)) return null
+        if (isSfxMuted) return null
+        if (!assetService.isLoaded(path)) { assetService.diagnostics("WARN sound not loaded: $path"); return null }
         return try {
             val sound = assetService.getSound(path)
             val effectiveVolume = (sfxVolume * volumeScale).coerceIn(0f, 1f)
             sound.play(effectiveVolume, pitch, 0f)
-        } catch (_: Exception) {
+        } catch (error: Exception) {
+            assetService.diagnostics("WARN audio playback: ${error.stackTraceToString()}")
             null
         }
     }
 
     fun playMusic(path: String, loop: Boolean = true) {
-        if (!assetService.isLoaded(path)) return
+        if (!assetService.isLoaded(path)) { assetService.diagnostics("WARN music not loaded: $path"); return }
         try {
             val music = assetService.getMusic(path)
             if (currentMusic != music) {
@@ -49,8 +51,8 @@ class SoundService(
             if (!music.isPlaying) {
                 music.play()
             }
-        } catch (_: Exception) {
-            // Ignore audio initialization failure on unsupported devices
+        } catch (error: Exception) {
+            assetService.diagnostics("WARN music playback: ${error.stackTraceToString()}")
         }
     }
 
