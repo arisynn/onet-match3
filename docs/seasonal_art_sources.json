@@ -1,0 +1,12 @@
+{
+  "provider": "gemini-3-1-flash-image",
+  "model": "gemini-3.1-flash-image-preview",
+  "base_url": "https://static.prod-images.emergentagent.com/jobs/0b8cb69b-dec7-4561-bae8-f56ff8e79c27/images/",
+  "sheets": {
+    "autumn_harvest": "94f933ed2eba2e040afc31fdd53a28a5d5a68b5ed6beeca7ce71458825296bc2",
+    "magic_atelier": "20a71013a4f4e67081f965ec12273311a1f990192f572f3dedf6b24e8eab8e10",
+    "retro_arcade": "5d4717a18a4f4de03f6594601374871cd29ce17bddf3932dc10fe643df360fa9",
+    "alpine_winter": "1a4f228a8f5a14539a6a3d065289ab50a8a9fc961c06010902fddeb75f4248ea",
+    "seasonal": "049e21e885f90c08140051828cc3f455558f1e9da5a1ea48f66d68866275de5d"
+  }
+}

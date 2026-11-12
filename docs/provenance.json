@@ -1,0 +1,1920 @@
+{
+  "sourceRepository": "https://github.com/arisynn/connectify-new",
+  "sourceCommit": "57160aa2c78fc6ec2fbfbdfbcc362dd3e6837471",
+  "assets": [
+    {
+      "source": "public/art/candy/0.webp",
+      "path": "assets/originals/public/art/candy/0.webp",
+      "sha256": "6b4a928fd7ffcd66026dd185cd1359df125b67608fc7563ad09bea90c0ab9e80",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/1.webp",
+      "path": "assets/originals/public/art/candy/1.webp",
+      "sha256": "35d9829559ce05295d9a026be445f87e909fea4610e912cb3a04c4cefbc8eddc",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/10.webp",
+      "path": "assets/originals/public/art/candy/10.webp",
+      "sha256": "124c36a8c077cb5390a436c1d3ce08bab0708be7478783eaffc44a112d14276f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/11.webp",
+      "path": "assets/originals/public/art/candy/11.webp",
+      "sha256": "3a1c2d81eee8ac4eabd38e95716e53053c9597e4ad16b6600b93dbb9cd4b1e1f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/12.webp",
+      "path": "assets/originals/public/art/candy/12.webp",
+      "sha256": "a8bc011b88eddaad49f139485e6afdecf7c89ca6248c365fa80c6d8e4b80ad6a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/13.webp",
+      "path": "assets/originals/public/art/candy/13.webp",
+      "sha256": "ebe93886b105645daf9b04e8f3c69111a487e39657dc50d8b4b7a1f67425bc79",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/14.webp",
+      "path": "assets/originals/public/art/candy/14.webp",
+      "sha256": "f9134b602bd01fea6260ac0d2c3a4107f2b56ea9184299948b0930891509945b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/15.webp",
+      "path": "assets/originals/public/art/candy/15.webp",
+      "sha256": "2e1283f05daa3c76c921165f5f6e38d5ed646f265c2c812392a711a71b4bd8d1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/2.webp",
+      "path": "assets/originals/public/art/candy/2.webp",
+      "sha256": "406e8c7d33df003925cd2f851ec26e47367366bd943354d3b756df99358bd4fa",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/3.webp",
+      "path": "assets/originals/public/art/candy/3.webp",
+      "sha256": "b4ed6262e4312c21a378923b84ec799539cfd77f3298e2ec871e6b47919e7cb7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/4.webp",
+      "path": "assets/originals/public/art/candy/4.webp",
+      "sha256": "c5d3531cffdfb10f490625e15c5af4fa6a383eaba922bbe5487fec081640aa1c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/5.webp",
+      "path": "assets/originals/public/art/candy/5.webp",
+      "sha256": "0d5d5b194508a8e8caeb325e817d0368fc4a97b21093ddcc1cce89acad35094e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/6.webp",
+      "path": "assets/originals/public/art/candy/6.webp",
+      "sha256": "8cd5091f249735cab07a8082cc779742aa5fbe40001f135617c27e61e806312c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/7.webp",
+      "path": "assets/originals/public/art/candy/7.webp",
+      "sha256": "654419163c168cce83a5c62d237d423382d2aac1dde8783a219bf777c3721948",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/8.webp",
+      "path": "assets/originals/public/art/candy/8.webp",
+      "sha256": "81c58bd5bfc210631c603bb73cf98a2fbf5c6fa0a68186e208d26da4dccb258b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/9.webp",
+      "path": "assets/originals/public/art/candy/9.webp",
+      "sha256": "83801cf6f83cb166fa4d54c6fb07c0851f35976e5999942bf5e82f8cb517922a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/candy/sheet.webp",
+      "path": "assets/originals/public/art/candy/sheet.webp",
+      "sha256": "853710abd97e869613ea9a6c5b809bbad07c17a5a96da84da8f273113b8a6308",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/0.webp",
+      "path": "assets/originals/public/art/ocean/0.webp",
+      "sha256": "a13b49e129054642c2706af637ada4fc7dee4f5cf5f09d0b227f24111d40befd",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/1.webp",
+      "path": "assets/originals/public/art/ocean/1.webp",
+      "sha256": "5406ded6d4936185f11fae12e9b39ae546719ac3bedae6205f3f612cbea34ae7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/10.webp",
+      "path": "assets/originals/public/art/ocean/10.webp",
+      "sha256": "8caaeac48a12e087b017145b415aa1ea9c163c890d031fea17f6bfc3558a256c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/11.webp",
+      "path": "assets/originals/public/art/ocean/11.webp",
+      "sha256": "2bb07843ce676ce109425a8f45a2ca5d7444b962f58a94251a0f87be5ea8969f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/12.webp",
+      "path": "assets/originals/public/art/ocean/12.webp",
+      "sha256": "197d16d8828f725f10fa1e00d39998d42e74afe1c784fde69d5e736062b5fb0d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/13.webp",
+      "path": "assets/originals/public/art/ocean/13.webp",
+      "sha256": "daf3c9bcb404353eed72310ebcd4b395e187f11105c88c2b1569f5dc0b1e54f2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/14.webp",
+      "path": "assets/originals/public/art/ocean/14.webp",
+      "sha256": "c32e10deca4e175e58deb993ae2affecd2a352e3f57a033a1abe1f7f9fd72e04",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/15.webp",
+      "path": "assets/originals/public/art/ocean/15.webp",
+      "sha256": "4020836311f6d10dae2f890c880a881a476a26389e0362d81ebb0d19124e3b31",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/2.webp",
+      "path": "assets/originals/public/art/ocean/2.webp",
+      "sha256": "b5b3fd42d71ae10c4c9756dcfa5332afed85cd1923913eda5d81c7c68ae72369",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/3.webp",
+      "path": "assets/originals/public/art/ocean/3.webp",
+      "sha256": "1347bfeb6d5f94ca170ba01d5e2231b0b65f3e536fb7387e306ba68cb12e57ca",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/4.webp",
+      "path": "assets/originals/public/art/ocean/4.webp",
+      "sha256": "cbdbb1c589d92c4949bb9fa85bc0e59d722f1677c5af57a59fd0dfccdcc395dd",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/5.webp",
+      "path": "assets/originals/public/art/ocean/5.webp",
+      "sha256": "6c570dcb188030e125e402cf4d141eda569cc10bad369640089c89dda239d3c1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/6.webp",
+      "path": "assets/originals/public/art/ocean/6.webp",
+      "sha256": "459b70a53efa75ea8c92aa844f8a729114a86ab7bbe0cf667d8e1201bd7e97b4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/7.webp",
+      "path": "assets/originals/public/art/ocean/7.webp",
+      "sha256": "226cf342124bbb9b5c7262137e29c6652fc77a0413aec9c1e00f05cd080bef0c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/8.webp",
+      "path": "assets/originals/public/art/ocean/8.webp",
+      "sha256": "15058637cfff2609ca29bac856394b2a8cf722284455b55b7fd8d35ac58b0990",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/9.webp",
+      "path": "assets/originals/public/art/ocean/9.webp",
+      "sha256": "d562b0a8cb87392cf5ed065221084884bc0d09d4e62214cc5190bf321312472a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/ocean/sheet.webp",
+      "path": "assets/originals/public/art/ocean/sheet.webp",
+      "sha256": "be251ea1db0f12b617759138f81b3db73c3dc5c3778844a5600dd45552622d39",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/0.webp",
+      "path": "assets/originals/public/art/forest/0.webp",
+      "sha256": "ad50a4a3bf23d3ec1c9558550b2ad527b2ce62c8366877b440d122c8ea3f21af",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/1.webp",
+      "path": "assets/originals/public/art/forest/1.webp",
+      "sha256": "363515bf5904c9d8063bf21657ba234827f6b4a2937e4a87a28c91c7414da040",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/10.webp",
+      "path": "assets/originals/public/art/forest/10.webp",
+      "sha256": "7ed9d9e4c92c3f7a640bcc929647758e0c506e6d6c79a9ddfcbde7c02672eaea",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/11.webp",
+      "path": "assets/originals/public/art/forest/11.webp",
+      "sha256": "ea73b353e7b6fe933f3d8cc594d110a396a69c789e2b7650aba214faf14958e5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/12.webp",
+      "path": "assets/originals/public/art/forest/12.webp",
+      "sha256": "021d0a877eb445cee2627647f74d1059b194881992f38e7d4c3c0e7505a80908",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/13.webp",
+      "path": "assets/originals/public/art/forest/13.webp",
+      "sha256": "2b3c9119f33d7c16c8338cf6c884f6c7e114aed3cd47c0c79af8f6c6759c135c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/14.webp",
+      "path": "assets/originals/public/art/forest/14.webp",
+      "sha256": "93b4e554b7855bfacdbbf924c36f93ddbec75e3416b89deb0fcf3ee434fd2813",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/15.webp",
+      "path": "assets/originals/public/art/forest/15.webp",
+      "sha256": "056d7dc9b1edcb9c7d97b71863b68a953d7725ae22dede641abb0e400f4d189c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/2.webp",
+      "path": "assets/originals/public/art/forest/2.webp",
+      "sha256": "45704cc8cd4f66531d90acf6d1bb1dc65fcab50ac72b955fb10406eebaca39a8",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/3.webp",
+      "path": "assets/originals/public/art/forest/3.webp",
+      "sha256": "db218429c177eb9c5637488b40ca816dd410c5677012b9f668a74afda696aaa7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/4.webp",
+      "path": "assets/originals/public/art/forest/4.webp",
+      "sha256": "3839b739fa491b403c0b742a06cebd9eb30a603501b6a35aed3e814de664c476",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/5.webp",
+      "path": "assets/originals/public/art/forest/5.webp",
+      "sha256": "3c39eb1d154934707f01524e495393c483a89e8173972387025f76205090b0e7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/6.webp",
+      "path": "assets/originals/public/art/forest/6.webp",
+      "sha256": "d35cf886e2a501140232b34a76b1d334a4ac01e45b943dec6bc051804ccaf396",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/7.webp",
+      "path": "assets/originals/public/art/forest/7.webp",
+      "sha256": "b4937afead0326880fe292899695968b3b8028b9a450991216d2326cb4a69960",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/8.webp",
+      "path": "assets/originals/public/art/forest/8.webp",
+      "sha256": "9d54ba3a071dc459d9c6350e24fae373dd4b236a5885c3f8033e79499a1caec5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/9.webp",
+      "path": "assets/originals/public/art/forest/9.webp",
+      "sha256": "770850b3b5ca0351732a5e3e757f8c263b81761bf791373082b6ee6879009d15",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/forest/sheet.webp",
+      "path": "assets/originals/public/art/forest/sheet.webp",
+      "sha256": "5073f035e3be6c2cf852bbd909020a13b54bf4768a82dbf56eb3453742c77565",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/0.webp",
+      "path": "assets/originals/public/art/space/0.webp",
+      "sha256": "2805803af2899f2ace820900aea875e5cd9c47c44de619e118176d2a6db56c16",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/1.webp",
+      "path": "assets/originals/public/art/space/1.webp",
+      "sha256": "561dbb8d5fbcfbe9c6f9e2ee50698dc1582a2201a0d016ebd06fa92bd69d7f6b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/10.webp",
+      "path": "assets/originals/public/art/space/10.webp",
+      "sha256": "c070b39c33a47687243590e20921aafbe7723ba831e857131bfb536b45ccbe19",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/11.webp",
+      "path": "assets/originals/public/art/space/11.webp",
+      "sha256": "3622ce890e5239824a4695cb3b0c83a25530c61c98c002bc200d82384fd8fb76",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/12.webp",
+      "path": "assets/originals/public/art/space/12.webp",
+      "sha256": "e5d4e5911717a00e0fec32f3b639cff4f5b4faa8b1bb8139ab6f68c72fe8699a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/13.webp",
+      "path": "assets/originals/public/art/space/13.webp",
+      "sha256": "80808e4f9ee312e5f1dd8a64ce21e1841990831c3d487cebe3fd6053c95f0905",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/14.webp",
+      "path": "assets/originals/public/art/space/14.webp",
+      "sha256": "10d72529eaaed0ecb8216bd07cf81c5d9abde2f77ffa46d5b27f971c6bdfdeb2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/15.webp",
+      "path": "assets/originals/public/art/space/15.webp",
+      "sha256": "3e95188ac2d8f1a25c1d6ccaf3af9ef6b80c402f1867a252ce5f99fcbf8e076a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/2.webp",
+      "path": "assets/originals/public/art/space/2.webp",
+      "sha256": "765c04157e50ec37b3e7a7237a033c8242d0e91064c81a2cd66a77373c97d986",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/3.webp",
+      "path": "assets/originals/public/art/space/3.webp",
+      "sha256": "c5ab40c2df3a5d84baedf5f75a8047172d1a7ff9d48ddedba759e0ab6489cb43",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/4.webp",
+      "path": "assets/originals/public/art/space/4.webp",
+      "sha256": "352aba659d884e31acddbd23983ee7632ab79828620c3137868a48722998b58b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/5.webp",
+      "path": "assets/originals/public/art/space/5.webp",
+      "sha256": "c076a71b9bb8ccee2cfa3300a7dc377b353bc99198a37f1d41045aab38543798",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/6.webp",
+      "path": "assets/originals/public/art/space/6.webp",
+      "sha256": "e7d7b93dc7d1bfe7acfb6be211f552042a8f8caa1bf228bc59e089ff3e545e0c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/7.webp",
+      "path": "assets/originals/public/art/space/7.webp",
+      "sha256": "4ab7f328878c6d7a2fa05389afd1d78c631a94a634393b5c76d45fce028a11d2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/8.webp",
+      "path": "assets/originals/public/art/space/8.webp",
+      "sha256": "3b806a90fd79dd9216c331c3ae445874f716e49e347b6a0d60c71fe9c970d9ee",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/9.webp",
+      "path": "assets/originals/public/art/space/9.webp",
+      "sha256": "11c3d5adb8ce97b699f2b986ac0acd28d27dec21a95528da4c27501134d133da",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/space/sheet.webp",
+      "path": "assets/originals/public/art/space/sheet.webp",
+      "sha256": "e96cc74767c72bea5b36c0792644d111f49e4c7b221f013bf50b693d275b05d8",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/0.webp",
+      "path": "assets/tiles/sakura/0.webp",
+      "sha256": "11ebdd83a088bdca59ccf5b9216f801f645240388a36ad5fda1a6357377c6f4c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/1.webp",
+      "path": "assets/tiles/sakura/1.webp",
+      "sha256": "9bad1f152c8ee99bdfb05df4a0e388236ce5f363cc4340fdcb84e947ab2f1010",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/10.webp",
+      "path": "assets/tiles/sakura/10.webp",
+      "sha256": "7f9387213120c05deb97b775cf2f454bb5dd9d80993cbd9d7cddb9cbc89a60d3",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/11.webp",
+      "path": "assets/tiles/sakura/11.webp",
+      "sha256": "90aed20096698b19743feb047d966114b025f92afbbdb2edaa3808af10f2ffc3",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/12.webp",
+      "path": "assets/tiles/sakura/12.webp",
+      "sha256": "e7fc9c7c03712af92605c9374b8276c977f4404bfc17229ab6ea80e6e855921d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/13.webp",
+      "path": "assets/tiles/sakura/13.webp",
+      "sha256": "716d931d39a27911dfbb0c23a04d3f8bdf3ffb79695946ea69f69d44128cf758",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/14.webp",
+      "path": "assets/tiles/sakura/14.webp",
+      "sha256": "1b99e98443eb3594c7c22dcc05a890412e902c6616e387337242622b0e77c9de",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/15.webp",
+      "path": "assets/tiles/sakura/15.webp",
+      "sha256": "fbf23c0ad7ad19ccb508fa9e41a97b6c87accdb9b46fd089f22a4a561b1f04b4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/2.webp",
+      "path": "assets/tiles/sakura/2.webp",
+      "sha256": "6fd4ba7c5299b6738e93d61a2e90efdce270237bd419751731d8b13abcd782ee",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/3.webp",
+      "path": "assets/tiles/sakura/3.webp",
+      "sha256": "d85ff7d86fe7b1967aff2602b40747c51f255256d24e954a337e4486bb7bd838",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/4.webp",
+      "path": "assets/tiles/sakura/4.webp",
+      "sha256": "e69448ecee3c1037e82b31a97a48f147eae7a23f6e728c94a3b58814b2d063c2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/5.webp",
+      "path": "assets/tiles/sakura/5.webp",
+      "sha256": "34d27dbebb3869ba9f82eba84b6dc250217a0b82c7c98fb8b37fa71691c98929",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/6.webp",
+      "path": "assets/tiles/sakura/6.webp",
+      "sha256": "91b3a415d7f81d34c2978ef62550600b6f0e6ac707f27759740ab9f15c508b77",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/7.webp",
+      "path": "assets/tiles/sakura/7.webp",
+      "sha256": "23b25b7cf4f293c17c8ae15e47aad348c7396cbf854b9dc64c1764bf208a7150",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/8.webp",
+      "path": "assets/tiles/sakura/8.webp",
+      "sha256": "cb451388996218ab26e41289e3468a114376a58c237f8d7fb3076a784693096d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/sakura/9.webp",
+      "path": "assets/tiles/sakura/9.webp",
+      "sha256": "315a64a3646a9891b8a7f9012b416a6d4ea8107125625f92031fc9774f725291",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/0.webp",
+      "path": "assets/tiles/bakery/0.webp",
+      "sha256": "09004013067aa88d7f779c5b3bb94783c8c8fb1d3c593b29f510ad5aba4306c8",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/1.webp",
+      "path": "assets/tiles/bakery/1.webp",
+      "sha256": "381cd7f318a4bf134dbcd80153c775cde6a92398a312ac9d4b1e2a436666290a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/10.webp",
+      "path": "assets/tiles/bakery/10.webp",
+      "sha256": "7d97d15f957f3816d0418e6a5028e918e7bfa6aae89fbee1e314287422e778f6",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/11.webp",
+      "path": "assets/tiles/bakery/11.webp",
+      "sha256": "ea4474d531a6adca8927c9dbd4d73994204cfd900aac834378dfdcd18c299da5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/12.webp",
+      "path": "assets/tiles/bakery/12.webp",
+      "sha256": "26d918e93726e982679cf159d681cbc8d6366f46a3fc12f0c496c23c772dbb98",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/13.webp",
+      "path": "assets/tiles/bakery/13.webp",
+      "sha256": "dcf75e84127edefdffae0aadee4973ec00bf21a50334f74c8674e9d91a988bb4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/14.webp",
+      "path": "assets/tiles/bakery/14.webp",
+      "sha256": "7b4e75e4d029fd29e7c29c1434e889000816ac05432854bb8fca782517e45c5f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/15.webp",
+      "path": "assets/tiles/bakery/15.webp",
+      "sha256": "28ed81ebe449e4406e2095936cb5fb23344d56acfdb904bef3392d87a11db012",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/2.webp",
+      "path": "assets/tiles/bakery/2.webp",
+      "sha256": "82f61b3da417e98c80bec6c6065dfc25b191aa30890f158c08545897d41274c4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/3.webp",
+      "path": "assets/tiles/bakery/3.webp",
+      "sha256": "d49881ee6b4925a96a694eaf89b6193ef9901fe4b1deab6c0106c9226295daae",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/4.webp",
+      "path": "assets/tiles/bakery/4.webp",
+      "sha256": "a8de16f1a123cc0383c71ae828b828f6839375c045e66039f67ec91e9ab70903",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/5.webp",
+      "path": "assets/tiles/bakery/5.webp",
+      "sha256": "62b9aaefcc057e421be37e90b6e4e30a3b237b4e0dc726fe9a1de722735c3c6b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/6.webp",
+      "path": "assets/tiles/bakery/6.webp",
+      "sha256": "d50c3bf90be9f1044e9b1aa4f71b156b046a9eff21b44950e490760233ea05c9",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/7.webp",
+      "path": "assets/tiles/bakery/7.webp",
+      "sha256": "b2f987583313dec0baa5dd0989fecc27c45dcbd44cdee9c95416519e52a45e60",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/8.webp",
+      "path": "assets/tiles/bakery/8.webp",
+      "sha256": "36123e7e4be679a0f44c957f8cde2dc51e415cb98624907dcbbff29e502b4a44",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/bakery/9.webp",
+      "path": "assets/tiles/bakery/9.webp",
+      "sha256": "6d3ec9e19f1378b7712b88d52d57f38575d66ce356bafd4e4eb1af689ed417c4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/0.webp",
+      "path": "assets/tiles/galaxy/0.webp",
+      "sha256": "e83f3523aeca00066e5c8d01bbb72ef2b29c62bf696aeb38437e60ec056172b6",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/1.webp",
+      "path": "assets/tiles/galaxy/1.webp",
+      "sha256": "5078043da3a47f3c536e3796c9af9e9ee803d441cb401f1394519c3537645483",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/10.webp",
+      "path": "assets/tiles/galaxy/10.webp",
+      "sha256": "c6d375be21110dd1aa2c5e66d46c3d8b03ab14d9e996ec1810bf2c1a8592d18e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/11.webp",
+      "path": "assets/tiles/galaxy/11.webp",
+      "sha256": "620af38375d0db2936837c012919d1106b4c1c373b5bec739037e3c0fa7d3d10",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/12.webp",
+      "path": "assets/tiles/galaxy/12.webp",
+      "sha256": "eff14f451fdbd21e7a6758ba41c67e12165ae8c55d0bc7eef977681ea9556593",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/13.webp",
+      "path": "assets/tiles/galaxy/13.webp",
+      "sha256": "b1ab9b64aa753ac07e9cb0bfab3212d8b60acec61253b8afff5040d3ee66a88a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/14.webp",
+      "path": "assets/tiles/galaxy/14.webp",
+      "sha256": "91425e8cc8cda8ef8253f1c906dfccf3d2920a006b83875680dca361a26e33cc",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/15.webp",
+      "path": "assets/tiles/galaxy/15.webp",
+      "sha256": "a2950e26cf2000eee2bb9cd45f6e0af5b63eb82bbb7da8dbd1d0066b1ed4026c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/2.webp",
+      "path": "assets/tiles/galaxy/2.webp",
+      "sha256": "a5c6c964b30d46039c4200061b8998d45ad42d63880254e92b9dde9c44ec0968",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/3.webp",
+      "path": "assets/tiles/galaxy/3.webp",
+      "sha256": "910c1ada8a43c4dacc1a59ed8a3f0bda1ced1353b01a952f70b6085b472708a9",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/4.webp",
+      "path": "assets/tiles/galaxy/4.webp",
+      "sha256": "952079ee3bc026a51235b07083491664ed1b2fd8c1f3f650b0e2de05687bb3dd",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/5.webp",
+      "path": "assets/tiles/galaxy/5.webp",
+      "sha256": "92bfee30217e4c263dd6f889c38b91d04c99c4fab64e01140c44fa3c55fbee53",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/6.webp",
+      "path": "assets/tiles/galaxy/6.webp",
+      "sha256": "1ac6134dba423eaabaad151517f2c69482a36cedf1c52987d6013c89846a220e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/7.webp",
+      "path": "assets/tiles/galaxy/7.webp",
+      "sha256": "5015c67a2ca0ede22580fdefa5cb48738c1a2656bab1289122be2d79ded38189",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/8.webp",
+      "path": "assets/tiles/galaxy/8.webp",
+      "sha256": "9fd26f91d92f2723e6b74eab7ae862d0696377a9027e8eac2efb4fd31feb85e4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/galaxy/9.webp",
+      "path": "assets/tiles/galaxy/9.webp",
+      "sha256": "729e14c4739d348fe7b7fe99b4280d3e2e7408ec4d54a8761e61fd1b9c31685d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/0.webp",
+      "path": "assets/tiles/meadow/0.webp",
+      "sha256": "743fb04797ee0a054a9feba22e6e518de89680ebc6a824e3f7bdeb53f7d1ad50",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/1.webp",
+      "path": "assets/tiles/meadow/1.webp",
+      "sha256": "ab5a35a7c167a840c2bbfea7270a58d8dc5189b4ea18e8770a7d252acfec5ccf",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/10.webp",
+      "path": "assets/tiles/meadow/10.webp",
+      "sha256": "bcdad3dbf161ee3e2654fce271a561161f5df221d0abf082045cbcd52e8fcbb2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/11.webp",
+      "path": "assets/tiles/meadow/11.webp",
+      "sha256": "d13e992757679ff1a8e980c759e5c43f045c8694d553a0a90b8fd806ba4d0d29",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/12.webp",
+      "path": "assets/tiles/meadow/12.webp",
+      "sha256": "2c3767e671b78fb9041934eaeda3425c401b9bd5159f8c10072f7852578bb814",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/13.webp",
+      "path": "assets/tiles/meadow/13.webp",
+      "sha256": "c3fdad695f86fbd5c7cd800d09c2ef4b14f07d6d74eeb7b04950965cb256c4b3",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/14.webp",
+      "path": "assets/tiles/meadow/14.webp",
+      "sha256": "af874192ea404372a5d2138a8d803c0676aeaa4c481ebe7a6a6f3151cd6602bb",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/15.webp",
+      "path": "assets/tiles/meadow/15.webp",
+      "sha256": "02134c043490fce4a0e0a27d6cb4c8d60745813ed0ec479152ce76c0b9cdac0e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/2.webp",
+      "path": "assets/tiles/meadow/2.webp",
+      "sha256": "727b847c6665c11c1d76692a1fdee6dc631d8c2c441d6ac40ce66e5a5b2e1f28",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/3.webp",
+      "path": "assets/tiles/meadow/3.webp",
+      "sha256": "027441e33207769433667410fcc013c54322cc6ae37665e1d960b5a2aa6cca27",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/4.webp",
+      "path": "assets/tiles/meadow/4.webp",
+      "sha256": "c099407718e08c96c061d14d96321ec43466e738061bb6e4b164e638ce9f467e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/5.webp",
+      "path": "assets/tiles/meadow/5.webp",
+      "sha256": "fbc467c0a521c695363af67e60f2014c811191007a7312a1c4c0b3143a8dcf5a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/6.webp",
+      "path": "assets/tiles/meadow/6.webp",
+      "sha256": "c96e0a22e8b9e8e45b06b096a356ddc016d8292133eed4894b326ab9451334a2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/7.webp",
+      "path": "assets/tiles/meadow/7.webp",
+      "sha256": "7c31d3316367e32b5523ef672f0a5e43d438c88cc49b79f37c3d2d49b34d286f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/8.webp",
+      "path": "assets/tiles/meadow/8.webp",
+      "sha256": "dcbb25300a834d3370db43bab5d9b523775c2c844661c040fb9891365863aa47",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/meadow/9.webp",
+      "path": "assets/tiles/meadow/9.webp",
+      "sha256": "239a5ed8d8a8a7933ded008a3e3e3f5e916c9e16cef9a0a5f727f167fe7daca5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/0.webp",
+      "path": "assets/tiles/fruit/0.webp",
+      "sha256": "d29ec5aa74bc97e6545669133016e2632ddc610da89bd3d49c7dfb84655a8e77",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/1.webp",
+      "path": "assets/tiles/fruit/1.webp",
+      "sha256": "1489e5198af597bd8e35aadbea72960ae036159204771da99ff8b4b09437e98f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/10.webp",
+      "path": "assets/tiles/fruit/10.webp",
+      "sha256": "9059824d0a90f03d809113509aa296f523295688933be1e460901d228a3fd19f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/11.webp",
+      "path": "assets/tiles/fruit/11.webp",
+      "sha256": "0de012b9f5164d979dddff37a7f55e41aa82aa8cea433aa860b9bbef10dff318",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/12.webp",
+      "path": "assets/tiles/fruit/12.webp",
+      "sha256": "d2641ad48f3c08b9700eee7f2a1c22c7f06e781309b943cbac93b057bc525c3e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/13.webp",
+      "path": "assets/tiles/fruit/13.webp",
+      "sha256": "7f856ac2f6a55732f4f0ffd6c692af9f8b6614ef622ad57f596212cb06e7e545",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/14.webp",
+      "path": "assets/tiles/fruit/14.webp",
+      "sha256": "6b24cb64042ee724e92ea92e36f42fbb59b27ac91208298e3d52ac93c3e369b2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/15.webp",
+      "path": "assets/tiles/fruit/15.webp",
+      "sha256": "6f8a9630a50a19e35d5e7583caad854e743eb176de6dd075d2dcd093eb55ce2d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/2.webp",
+      "path": "assets/tiles/fruit/2.webp",
+      "sha256": "59044e0f5ead69ae3189d9322a6df18ae4416933e789e6cd83ff0bf099078017",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/3.webp",
+      "path": "assets/tiles/fruit/3.webp",
+      "sha256": "6495e96e6efe18945ebc4abb16c36a86edb4a1287a83e70ba1a6b5fa83894256",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/4.webp",
+      "path": "assets/tiles/fruit/4.webp",
+      "sha256": "81e1a8739b4049491be47f7eac87b11e4fb9cbdd7a21d7bc4e1cf7578718e6a3",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/5.webp",
+      "path": "assets/tiles/fruit/5.webp",
+      "sha256": "614350b1d68802085119496f885c13089a768184b660ab8ed501a5965d8020f1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/6.webp",
+      "path": "assets/tiles/fruit/6.webp",
+      "sha256": "86926669d26a5fe788c34b7a47be618f23ecd8f8bac680080d995394299cb05b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/7.webp",
+      "path": "assets/tiles/fruit/7.webp",
+      "sha256": "fef82fcc462ab668795268b4fd8455b7355ea6c6da39210f2d04826919fbacb2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/8.webp",
+      "path": "assets/tiles/fruit/8.webp",
+      "sha256": "3ba095e9f4d89fb21328a9d3e72b7521662ede9a68ae04bf86dbd11500060ebf",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/fruit/9.webp",
+      "path": "assets/tiles/fruit/9.webp",
+      "sha256": "50b23d7880a472f679b9446a833362c59e62873ffd4b9760212d1b74a8d6eecb",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/0.webp",
+      "path": "assets/tiles/autumn_harvest/0.webp",
+      "sha256": "f0663738ed70549bd3f0019350bb7b7c68af2802bc5cf32564db51e49c26fe1f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/1.webp",
+      "path": "assets/tiles/autumn_harvest/1.webp",
+      "sha256": "84a98ad89f57432a7d0f87c1dbeb4db84d036358d213a1ac78e55d52cc0fb2e6",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/10.webp",
+      "path": "assets/tiles/autumn_harvest/10.webp",
+      "sha256": "1c1911c59779350e85b72de88e97c6f05a23008555ea60ba9d0cbf2e5797587a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/11.webp",
+      "path": "assets/tiles/autumn_harvest/11.webp",
+      "sha256": "7086c10a0b6d3735e562dd0bedc7ffb8c96f3fe598d6fbc1c441e009a5950104",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/12.webp",
+      "path": "assets/tiles/autumn_harvest/12.webp",
+      "sha256": "4d1b16615646a1b7c17ba67f65b2294ba97835cd4a6e22f2efdcd7c15e7ab594",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/13.webp",
+      "path": "assets/tiles/autumn_harvest/13.webp",
+      "sha256": "8b3da92bf7c24b21852fba2732851b5f4515a2f545e8ef39fc36800e7714622b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/14.webp",
+      "path": "assets/tiles/autumn_harvest/14.webp",
+      "sha256": "76c6b01054f00d91995ec3e6abb128a733ffd30ac90a8afe1639325ef0857594",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/15.webp",
+      "path": "assets/tiles/autumn_harvest/15.webp",
+      "sha256": "21a25da08f06021d5af805f7ba8476fbf80a7b4455cc0ef2d5f416fc652be35a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/2.webp",
+      "path": "assets/tiles/autumn_harvest/2.webp",
+      "sha256": "d670460386e43bf2d32df7fffb18d5b9715f718788adeb11f4d1a54c745afb4b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/3.webp",
+      "path": "assets/tiles/autumn_harvest/3.webp",
+      "sha256": "1ff865d2a3832cbd0ed24ceb6fd20946f35cc257b332e9b4104d3866d9aed9cf",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/4.webp",
+      "path": "assets/tiles/autumn_harvest/4.webp",
+      "sha256": "f440b33b76a3be39d0606cb69bd4da901684e4c832e8efcc53a889994bad42f2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/5.webp",
+      "path": "assets/tiles/autumn_harvest/5.webp",
+      "sha256": "08674f100a592a37d5d0aeb919a77b713b12e921639c83867eb814625a91a2e1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/6.webp",
+      "path": "assets/tiles/autumn_harvest/6.webp",
+      "sha256": "6897cb3bc8173e8b8a8fc4f71db08c7d149697d6cdeaabea3499597a7ecbe09f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/7.webp",
+      "path": "assets/tiles/autumn_harvest/7.webp",
+      "sha256": "fcadff66c61d774e8d1542ddd5653953bf65f47456b935570e353a9b422145a3",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/8.webp",
+      "path": "assets/tiles/autumn_harvest/8.webp",
+      "sha256": "7432212624ed204bc49a67abbcfc031b0d610c9cb3f28e5fcf043993136a6428",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/autumn_harvest/9.webp",
+      "path": "assets/tiles/autumn_harvest/9.webp",
+      "sha256": "83ef077b2a93b5f599d5090e4550402d73d75fef7b28237ff83e942e6d4aa051",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/0.webp",
+      "path": "assets/tiles/magic_atelier/0.webp",
+      "sha256": "c877956b2f410e483c7d8988e8ed43e1cc3b8ef80dad599fabe6cc15a3d554c1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/1.webp",
+      "path": "assets/tiles/magic_atelier/1.webp",
+      "sha256": "465ec302fc1f9033b5af6d769f8da2b194d404fe98dfa4089bd1f0197f59998c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/10.webp",
+      "path": "assets/tiles/magic_atelier/10.webp",
+      "sha256": "e786f7f7d8a53d3cf05fb7f5706194c78f079c18944d3c80c41afd3d0be220a3",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/11.webp",
+      "path": "assets/tiles/magic_atelier/11.webp",
+      "sha256": "062cd6757f546133210b3c923078fa2b330562c26c239fbebac811b0e0041089",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/12.webp",
+      "path": "assets/tiles/magic_atelier/12.webp",
+      "sha256": "6f4292010ab9e1b1f171978b37201bb555e2bf1ed616f5892eee9e3b8d1b2352",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/13.webp",
+      "path": "assets/tiles/magic_atelier/13.webp",
+      "sha256": "5bc45a06ac581cd3e78eea65d7f95e576377d79d25d443206dd9d50629f2f112",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/14.webp",
+      "path": "assets/tiles/magic_atelier/14.webp",
+      "sha256": "a95712083e23ec21652b7537d270b8633a43029651626acc939eed991def261c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/15.webp",
+      "path": "assets/tiles/magic_atelier/15.webp",
+      "sha256": "e1b336ddf1f8a7910f19e4da045a76e6fdc98ccc7f2c4b06f67e5cb35ebccdf1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/2.webp",
+      "path": "assets/tiles/magic_atelier/2.webp",
+      "sha256": "95d2f8a7f874db240f0d5f012879977e1206278fbcdf8fa6815af3717be42e5b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/3.webp",
+      "path": "assets/tiles/magic_atelier/3.webp",
+      "sha256": "07b40d83e1234c15737c760ff889075bca4a5e8524131732464cb9594d3f1949",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/4.webp",
+      "path": "assets/tiles/magic_atelier/4.webp",
+      "sha256": "479a1bfb7a84452ebe81f1b6c5ea28d43f34dfacef2dab654f3fe31420df3f2a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/5.webp",
+      "path": "assets/tiles/magic_atelier/5.webp",
+      "sha256": "ce8f978562413be0c8e67923a7930ce5fe61624d99a518dc3ae4a6690ac118c2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/6.webp",
+      "path": "assets/tiles/magic_atelier/6.webp",
+      "sha256": "9f8092ded028250cb7bfd11bcb9888c7f00c63ee4f5a7436b4819d3c4ee40176",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/7.webp",
+      "path": "assets/tiles/magic_atelier/7.webp",
+      "sha256": "eb21c6f15b600891bdab20a2a97e75b90c3155f7addc7b6252312ccf6d3d0472",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/8.webp",
+      "path": "assets/tiles/magic_atelier/8.webp",
+      "sha256": "1ab5b343ca346db74e86d50f2c0a6e95661a0d4f4d09eaf704734c3e35911e98",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/magic_atelier/9.webp",
+      "path": "assets/tiles/magic_atelier/9.webp",
+      "sha256": "d31443bfccc8179a23a34cb01d59e6ecc401a52bb928d4c3eb18518c5b02ab90",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/0.webp",
+      "path": "assets/tiles/retro_arcade/0.webp",
+      "sha256": "cbfe4123369647cfd8bce439004181c555376a90208cb0eaaf26e8077e367544",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/1.webp",
+      "path": "assets/tiles/retro_arcade/1.webp",
+      "sha256": "31e68be281bab38108c2b54203f242f95c8a0eb17e6ab7c952f65a6ea23c0bde",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/10.webp",
+      "path": "assets/tiles/retro_arcade/10.webp",
+      "sha256": "19d82103e622983a2d1c38198868345c6cb14ffc686bb19bf205eb1fde95fe2b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/11.webp",
+      "path": "assets/tiles/retro_arcade/11.webp",
+      "sha256": "cb9ca14da6d17383af5aee073bcb020bf1ba2bb67e962e47892773f56e636356",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/12.webp",
+      "path": "assets/tiles/retro_arcade/12.webp",
+      "sha256": "b59bda41447b4f2fe9154ae61129b68d57146c41fc15fb6918bf6ef0008c32d5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/13.webp",
+      "path": "assets/tiles/retro_arcade/13.webp",
+      "sha256": "b491dd2ecaab55986b2d7d0991b74a8ea6b8c2d74d77a5b810a137f4bdc801db",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/14.webp",
+      "path": "assets/tiles/retro_arcade/14.webp",
+      "sha256": "d98f33533b33fa115c1048d93dac42480871d18c6241b5c6ba03692eac9f1af9",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/15.webp",
+      "path": "assets/tiles/retro_arcade/15.webp",
+      "sha256": "8bd8f2a5311037784149573d8b0d973b5493c55edb0d29771ed4f19101e45a4f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/2.webp",
+      "path": "assets/tiles/retro_arcade/2.webp",
+      "sha256": "9cb86a1825011fa7c22dd51fca91372ca7fd03af54ec11e4e2d69f1a384cf8fd",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/3.webp",
+      "path": "assets/tiles/retro_arcade/3.webp",
+      "sha256": "580bc86f527527a7668b9f8086a117b68eb47057115cfd7b8a2389e06ef01092",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/4.webp",
+      "path": "assets/tiles/retro_arcade/4.webp",
+      "sha256": "790ba64f7dda57aebcc887e7570486888cfe206e69d5e8af6f2666f7cd20a39d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/5.webp",
+      "path": "assets/tiles/retro_arcade/5.webp",
+      "sha256": "e29b3ada1efea771acf5071efc6536ff83284aeeba6b240f2f2a8fe79828c0c1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/6.webp",
+      "path": "assets/tiles/retro_arcade/6.webp",
+      "sha256": "6ec83d56337a7b7c7d2970ec51e2843ee360c3571ff36bd4dbfbd3d3f50ee86d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/7.webp",
+      "path": "assets/tiles/retro_arcade/7.webp",
+      "sha256": "fdc35438f227e07fb24aa8852f09948f2da0952219a5b4529a4d4ada967bb535",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/8.webp",
+      "path": "assets/tiles/retro_arcade/8.webp",
+      "sha256": "ff2a2b11ff9960b4b7e293cc05bd360e2a22c12fb0aedcef29536b858fa7c4b6",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/retro_arcade/9.webp",
+      "path": "assets/tiles/retro_arcade/9.webp",
+      "sha256": "7ad5b903fd4804811783f5342cb29015d1260b483088020e99549ddef800a045",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/0.webp",
+      "path": "assets/tiles/alpine_winter/0.webp",
+      "sha256": "b77d1359dd0010be9bcdbb256380a19385c584162659c7dedbfb519a6574ba26",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/1.webp",
+      "path": "assets/tiles/alpine_winter/1.webp",
+      "sha256": "52d4e55ebda2b826912b43e7c642240a91a0596fbd9826b6f34bc1abef68b6e6",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/10.webp",
+      "path": "assets/tiles/alpine_winter/10.webp",
+      "sha256": "06c0bab770a05d0f872b4b10bd88d08505bb9b9d20d75bac17f3e57d9d522ee1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/11.webp",
+      "path": "assets/tiles/alpine_winter/11.webp",
+      "sha256": "8bb210776b24260531c38bf05b1f0ad1c1c667544bc2109e2895da4210286f87",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/12.webp",
+      "path": "assets/tiles/alpine_winter/12.webp",
+      "sha256": "4a882c3f4e3fb190a1fc51fc929cac08686c20ba1ebc3f5318d5add08e440bef",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/13.webp",
+      "path": "assets/tiles/alpine_winter/13.webp",
+      "sha256": "ee72ebb84a1bff6a791bd4169cf56aa7fd0efda44eb2fd011534ec1150a55920",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/14.webp",
+      "path": "assets/tiles/alpine_winter/14.webp",
+      "sha256": "634874a1c6492e067ed600e28c45000a0619defb70e50e1b2d9edcf90d4aa85b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/15.webp",
+      "path": "assets/tiles/alpine_winter/15.webp",
+      "sha256": "3d944ec0c0637b34e747917cd77460907349acc021250ca59f74d458b8e3a95f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/2.webp",
+      "path": "assets/tiles/alpine_winter/2.webp",
+      "sha256": "eb0b85ca6550780b0780ecc7fc1006770599a82d16802264a071e76f20d3467b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/3.webp",
+      "path": "assets/tiles/alpine_winter/3.webp",
+      "sha256": "2a46cecec5b683b5b183375ded794a5c94078f0d9d62934b6da885e6c2846a12",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/4.webp",
+      "path": "assets/tiles/alpine_winter/4.webp",
+      "sha256": "81161d016ebfc8e4852e1a58c2bc494adb31aa307158ff64ec2c75cc3673fb41",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/5.webp",
+      "path": "assets/tiles/alpine_winter/5.webp",
+      "sha256": "91a83fe8af989cef3633881ed9ef9edffaae2f569fc0bea01c1ae34ec50d5d31",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/6.webp",
+      "path": "assets/tiles/alpine_winter/6.webp",
+      "sha256": "8422e7fd04a74ca9606b3fbf9698ef92a7310ace9a6890a1428ef11307745d9f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/7.webp",
+      "path": "assets/tiles/alpine_winter/7.webp",
+      "sha256": "ba4d97eadb284a2443e0420b53bc688df9d9b7d6e26a044997a5a2d14fcada53",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/8.webp",
+      "path": "assets/tiles/alpine_winter/8.webp",
+      "sha256": "f290f60301e4b61e6160fa699730e48fe099967553076dd417dc5660c6a510e8",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/alpine_winter/9.webp",
+      "path": "assets/tiles/alpine_winter/9.webp",
+      "sha256": "fff21662d62183bcff255701cc1222d77754bf5cb6897954ba1293a1650d2550",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/0.webp",
+      "path": "assets/tiles/reward_sakura/0.webp",
+      "sha256": "ca28adef05a6b8787042b36d0d485c2ba0138c00ef5ef542fa38ba09ee77e4bb",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/1.webp",
+      "path": "assets/tiles/reward_sakura/1.webp",
+      "sha256": "16a4a604d21de09bf4eb1eacc8e44be5d01dca3a346902280cdfe59bb9006726",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/2.webp",
+      "path": "assets/tiles/reward_sakura/2.webp",
+      "sha256": "64bb0eb22a4aa959e33578a21d681a9ac5fc2c578b369864bb7da3e26453b37a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/3.webp",
+      "path": "assets/tiles/reward_sakura/3.webp",
+      "sha256": "4aef445cc92ea51bb4050b9f9e696d42828e5a126e599d2be668845bf9706a28",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/4.webp",
+      "path": "assets/tiles/reward_sakura/4.webp",
+      "sha256": "d1da7cae0f33dbb318abf022b8d18ac0f26a0ba409acdf12e806ca2104e12fc2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/5.webp",
+      "path": "assets/tiles/reward_sakura/5.webp",
+      "sha256": "fc5c2d13bb7307d10547aa3f44e328946c5c0c4072088ae64ded0dc2c0c4bc61",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/6.webp",
+      "path": "assets/tiles/reward_sakura/6.webp",
+      "sha256": "1deeaa4809d9b3490298d675d0ce1725e689877bff52af844d90fb6ed7175d0d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/7.webp",
+      "path": "assets/tiles/reward_sakura/7.webp",
+      "sha256": "918a1aa584f4aea5e94f3ab479df8d69cee2dd308d98be0b8137b57c71da7930",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/8.webp",
+      "path": "assets/tiles/reward_sakura/8.webp",
+      "sha256": "612de65842a641324d5a437f6a662c6fc8bcc1cd57c9c67fb0031d040c8d1fa4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/sakura/9.webp",
+      "path": "assets/tiles/reward_sakura/9.webp",
+      "sha256": "1cd36f65cd424be3956b74d0697b6f2d49d891145854007d19211b51eead1088",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/0.webp",
+      "path": "assets/tiles/reward_bakery/0.webp",
+      "sha256": "68ffd8db51e6a764be3db3f1027dbcd9b27d9ed29ed628fd6f2809628de4acbb",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/1.webp",
+      "path": "assets/tiles/reward_bakery/1.webp",
+      "sha256": "deb9e4f6e4ef1b476185dceb6e891d0042d33c13489cf9cba56bbc9e082f6e04",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/2.webp",
+      "path": "assets/tiles/reward_bakery/2.webp",
+      "sha256": "fda603fd0ae1ebd8b2c0cb6e485c622b53a4dd45a6115eba6ab1de9047754e38",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/3.webp",
+      "path": "assets/tiles/reward_bakery/3.webp",
+      "sha256": "ba3c5ce09d990a5afab9b9795263a0d3d94f7f6af4e96a460d584530b3b2bd42",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/4.webp",
+      "path": "assets/tiles/reward_bakery/4.webp",
+      "sha256": "2ae0e61fa098085eeac69162fb22fcfb2e4bf7982ada8da927862cdb5e9b8437",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/5.webp",
+      "path": "assets/tiles/reward_bakery/5.webp",
+      "sha256": "c8ee634d074a6e2e5180acd4bd530e763dac4c5a3e527cc177093c47576dbb76",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/6.webp",
+      "path": "assets/tiles/reward_bakery/6.webp",
+      "sha256": "6739f7d7dfce66c26ca58e9b4404d88777e584626e2ae98fa7b48f789f4f5421",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/7.webp",
+      "path": "assets/tiles/reward_bakery/7.webp",
+      "sha256": "ee1195720b5bc68bd1034ad5e42f3ba161d62d30aae1e8cd951bbb200fffd291",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/8.webp",
+      "path": "assets/tiles/reward_bakery/8.webp",
+      "sha256": "beda44ec559cc59af6de177ec66ad4234da22f81b018ba5327e71d2693307f8a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/bakery/9.webp",
+      "path": "assets/tiles/reward_bakery/9.webp",
+      "sha256": "cd239a023996600c7d086acbc2992f6e568950623ed7dfaf62f7d15803dfe9a5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/0.webp",
+      "path": "assets/tiles/reward_galaxy/0.webp",
+      "sha256": "4a384870f0db84e1a63aeaa1ad7b6137197696be0c46fb69fd89e79dded9745a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/1.webp",
+      "path": "assets/tiles/reward_galaxy/1.webp",
+      "sha256": "3ac70b76cb834ad6e64adeff53e683ca4cecd649674332d03421d6e8ac1745e4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/2.webp",
+      "path": "assets/tiles/reward_galaxy/2.webp",
+      "sha256": "e15a3203dcb72869bf3c2f066fe2924c996c3cc25abad6e363b50e86a8bbe7cd",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/3.webp",
+      "path": "assets/tiles/reward_galaxy/3.webp",
+      "sha256": "b2126476ef611f2c561f0bc8e4c8b7a69ba9c23af63d2c2502e042f998a0faee",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/4.webp",
+      "path": "assets/tiles/reward_galaxy/4.webp",
+      "sha256": "b6047dcc332c17eab91a37c86bb36a9691ceafb2e290a4e6d948bb914ac36678",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/5.webp",
+      "path": "assets/tiles/reward_galaxy/5.webp",
+      "sha256": "12172e7e84253e7722317caf9c5b492e0c64da1e4f9dc6b9a865fb64600ef64e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/6.webp",
+      "path": "assets/tiles/reward_galaxy/6.webp",
+      "sha256": "ea48c9d41afd332e91139578c7d95d0da91dffac70d67a07b87a782cd339e11f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/7.webp",
+      "path": "assets/tiles/reward_galaxy/7.webp",
+      "sha256": "65b8633736cd402591bf46e3c4fa7ba9c6b09e6f9172ec181d5aced0cac3c4f7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/8.webp",
+      "path": "assets/tiles/reward_galaxy/8.webp",
+      "sha256": "679aea1ad7c271a79afabedf5c06941779f20bca915759d84e36ca246ec14071",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/galaxy/9.webp",
+      "path": "assets/tiles/reward_galaxy/9.webp",
+      "sha256": "225bdee9904928aaea3beac839070bf0149ec010d5f671f70edd007bb5ef8f93",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/0.webp",
+      "path": "assets/tiles/reward_meadow/0.webp",
+      "sha256": "05ce7fd3ab1cf0458e64be9f8cd1929ba6bfd655f20497c668458ad348b9a49e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/1.webp",
+      "path": "assets/tiles/reward_meadow/1.webp",
+      "sha256": "4ac7936780eaaec53319539ee3cf055fe81db57bfa867e1d60c415385dead9df",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/2.webp",
+      "path": "assets/tiles/reward_meadow/2.webp",
+      "sha256": "1ab7e68edef3fe01e6c1d6ae0f8152797a61e0efc5ee03836b459fcd9c59cda1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/3.webp",
+      "path": "assets/tiles/reward_meadow/3.webp",
+      "sha256": "75be9cc1548b381b7343a1e14aaf61dc27cbcc651efdddbba60cca43f66cd1ca",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/4.webp",
+      "path": "assets/tiles/reward_meadow/4.webp",
+      "sha256": "4dacf6fef14b259dd69e0cbfc4e085414f32cdc552e6feaa15be90da668096ee",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/5.webp",
+      "path": "assets/tiles/reward_meadow/5.webp",
+      "sha256": "8f9ba5073e183da819b5002a484cb745e1ff01c545b12490199b0d3a1cddc0d6",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/6.webp",
+      "path": "assets/tiles/reward_meadow/6.webp",
+      "sha256": "6a972c0db7ccfae89365fa0d1f77eab083436c4f770c93d2c1791ddee48be039",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/7.webp",
+      "path": "assets/tiles/reward_meadow/7.webp",
+      "sha256": "3b84720eb7ff3fc3fedc6e21c77d21f45270570c6e27fc13b80e06389a2e6a75",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/8.webp",
+      "path": "assets/tiles/reward_meadow/8.webp",
+      "sha256": "e3a730e52cc295ce017d707a02c07f1299130603baa73bc0f22afc4032aaf1e7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/meadow/9.webp",
+      "path": "assets/tiles/reward_meadow/9.webp",
+      "sha256": "1a10c3846fa6bb70bb747cbbec810586d0d021930e01899c3dd967d487cba48a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/0.webp",
+      "path": "assets/tiles/reward_fruit/0.webp",
+      "sha256": "1b8751362013426f22e9bddafca528bcf3bc474fd460646c05565e6eb89a593a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/1.webp",
+      "path": "assets/tiles/reward_fruit/1.webp",
+      "sha256": "7e71eae9ac3e27a8c9e0650089e22f48d9e3e9c6d5f27da460fb1845ec22621b",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/2.webp",
+      "path": "assets/tiles/reward_fruit/2.webp",
+      "sha256": "65bc070854d7109a0d2f91aea189f48163e840b44377a1913bca04d5d1b42d83",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/3.webp",
+      "path": "assets/tiles/reward_fruit/3.webp",
+      "sha256": "5dd162d80716d363ec2eb094c3343b5489757e03187e906adeef8edf98f076df",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/4.webp",
+      "path": "assets/tiles/reward_fruit/4.webp",
+      "sha256": "5283eb7d6768a27ee8d7fe5c348dbae7dacdf31ff90e46263d94b5ad10e5c35c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/5.webp",
+      "path": "assets/tiles/reward_fruit/5.webp",
+      "sha256": "4c7afab3a14b74e4f5cffc00efc05ed3bea81df8c548a8ccc35ec54dd8a3418f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/6.webp",
+      "path": "assets/tiles/reward_fruit/6.webp",
+      "sha256": "ca483dc700820c05e25ffe3581393ca755398ad6c9ef66221bacdf71a057a14c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/7.webp",
+      "path": "assets/tiles/reward_fruit/7.webp",
+      "sha256": "11bdc4d79defd1f97eeea4e2de0b838e7424cc7de9592bae062367e5fa1b4419",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/8.webp",
+      "path": "assets/tiles/reward_fruit/8.webp",
+      "sha256": "53528f52802b00edc93607e8c4152150fe5740ccb626561a217598accb533f9a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/fruit/9.webp",
+      "path": "assets/tiles/reward_fruit/9.webp",
+      "sha256": "1fb1565e64232a93360875122058fbe2d43a3fc2c3ebdf43adb185b3f23f5906",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/beach_ball.png",
+      "path": "assets/tiles/beach/beach_ball.png",
+      "sha256": "89f9c69be24f440fd0344d3aee6fb77c6222efb4f9fa0a71c06492c60dd70eb2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/beach_hat.png",
+      "path": "assets/tiles/beach/beach_hat.png",
+      "sha256": "21af0bbffb8b51c2235029a55b54bf0fcc1adf487f66fdce5d0e67af15c85bf4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/camera.png",
+      "path": "assets/tiles/beach/camera.png",
+      "sha256": "723ea1cd7bd10460b13f04016f426c1b0ed5e9026ff753fe915e748cc3b47146",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/coconut.png",
+      "path": "assets/tiles/beach/coconut.png",
+      "sha256": "9c2c0d687eb9512a923d6a84a8ef6f4a28037260383601b3ea038978d25268df",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/crab.png",
+      "path": "assets/tiles/beach/crab.png",
+      "sha256": "5b9925ce3a56604215abc5e424e0f2938d1b6285ad5082edc2c2337c6d3269fe",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/ice_cream.png",
+      "path": "assets/tiles/beach/ice_cream.png",
+      "sha256": "f046f3341b879d40b226672019e48cd5662b8fa3b9a9f3810a70f7cf9ed9fd4e",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/sandal.png",
+      "path": "assets/tiles/beach/sandal.png",
+      "sha256": "a70f29e84eb10e7d9bdcbd65b519a92524bd81b215d37e5f2edad4d27b8dbecc",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/seagull.png",
+      "path": "assets/tiles/beach/seagull.png",
+      "sha256": "8a9a4ad5dea80dfc80b8a4d14bfbf1fa2734415a54bf71c32ba85546aff069c7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/seashell.png",
+      "path": "assets/tiles/beach/seashell.png",
+      "sha256": "87a3c9704381ef3d000ed7dc5137ed0c614ded53bba66cc0ad6017393373c790",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/summer_shirt.png",
+      "path": "assets/tiles/beach/summer_shirt.png",
+      "sha256": "f82c7f0de20535e2db37b83dd011293b0c6613f114ba051505513d3a3adf7d30",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/summer_shorts.png",
+      "path": "assets/tiles/beach/summer_shorts.png",
+      "sha256": "fa8e88aec001750e7f44911bae4a57bdb555bbc3f57c0326a851b3a255d824e5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/sunglasses.png",
+      "path": "assets/tiles/beach/sunglasses.png",
+      "sha256": "ed09ea5660e5c2da28fa40af36265ad65ff026a9db7d7a91f424479f13e76c50",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/swim_ring.png",
+      "path": "assets/tiles/beach/swim_ring.png",
+      "sha256": "57d48b26884a67c1c105ed99758d753302ebf63fbb21620ec847a85c279e356a",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/tropical_fish.png",
+      "path": "assets/tiles/beach/tropical_fish.png",
+      "sha256": "5687d9428cb358ecf91c932e20614c68103da0c7dd328ff8df03573da0f0a497",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "src/assets/vanilla/tiles/tropical_juice.png",
+      "path": "assets/tiles/beach/tropical_juice.png",
+      "sha256": "d4a1d2334fc8b5f8c58fadaa133a43b7e46a19b9308d1753a82a2150ed7ac60d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/amber.webp",
+      "path": "assets/surfaces/amber.webp",
+      "sha256": "7076d282511ebe90e7f99acc8ec5e33569a1876dd0a22019033749c3cf8a00ef",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/candy.webp",
+      "path": "assets/surfaces/candy.webp",
+      "sha256": "3c3cc5df97ed6ebf3c366a21a90331d21f8b2e9e3d9ef5a87315da01cb6318f4",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/cloud.webp",
+      "path": "assets/surfaces/cloud.webp",
+      "sha256": "ae48375fbcd49ddbbd9ad6fbead42309e48849375c4480b3aa41eaef8aeb6c71",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/cream.webp",
+      "path": "assets/surfaces/cream.webp",
+      "sha256": "27a67997cabec8c4c61bf3468864dee226df9e624a909dbd7812907b3490bc84",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/enchanted.webp",
+      "path": "assets/surfaces/enchanted.webp",
+      "sha256": "ebab75c3355094e11dd9bad55d58cd1ccf55b28193966f63da8f2c7245e3b222",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/frost.webp",
+      "path": "assets/surfaces/frost.webp",
+      "sha256": "4a0857b585906621faeff105bac1df40526a3c794c8f194cb389b64edf08cf55",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/jelly.webp",
+      "path": "assets/surfaces/jelly.webp",
+      "sha256": "7fac00d5255e8bdc12d78de2bced5e98670483b921ab4e7051323c76fabdab74",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/mint.webp",
+      "path": "assets/surfaces/mint.webp",
+      "sha256": "12390a59f56c9811811d84d90b934529f48746fd2d7d79c3d39057fd8b8157bb",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/night.webp",
+      "path": "assets/surfaces/night.webp",
+      "sha256": "44277471a876929f1c424a5af60e52c96937e8247f0aae1f1abdee2667f23974",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/opal.webp",
+      "path": "assets/surfaces/opal.webp",
+      "sha256": "68f7b4e66c699cb7172094c36707722e679e09c7cf0768af9ee381c24e402b44",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/pixel.webp",
+      "path": "assets/surfaces/pixel.webp",
+      "sha256": "bb863f6406de497b533d9d20b84cce21625001b8c804a752807b8f58a5812fe9",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/sunset.webp",
+      "path": "assets/surfaces/sunset.webp",
+      "sha256": "b66cebac2b4a9d6f235a837e05f5bb5ff1ce511b3876caf2ca7f6d0d643d8510",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/surfaces/wood.webp",
+      "path": "assets/surfaces/wood.webp",
+      "sha256": "ab5b413f7f35eb9a145dbc53d62a965bcc1853ea97bc6c8eb0eac7e4c54422ae",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/effects/autumn.webp",
+      "path": "assets/effects/autumn.webp",
+      "sha256": "1e08275ba1598b0cc8b7c3b5867a467218b1e2a6c8541b153b5fa6eb50c2125f",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/effects/blossom.webp",
+      "path": "assets/effects/blossom.webp",
+      "sha256": "9c8d87495509ada68f59c2e5662059f782c6bfda2a802b5fed1fe1d5366bf7fc",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/effects/confetti.webp",
+      "path": "assets/effects/confetti.webp",
+      "sha256": "0bd9cecaf1cb70bf46349e51f2784b838cb2f5d1bcb1f26046186a54ba3efcd5",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/effects/magic.webp",
+      "path": "assets/effects/magic.webp",
+      "sha256": "d7629f5f78b709537a2c38b653380f74208e04387b233b2eb7b23db043da75e1",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/effects/pixel.webp",
+      "path": "assets/effects/pixel.webp",
+      "sha256": "44714e35fcb15e7642d4a90d96c7ba82635dec1e03b2343381b18ba66c4dabd7",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/effects/snow.webp",
+      "path": "assets/effects/snow.webp",
+      "sha256": "f1628fc6f4f1fc04e385b3d08213d8678290bac1e59a4915e4c5014c8446eaf2",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/effects/stars.webp",
+      "path": "assets/effects/stars.webp",
+      "sha256": "a783108e7b771bff50b1571c519dad39f1cb04d167e7254655bf80d1ce09227c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/ui/onet.webp",
+      "path": "assets/tools/onet.webp",
+      "sha256": "b1675a8c03a88ad627990fb2332c55eb38113722a2ece636dd4be467b5a267ef",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/ui/triple.webp",
+      "path": "assets/tools/triple.webp",
+      "sha256": "7ca887116c99cdc776e56d4521fa3fd92f288ceb9022702e71b127577deaa2de",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/ui/hint.webp",
+      "path": "assets/tools/hint.webp",
+      "sha256": "ed13ae7123e32f86e70a29b1c422b67b40744e7e9847abc9cb0eb75f3790eba8",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "public/art/premium/ui/shuffle.webp",
+      "path": "assets/tools/shuffle.webp",
+      "sha256": "eae1e91b302a0f2f400bfa9b6ff82859da69cf928ec806fb2f88bab93e3336eb",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/bakery-cfa52bbf427dfa64ea075afe0e4dc81cf463e99d83ecb73c989bde8e1202931d.jpg",
+      "path": "assets/originals/scripts/art-originals/bakery-cfa52bbf427dfa64ea075afe0e4dc81cf463e99d83ecb73c989bde8e1202931d.jpg",
+      "sha256": "cfa52bbf427dfa64ea075afe0e4dc81cf463e99d83ecb73c989bde8e1202931d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/bakery.jpg",
+      "path": "assets/originals/scripts/art-originals/bakery.jpg",
+      "sha256": "75dbb3b029d9f94aa08db2a61293dc5833c90ef735bf0a0ee09fb67905a45948",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/fruit-82474f121ca1b713c8be3434bef35ca90d190bebbdd3f44bc7d4914e0e49919c.jpg",
+      "path": "assets/originals/scripts/art-originals/fruit-82474f121ca1b713c8be3434bef35ca90d190bebbdd3f44bc7d4914e0e49919c.jpg",
+      "sha256": "82474f121ca1b713c8be3434bef35ca90d190bebbdd3f44bc7d4914e0e49919c",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/fruit.jpg",
+      "path": "assets/originals/scripts/art-originals/fruit.jpg",
+      "sha256": "644f3dfe65ed3b55be5149f1611cb588c31d56ad7ffbf0c42fbc2e1b2d8f58b8",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/galaxy-48b4a667dc6b1cf1d646587576bc741549a09029b39b6c791b4a44fb04d866ec.jpg",
+      "path": "assets/originals/scripts/art-originals/galaxy-48b4a667dc6b1cf1d646587576bc741549a09029b39b6c791b4a44fb04d866ec.jpg",
+      "sha256": "48b4a667dc6b1cf1d646587576bc741549a09029b39b6c791b4a44fb04d866ec",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/galaxy.jpg",
+      "path": "assets/originals/scripts/art-originals/galaxy.jpg",
+      "sha256": "334186965d9fdfedafdb9106cea532be7c8cad283480d0c9f70d8300eba631f9",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/meadow-34a6d0a023be5237b9c4cc5ba865b5c3b8ab8341b22bcdd9091f91ca396a1b30.jpg",
+      "path": "assets/originals/scripts/art-originals/meadow-34a6d0a023be5237b9c4cc5ba865b5c3b8ab8341b22bcdd9091f91ca396a1b30.jpg",
+      "sha256": "34a6d0a023be5237b9c4cc5ba865b5c3b8ab8341b22bcdd9091f91ca396a1b30",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/meadow.jpg",
+      "path": "assets/originals/scripts/art-originals/meadow.jpg",
+      "sha256": "f4c81f4c08dfffd8dda8c1fd60b2888a00fb8884f0b32c3e5037660d11324091",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/sakura-9b3a80004d1ac098cb382a185a686f9764ea4c2a6a06e1890244b5cbe7988fed.jpg",
+      "path": "assets/originals/scripts/art-originals/sakura-9b3a80004d1ac098cb382a185a686f9764ea4c2a6a06e1890244b5cbe7988fed.jpg",
+      "sha256": "9b3a80004d1ac098cb382a185a686f9764ea4c2a6a06e1890244b5cbe7988fed",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/sakura.jpg",
+      "path": "assets/originals/scripts/art-originals/sakura.jpg",
+      "sha256": "d62bb965362aa151d8150d57f1a2e62283208e6c7b1c6b6d3b2f82064b92a72d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/seasonal-049e21e885f90c08140051828cc3f455558f1e9da5a1ea48f66d68866275de5d.jpg",
+      "path": "assets/originals/scripts/art-originals/seasonal-049e21e885f90c08140051828cc3f455558f1e9da5a1ea48f66d68866275de5d.jpg",
+      "sha256": "049e21e885f90c08140051828cc3f455558f1e9da5a1ea48f66d68866275de5d",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/seasonal-1a4f228a8f5a14539a6a3d065289ab50a8a9fc961c06010902fddeb75f4248ea.jpg",
+      "path": "assets/originals/scripts/art-originals/seasonal-1a4f228a8f5a14539a6a3d065289ab50a8a9fc961c06010902fddeb75f4248ea.jpg",
+      "sha256": "1a4f228a8f5a14539a6a3d065289ab50a8a9fc961c06010902fddeb75f4248ea",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/seasonal-20a71013a4f4e67081f965ec12273311a1f990192f572f3dedf6b24e8eab8e10.jpg",
+      "path": "assets/originals/scripts/art-originals/seasonal-20a71013a4f4e67081f965ec12273311a1f990192f572f3dedf6b24e8eab8e10.jpg",
+      "sha256": "20a71013a4f4e67081f965ec12273311a1f990192f572f3dedf6b24e8eab8e10",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/seasonal-5d4717a18a4f4de03f6594601374871cd29ce17bddf3932dc10fe643df360fa9.jpg",
+      "path": "assets/originals/scripts/art-originals/seasonal-5d4717a18a4f4de03f6594601374871cd29ce17bddf3932dc10fe643df360fa9.jpg",
+      "sha256": "5d4717a18a4f4de03f6594601374871cd29ce17bddf3932dc10fe643df360fa9",
+      "status": "original-unchanged"
+    },
+    {
+      "source": "scripts/art-originals/seasonal-94f933ed2eba2e040afc31fdd53a28a5d5a68b5ed6beeca7ce71458825296bc2.jpg",
+      "path": "assets/originals/scripts/art-originals/seasonal-94f933ed2eba2e040afc31fdd53a28a5d5a68b5ed6beeca7ce71458825296bc2.jpg",
+      "sha256": "94f933ed2eba2e040afc31fdd53a28a5d5a68b5ed6beeca7ce71458825296bc2",
+      "status": "original-unchanged"
+    }
+  ],
+  "logicSources": [
+    "src/core/board.js",
+    "src/core/difficulty.js",
+    "src/core/random.js",
+    "src/core/tileCatalog.js",
+    "src/game/hooks/useOnetGame.ts",
+    "src/game/minigames/TripleGame.tsx",
+    "src/game/minigames/useMiniRound.ts"
+  ],
+  "logicSourceHashes": {
+    "src/core/board.js": "590fcdef765e477e214a95d138232a3ea8c059a2094c61182395fa005cf11e82",
+    "src/core/difficulty.js": "1fe25d99353438d355562ba93fdeba22525ea0ceda58ba9d5031de9be1557c52",
+    "src/core/random.js": "0dbedfd44dad3035e49335248db79e11e66eae6484f71b68d1db7ab3ad25a5f9",
+    "src/core/tileCatalog.js": "4bf17ddd1c093492121096dd0b4a87eeb995e93c9ac958b73a821b5359789b7b",
+    "src/game/hooks/useOnetGame.ts": "47379a061272caec970352d8a715bc6e3be45072edecb9ea63c9fe9bd7641325",
+    "src/game/minigames/TripleGame.tsx": "f0a5a281be320daa824d860c5ff0158623aaaae7e0afdc4501ca09827692b846",
+    "src/game/minigames/useMiniRound.ts": "5873c8d3ff2a49dd2d44d60aea80c5e08728d233f93ec8a5588b3e9e9738eca6"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "onet-match3",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Raw game art and UI-independent Onet / Triple Match logic extracted from connectify-new",
+  "type": "module",
+  "exports": {".": "./src/index.js", "./onet": "./src/onet/index.js", "./match3": "./src/match3/index.js", "./tiles": "./src/shared/tiles.js"},
+  "scripts": {"test": "node --test tests/*.test.js", "check:assets": "node scripts/check-assets.mjs"},
+  "engines": {"node": ">=20"}
+}

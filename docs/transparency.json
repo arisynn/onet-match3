@@ -1,0 +1,517 @@
+{
+  "method": "Image editing tool removes the background from four 4x4 atlases, followed by deterministic cell slicing. Original source files remain unchanged under assets/originals/. These are edited derivatives and are not guaranteed pixel-identical to their sources.",
+  "tiles": [
+    {
+      "path": "assets/tiles/forest/0.png",
+      "source": "public/art/forest/0.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 0,
+      "sha256": "6e3c20319dfa0c18bf741a3781a92befa78d2c240ecd8c2c831529960a248b8a",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/1.png",
+      "source": "public/art/forest/1.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 1,
+      "sha256": "af16ef65718f7b470f340e7a707a100971c48dda1ba94c283fe80660a1c5349f",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/2.png",
+      "source": "public/art/forest/2.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 2,
+      "sha256": "c75454caddbc68e856a7f37dad9781aee59d61f9d6be6a6f0f6cb6b0c2ca1e46",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/3.png",
+      "source": "public/art/forest/3.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 3,
+      "sha256": "97570aaf835ee2cecb4e3542f3c44fb26c8f627bf978569fc7fff0d8631833a5",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/4.png",
+      "source": "public/art/forest/4.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 4,
+      "sha256": "3c9058e91e32689c1e6c50f7a6aaf90b4ef148c273725db11b3beea44fa826a0",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/5.png",
+      "source": "public/art/forest/5.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 5,
+      "sha256": "f2a66d2ef4c48bd0bbeab312fb95f27093ed7fc4a27827270c39611779272240",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/6.png",
+      "source": "public/art/forest/6.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 6,
+      "sha256": "f3105a87ac29ced3b3d393ad9dd2897566b870103b1ada6aad9c1b6067ad90e6",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/7.png",
+      "source": "public/art/forest/7.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 7,
+      "sha256": "89baa69a8f465ec903afcffd07bfb36c38143f8aa09881acb097b7fb4c377046",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/8.png",
+      "source": "public/art/forest/8.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 8,
+      "sha256": "dd97371f174be5c6c346f5d5865d50009eb6a5f354d399ae9fecce261d512965",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/9.png",
+      "source": "public/art/forest/9.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 9,
+      "sha256": "54100e3698e13e59f9190e7646964bac73714d3ad79471b0d32aa29e7fa73d64",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/10.png",
+      "source": "public/art/forest/10.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 10,
+      "sha256": "1f7b0722fc97ee6d1b1e9bc4bb2a643f08b560638c0fc5f0ca7c8d231a13f2ed",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/11.png",
+      "source": "public/art/forest/11.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 11,
+      "sha256": "c68d51e62d4e2b2918ab484244db2edc9d904c727ab0de4b1971f27e80d34e36",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/12.png",
+      "source": "public/art/forest/12.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 12,
+      "sha256": "6d17e2d05d2b6ff85111cd74782a84a253c6836ed785621f4faf4d328ca95e36",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/13.png",
+      "source": "public/art/forest/13.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 13,
+      "sha256": "ed8dbb86846fd8c23141d6b41ea7ec8069f0249bb7bf739be1297a2a06a4ac62",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/14.png",
+      "source": "public/art/forest/14.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 14,
+      "sha256": "05f5c79d9cae6ac581a5f79cda8d2e7681a079f1c376ab68f16f28209f67e2ee",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/forest/15.png",
+      "source": "public/art/forest/15.webp",
+      "atlas": "assets/atlases/forest-transparent.png",
+      "cell": 15,
+      "sha256": "5248d27962a09175695f0fea9469452b6721997e78637e7f094109d87e0267c0",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/0.png",
+      "source": "public/art/candy/0.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 0,
+      "sha256": "ddab39ec0fedf566eab9877a629bd1646b661e36641548aa9af79e45b50fdb1b",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/1.png",
+      "source": "public/art/candy/1.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 1,
+      "sha256": "1e4c830425571f879861260ffe835bc4199645c9776c741100201595d7640506",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/2.png",
+      "source": "public/art/candy/2.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 2,
+      "sha256": "9c20e6d5cc01286bc800c2dbe679d0bd5ac3c4c943b713fe724eca7abbe0fa68",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/3.png",
+      "source": "public/art/candy/3.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 3,
+      "sha256": "313864e0a3efa4595e0724fc0a7de006c02694ff392191c1b5b2c87b5eb80d99",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/4.png",
+      "source": "public/art/candy/4.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 4,
+      "sha256": "27cedd1cf5718907e5086dcfd332bb4733771c7a2304c44395a90a811dd3821c",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/5.png",
+      "source": "public/art/candy/5.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 5,
+      "sha256": "6b87290bae45cd0ad0b5e54b7b24fcdd5eb24bea8b2b78784942670440435e6a",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/6.png",
+      "source": "public/art/candy/6.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 6,
+      "sha256": "04711ea3e5be6567901b470e1a18633310044e4c82bc6156a38a5308fcc409dd",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/7.png",
+      "source": "public/art/candy/7.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 7,
+      "sha256": "432be5630e2149f833f711bb5947a9b62b8b7e9dbb616cf0abd3159677d0c487",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/8.png",
+      "source": "public/art/candy/8.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 8,
+      "sha256": "9c33445e27d92d2aa1aefae1b2dd72be5ad19587bc954c1be737fc31fd785021",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/9.png",
+      "source": "public/art/candy/9.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 9,
+      "sha256": "e18df1851ce0540a5cc3595052cc514eb6d2365188023427c4c28c459f53cef4",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/10.png",
+      "source": "public/art/candy/10.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 10,
+      "sha256": "863ebed237213e0f1ce2b07b09f4b6ba4d90182561a3d53d1a59e72289acc335",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/11.png",
+      "source": "public/art/candy/11.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 11,
+      "sha256": "3f4f2f2d6a2026af001658f4cc3902fbc4af3bfc2d8700b11be537a8f6a1f77e",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/12.png",
+      "source": "public/art/candy/12.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 12,
+      "sha256": "1c77ddcd8f9baf2f3405945bb7e05a33470329682686cd500978f1b91f691aea",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/13.png",
+      "source": "public/art/candy/13.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 13,
+      "sha256": "8e48e15fb45e20f73dcdfe394715da02b5f6ceb8a75622bb41d969d33aea9a2c",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/14.png",
+      "source": "public/art/candy/14.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 14,
+      "sha256": "ce0d655b4abfcdbc818e03f6ac2e38b7171f6acd459f4d9aa1f1440e5999b782",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/candy/15.png",
+      "source": "public/art/candy/15.webp",
+      "atlas": "assets/atlases/candy-transparent.png",
+      "cell": 15,
+      "sha256": "69e10d897819a3bdd3bb97c693827d2db7e7caeb75003e5c25629de591fe5fdd",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/0.png",
+      "source": "public/art/space/0.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 0,
+      "sha256": "18d78f8ccf54f17e22a40b891c1d591d079a5c8e3288c643a569467531d1331e",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/1.png",
+      "source": "public/art/space/1.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 1,
+      "sha256": "260c9203757b61160a74776fbb6fa2d1d0b695985777f4444d33a628d40ac58a",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/2.png",
+      "source": "public/art/space/2.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 2,
+      "sha256": "d5b6e808c0e48f7a4cce98a36d5cb0cb1b80652fc77bd60967ce8f615be71619",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/3.png",
+      "source": "public/art/space/3.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 3,
+      "sha256": "bb0be49d6d03b6908c028262fc27d57e17944a8b7afe78a851dab375b9521fac",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/4.png",
+      "source": "public/art/space/4.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 4,
+      "sha256": "bddf12a8d5eeeee3015c0f1548419175082f2de61fd34f07d27c00bb74f9237a",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/5.png",
+      "source": "public/art/space/5.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 5,
+      "sha256": "e27090d1d7ef6082a8424bd86809dafcbb6d71b2ff6602d027a8bf7e423e59e4",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/6.png",
+      "source": "public/art/space/6.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 6,
+      "sha256": "dcaed131f9e56daa8ec64f1170d47a5c00d5c343304a921a520f805d2d8fdb09",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/7.png",
+      "source": "public/art/space/7.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 7,
+      "sha256": "a3c6a14ff9e33bc46446590e495ade2501328217f8efcb75d4ffcdf8b2ba538c",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/8.png",
+      "source": "public/art/space/8.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 8,
+      "sha256": "d7287b3c980d8945a8f22b13df1bb14f52f98d88f54b789254df9b47ade80a9f",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/9.png",
+      "source": "public/art/space/9.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 9,
+      "sha256": "9bd007ce43b95c493d3696aeddcca6c29d9a26ff6f44436c57312d7961211201",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/10.png",
+      "source": "public/art/space/10.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 10,
+      "sha256": "d530ef523fc0fb630970c6231be9f87dd7ab4eea81d409633bfc717326d4fb3e",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/11.png",
+      "source": "public/art/space/11.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 11,
+      "sha256": "d4c7ffbc1500e6d0343832cc4d161b0d15f57ff846182367bacc75818b634008",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/12.png",
+      "source": "public/art/space/12.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 12,
+      "sha256": "d072603cae1ab445523b8319638e59116cc4722b4dc2d74799bac057ac4b4797",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/13.png",
+      "source": "public/art/space/13.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 13,
+      "sha256": "216065dfcfc4c921250a47cd58f2d9bc3fc1f756c15d7178bea76041e35f906b",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/14.png",
+      "source": "public/art/space/14.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 14,
+      "sha256": "b79f52890c5b53138ef2c36d14ebb1e0d4e59a39e068d0c1dfed7439061c5abb",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/space/15.png",
+      "source": "public/art/space/15.webp",
+      "atlas": "assets/atlases/space-transparent.png",
+      "cell": 15,
+      "sha256": "4b490d0b8801e83871b8377e8b8949235abe5939482ad3c88cc33c95b69537a4",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/0.png",
+      "source": "public/art/ocean/0.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 0,
+      "sha256": "a1b774dd982670b8c63939f3b91280f8597cc20907ec6f5c9a5317fba09472af",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/1.png",
+      "source": "public/art/ocean/1.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 1,
+      "sha256": "895e3f4d8e0c6ba73d5fd65013abefde4ee001bddcd4dc289dddf1fef2017efd",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/2.png",
+      "source": "public/art/ocean/2.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 2,
+      "sha256": "5d4eb4d46331c5b224d7c63dce6a6175b2a38ae956b6a94cd3f3460d163a618e",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/3.png",
+      "source": "public/art/ocean/3.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 3,
+      "sha256": "cdd764b58ef4b6eec3a31a4c95e8a07de4bb2e03015b73fe2ba661ef85adfcab",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/4.png",
+      "source": "public/art/ocean/4.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 4,
+      "sha256": "fef8b0b7d12cb90cce3cf16072c6e30cc75ff07cfb14b5b7ff13fe5d685a7b8c",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/5.png",
+      "source": "public/art/ocean/5.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 5,
+      "sha256": "2306b7acd7dd47f0a893caf1ecaa84b6ee7f345406bd3d43b860d78d2a4189f3",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/6.png",
+      "source": "public/art/ocean/6.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 6,
+      "sha256": "96c5141c9a5059529753c5d93af78d9f523d8405512279f36e35e67ea34b7313",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/7.png",
+      "source": "public/art/ocean/7.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 7,
+      "sha256": "abb8d50c5d3775aed84f4ebf9087f94592ec122654a54f70fbd5aebcee368cbc",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/8.png",
+      "source": "public/art/ocean/8.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 8,
+      "sha256": "234fe13aac898668acd5dff144aa21371390f7f9ab8d5634edd855f76c9bd049",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/9.png",
+      "source": "public/art/ocean/9.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 9,
+      "sha256": "c38c52e9919183a035f4ec98228131844252b31afc46de0f3cbaddce6d753943",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/10.png",
+      "source": "public/art/ocean/10.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 10,
+      "sha256": "8c8bdfd995342233e8f50291a926d6e429cf2d600d1986388e7d3b1afc9a289b",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/11.png",
+      "source": "public/art/ocean/11.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 11,
+      "sha256": "e6b25003f0246f233108877defa7b572e10cb75b478b823b8debbd8bc79dc3fc",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/12.png",
+      "source": "public/art/ocean/12.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 12,
+      "sha256": "199cd4151dcb84d9c94157bda5cba53a2ac3aa4b196c376573997c019a484e64",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/13.png",
+      "source": "public/art/ocean/13.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 13,
+      "sha256": "85db860e1bc27eed0eddcfb0476045836ef96424a7cbfd222c176139c4866651",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/14.png",
+      "source": "public/art/ocean/14.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 14,
+      "sha256": "072263d9196e286be2492fcfbb1373aa50b268bd75416e9075d17bdb453adb54",
+      "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/ocean/15.png",
+      "source": "public/art/ocean/15.webp",
+      "atlas": "assets/atlases/ocean-transparent.png",
+      "cell": 15,
+      "sha256": "5e7e31419f8ca1a298d2b7b1cd4117f2e6eb6e9d8d8a7b4a1168b8792f869918",
+      "status": "image-tool-transparent-derivative"
+    }
+  ]
+}
