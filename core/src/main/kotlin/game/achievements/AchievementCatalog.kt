@@ -2,7 +2,7 @@ package game.achievements
 
 /**
  * Standard tier rewards (Bronze, Silver, Gold, Platinum, Diamond).
- * Total gems per achievement: 25 + 50 + 75 + 100 + 150 = 400 Gems.
+ * Total gems per achievement: 50 + 100 + 200 + 500 + 1000 = 1850 Gems.
  * Enforces Rule 7: Deterministic and transparent rewards.
  */
 object AchievementCatalog {
@@ -10,7 +10,7 @@ object AchievementCatalog {
     private fun standardTiers(targets: List<Long>): List<AchievementTier> {
         require(targets.size == 5) { "Must provide exactly 5 tier targets" }
         val names = listOf("Bronze", "Silver", "Gold", "Platinum", "Diamond")
-        val rewards = listOf(25, 50, 75, 100, 150)
+        val rewards = game.economy.EconomyTuning.achievementRewards
         return targets.mapIndexed { index, target ->
             AchievementTier(
                 tierIndex = index + 1,

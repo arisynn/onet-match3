@@ -70,7 +70,7 @@ object CosmeticCatalog {
         type = CosmeticType.TILE_SET,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 200,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/tiles/reward_bakery"
     )
 
@@ -81,7 +81,7 @@ object CosmeticCatalog {
         type = CosmeticType.TILE_SET,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 200,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/tiles/reward_fruit"
     )
 
@@ -92,7 +92,7 @@ object CosmeticCatalog {
         type = CosmeticType.TILE_SET,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.EPIC,
-        gemPrice = 250,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.EPIC),
         assetPath = "assets/tiles/reward_galaxy"
     )
 
@@ -103,7 +103,7 @@ object CosmeticCatalog {
         type = CosmeticType.TILE_SET,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 200,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/tiles/reward_meadow"
     )
 
@@ -114,7 +114,7 @@ object CosmeticCatalog {
         type = CosmeticType.TILE_SET,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.EPIC,
-        gemPrice = 250,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.EPIC),
         assetPath = "assets/tiles/reward_sakura"
     )
 
@@ -160,7 +160,7 @@ object CosmeticCatalog {
         type = CosmeticType.UI_PALETTE,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 80,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/ui-kit/panels/lavender.webp"
     )
 
@@ -171,7 +171,7 @@ object CosmeticCatalog {
         type = CosmeticType.UI_PALETTE,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 80,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/ui-kit/panels/sky.webp"
     )
 
@@ -182,7 +182,7 @@ object CosmeticCatalog {
         type = CosmeticType.UI_PALETTE,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 100,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/ui-kit/panels/rose.webp"
     )
 
@@ -193,7 +193,7 @@ object CosmeticCatalog {
         type = CosmeticType.UI_PALETTE,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 100,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/ui-kit/panels/sand.webp"
     )
 
@@ -204,7 +204,7 @@ object CosmeticCatalog {
         type = CosmeticType.UI_PALETTE,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.EPIC,
-        gemPrice = 120,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.EPIC),
         assetPath = "assets/ui-kit/panels/slate.webp"
     )
 
@@ -226,8 +226,8 @@ object CosmeticCatalog {
         description = "Horizontal ceramic domino body in soft sage mint.",
         type = CosmeticType.TILE_BODY,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
-        rarity = CosmeticRarity.RARE,
-        gemPrice = 75,
+        rarity = CosmeticRarity.COMMON,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.COMMON),
         assetPath = "assets/ui-kit/tile-bodies/horizontal-mint.webp"
     )
 
@@ -237,8 +237,8 @@ object CosmeticCatalog {
         description = "Vertical ceramic domino body in comforting warm peach.",
         type = CosmeticType.TILE_BODY,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
-        rarity = CosmeticRarity.RARE,
-        gemPrice = 75,
+        rarity = CosmeticRarity.COMMON,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.COMMON),
         assetPath = "assets/ui-kit/tile-bodies/vertical-peach.webp"
     )
 
@@ -249,7 +249,7 @@ object CosmeticCatalog {
         type = CosmeticType.TILE_BODY,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.EPIC,
-        gemPrice = 120,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.EPIC),
         assetPath = "assets/ui-kit/tile-bodies/large-rose.webp"
     )
 
@@ -260,7 +260,7 @@ object CosmeticCatalog {
         type = CosmeticType.TILE_BODY,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.EPIC,
-        gemPrice = 120,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.EPIC),
         assetPath = "assets/ui-kit/tile-bodies/large-slate.webp"
     )
 
@@ -272,7 +272,7 @@ object CosmeticCatalog {
         type = CosmeticType.EFFECT,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 150,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/ui-kit/animations/match-burst.webp"
     )
 
@@ -283,7 +283,7 @@ object CosmeticCatalog {
         type = CosmeticType.EFFECT,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 150,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/ui-kit/animations/tile-pop-dust.webp"
     )
 
@@ -294,7 +294,7 @@ object CosmeticCatalog {
         type = CosmeticType.EFFECT,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.RARE,
-        gemPrice = 120,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.RARE),
         assetPath = "assets/ui-kit/animations/hint-pulse.webp"
     )
 
@@ -305,7 +305,7 @@ object CosmeticCatalog {
         type = CosmeticType.EFFECT,
         acquisitionType = CosmeticAcquisitionType.EARNABLE,
         rarity = CosmeticRarity.EPIC,
-        gemPrice = 200,
+        gemPrice = game.economy.EconomyTuning.price(CosmeticRarity.EPIC),
         assetPath = "assets/ui-kit/animations/victory-confetti.webp"
     )
 

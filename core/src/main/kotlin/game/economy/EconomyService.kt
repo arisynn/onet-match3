@@ -69,6 +69,11 @@ class EconomyService(
         gemCost: Int,
         timestampMs: Long = System.currentTimeMillis()
     ): TransactionResult {
+        val item = game.cosmetics.CosmeticCatalog.getItem(cosmeticId)
+            ?: throw IllegalArgumentException("Unknown cosmetic: $cosmeticId")
+        require(item.acquisitionType == game.cosmetics.CosmeticAcquisitionType.EARNABLE && item.gemPrice == gemCost) {
+            "Cosmetic price or acquisition type does not match catalog"
+        }
         require(gemCost > 0) { "Cosmetic gem cost must be positive: $gemCost" }
         val idempotencyKey = "PURCHASE_COSMETIC_${cosmeticId}"
         return ledger.record(

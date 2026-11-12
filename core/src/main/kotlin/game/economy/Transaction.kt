@@ -20,7 +20,14 @@ data class Transaction(
     val previousHash: String = "GENESIS",
     val hash: String = computeHash(id, timestampMs, type, currency, amount, source, sourceId, idempotencyKey, previousHash)
 ) {
+    // The append-only ledger contains committed entries only; pending writes live
+    // in the atomic session snapshot, never as partially applied balance changes.
+    val status: TransactionStatus get() = TransactionStatus.POSTED
+    val saveVersion: Int get() = 1
+
     init {
+        require(id.isNotBlank() && timestampMs >= 0) { "Invalid transaction identity or timestamp" }
+        require(listOf(id, sourceId, idempotencyKey).none { '|' in it }) { "Transaction IDs cannot contain the hash delimiter" }
         require(amount > 0) { "Transaction amount must be strictly positive, was: $amount" }
         require(idempotencyKey.isNotBlank()) { "Idempotency key must not be blank" }
         require(sourceId.isNotBlank()) { "Source ID must not be blank" }
@@ -45,3 +52,6 @@ data class Transaction(
         }
     }
 }
+
+/** Status of immutable ledger entries. */
+enum class TransactionStatus { POSTED }

@@ -11,16 +11,36 @@ import java.util.concurrent.ConcurrentHashMap
  * - Rule 4: Immutable idempotent transaction ledger.
  * - Rule 5: Strict non-negative balance invariant.
  * - Rule 6: Zero pay-to-win booster sinks.
- * - Rule 8: Tamper-resistant cryptographic integrity check.
+ * - Hash chaining detects corruption; it is not authentication against a modified APK.
  */
 class TransactionLedger(initialTransactions: List<Transaction> = emptyList()) {
 
     private val transactions = mutableListOf<Transaction>()
     private val idempotencyIndex = ConcurrentHashMap<String, Transaction>()
 
+    private val transactionIds = mutableSetOf<String>()
+    private var balance = 0
+
     init {
-        initialTransactions.forEach { appendInternal(it) }
+        initialTransactions.forEach { tx ->
+            validateRuleInvariants(tx.type, tx.currency, tx.amount, tx.source)
+            require(tx.id.isNotBlank() && tx.sourceId.isNotBlank() && tx.idempotencyKey.isNotBlank() && tx.timestampMs >= 0) { "Invalid transaction identity or timestamp" }
+            require(tx.id !in transactionIds && tx.idempotencyKey !in idempotencyIndex) { "Duplicate restored transaction" }
+            require(tx.previousHash == (transactions.lastOrNull()?.hash ?: "GENESIS")) { "Broken ledger chain" }
+            require(tx.hash == Transaction.computeHash(tx.id, tx.timestampMs, tx.type, tx.currency,
+                tx.amount, tx.source, tx.sourceId, tx.idempotencyKey, tx.previousHash)) { "Corrupt transaction payload" }
+            validateNextBalance(tx.type, tx.amount)
+            appendInternal(tx)
+        }
     }
+
+    private fun validateNextBalance(type: TransactionType, amount: Int) {
+        val next = balance.toLong() + if (type == TransactionType.CREDIT) amount.toLong() else -amount.toLong()
+        require(next <= Int.MAX_VALUE) { "Currency balance overflow" }
+        if (next < 0) throw InsufficientFundsException(required = amount, available = balance)
+    }
+
+    @Synchronized fun findByIdempotencyKey(key: String): Transaction? = idempotencyIndex[key]
 
     /**
      * Appends a new transaction or returns the existing transaction if idempotent key matches.
@@ -36,6 +56,7 @@ class TransactionLedger(initialTransactions: List<Transaction> = emptyList()) {
         idempotencyKey: String,
         timestampMs: Long = System.currentTimeMillis()
     ): TransactionResult {
+        require(timestampMs >= 0) { "Timestamp must be nonnegative" }
         // Idempotency check (Rule 4)
         val existing = idempotencyIndex[idempotencyKey]
         if (existing != null) {
@@ -53,6 +74,8 @@ class TransactionLedger(initialTransactions: List<Transaction> = emptyList()) {
 
         // Rule Invariant Validations
         validateRuleInvariants(type, currency, amount, source)
+
+        validateNextBalance(type, amount)
 
         // Rule 5: Sufficiency check for debits
         val currentBalance = calculateBalance(currency)
@@ -83,6 +106,7 @@ class TransactionLedger(initialTransactions: List<Transaction> = emptyList()) {
         amount: Int,
         source: TransactionSource
     ) {
+        require(amount > 0) { "Transaction amount must be positive" }
         // Rule 1 & 2: Credits can ONLY be earned from claiming missions/achievements.
         if (type == TransactionType.CREDIT) {
             when (source) {
@@ -129,6 +153,8 @@ class TransactionLedger(initialTransactions: List<Transaction> = emptyList()) {
 
     @Synchronized
     private fun appendInternal(tx: Transaction) {
+        require(transactionIds.add(tx.id)) { "Duplicate transaction ID" }
+        balance = (balance.toLong() + if (tx.type == TransactionType.CREDIT) tx.amount.toLong() else -tx.amount.toLong()).toInt()
         transactions.add(tx)
         idempotencyIndex[tx.idempotencyKey] = tx
     }
@@ -139,15 +165,6 @@ class TransactionLedger(initialTransactions: List<Transaction> = emptyList()) {
     }
 
     private fun calculateBalance(currency: Currency): Int {
-        var balance = 0
-        for (tx in transactions) {
-            if (tx.currency == currency) {
-                when (tx.type) {
-                    TransactionType.CREDIT -> balance += tx.amount
-                    TransactionType.DEBIT -> balance -= tx.amount
-                }
-            }
-        }
         return balance
     }
 

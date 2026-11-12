@@ -134,7 +134,7 @@ class CurrencyRulesTest {
 
         // Attempting to spend when wallet has 0 gems fails atomically
         assertThrows(InsufficientFundsException::class.java) {
-            economyService.purchaseCosmetic(cosmeticId = "theme_reward_bakery", gemCost = 200)
+            economyService.purchaseCosmetic(cosmeticId = "theme_reward_bakery", gemCost = 1200)
         }
         assertEquals(0, economyService.wallet.gemBalance)
 
@@ -144,12 +144,13 @@ class CurrencyRulesTest {
 
         // Attempting to spend 200 still fails
         assertThrows(InsufficientFundsException::class.java) {
-            economyService.purchaseCosmetic(cosmeticId = "theme_reward_bakery", gemCost = 200)
+            economyService.purchaseCosmetic(cosmeticId = "theme_reward_bakery", gemCost = 1200)
         }
         assertEquals(150, economyService.wallet.gemBalance) // Balance unchanged
 
         // Spending 100 succeeds and balance updates cleanly
-        val spend = economyService.purchaseCosmetic(cosmeticId = "palette_rose", gemCost = 100)
+        economyService.claimMissionReward("m_extra", 1100)
+        val spend = economyService.purchaseCosmetic(cosmeticId = "palette_rose", gemCost = 1200)
         assertTrue(spend is TransactionResult.Success)
         assertEquals(50, economyService.wallet.gemBalance)
     }
@@ -172,16 +173,16 @@ class CurrencyRulesTest {
         val achievements = AchievementCatalog.ALL_ACHIEVEMENTS
         for (ach in achievements) {
             assertEquals(5, ach.tiers.size)
-            assertEquals(listOf(25, 50, 75, 100, 150), ach.tiers.map { it.gemReward })
+            assertEquals(listOf(50, 100, 200, 500, 1000), ach.tiers.map { it.gemReward })
         }
     }
 
     @Test
     @DisplayName("Rule 8: Tamper-resistant cryptographic integrity check")
     fun testRule8_TamperResistantIntegrity() {
-        economyService.claimMissionReward("m_1", 20)
+        economyService.claimMissionReward("m_1", 1200)
         economyService.claimMissionReward("m_2", 25)
-        economyService.purchaseCosmetic("palette_lavender", 40)
+        economyService.purchaseCosmetic("palette_lavender", 1200)
 
         assertTrue(ledger.verifyIntegrity())
 
@@ -191,25 +192,26 @@ class CurrencyRulesTest {
 
         // Tamper simulation: invalid previous hash
         val tamperedTx = transactions[1].copy(previousHash = "CORRUPTED_HASH")
-        val tamperedLedger = TransactionLedger(listOf(transactions[0], tamperedTx, transactions[2]))
-        assertFalse(tamperedLedger.verifyIntegrity())
+        assertThrows(IllegalArgumentException::class.java) {
+            TransactionLedger(listOf(transactions[0], tamperedTx, transactions[2]))
+        }
     }
 
     @Test
     @DisplayName("Rule 9: Non-expiring currency")
     fun testRule9_NonExpiringCurrency() {
         // Transaction recorded at t = 0
-        economyService.claimMissionReward("m_old", 100, timestampMs = 1_000_000L)
-        assertEquals(100, economyService.wallet.gemBalance)
+        economyService.claimMissionReward("m_old", 1300, timestampMs = 1_000_000L)
+        assertEquals(1300, economyService.wallet.gemBalance)
 
         // Forward time by 1 year (365 days = 31,536,000,000 ms)
         val oneYearLater = 1_000_000L + 31_536_000_000L
-        assertEquals(100, economyService.wallet.gemBalance)
+        assertEquals(1300, economyService.wallet.gemBalance)
 
         // Can still spend the balance normally
-        val spend = economyService.purchaseCosmetic("palette_lavender", 80, timestampMs = oneYearLater)
+        val spend = economyService.purchaseCosmetic("palette_lavender", 1200, timestampMs = oneYearLater)
         assertTrue(spend is TransactionResult.Success)
-        assertEquals(20, economyService.wallet.gemBalance)
+        assertEquals(100, economyService.wallet.gemBalance)
     }
 
     @Test

@@ -15,6 +15,7 @@ class CosmeticService(
      * Purchases an Earnable cosmetic item using earned Gems.
      * Enforces Rule 5 (sufficient balance) and Rule 6 (zero pay-to-win).
      */
+    @Synchronized
     fun purchaseEarnable(
         itemId: String,
         economyService: EconomyService,
@@ -47,9 +48,7 @@ class CosmeticService(
         for (item in matchingItems) {
             inventory.unlock(item.id)
         }
-        for (id in idsToUnlock) {
-            inventory.unlock(id)
-        }
+
         return matchingItems
     }
 }

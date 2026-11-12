@@ -13,7 +13,15 @@ class AchievementService(
     private val achievements = mutableMapOf<String, Achievement>()
 
     init {
+        require(initialAchievements.map { it.id }.distinct().size == initialAchievements.size)
         for (ach in initialAchievements) {
+            val canonical = AchievementCatalog.createInitialCatalog().firstOrNull { it.id == ach.id }
+                ?: throw IllegalArgumentException("Unknown restored achievement: ${ach.id}")
+            require(ach.currentValue >= 0 && ach.tiers.size == canonical.tiers.size)
+            require(ach.tiers.zip(canonical.tiers).all { (a, b) ->
+                a.tierIndex == b.tierIndex && a.requiredValue == b.requiredValue && a.gemReward == b.gemReward &&
+                    (!a.isClaimed || ach.currentValue >= a.requiredValue)
+            }) { "Invalid restored achievement tiers" }
             achievements[ach.id] = ach
         }
     }
@@ -64,6 +72,9 @@ class AchievementService(
                 ?: throw IllegalArgumentException("Tier $tierIndex not found in achievement '$achievementId'")
 
             if (tier.isClaimed) {
+                check(economyService.ledger.findByIdempotencyKey("CLAIM_ACH_${achievementId}_TIER_${tierIndex}") != null) {
+                    "Claimed achievement is missing its ledger transaction"
+                }
                 // Return idempotent result
                 val txResult = economyService.claimAchievementReward(achievementId, tierIndex, tier.gemReward, timestampMs)
                 return Pair(achievement, txResult)

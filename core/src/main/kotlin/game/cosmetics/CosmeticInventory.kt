@@ -15,8 +15,16 @@ class CosmeticInventory(
         )
     }
 
-    private val unlocked = mutableSetOf<String>().apply { addAll(initialUnlockedIds) }
-    private val equipped = mutableMapOf<CosmeticType, String>().apply { putAll(initialEquipped) }
+    private val unlocked = mutableSetOf<String>().apply {
+        addAll(CosmeticCatalog.DEFAULT_UNLOCKED_IDS)
+        addAll(initialUnlockedIds.filter { CosmeticCatalog.getItem(it) != null })
+    }
+    private val equipped = mutableMapOf<CosmeticType, String>().apply {
+        putAll(defaultEquippedMap())
+        initialEquipped.forEach { (type, id) ->
+            if (id in unlocked && CosmeticCatalog.getItem(id)?.type == type) put(type, id)
+        }
+    }
 
     fun isOwned(id: String): Boolean = synchronized(unlocked) {
         unlocked.contains(id)
@@ -31,7 +39,7 @@ class CosmeticInventory(
     }
 
     fun unlock(id: String): Boolean = synchronized(unlocked) {
-        unlocked.add(id)
+        if (CosmeticCatalog.getItem(id) == null) false else unlocked.add(id)
     }
 
     fun getEquipped(type: CosmeticType): String? = synchronized(equipped) {
@@ -40,7 +48,7 @@ class CosmeticInventory(
 
     fun equip(id: String, type: CosmeticType? = null): Boolean = synchronized(unlocked) {
         val targetType = type ?: CosmeticCatalog.getItem(id)?.type ?: return false
-        if (!unlocked.contains(id)) return false
+        if (!unlocked.contains(id) || CosmeticCatalog.getItem(id)?.type != targetType) return false
         synchronized(equipped) {
             equipped[targetType] = id
         }

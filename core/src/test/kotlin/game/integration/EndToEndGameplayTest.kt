@@ -39,7 +39,7 @@ class EndToEndGameplayTest {
             objective = MissionObjective.MATCH_TILES,
             targetCount = 2,
             currentCount = 0,
-            gemReward = 200,
+            gemReward = 1200,
             status = MissionStatus.IN_PROGRESS,
             createdAtMs = 1000L,
             expiryTimeMs = 100000L
@@ -88,7 +88,7 @@ class EndToEndGameplayTest {
         // 3. Claim completed mission reward
         val (claimedMission, txResult) = missionService.claimMission("e2e_daily_tile_master", economyService, timestampMs = 3000L)
         assertEquals(MissionStatus.CLAIMED, claimedMission.status)
-        assertEquals(200, economyService.getGemBalance(), "Gems credited to wallet upon explicit claim")
+        assertEquals(1200, economyService.getGemBalance(), "Gems credited to wallet upon explicit claim")
         assertEquals(1, ledger.getTransactionCount())
 
         // 4. Purchase Earnable Cosmetic item from Store using Gems

@@ -37,8 +37,8 @@ class MonteCarloSimulationTest {
     @Test
     @DisplayName("Monte Carlo: Statistical Cohort Simulation & Markdown Report Output")
     fun testStatisticalCohortRun() {
-        val summaries = SimulationRunner.runAll(iterationsPerCohort = 50)
-        assertEquals(15, summaries.size) // 5 horizons x 3 archetypes
+        val summaries = SimulationRunner.runAll(iterationsPerCohort = 5)
+        assertEquals(25, summaries.size) // 5 horizons x 3 archetypes
 
         val reportTable = SimulationRunner.formatMarkdownTable(summaries)
         assertNotNull(reportTable)

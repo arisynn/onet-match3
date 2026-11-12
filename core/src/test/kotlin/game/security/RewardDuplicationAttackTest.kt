@@ -301,7 +301,6 @@ class RewardDuplicationAttackTest {
         val tamperedTx = originalTxList[0].copy(amount = 9999) // Tamper amount without valid hash
         val tamperedList = listOf(tamperedTx, originalTxList[1])
 
-        val tamperedLedger = TransactionLedger(tamperedList)
-        assertFalse(tamperedLedger.verifyIntegrity(), "Tampered transaction payload must fail hash integrity check")
+        assertThrows<IllegalArgumentException> { TransactionLedger(tamperedList) }
     }
 }

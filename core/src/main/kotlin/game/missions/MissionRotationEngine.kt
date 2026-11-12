@@ -7,7 +7,7 @@ import java.util.Random
  * Enforces Rule 1 (Gems can only be earned from claiming missions/achievements)
  * and Rule 7 (Deterministic and transparent rewards).
  */
-class MissionRotationEngine(private val rng: Random = Random(42)) {
+class MissionRotationEngine(private val rng: Random = Random(42), private val rewards: MissionRewardConfig = MissionRewardConfig()) {
 
     companion object {
         const val DAILY_SLOT_COUNT = 3
@@ -67,7 +67,7 @@ class MissionRotationEngine(private val rng: Random = Random(42)) {
                 objective = template.objective,
                 targetCount = template.target,
                 currentCount = 0,
-                gemReward = template.gemReward,
+                gemReward = rewards.daily[index],
                 status = MissionStatus.IN_PROGRESS,
                 createdAtMs = currentTimeMs,
                 expiryTimeMs = expiry,
@@ -94,7 +94,7 @@ class MissionRotationEngine(private val rng: Random = Random(42)) {
                 objective = template.objective,
                 targetCount = template.target,
                 currentCount = 0,
-                gemReward = template.gemReward,
+                gemReward = rewards.weekly[index],
                 status = MissionStatus.IN_PROGRESS,
                 createdAtMs = currentTimeMs,
                 expiryTimeMs = expiry,
@@ -120,21 +120,25 @@ class MissionRotationEngine(private val rng: Random = Random(42)) {
             generateWeeklyMissions(currentTimeMs, epoch)
         }
 
-        val preservedUnclaimed = currentActive.filter { it.type == type && it.isClaimable }
-        val nonExpired = currentActive.filter { it.type == type && it.expiryTimeMs > currentTimeMs && !it.isClaimable }
-
-        val result = mutableListOf<Mission>()
-        result.addAll(preservedUnclaimed) // Preserve unclaimed completed missions
-        result.addAll(nonExpired)
-
-        val targetCount = if (type == MissionType.DAILY) DAILY_SLOT_COUNT else WEEKLY_SLOT_COUNT
-        for (fresh in freshMissions) {
-            if (result.count { it.type == type } >= targetCount) break
-            if (result.none { it.id == fresh.id }) {
-                result.add(fresh)
-            }
-        }
+        val periodIds = freshMissions.map { it.id }.toSet()
+        val existing = currentActive.filter { it.type == type }.associateBy { it.id }
+        // Old earned rewards remain claimable without taking away today's mission slots.
+        val result = currentActive.filter { it.type == type && it.isClaimable && it.id !in periodIds }.toMutableList()
+        freshMissions.forEach { fresh -> result.add(existing[fresh.id] ?: fresh) }
 
         return result
+    }
+}
+
+
+/** Reward budgets are deterministic by slot, independently of shuffled objectives. */
+data class MissionRewardConfig(
+    val daily: List<Int> = listOf(20, 30, 50),
+    val weekly: List<Int> = listOf(60, 60, 80)
+) {
+    init {
+        require(daily.size == 3 && weekly.size == 3)
+        require((daily + weekly).all { it > 0 })
+        require(daily.sumOf { it.toLong() } <= 100 && weekly.sumOf { it.toLong() } <= 200)
     }
 }

@@ -29,7 +29,7 @@ class AchievementSystemTest {
         for (ach in all) {
             assertEquals(5, ach.tiers.size)
             assertEquals(listOf(1, 2, 3, 4, 5), ach.tiers.map { it.tierIndex })
-            assertEquals(listOf(25, 50, 75, 100, 150), ach.tiers.map { it.gemReward })
+            assertEquals(listOf(50, 100, 200, 500, 1000), ach.tiers.map { it.gemReward })
         }
     }
 
@@ -49,13 +49,13 @@ class AchievementSystemTest {
 
         // Claim Tier 1 (25 gems)
         val (updated1, tx1) = service.claimTier("onet_master", 1, economyService)
-        assertEquals(25, economyService.wallet.gemBalance)
+        assertEquals(50, economyService.wallet.gemBalance)
         assertTrue(updated1.tiers.first { it.tierIndex == 1 }.isClaimed)
         assertFalse(updated1.isTierClaimable(1)) // No longer claimable
 
         // Claim Tier 2 (50 gems)
         val (updated2, tx2) = service.claimTier("onet_master", 2, economyService)
-        assertEquals(75, economyService.wallet.gemBalance)
+        assertEquals(150, economyService.wallet.gemBalance)
         assertTrue(updated2.tiers.first { it.tierIndex == 2 }.isClaimed)
 
         // Attempting to claim Tier 3 before reaching 200 throws exception
@@ -70,10 +70,10 @@ class AchievementSystemTest {
         service.syncStats(stats)
 
         val (firstClaim, _) = service.claimTier("onet_master", 1, economyService)
-        assertEquals(25, economyService.wallet.gemBalance)
+        assertEquals(50, economyService.wallet.gemBalance)
 
         // Repeat claim call
         val (repeatClaim, _) = service.claimTier("onet_master", 1, economyService)
-        assertEquals(25, economyService.wallet.gemBalance) // Unchanged!
+        assertEquals(50, economyService.wallet.gemBalance) // Unchanged!
     }
 }

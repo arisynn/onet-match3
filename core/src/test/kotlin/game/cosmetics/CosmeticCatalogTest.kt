@@ -47,13 +47,13 @@ class CosmeticCatalogTest {
     @Test
     fun testPurchaseEarnableCosmetic() {
         // Credit sufficient gems
-        economyService.claimMissionReward("m_seed", 300)
-        assertEquals(300, economyService.wallet.gemBalance)
+        economyService.claimMissionReward("m_seed", 1300)
+        assertEquals(1300, economyService.wallet.gemBalance)
 
         val result = service.purchaseEarnable("theme_reward_bakery", economyService)
         assertTrue(result is PurchaseResult.Success)
         assertTrue(inventory.isOwned("theme_reward_bakery"))
-        assertEquals(100, economyService.wallet.gemBalance) // 300 - 200 = 100
+        assertEquals(100, economyService.wallet.gemBalance) // 11300 - 1200 = 100
 
         // Repurchasing already owned returns AlreadyOwned without debiting
         val repeatResult = service.purchaseEarnable("theme_reward_bakery", economyService)
@@ -66,7 +66,7 @@ class CosmeticCatalogTest {
         economyService.claimMissionReward("m_seed", 50)
         assertEquals(50, economyService.wallet.gemBalance)
 
-        // Cost is 200 gems
+        // Cost is 1200 gems
         assertThrows(InsufficientFundsException::class.java) {
             service.purchaseEarnable("theme_reward_bakery", economyService)
         }

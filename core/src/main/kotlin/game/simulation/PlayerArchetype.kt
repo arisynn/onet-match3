@@ -13,6 +13,8 @@ data class PlayerArchetype(
     val flawlessRate: Double = 0.30
 ) {
     companion object {
+        val NEW_PLAYER = PlayerArchetype("New player", 2, 0.65, 0.30, 35, 2, 0.10)
+        val LONG_TERM = PlayerArchetype("Long-term player", 10, 0.85, 0.90, 55, 9, 0.45)
         val CASUAL = PlayerArchetype(
             name = "Casual (Zen Explorer)",
             roundsPerDay = 3,
@@ -73,5 +75,8 @@ data class CohortSummary(
     val p90Gems: Int,
     val meanItemsUnlocked: Double,
     val meanSatiationPercent: Double,
-    val medianFirstUnlockDay: Int?
+    val medianFirstUnlockDay: Int?,
+    val meanGemsSpent: Double = 0.0,
+    val meanUnspentBalance: Double = 0.0,
+    val meanCatalogExhaustionDay: Double? = null
 )

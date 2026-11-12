@@ -30,6 +30,7 @@ class MonteCarloSimulator(private val baseSeed: Long = 1337L) {
         days: Int,
         rng: Random
     ): TrajectoryMetrics {
+        require(days > 0)
         val ledger = TransactionLedger()
         val economyService = EconomyService(ledger)
         val missionRotationEngine = MissionRotationEngine(Random(rng.nextLong()))
@@ -57,55 +58,31 @@ class MonteCarloSimulator(private val baseSeed: Long = 1337L) {
             // 1. Mission Rotation & Rollover
             missionService.refreshMissions(currentTimeMs)
 
-            // 2. Simulate Daily Gameplay
-            var dailyTilesMatched = 0L
-            var dailyFlawlessRounds = 0
-            for (round in 1..archetype.roundsPerDay) {
+            // Engagement is probabilistic; objective progress only comes from
+            // simulated gameplay events, never an invented "mission completed" roll.
+            val engagedToday = rng.nextDouble() < archetype.dailyMissionCompletionRate
+            for (round in 0 until (if (engagedToday) archetype.roundsPerDay else 0)) {
                 val isOnet = rng.nextBoolean()
-                val tilesInRound = archetype.averageTilesPerRound + rng.nextInt(15) - 7
-                val combo = archetype.averageCombo + rng.nextInt(5) - 2
-                val isFlawless = rng.nextDouble() < archetype.flawlessRate
-
-                dailyTilesMatched += tilesInRound
-                if (isFlawless) dailyFlawlessRounds++
-
+                val tilesInRound = (archetype.averageTilesPerRound + rng.nextInt(15) - 7).coerceAtLeast(0)
+                val combo = (archetype.averageCombo + rng.nextInt(5) - 2).coerceAtLeast(0)
+                val won = rng.nextDouble() < (0.65 + archetype.weeklyMissionCompletionRate * 0.25)
+                val isFlawless = won && rng.nextDouble() < archetype.flawlessRate
+                val remainingRatio = if (won) rng.nextFloat() * 0.75f else 0f
+                val theme = if (isOnet) "candy" else "ocean"
                 if (isOnet) {
-                    stats = stats.recordOnetRound(
-                        won = true,
-                        tilesMatched = tilesInRound,
-                        maxCombo = combo,
-                        hintsUsedInRound = if (isFlawless) 0 else 1,
-                        shufflesUsedInRound = 0,
-                        remainingTimeRatio = 0.60f,
-                        theme = "candy"
-                    )
+                    stats = stats.recordOnetRound(won, tilesInRound, combo,
+                        if (isFlawless) 0 else 1, 0, remainingRatio, theme)
                 } else {
-                    stats = stats.recordTripleMatchRound(
-                        won = true,
-                        triosMatched = tilesInRound / 3,
-                        undosUsedInRound = if (isFlawless) 0 else 1,
-                        remainingTimeRatio = 0.55f,
-                        theme = "ocean"
-                    )
+                    stats = stats.recordTripleMatchRound(won, tilesInRound / 3,
+                        if (isFlawless) 0 else 1, remainingRatio, theme)
                 }
-            }
-
-            // 3. Evaluate and Progress Active Missions
-            for (mission in missionService.getActiveMissions()) {
-                if (mission.status == MissionStatus.IN_PROGRESS) {
-                    val rate = if (mission.type == MissionType.DAILY) {
-                        archetype.dailyMissionCompletionRate
-                    } else {
-                        archetype.weeklyMissionCompletionRate
-                    }
-
-                    // Chance of completing mission today based on archetype
-                    if (rng.nextDouble() < rate) {
-                        missionService.recordProgress(
-                            objective = mission.objective,
-                            amount = mission.targetCount
-                        )
-                    }
+                missionService.recordProgress(MissionObjective.MATCH_TILES, tilesInRound)
+                missionService.recordProgress(MissionObjective.COMBO_STREAK, combo)
+                missionService.recordProgress(MissionObjective.PLAY_THEME, theme = theme)
+                if (won) {
+                    missionService.recordProgress(if (isOnet) MissionObjective.WIN_ONET_ROUNDS else MissionObjective.WIN_TRIPLE_MATCH_ROUNDS)
+                    if (isFlawless) missionService.recordProgress(MissionObjective.FLAWLESS_ROUNDS)
+                    if (remainingRatio >= 0.5f) missionService.recordProgress(MissionObjective.FAST_ROUNDS)
                 }
             }
 
@@ -172,6 +149,7 @@ class MonteCarloSimulator(private val baseSeed: Long = 1337L) {
         days: Int,
         iterations: Int = 100
     ): CohortSummary {
+        require(days > 0 && iterations > 0)
         val runs = mutableListOf<TrajectoryMetrics>()
         for (i in 0 until iterations) {
             val trajectoryRng = Random(baseSeed + (i * 7919L) + (days * 31L))
@@ -206,7 +184,10 @@ class MonteCarloSimulator(private val baseSeed: Long = 1337L) {
             p90Gems = gemsEarnedList[p90Index],
             meanItemsUnlocked = meanUnlocked,
             meanSatiationPercent = meanSatiation,
-            medianFirstUnlockDay = medianFirstUnlock
+            medianFirstUnlockDay = medianFirstUnlock,
+            meanGemsSpent = runs.map { it.cumulativeGemsSpent }.average(),
+            meanUnspentBalance = runs.map { it.finalBalance }.average(),
+            meanCatalogExhaustionDay = runs.mapNotNull { it.dayCatalogExhausted }.takeIf { it.isNotEmpty() }?.average()
         )
     }
 }
