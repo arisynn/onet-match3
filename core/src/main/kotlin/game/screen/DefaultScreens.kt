@@ -76,7 +76,7 @@ class MainMenuScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.14f, 0.16f, 0.22f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -132,7 +132,7 @@ class ModeSelectScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.13f, 0.15f, 0.20f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -175,7 +175,7 @@ class LevelSelectScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.12f, 0.15f, 0.20f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -229,7 +229,7 @@ class OnetGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.15f, 0.18f, 0.23f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -366,7 +366,7 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.18f, 0.20f, 0.25f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -462,7 +462,7 @@ class VictoryScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.10f, 0.16f, 0.12f, 0.95f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -506,7 +506,7 @@ class DefeatScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.20f, 0.10f, 0.10f, 0.95f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -542,7 +542,7 @@ class PauseScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.08f, 0.10f, 0.14f, 0.90f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -591,7 +591,7 @@ class MissionCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.14f, 0.17f, 0.22f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -659,7 +659,7 @@ class AchievementCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.14f, 0.17f, 0.22f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -711,7 +711,7 @@ class PlayerProfileScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.13f, 0.16f, 0.22f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -749,7 +749,7 @@ class CosmeticCollectionScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.15f, 0.18f, 0.24f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -793,7 +793,7 @@ class CosmeticShopScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.16f, 0.18f, 0.25f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -826,7 +826,7 @@ class SettingsScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.12f, 0.14f, 0.18f, 1f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 
@@ -872,7 +872,7 @@ class CosmeticPreviewScreen(game: OnetMatch3Game) : BaseScreen(game) {
         backgroundColor = Color(0.10f, 0.12f, 0.16f, 0.95f)
         addInputProcessor(object : InputAdapter() {
             override fun touchUp(screenX: Int, screenY: Int, pointer: Int, button: Int): Boolean {
-                val touch = viewport.unproject(com.badlogic.gdx.math.Vector2(screenX.toFloat(), screenY.toFloat()))
+                val touch = inputPoint(screenX, screenY)
                 val x = touch.x
                 val y = touch.y
 

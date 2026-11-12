@@ -1,0 +1,230 @@
+{
+  "tile-ivory": {
+    "path": "ui-native/tile-ivory.png",
+    "source": "assets/ui-kit/tile-bodies/square-ivory.webp",
+    "sourceSha256": "a6ce30804f15e80f9b5416892f7ff1cda1e2eb73930ec4d14537d0ad5c126643",
+    "sha256": "098322670f30cd9832b66442431a6bd3c7bec52a05652c7d2ab0ec7a3b81b6c0",
+    "bounds": [
+      44,
+      44,
+      424,
+      423
+    ]
+  },
+  "tile-mint": {
+    "path": "ui-native/tile-mint.png",
+    "source": "assets/ui-kit/tile-bodies/square-mint.webp",
+    "sourceSha256": "55cd8493f1e8ef7d84fbb5f99268da2c3f53344bbbe282d152d8bb402cae5d45",
+    "sha256": "1ca74cda7270602eefdfe7331dbdc3a6111054cc4d774724d93daf943ee49404",
+    "bounds": [
+      44,
+      45,
+      424,
+      422
+    ]
+  },
+  "button-mint": {
+    "path": "ui-native/button-mint.png",
+    "source": "assets/ui-kit/tile-bodies/horizontal-mint.webp",
+    "sourceSha256": "384b85de6ac0acc5d091f2bb1163322d00079960f53258e98de41834d30cf362",
+    "sha256": "b5a629b60d450becaae7094dfc44e3bed7c353978693036a7b7b1aa6d9d0a834",
+    "bounds": [
+      85,
+      33,
+      598,
+      318
+    ]
+  },
+  "panel-ivory": {
+    "path": "ui-native/panel-ivory.png",
+    "source": "assets/ui-kit/panels/ivory.webp",
+    "sourceSha256": "72edc2cd4a29d97913a380181e9f1a0dc6ab91fa81ba6017e8fd30db14bd5e2d",
+    "sha256": "e54de7e1cb6faec14c0eb66f664cea2fe5691fcc61a3ae63e268d6abf7e12f5e",
+    "bounds": [
+      131,
+      44,
+      506,
+      424
+    ]
+  },
+  "panel-mint": {
+    "path": "ui-native/panel-mint.png",
+    "source": "assets/ui-kit/panels/mint.webp",
+    "sourceSha256": "df0214d58e3b39c5e54af295c54d67516e9054bd106ca97358bc8279d3b9a6f3",
+    "sha256": "77cc60a8e4691ac87012018901ba5ed9cb337b43b0f24eab0001480f93907999",
+    "bounds": [
+      129,
+      44,
+      509,
+      424
+    ]
+  },
+  "slot-mint": {
+    "path": "ui-native/slot-mint.png",
+    "source": "assets/ui-kit/slots/mint.webp",
+    "sourceSha256": "e7ea131ba661b951659f275e14a7ca0454ff862c0a4bcb2b5c253d6f8ecbaf4b",
+    "sha256": "ea04ac86c911f5290b67152b9456f9c5afea2f8b2c9c0772193920e34b9dfd12",
+    "bounds": [
+      33,
+      33,
+      318,
+      317
+    ]
+  },
+  "spa": {
+    "path": "ui-native/spa.png",
+    "source": "assets/ui-kit/backgrounds/spa-portrait.webp",
+    "sourceSha256": "adf953f9f13084ba52d613d70e0e6800cd8a4a065e4cc867ae9faf327df8c69b",
+    "sha256": "6b15582c8eb642630a789fdcbec105dce77304a6d4c60e0b31a39cc31121a596",
+    "bounds": [
+      0,
+      0,
+      1024,
+      1536
+    ]
+  },
+  "victory": {
+    "path": "ui-native/victory.png",
+    "source": "assets/ui-kit/results/victory.webp",
+    "sourceSha256": "494c68a7862a232900680b618e18969d2801381b5935cb1cd31ee68482700d88",
+    "sha256": "7fbc3185b6094f0d58beeaa02b94dc19618b0cfca684a1b87277575f6f4433d9",
+    "bounds": [
+      65,
+      79,
+      638,
+      609
+    ]
+  },
+  "pause": {
+    "path": "ui-native/pause.png",
+    "source": "assets/ui-kit/results/pause.webp",
+    "sourceSha256": "a05b4e7af1862d30a9fe56623ab030503590018c3f7157e9d5ad20dd97d7bddb",
+    "sha256": "544dc35c745dfb69ea475f840d74b7bdd0ef88c96173613cb13a8e083bfd0f3c",
+    "bounds": [
+      65,
+      111,
+      638,
+      545
+    ]
+  },
+  "time-up": {
+    "path": "ui-native/time-up.png",
+    "source": "assets/ui-kit/results/time-up.webp",
+    "sourceSha256": "f40486eb9ad4b00fcfe635c5fa8a133025e6db5ba21abcb430649c371d69cf70",
+    "sha256": "9270aad664ea333f10b341a359180230ecb1205485b4e4b31840691c5d14f1f4",
+    "bounds": [
+      93,
+      65,
+      580,
+      638
+    ]
+  },
+  "tray-full": {
+    "path": "ui-native/tray-full.png",
+    "source": "assets/ui-kit/results/tray-full.webp",
+    "sourceSha256": "9746a3a26b078d32f98bf58894eba7be806c01433459b4b21c015b1767324c70",
+    "sha256": "67cc79a181cdd384a42f8343518cff1c33ba895dc6ba2517809ab8447842b9d7",
+    "bounds": [
+      65,
+      139,
+      638,
+      490
+    ]
+  },
+  "new-level": {
+    "path": "ui-native/new-level.png",
+    "source": "assets/ui-kit/results/new-level.webp",
+    "sourceSha256": "a25cd24080f73109374558385887cc2e553349cc1fe9320ea51e76f0db4b4e84",
+    "sha256": "477370a6b61298b0873dba3aa672e0652549301b209287900a89858583b9a192",
+    "bounds": [
+      65,
+      111,
+      638,
+      545
+    ]
+  },
+  "reward": {
+    "path": "ui-native/reward.png",
+    "source": "assets/ui-kit/results/reward.webp",
+    "sourceSha256": "1d3c340ad4ff781760468f391580d40b987c01e7ed72a795cf180ab2f8b0a405",
+    "sha256": "73dffc1b1307f4aeb8fce4597846f3160d51656e32a752c3a4a1e90fc4dd621a",
+    "bounds": [
+      65,
+      70,
+      638,
+      627
+    ]
+  },
+  "fern": {
+    "path": "ui-native/fern.png",
+    "source": "assets/ui-kit/decorations/fern-stones.webp",
+    "sourceSha256": "74ac2df01c03dcc1100a1031c73192c02bb0c0c820380dc0a7e63ce2c663992a",
+    "sha256": "39a62d81a99b244872b81ccd09aacb0a77ebcfb8f402f8c0d0f9388246b86649",
+    "bounds": [
+      76,
+      44,
+      359,
+      424
+    ]
+  },
+  "succulent": {
+    "path": "ui-native/succulent.png",
+    "source": "assets/ui-kit/decorations/succulent-cluster.webp",
+    "sourceSha256": "686c755ac938137818b8e544ca636db03ffa3ca0a2e41b2473799a8df9d666ce",
+    "sha256": "4d7c18a8a5bc02eb56b159da0255186daba49032b2d04c09ac878acc07a7a78a",
+    "bounds": [
+      44,
+      103,
+      424,
+      305
+    ]
+  },
+  "hint": {
+    "path": "ui-native/hint.png",
+    "source": "assets/tools/hint.webp",
+    "sourceSha256": "ed13ae7123e32f86e70a29b1c422b67b40744e7e9847abc9cb0eb75f3790eba8",
+    "sha256": "0e1fedd1553b215f0a5fc8c2859e9777683230e164f04aa1efffa203b2e33864",
+    "bounds": [
+      36,
+      31,
+      184,
+      193
+    ]
+  },
+  "shuffle": {
+    "path": "ui-native/shuffle.png",
+    "source": "assets/tools/shuffle.webp",
+    "sourceSha256": "eae1e91b302a0f2f400bfa9b6ff82859da69cf928ec806fb2f88bab93e3336eb",
+    "sha256": "06bd95adb26f79ec7ab9bae3905a09ab41472d3fdd04f0c2afa39198949ed7c2",
+    "bounds": [
+      32,
+      46,
+      191,
+      164
+    ]
+  },
+  "onet": {
+    "path": "ui-native/onet.png",
+    "source": "assets/tools/onet.webp",
+    "sourceSha256": "b1675a8c03a88ad627990fb2332c55eb38113722a2ece636dd4be467b5a267ef",
+    "sha256": "e3a7c4bf0244b1c2fe7efdefa4da74a46acb5ce689a5475327d69a7487d07a8e",
+    "bounds": [
+      25,
+      36,
+      206,
+      184
+    ]
+  },
+  "triple": {
+    "path": "ui-native/triple.png",
+    "source": "assets/tools/triple.webp",
+    "sourceSha256": "7ca887116c99cdc776e56d4521fa3fd92f288ceb9022702e71b127577deaa2de",
+    "sha256": "39c4ee3334e0218dc745bba7fa060db479e72bf16ffa157116c665baec690a5c",
+    "bounds": [
+      55,
+      33,
+      146,
+      190
+    ]
+  }
+}

@@ -7,7 +7,8 @@ import com.badlogic.gdx.Screen
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.OrthographicCamera
-import com.badlogic.gdx.utils.viewport.FitViewport
+import com.badlogic.gdx.utils.viewport.ExtendViewport
+import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.utils.viewport.Viewport
 import game.OnetMatch3Game
 
@@ -22,7 +23,7 @@ abstract class BaseScreen(
 ) : Screen {
 
     val camera: OrthographicCamera = OrthographicCamera()
-    val viewport: Viewport = FitViewport(virtualWidth, virtualHeight, camera)
+    val viewport: Viewport = ExtendViewport(virtualWidth, virtualHeight, camera)
     val inputMultiplexer: InputMultiplexer = InputMultiplexer()
 
     var backgroundColor: Color = Color(0.12f, 0.12f, 0.15f, 1.0f)
@@ -68,12 +69,23 @@ abstract class BaseScreen(
         inputMultiplexer.removeProcessor(processor)
     }
 
+    protected open val responsiveLayout: Boolean = false
+    private val contentOffsetX: Float get() = if (responsiveLayout) 0f else (viewport.worldWidth - virtualWidth) / 2f
+    private val contentOffsetY: Float get() = if (responsiveLayout) 0f else (viewport.worldHeight - virtualHeight) / 2f
+
+    protected fun inputPoint(screenX: Int, screenY: Int): Vector2 =
+        viewport.unproject(Vector2(screenX.toFloat(), screenY.toFloat())).sub(contentOffsetX, contentOffsetY)
+
+    fun projectUi(point: Vector2): Vector2 = viewport.project(point.add(contentOffsetX, contentOffsetY))
+
     private var screenUi: ScreenUi? = null
 
     protected fun ui(draw: ScreenUi.() -> Unit) {
         if (Gdx.gl == null) return
         val renderer = screenUi ?: ScreenUi().also { screenUi = it }
-        renderer.render(camera.combined, draw)
+        val pointer = if (Gdx.input?.isTouched == true) inputPoint(Gdx.input.x, Gdx.input.y) else null
+        renderer.render(camera.combined, viewport.worldWidth, viewport.worldHeight,
+            contentOffsetX, contentOffsetY, pointer, draw)
     }
 
     fun renderStatic() { renderFrame(0f, false) }

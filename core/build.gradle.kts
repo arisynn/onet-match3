@@ -20,6 +20,7 @@ kotlin {
 dependencies {
     // libGDX core
     api("com.badlogicgames.gdx:gdx:$gdxVersion")
+    implementation("com.badlogicgames.gdx:gdx-freetype:$gdxVersion")
 
     // Kotlin Coroutines & Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
