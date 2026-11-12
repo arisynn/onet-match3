@@ -16,8 +16,7 @@ import game.screen.*
  * Main application bootstrap for Onet + Triple Match.
  * Orchestrates ScreenManager, AssetService, domain engines, and audio lifecycle across Android and Desktop.
  */
-class OnetMatch3Game(val diagnostics: (String) -> Unit = {}) : Game() {
-    private var diagnosticElapsed = 0f
+class OnetMatch3Game : Game() {
 
     lateinit var assetService: AssetService
         private set
@@ -43,8 +42,7 @@ class OnetMatch3Game(val diagnostics: (String) -> Unit = {}) : Game() {
     var lastResultReason: String = ""
 
     override fun create() {
-        diagnostics("Game create() entered; GL=${Gdx.gl?.glGetString(com.badlogic.gdx.graphics.GL20.GL_VERSION)}")
-        assetService = AssetService(diagnostics = diagnostics)
+        assetService = AssetService()
         soundService = SoundService(assetService)
         screenManager = ScreenManager(this)
 
@@ -52,7 +50,6 @@ class OnetMatch3Game(val diagnostics: (String) -> Unit = {}) : Game() {
 
         // Kick off with boot screen
         screenManager.setScreen(ScreenType.BOOT)
-        diagnostics("Game create() completed")
     }
 
     private fun registerAllScreens() {
@@ -100,12 +97,6 @@ class OnetMatch3Game(val diagnostics: (String) -> Unit = {}) : Game() {
     override fun render() {
         val delta = Gdx.graphics?.deltaTime ?: 0.016f
         screenManager.render(delta)
-        diagnosticElapsed += delta
-        if (diagnosticElapsed >= 2f) {
-            diagnosticElapsed = 0f
-            val v = screenManager.currentScreen?.viewport
-            diagnostics("Render: screen=${screenManager.currentScreenType} fps=${Gdx.graphics.framesPerSecond} surface=${Gdx.graphics.width}x${Gdx.graphics.height} viewport=${v?.screenWidth}x${v?.screenHeight} assets=${assetService.progress}")
-        }
     }
 
     override fun resize(width: Int, height: Int) {

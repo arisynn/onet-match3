@@ -11,9 +11,8 @@ class ScreenLifecycleTest {
     @DisplayName("Verify all 17 screens instantiate, initialize viewport, and handle lifecycle")
     fun testAllSeventeenScreensInstantiate() {
         val game = OnetMatch3Game()
-        // LoadingScreen now uses the real asset service; bootstrap its dependencies.
-        game.create()
-        try {
+        // Initialize services manually for headless unit testing
+        val screenManager = ScreenManager(game)
 
         for (type in ScreenType.values()) {
             val screen: BaseScreen = when (type) {
@@ -54,7 +53,6 @@ class ScreenLifecycleTest {
 
             assertTrue(screen.isDisposed, "Screen $type must be marked disposed after dispose()")
         }
-        } finally { game.dispose() }
     }
 
     @Test

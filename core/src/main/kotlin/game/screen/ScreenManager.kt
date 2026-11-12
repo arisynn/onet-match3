@@ -29,7 +29,6 @@ class ScreenManager(
     private var nextScreen: BaseScreen? = null
     private var nextScreenType: ScreenType? = null
     private var isTransitioning: Boolean = false
-    private var disposeAfterTransition: Boolean = true
 
     private var transitionBatch: SpriteBatch? = null
     private var transitionShapes: ShapeRenderer? = null
@@ -60,8 +59,6 @@ class ScreenManager(
         transition: ScreenTransition = InstantTransition,
         disposePrevious: Boolean = true
     ) {
-        if (isTransitioning) return
-        game.diagnostics("Screen transition: $currentScreenType -> $type")
         val factory = screenFactories[type]
             ?: error("Screen type $type has not been registered in ScreenManager.")
 
@@ -71,7 +68,6 @@ class ScreenManager(
             completeScreenSwitch(type, newScreen, disposePrevious)
         } else {
             // Animated transition setup
-            this.disposeAfterTransition = disposePrevious
             this.transition = transition
             this.nextScreen = newScreen
             this.nextScreenType = type
@@ -86,7 +82,6 @@ class ScreenManager(
      * Current screen is paused and hidden, but NOT disposed.
      */
     fun pushScreen(type: ScreenType, transition: ScreenTransition = InstantTransition) {
-        if (isTransitioning) return
         currentScreen?.let {
             it.pause()
             it.hide()
@@ -127,7 +122,6 @@ class ScreenManager(
         currentScreen = newScreen
         currentScreenType = type
 
-        game.diagnostics("Screen active: $type")
         newScreen.show()
         newScreen.resize(Gdx.graphics?.width ?: 540, Gdx.graphics?.height ?: 960)
     }
@@ -152,9 +146,8 @@ class ScreenManager(
                     currentScreen = nextScreen
                     currentScreenType = nextScreenType
                     old?.hide()
-                    if (disposeAfterTransition) old?.dispose()
+                    old?.dispose()
 
-                    game.diagnostics("Screen active: $currentScreenType")
                     currentScreen?.show()
                     currentScreen?.resize(Gdx.graphics?.width ?: 540, Gdx.graphics?.height ?: 960)
                     nextScreen = null
@@ -168,10 +161,6 @@ class ScreenManager(
                 val shapes = getShapes()
                 Gdx.gl.glEnable(GL20.GL_BLEND)
                 Gdx.gl.glBlendFunc(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA)
-                Gdx.gl.glViewport(0, 0, Gdx.graphics.width, Gdx.graphics.height)
-                shapes.projectionMatrix = com.badlogic.gdx.math.Matrix4().setToOrtho2D(
-                    0f, 0f, Gdx.graphics.width.toFloat(), Gdx.graphics.height.toFloat()
-                )
                 shapes.begin(ShapeRenderer.ShapeType.Filled)
                 transition.render(
                     batch,

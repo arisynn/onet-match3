@@ -14,8 +14,8 @@ android {
         applicationId = "com.onetmatch3.game"
         minSdk = 24
         targetSdk = 35
-        versionCode = 2
-        versionName = "1.0.1"
+        versionCode = 1
+        versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -47,8 +47,6 @@ android {
         }
     }
 
-    buildFeatures { buildConfig = true }
-
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -60,11 +58,6 @@ android {
             }
         }
         debug {
-            applicationIdSuffix = ".debug"
-            resValue("string", "app_name", "Onet + Triple Match Debug")
-            isMinifyEnabled = false
-            isShrinkResources = false
-            signingConfig = signingConfigs.getByName("debug")
             isDebuggable = true
         }
     }
