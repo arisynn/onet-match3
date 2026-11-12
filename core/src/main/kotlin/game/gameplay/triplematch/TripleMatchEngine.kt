@@ -197,6 +197,10 @@ object TripleMatchEngine {
         stacks: List<List<String>>? = null
     ) = createTripleRound(tileIds, rng, seconds, stacks)
 
+    fun difficulty(level: Int) = getTripleDifficulty(level)
+    fun createLevelRound(tileIds: List<String>, level: Int, rng: RandomGenerator = RandomGenerator { Math.random() }) =
+        createTripleLevelRound(tileIds, level, rng)
+
     fun startRound(state: TripleRoundState) = startTripleRound(state)
     fun pauseRound(state: TripleRoundState, paused: Boolean = true) = pauseTripleRound(state, paused)
     fun resolveTrio(tray: List<String>) = game.gameplay.triplematch.resolveTrio(tray)

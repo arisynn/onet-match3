@@ -30,7 +30,7 @@ fun getOnetDifficulty(input: Int = 1): OnetDifficulty {
         level < 6 -> 1
         else -> 2
     }
-    val time = max(75, 150 - (level - 1) * 2)
+    val time = max(75L, 150L - (level.toLong() - 1L) * 2L).toInt()
     val separation = min(8, 2 + level / 3)
     val arrowPairs = if (level < 8) 0 else min(6, 1 + (level - 8) / 4)
 

@@ -116,7 +116,8 @@ fun selectTile(state: OnetRoundState, r: Int, c: Int, now: Long = System.current
     if (tile.isSlave) {
         targetR = tile.masterR
         targetC = tile.masterC
-        tile = state.board[targetR][targetC] ?: return state
+        tile = state.board.getOrNull(targetR)?.getOrNull(targetC) ?: return state
+        if (tile.isSlave) return state
     }
 
     val b = Point(targetR, targetC)
@@ -129,7 +130,8 @@ fun selectTile(state: OnetRoundState, r: Int, c: Int, now: Long = System.current
         return state.copy(selected = null, event = null)
     }
 
-    val tileA = state.board[a.r][a.c]
+    val tileA = state.board.getOrNull(a.r)?.getOrNull(a.c)
+        ?: return state.copy(selected = b, event = null)
     if (!canMatch(tileA, tile)) {
         return state.copy(selected = b, event = null)
     }
@@ -143,7 +145,9 @@ fun selectTile(state: OnetRoundState, r: Int, c: Int, now: Long = System.current
         )
     }
 
-    val combo = if (state.lastMatchAt != null && (now - state.lastMatchAt) < COMBO_WINDOW_MS) {
+    // A restored wall-clock timestamp in the future must not prolong a streak.
+    val combo = if (state.lastMatchAt != null && now >= state.lastMatchAt &&
+        (now - state.lastMatchAt) in 0 until COMBO_WINDOW_MS) {
         state.combo + 1
     } else {
         1
