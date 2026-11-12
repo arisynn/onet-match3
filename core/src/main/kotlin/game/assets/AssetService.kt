@@ -11,7 +11,8 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas
  * Manages lifecycle, loading progress, and retrieval of visual & audio assets.
  */
 class AssetService(
-    val manager: AssetManager = AssetManager()
+    val manager: AssetManager = AssetManager(),
+    val diagnostics: (String) -> Unit = {}
 ) {
 
     val progress: Float
@@ -21,7 +22,10 @@ class AssetService(
         get() = manager.isFinished
 
     fun update(): Boolean {
-        return manager.update()
+        return try { manager.update() } catch (error: Throwable) {
+            diagnostics("ERROR asset loading: ${error.stackTraceToString()}")
+            throw error
+        }
     }
 
     fun finishLoading() {
@@ -32,24 +36,28 @@ class AssetService(
 
     fun loadTexture(path: String) {
         if (!manager.isLoaded(path, Texture::class.java)) {
+            diagnostics("Asset queued: $path")
             manager.load(path, Texture::class.java)
         }
     }
 
     fun loadAtlas(path: String) {
         if (!manager.isLoaded(path, TextureAtlas::class.java)) {
+            diagnostics("Asset queued: $path")
             manager.load(path, TextureAtlas::class.java)
         }
     }
 
     fun loadSound(path: String) {
         if (!manager.isLoaded(path, Sound::class.java)) {
+            diagnostics("Asset queued: $path")
             manager.load(path, Sound::class.java)
         }
     }
 
     fun loadMusic(path: String) {
         if (!manager.isLoaded(path, Music::class.java)) {
+            diagnostics("Asset queued: $path")
             manager.load(path, Music::class.java)
         }
     }

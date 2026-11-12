@@ -23,6 +23,16 @@ import kotlin.math.min
 class BootScreen(game: OnetMatch3Game) : BaseScreen(game) {
     private var timer = 0f
 
+    private var ui: StartupUi? = null
+    override fun onScreenShown() {
+        if (Gdx.gl == null) return
+        ui = StartupUi(this).apply {
+            text("Onet + Triple Match", 70f, 620f)
+            text("Starting...", 170f, 450f)
+        }
+    }
+    override fun onDispose() { ui?.dispose(); ui = null }
+
     init {
         backgroundColor = Color(0.08f, 0.08f, 0.11f, 1f)
     }
@@ -34,7 +44,7 @@ class BootScreen(game: OnetMatch3Game) : BaseScreen(game) {
         }
     }
 
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui?.draw(delta) }
 }
 
 // =============================================================================
@@ -43,24 +53,48 @@ class BootScreen(game: OnetMatch3Game) : BaseScreen(game) {
 class LoadingScreen(game: OnetMatch3Game) : BaseScreen(game) {
     private var simulatedProgress = 0f
 
+    private var ui: StartupUi? = null
+    override fun onScreenShown() {
+        if (Gdx.gl == null) return
+        ui = StartupUi(this).apply {
+            text("Loading...", 160f, 570f)
+        }
+    }
+    override fun onDispose() { ui?.dispose(); ui = null }
+
     init {
         backgroundColor = Color(0.10f, 0.12f, 0.16f, 1f)
     }
 
     override fun update(delta: Float) {
-        simulatedProgress = min(1f, simulatedProgress + delta * 2.5f)
-        if (simulatedProgress >= 1f) {
+        game.assetService.update()
+        simulatedProgress = game.assetService.progress
+        if (game.assetService.isFinished) {
             game.screenManager.setScreen(ScreenType.MAIN_MENU, FadeTransition(0.4f))
         }
     }
 
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui?.draw(delta) }
 }
 
 // =============================================================================
 // 3. MAIN MENU SCREEN
 // =============================================================================
 class MainMenuScreen(game: OnetMatch3Game) : BaseScreen(game) {
+    private var ui: StartupUi? = null
+    override fun onScreenShown() {
+        if (Gdx.gl == null) return
+        ui = StartupUi(this).apply {
+            text("Onet + Triple Match", 70f, 760f)
+            text("Play", 210f, 500f)
+            text("Missions", 180f, 395f)
+            text("Shop", 210f, 295f)
+            text("Profile", 125f, 195f)
+            text("Settings", 290f, 195f)
+        }
+    }
+    override fun onDispose() { ui?.dispose(); ui = null }
+
     init {
         backgroundColor = Color(0.14f, 0.16f, 0.22f, 1f)
         addInputProcessor(object : InputAdapter() {
@@ -100,13 +134,25 @@ class MainMenuScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui?.draw(delta) }
 }
 
 // =============================================================================
 // 4. GAME MODE SELECTION SCREEN
 // =============================================================================
 class ModeSelectScreen(game: OnetMatch3Game) : BaseScreen(game) {
+    private var ui: StartupUi? = null
+    override fun onScreenShown() {
+        if (Gdx.gl == null) return
+        ui = StartupUi(this).apply {
+            text("Choose a mode", 100f, 780f)
+            text("Onet Connect", 140f, 570f)
+            text("Triple Match", 140f, 370f)
+            text("Back", 40f, 875f)
+        }
+    }
+    override fun onDispose() { ui?.dispose(); ui = null }
+
     init {
         backgroundColor = Color(0.13f, 0.15f, 0.20f, 1f)
         addInputProcessor(object : InputAdapter() {
@@ -136,7 +182,7 @@ class ModeSelectScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui?.draw(delta) }
 }
 
 // =============================================================================

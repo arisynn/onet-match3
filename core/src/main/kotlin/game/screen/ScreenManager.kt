@@ -59,6 +59,8 @@ class ScreenManager(
         transition: ScreenTransition = InstantTransition,
         disposePrevious: Boolean = true
     ) {
+        if (isTransitioning) return
+        game.diagnostics("Screen transition: $currentScreenType -> $type")
         val factory = screenFactories[type]
             ?: error("Screen type $type has not been registered in ScreenManager.")
 
@@ -122,6 +124,7 @@ class ScreenManager(
         currentScreen = newScreen
         currentScreenType = type
 
+        game.diagnostics("Screen active: $type")
         newScreen.show()
         newScreen.resize(Gdx.graphics?.width ?: 540, Gdx.graphics?.height ?: 960)
     }
@@ -148,6 +151,7 @@ class ScreenManager(
                     old?.hide()
                     old?.dispose()
 
+                    game.diagnostics("Screen active: $currentScreenType")
                     currentScreen?.show()
                     currentScreen?.resize(Gdx.graphics?.width ?: 540, Gdx.graphics?.height ?: 960)
                     nextScreen = null

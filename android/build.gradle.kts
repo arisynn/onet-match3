@@ -47,6 +47,8 @@ android {
         }
     }
 
+    buildFeatures { buildConfig = true }
+
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -58,6 +60,11 @@ android {
             }
         }
         debug {
+            applicationIdSuffix = ".debug"
+            resValue("string", "app_name", "Onet + Triple Match Debug")
+            isMinifyEnabled = false
+            isShrinkResources = false
+            signingConfig = signingConfigs.getByName("debug")
             isDebuggable = true
         }
     }
