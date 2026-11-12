@@ -1,0 +1,4006 @@
+{
+  "schemaVersion": 1,
+  "name": "Cozy Ceramic UI Kit",
+  "palettes": [
+    "ivory",
+    "mint",
+    "peach",
+    "lavender",
+    "sky",
+    "rose",
+    "sand",
+    "slate"
+  ],
+  "counts": {
+    "tile-bodies": 32,
+    "trays": 8,
+    "slots": 8,
+    "results": 6,
+    "panels": 8,
+    "effect-frames": 32,
+    "animations": 4,
+    "backgrounds": 8,
+    "decorations": 16
+  },
+  "readyFileCount": 122,
+  "style": "Original calm matte ceramic/clay game art in eight palettes. Blank UI surfaces; no new matching-object icon set.",
+  "usage": "Raw art only. Host renders text, controls and gameplay. Backgrounds opaque; other still assets have transparency. Animation WebP playback depends on host; individual PNG frames and strips are also provided.",
+  "assets": [
+    {
+      "id": "large-ivory",
+      "path": "assets/ui-kit/tile-bodies/large-ivory.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "f708ef54604229227f123501d1f8839dda9422bb4bd318eabfacf94a2d80a9b1",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        30,
+        24,
+        428,
+        423
+      ],
+      "cell": 0,
+      "palette": "ivory",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        71,
+        70,
+        697,
+        698
+      ]
+    },
+    {
+      "id": "large-mint",
+      "path": "assets/ui-kit/tile-bodies/large-mint.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "3d61be9a2b21dfab686ad32a09fde1b4a7fd7bde3baec28b205f29815b3ed008",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        469,
+        24,
+        867,
+        423
+      ],
+      "cell": 1,
+      "palette": "mint",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        72,
+        70,
+        696,
+        698
+      ]
+    },
+    {
+      "id": "large-peach",
+      "path": "assets/ui-kit/tile-bodies/large-peach.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "c33718944379a2e259557583564e52da8c64a2a4443b3def5a8c969628607838",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        907,
+        23,
+        1305,
+        423
+      ],
+      "cell": 2,
+      "palette": "peach",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        71,
+        71,
+        696,
+        698
+      ]
+    },
+    {
+      "id": "large-lavender",
+      "path": "assets/ui-kit/tile-bodies/large-lavender.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "0310f79f9e9d2962342666a8dfd705d8a6bc54d66d85109f7402db36444d7af5",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        1346,
+        23,
+        1744,
+        423
+      ],
+      "cell": 3,
+      "palette": "lavender",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        72,
+        70,
+        696,
+        698
+      ]
+    },
+    {
+      "id": "large-sky",
+      "path": "assets/ui-kit/tile-bodies/large-sky.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "f9e2f839e1091e38e992f88fa88b819b235e6a39db25f302d0d2dd96335c19ba",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        30,
+        458,
+        428,
+        859
+      ],
+      "cell": 4,
+      "palette": "sky",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        72,
+        70,
+        695,
+        699
+      ]
+    },
+    {
+      "id": "large-rose",
+      "path": "assets/ui-kit/tile-bodies/large-rose.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "511c41e7a412137c708487cb6b48d417a74805a97474f68241794d1527917c7e",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        470,
+        458,
+        867,
+        859
+      ],
+      "cell": 5,
+      "palette": "rose",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        72,
+        71,
+        695,
+        699
+      ]
+    },
+    {
+      "id": "large-sand",
+      "path": "assets/ui-kit/tile-bodies/large-sand.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "d9014eed3d3bacd8ee801665dee2e9548634633cff50be605ec5635e7cf86f09",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        907,
+        458,
+        1305,
+        859
+      ],
+      "cell": 6,
+      "palette": "sand",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        72,
+        70,
+        695,
+        699
+      ]
+    },
+    {
+      "id": "large-slate",
+      "path": "assets/ui-kit/tile-bodies/large-slate.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "175e121efc4b1197ad8518ca7e0bca225cd8a539744ebe582d4a776cb3dae6a5",
+      "source": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sourceRect": [
+        1347,
+        458,
+        1745,
+        859
+      ],
+      "cell": 7,
+      "palette": "slate",
+      "logicalUnits": [
+        2,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        71,
+        70,
+        695,
+        699
+      ]
+    },
+    {
+      "id": "square-ivory",
+      "path": "assets/ui-kit/tile-bodies/square-ivory.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "a6ce30804f15e80f9b5416892f7ff1cda1e2eb73930ec4d14537d0ad5c126643",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        49,
+        61,
+        396,
+        407
+      ],
+      "cell": 0,
+      "palette": "ivory",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        48,
+        465,
+        463
+      ]
+    },
+    {
+      "id": "square-mint",
+      "path": "assets/ui-kit/tile-bodies/square-mint.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "55cd8493f1e8ef7d84fbb5f99268da2c3f53344bbbe282d152d8bb402cae5d45",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        492,
+        61,
+        840,
+        407
+      ],
+      "cell": 1,
+      "palette": "mint",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        49,
+        464,
+        463
+      ]
+    },
+    {
+      "id": "square-peach",
+      "path": "assets/ui-kit/tile-bodies/square-peach.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "67e2123cd1050e9863c19d9d851b87ac8df42a96cd92260704fdf0ce8f2c9f46",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        935,
+        61,
+        1283,
+        408
+      ],
+      "cell": 2,
+      "palette": "peach",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        48,
+        464,
+        462
+      ]
+    },
+    {
+      "id": "square-lavender",
+      "path": "assets/ui-kit/tile-bodies/square-lavender.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "f25bcca602d886dd4d92eebca033f4a69bde4be25288062b9084c60c0b108ada",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        1378,
+        61,
+        1727,
+        407
+      ],
+      "cell": 3,
+      "palette": "lavender",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        50,
+        464,
+        461
+      ]
+    },
+    {
+      "id": "square-sky",
+      "path": "assets/ui-kit/tile-bodies/square-sky.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "d5b1177b7c7fb94e08a2da690d4bec85fee37f4fd656d7f25d50fd0ab4ac4e11",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        49,
+        505,
+        397,
+        852
+      ],
+      "cell": 4,
+      "palette": "sky",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        47,
+        48,
+        464,
+        461
+      ]
+    },
+    {
+      "id": "square-rose",
+      "path": "assets/ui-kit/tile-bodies/square-rose.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "151422d42fe58107dbfeb31e7e62c82c83aa4fc05ee1233d3d832bf1bda886a1",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        492,
+        505,
+        840,
+        852
+      ],
+      "cell": 5,
+      "palette": "rose",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        47,
+        48,
+        464,
+        461
+      ]
+    },
+    {
+      "id": "square-sand",
+      "path": "assets/ui-kit/tile-bodies/square-sand.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "3d3dc31a6d038f64e41681e97d4aede987bfc124e85afbc6e001cf8f47ba27ee",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        935,
+        505,
+        1283,
+        852
+      ],
+      "cell": 6,
+      "palette": "sand",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        48,
+        48,
+        464,
+        461
+      ]
+    },
+    {
+      "id": "square-slate",
+      "path": "assets/ui-kit/tile-bodies/square-slate.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "9b81ed580a1daf4c2ecce2dbd08a7a49dfc2b6c62d056739c92ab4865b62eacd",
+      "source": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sourceRect": [
+        1378,
+        505,
+        1727,
+        852
+      ],
+      "cell": 7,
+      "palette": "slate",
+      "logicalUnits": [
+        1,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        49,
+        464,
+        461
+      ]
+    },
+    {
+      "id": "horizontal-ivory",
+      "path": "assets/ui-kit/tile-bodies/horizontal-ivory.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "df35503c61301ddf624cfa9761c2a62c29fd85a4dd816226a563a00723c562ba",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        36,
+        203,
+        439,
+        418
+      ],
+      "cell": 0,
+      "palette": "ivory",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        90,
+        38,
+        677,
+        347
+      ]
+    },
+    {
+      "id": "horizontal-mint",
+      "path": "assets/ui-kit/tile-bodies/horizontal-mint.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "384b85de6ac0acc5d091f2bb1163322d00079960f53258e98de41834d30cf362",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        468,
+        203,
+        872,
+        418
+      ],
+      "cell": 1,
+      "palette": "mint",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        89,
+        38,
+        679,
+        347
+      ]
+    },
+    {
+      "id": "horizontal-peach",
+      "path": "assets/ui-kit/tile-bodies/horizontal-peach.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "4cce352c9961fe4f4913ff46f34851bf0388dcd212f645dc223e2c1e7a5ed131",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        901,
+        203,
+        1305,
+        418
+      ],
+      "cell": 2,
+      "palette": "peach",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        90,
+        38,
+        679,
+        347
+      ]
+    },
+    {
+      "id": "horizontal-lavender",
+      "path": "assets/ui-kit/tile-bodies/horizontal-lavender.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "a364789677d382db1c7f23d1082632b5cac37319299079f726b0d5e84a5d3a86",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        1335,
+        203,
+        1740,
+        418
+      ],
+      "cell": 3,
+      "palette": "lavender",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        88,
+        38,
+        678,
+        347
+      ]
+    },
+    {
+      "id": "horizontal-sky",
+      "path": "assets/ui-kit/tile-bodies/horizontal-sky.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "ad151a68d47cf11770a0fb770cb7de9ba6c092d50619117e240421229d5b7a08",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        36,
+        488,
+        439,
+        704
+      ],
+      "cell": 4,
+      "palette": "sky",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        91,
+        37,
+        676,
+        346
+      ]
+    },
+    {
+      "id": "horizontal-rose",
+      "path": "assets/ui-kit/tile-bodies/horizontal-rose.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "0d64cc937bdc6a2308f68dfa6b74606948acb90dd37fd203bb5ca0e037bcc83e",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        468,
+        488,
+        872,
+        704
+      ],
+      "cell": 5,
+      "palette": "rose",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        90,
+        37,
+        677,
+        346
+      ]
+    },
+    {
+      "id": "horizontal-sand",
+      "path": "assets/ui-kit/tile-bodies/horizontal-sand.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "2bd63ecd9b60136c5518a06e3f5b9427241f66d5b5946685c0ba5aca3a3818cd",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        901,
+        488,
+        1305,
+        704
+      ],
+      "cell": 6,
+      "palette": "sand",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        90,
+        37,
+        677,
+        346
+      ]
+    },
+    {
+      "id": "horizontal-slate",
+      "path": "assets/ui-kit/tile-bodies/horizontal-slate.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        768,
+        384
+      ],
+      "sha256": "20df5c48f848bca53266b04c39129defadbbf7071669f14815ee899d6e928e63",
+      "source": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sourceRect": [
+        1335,
+        488,
+        1740,
+        704
+      ],
+      "cell": 7,
+      "palette": "slate",
+      "logicalUnits": [
+        2,
+        1
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        90,
+        37,
+        677,
+        346
+      ]
+    },
+    {
+      "id": "vertical-ivory",
+      "path": "assets/ui-kit/tile-bodies/vertical-ivory.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "abd9177cb2566fcc29ec2874ba4be62e9ff2e3890517ccfdd7c2f0f2aeb1772f",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        126,
+        17,
+        330,
+        427
+      ],
+      "cell": 0,
+      "palette": "ivory",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        37,
+        68,
+        346,
+        698
+      ]
+    },
+    {
+      "id": "vertical-mint",
+      "path": "assets/ui-kit/tile-bodies/vertical-mint.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "ae37e4f00506c9b95ea65065099edd13592b3dbca2802bdece968bcee299e7a6",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        564,
+        16,
+        770,
+        426
+      ],
+      "cell": 1,
+      "palette": "mint",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        38,
+        71,
+        346,
+        695
+      ]
+    },
+    {
+      "id": "vertical-peach",
+      "path": "assets/ui-kit/tile-bodies/vertical-peach.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "62c149010ed4cfda8ac1d59998da663e4df0c1ec50f3b430c86423949ee09859",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        1004,
+        16,
+        1210,
+        427
+      ],
+      "cell": 2,
+      "palette": "peach",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        37,
+        71,
+        346,
+        696
+      ]
+    },
+    {
+      "id": "vertical-lavender",
+      "path": "assets/ui-kit/tile-bodies/vertical-lavender.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "258a4c661e5df0ad974c8fb5c1137c909a4cbeb9ebbf5013a110bae091c34496",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        1444,
+        16,
+        1649,
+        427
+      ],
+      "cell": 3,
+      "palette": "lavender",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        37,
+        69,
+        347,
+        698
+      ]
+    },
+    {
+      "id": "vertical-sky",
+      "path": "assets/ui-kit/tile-bodies/vertical-sky.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "3a898b6ba0db84e09f01638a3ce3b27858437100461fd9dcc956cf44e5b7ba73",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        124,
+        459,
+        331,
+        871
+      ],
+      "cell": 4,
+      "palette": "sky",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        37,
+        72,
+        346,
+        695
+      ]
+    },
+    {
+      "id": "vertical-rose",
+      "path": "assets/ui-kit/tile-bodies/vertical-rose.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "642bca4b997d0d01e95725fc8c8c290144aa120fafd974644e0e0833168523fc",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        563,
+        459,
+        770,
+        871
+      ],
+      "cell": 5,
+      "palette": "rose",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        38,
+        71,
+        346,
+        696
+      ]
+    },
+    {
+      "id": "vertical-sand",
+      "path": "assets/ui-kit/tile-bodies/vertical-sand.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "c21bb360d6bde98e4102bcb96c67982ddd5b82e63cd866ed8e1a03ad78b4cd22",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        1004,
+        459,
+        1210,
+        871
+      ],
+      "cell": 6,
+      "palette": "sand",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        37,
+        71,
+        346,
+        698
+      ]
+    },
+    {
+      "id": "vertical-slate",
+      "path": "assets/ui-kit/tile-bodies/vertical-slate.webp",
+      "category": "tile-bodies",
+      "dimensions": [
+        384,
+        768
+      ],
+      "sha256": "c0099686b98de4ca23ea4c558398d08e537c6a02cb48052a8c0a389994e8ba31",
+      "source": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sourceRect": [
+        1443,
+        459,
+        1651,
+        871
+      ],
+      "cell": 7,
+      "palette": "slate",
+      "logicalUnits": [
+        1,
+        2
+      ],
+      "iconSafeRect": [
+        0.22,
+        0.18,
+        0.56,
+        0.54
+      ],
+      "iconSafeRectNote": "Suggested normalized placement area; tune in host for chosen perspective.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        38,
+        74,
+        347,
+        695
+      ]
+    },
+    {
+      "id": "trays-ivory",
+      "path": "assets/ui-kit/trays/ivory.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "fe0b733fe12cd7885793fa795a5f53ec593d68a5a8c0e234bb94e4dd40a93d55",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        18,
+        226,
+        526,
+        406
+      ],
+      "cell": 0,
+      "palette": "ivory",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        141,
+        32,
+        883,
+        289
+      ]
+    },
+    {
+      "id": "trays-mint",
+      "path": "assets/ui-kit/trays/mint.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "40ced3bc83fac121b45a2b2fd849aed155ffa54ccd4f697fd687787827dfb0ae",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        560,
+        226,
+        1068,
+        406
+      ],
+      "cell": 1,
+      "palette": "mint",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        141,
+        32,
+        882,
+        289
+      ]
+    },
+    {
+      "id": "trays-peach",
+      "path": "assets/ui-kit/trays/peach.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "d5c63d835f63301fa973e9807f68bec52a351c0c4c01055a8a912d50be787a06",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        18,
+        531,
+        526,
+        711
+      ],
+      "cell": 2,
+      "palette": "peach",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        140,
+        32,
+        883,
+        288
+      ]
+    },
+    {
+      "id": "trays-lavender",
+      "path": "assets/ui-kit/trays/lavender.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "7a85f55beeb079891609351b48a5ac28090c76a427372b54e6eadd78a2bb12b1",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        560,
+        531,
+        1068,
+        711
+      ],
+      "cell": 3,
+      "palette": "lavender",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        140,
+        32,
+        882,
+        288
+      ]
+    },
+    {
+      "id": "trays-sky",
+      "path": "assets/ui-kit/trays/sky.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "144d683eacf1c40a0d76611daf59ba7dfd61ba7ae07084c4694a0a73914fa2e6",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        18,
+        836,
+        526,
+        1016
+      ],
+      "cell": 4,
+      "palette": "sky",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        140,
+        31,
+        883,
+        289
+      ]
+    },
+    {
+      "id": "trays-rose",
+      "path": "assets/ui-kit/trays/rose.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "8f328ff44fbf31442e373555424f638d1b2cfb3081ef3b3250461dfe941451b7",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        560,
+        836,
+        1068,
+        1016
+      ],
+      "cell": 5,
+      "palette": "rose",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        140,
+        32,
+        883,
+        289
+      ]
+    },
+    {
+      "id": "trays-sand",
+      "path": "assets/ui-kit/trays/sand.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "367f03d6bc83ab43217ccbfdaa3c0c0274c9298cb9e0843baa8cf7e8c242282e",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        18,
+        1141,
+        526,
+        1321
+      ],
+      "cell": 6,
+      "palette": "sand",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        141,
+        31,
+        883,
+        288
+      ]
+    },
+    {
+      "id": "trays-slate",
+      "path": "assets/ui-kit/trays/slate.webp",
+      "category": "trays",
+      "dimensions": [
+        1024,
+        320
+      ],
+      "sha256": "9cffe416b31fa7f8d776f99458c76157751acde6949e16f513e48474348c26ff",
+      "source": "assets/ui-kit/source-atlases/trays.png",
+      "sourceRect": [
+        560,
+        1141,
+        1068,
+        1321
+      ],
+      "cell": 7,
+      "palette": "slate",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        140,
+        31,
+        883,
+        288
+      ]
+    },
+    {
+      "id": "slots-ivory",
+      "path": "assets/ui-kit/slots/ivory.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "405b86c98827facb80291907769c9a9e3ad75981f3a3d3612611ee62361ddb82",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        35,
+        37,
+        431,
+        433
+      ],
+      "cell": 0,
+      "palette": "ivory",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        36,
+        35,
+        349,
+        348
+      ]
+    },
+    {
+      "id": "slots-mint",
+      "path": "assets/ui-kit/slots/mint.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "e7ea131ba661b951659f275e14a7ca0454ff862c0a4bcb2b5c253d6f8ecbaf4b",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        468,
+        37,
+        865,
+        433
+      ],
+      "cell": 1,
+      "palette": "mint",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        35,
+        35,
+        349,
+        347
+      ]
+    },
+    {
+      "id": "slots-peach",
+      "path": "assets/ui-kit/slots/peach.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "64c6ea0d93d09d6eb338ed31099a34b8ce5f27f1b15a6e761ca71d8a6f5133c7",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        901,
+        37,
+        1301,
+        433
+      ],
+      "cell": 2,
+      "palette": "peach",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        35,
+        36,
+        349,
+        347
+      ]
+    },
+    {
+      "id": "slots-lavender",
+      "path": "assets/ui-kit/slots/lavender.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "810cfe404b28789e385894061cca2ad3e966d56d06144b5247dd2948ec8b1297",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        1336,
+        37,
+        1736,
+        433
+      ],
+      "cell": 3,
+      "palette": "lavender",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        35,
+        36,
+        348,
+        347
+      ]
+    },
+    {
+      "id": "slots-sky",
+      "path": "assets/ui-kit/slots/sky.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "04c728147b9eb05f4b57382c0780b08f9754f70fb4d62387e2d4a65e3fd5709f",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        35,
+        459,
+        434,
+        857
+      ],
+      "cell": 4,
+      "palette": "sky",
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        35,
+        36,
+        349,
+        348
+      ]
+    },
+    {
+      "id": "slots-rose",
+      "path": "assets/ui-kit/slots/rose.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "f36c7d642acf94372945cc0dbb0f9129a3099c397fd07139f81667b4701bb69e",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        466,
+        459,
+        865,
+        857
+      ],
+      "cell": 5,
+      "palette": "rose",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        36,
+        36,
+        349,
+        348
+      ]
+    },
+    {
+      "id": "slots-sand",
+      "path": "assets/ui-kit/slots/sand.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "68125698bfdc137bee8764c371acffab12029d553e49d06621b901d9da84f375",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        900,
+        459,
+        1302,
+        857
+      ],
+      "cell": 6,
+      "palette": "sand",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        36,
+        37,
+        348,
+        347
+      ]
+    },
+    {
+      "id": "slots-slate",
+      "path": "assets/ui-kit/slots/slate.webp",
+      "category": "slots",
+      "dimensions": [
+        384,
+        384
+      ],
+      "sha256": "82fbdc60289ae9fea1171869d2ee87939bda5a9f89a59d4ee14e886a26dd4596",
+      "source": "assets/ui-kit/source-atlases/slots.png",
+      "sourceRect": [
+        1334,
+        459,
+        1737,
+        858
+      ],
+      "cell": 7,
+      "palette": "slate",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        35,
+        37,
+        349,
+        347
+      ]
+    },
+    {
+      "id": "results-victory",
+      "path": "assets/ui-kit/results/victory.webp",
+      "category": "results",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "494c68a7862a232900680b618e18969d2801381b5935cb1cd31ee68482700d88",
+      "source": "assets/ui-kit/source-atlases/results.png",
+      "sourceRect": [
+        31,
+        45,
+        478,
+        472
+      ],
+      "cell": 0,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        70,
+        83,
+        699,
+        683
+      ]
+    },
+    {
+      "id": "results-reward",
+      "path": "assets/ui-kit/results/reward.webp",
+      "category": "results",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "1d3c340ad4ff781760468f391580d40b987c01e7ed72a795cf180ab2f8b0a405",
+      "source": "assets/ui-kit/source-atlases/results.png",
+      "sourceRect": [
+        548,
+        33,
+        993,
+        470
+      ],
+      "cell": 1,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        70,
+        75,
+        699,
+        693
+      ]
+    },
+    {
+      "id": "results-time-up",
+      "path": "assets/ui-kit/results/time-up.webp",
+      "category": "results",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "f40486eb9ad4b00fcfe635c5fa8a133025e6db5ba21abcb430649c371d69cf70",
+      "source": "assets/ui-kit/source-atlases/results.png",
+      "sourceRect": [
+        1089,
+        56,
+        1473,
+        478
+      ],
+      "cell": 2,
+      "palette": null,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        97,
+        69,
+        669,
+        699
+      ]
+    },
+    {
+      "id": "results-tray-full",
+      "path": "assets/ui-kit/results/tray-full.webp",
+      "category": "results",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "9746a3a26b078d32f98bf58894eba7be806c01433459b4b21c015b1767324c70",
+      "source": "assets/ui-kit/source-atlases/results.png",
+      "sourceRect": [
+        25,
+        598,
+        478,
+        946
+      ],
+      "cell": 3,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        69,
+        143,
+        699,
+        625
+      ]
+    },
+    {
+      "id": "results-pause",
+      "path": "assets/ui-kit/results/pause.webp",
+      "category": "results",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "a05b4e7af1862d30a9fe56623ab030503590018c3f7157e9d5ad20dd97d7bddb",
+      "source": "assets/ui-kit/source-atlases/results.png",
+      "sourceRect": [
+        506,
+        551,
+        992,
+        966
+      ],
+      "cell": 4,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        70,
+        115,
+        699,
+        652
+      ]
+    },
+    {
+      "id": "results-new-level",
+      "path": "assets/ui-kit/results/new-level.webp",
+      "category": "results",
+      "dimensions": [
+        768,
+        768
+      ],
+      "sha256": "a25cd24080f73109374558385887cc2e553349cc1fe9320ea51e76f0db4b4e84",
+      "source": "assets/ui-kit/source-atlases/results.png",
+      "sourceRect": [
+        1037,
+        552,
+        1517,
+        962
+      ],
+      "cell": 5,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        69,
+        114,
+        699,
+        652
+      ]
+    },
+    {
+      "id": "panels-ivory",
+      "path": "assets/ui-kit/panels/ivory.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "72edc2cd4a29d97913a380181e9f1a0dc6ab91fa81ba6017e8fd30db14bd5e2d",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        28,
+        66,
+        448,
+        418
+      ],
+      "cell": 0,
+      "palette": "ivory",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        135,
+        48,
+        633,
+        464
+      ]
+    },
+    {
+      "id": "panels-mint",
+      "path": "assets/ui-kit/panels/mint.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "df0214d58e3b39c5e54af295c54d67516e9054bd106ca97358bc8279d3b9a6f3",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        460,
+        66,
+        881,
+        417
+      ],
+      "cell": 1,
+      "palette": "mint",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        132,
+        48,
+        634,
+        464
+      ]
+    },
+    {
+      "id": "panels-peach",
+      "path": "assets/ui-kit/panels/peach.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "68095960ff05f9a32b6d06928610e5df1df9e8e2caeca7a29869a3583c902eda",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        891,
+        66,
+        1313,
+        418
+      ],
+      "cell": 2,
+      "palette": "peach",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        133,
+        48,
+        634,
+        464
+      ]
+    },
+    {
+      "id": "panels-lavender",
+      "path": "assets/ui-kit/panels/lavender.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "356c3551908ddbc6b97c006d718d7d68f58f0059f17fb44da37384b7e0d8bf5c",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        1325,
+        66,
+        1746,
+        417
+      ],
+      "cell": 3,
+      "palette": "lavender",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        133,
+        48,
+        635,
+        465
+      ]
+    },
+    {
+      "id": "panels-sky",
+      "path": "assets/ui-kit/panels/sky.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "2dec6ade5166595f7c99ddd8ea86678e5218ebeb4bd40b949ba220f5c7b00a19",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        28,
+        469,
+        448,
+        813
+      ],
+      "cell": 4,
+      "palette": "sky",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        129,
+        48,
+        639,
+        464
+      ]
+    },
+    {
+      "id": "panels-rose",
+      "path": "assets/ui-kit/panels/rose.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "23336feed24d474940e6ac503ef1a996cea79bf305fc41228b58d8ad525e31e9",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        458,
+        467,
+        883,
+        819
+      ],
+      "cell": 5,
+      "palette": "rose",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        132,
+        47,
+        637,
+        464
+      ]
+    },
+    {
+      "id": "panels-sand",
+      "path": "assets/ui-kit/panels/sand.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "bd1c3aea79fec14c8f47b823725cf425a6b715667ebf9ac4d4008c57368f7a27",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        893,
+        470,
+        1312,
+        813
+      ],
+      "cell": 6,
+      "palette": "sand",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        129,
+        47,
+        639,
+        464
+      ]
+    },
+    {
+      "id": "panels-slate",
+      "path": "assets/ui-kit/panels/slate.webp",
+      "category": "panels",
+      "dimensions": [
+        768,
+        512
+      ],
+      "sha256": "dfa98338afcdad4014a45c6170b02e1bf125fefff1ca8323b5889814fb3f87fc",
+      "source": "assets/ui-kit/source-atlases/panels.png",
+      "sourceRect": [
+        1326,
+        470,
+        1747,
+        813
+      ],
+      "cell": 7,
+      "palette": "slate",
+      "suggestedSliceInset": 92,
+      "sliceNote": "Suggested inset only; prefer scale-to-fit when preserving decorative corners.",
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        128,
+        47,
+        640,
+        464
+      ]
+    },
+    {
+      "id": "match-burst-frame-00",
+      "path": "assets/ui-kit/effects/match-burst/00.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "b336420c38a9b13cc01592e26c39d89ee96fb51f172958e9d3d7935ac70d89e9",
+      "effect": "match-burst",
+      "index": 0,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        0,
+        0,
+        222,
+        222
+      ],
+      "alphaRange": [
+        0,
+        245
+      ],
+      "visibleBounds": [
+        114,
+        117,
+        144,
+        147
+      ]
+    },
+    {
+      "id": "match-burst-frame-01",
+      "path": "assets/ui-kit/effects/match-burst/01.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "8d83704f3b446deea00e9467ef663ca7e7304d74fed1bc26deab18774969e307",
+      "effect": "match-burst",
+      "index": 1,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        222,
+        0,
+        444,
+        222
+      ],
+      "alphaRange": [
+        0,
+        252
+      ],
+      "visibleBounds": [
+        97,
+        104,
+        165,
+        160
+      ]
+    },
+    {
+      "id": "match-burst-frame-02",
+      "path": "assets/ui-kit/effects/match-burst/02.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "7d6c6960578e6086897eecd8e56052e7b42a51cb253b8479b9b4ca2a2b9e2e64",
+      "effect": "match-burst",
+      "index": 2,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        444,
+        0,
+        665,
+        222
+      ],
+      "alphaRange": [
+        0,
+        252
+      ],
+      "visibleBounds": [
+        59,
+        67,
+        195,
+        193
+      ]
+    },
+    {
+      "id": "match-burst-frame-03",
+      "path": "assets/ui-kit/effects/match-burst/03.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "123e2de7465cb81db3187f7f0211a3d6c48081f2ac9e8164f020f081b677089c",
+      "effect": "match-burst",
+      "index": 3,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        665,
+        0,
+        887,
+        222
+      ],
+      "alphaRange": [
+        0,
+        249
+      ],
+      "visibleBounds": [
+        32,
+        32,
+        222,
+        223
+      ]
+    },
+    {
+      "id": "match-burst-frame-04",
+      "path": "assets/ui-kit/effects/match-burst/04.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "1d8ee036f0d7420a013060df9111a30ce38fd12e365eb588b8f91eca8a72c7b6",
+      "effect": "match-burst",
+      "index": 4,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        887,
+        0,
+        1109,
+        222
+      ],
+      "alphaRange": [
+        0,
+        235
+      ],
+      "visibleBounds": [
+        44,
+        42,
+        219,
+        222
+      ]
+    },
+    {
+      "id": "match-burst-frame-05",
+      "path": "assets/ui-kit/effects/match-burst/05.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "e3af4d8412e53aa741a60f6fa41961350b2d5f72389a7cd5bcc7afd0b20593c3",
+      "effect": "match-burst",
+      "index": 5,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1109,
+        0,
+        1330,
+        222
+      ],
+      "alphaRange": [
+        0,
+        121
+      ],
+      "visibleBounds": [
+        56,
+        53,
+        202,
+        205
+      ]
+    },
+    {
+      "id": "match-burst-frame-06",
+      "path": "assets/ui-kit/effects/match-burst/06.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "ce2fd6d7c600788c6c5953e5d5436fc3b285813fc1697b7e803c75c66e769c37",
+      "effect": "match-burst",
+      "index": 6,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1330,
+        0,
+        1552,
+        222
+      ],
+      "alphaRange": [
+        0,
+        64
+      ],
+      "visibleBounds": [
+        174,
+        185,
+        177,
+        188
+      ]
+    },
+    {
+      "id": "match-burst-frame-07",
+      "path": "assets/ui-kit/effects/match-burst/07.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "f9fb2b5b006ab69291242ffaa317be3e048c15de2287779f922c3a06dcde8e58",
+      "effect": "match-burst",
+      "index": 7,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1552,
+        0,
+        1774,
+        222
+      ],
+      "alphaRange": [
+        0,
+        26
+      ]
+    },
+    {
+      "id": "match-burst",
+      "path": "assets/ui-kit/animations/match-burst.webp",
+      "category": "animations",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "414942d455f71a1f8e22ea1bfe113ec79967bb21b7e12ca579985dce0c488a01",
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": false
+    },
+    {
+      "id": "hint-pulse-frame-00",
+      "path": "assets/ui-kit/effects/hint-pulse/00.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "c7b3a423a3fc8a63924ef49ec8d0e26c60fbe7ffb10c76bfb0b903c0a63608e9",
+      "effect": "hint-pulse",
+      "index": 0,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        0,
+        222,
+        222,
+        444
+      ],
+      "alphaRange": [
+        0,
+        246
+      ],
+      "visibleBounds": [
+        97,
+        84,
+        171,
+        159
+      ]
+    },
+    {
+      "id": "hint-pulse-frame-01",
+      "path": "assets/ui-kit/effects/hint-pulse/01.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "9b5600b68ededa300b0238938e8bfeb258cf9eff4332b555519cfff136f0c8bc",
+      "effect": "hint-pulse",
+      "index": 1,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        222,
+        222,
+        444,
+        444
+      ],
+      "alphaRange": [
+        0,
+        250
+      ],
+      "visibleBounds": [
+        81,
+        71,
+        182,
+        173
+      ]
+    },
+    {
+      "id": "hint-pulse-frame-02",
+      "path": "assets/ui-kit/effects/hint-pulse/02.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "ba42ad73487688500ae8f19c6d4669714e9b7c517d59be5f6f7d36b07a0cdac5",
+      "effect": "hint-pulse",
+      "index": 2,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        444,
+        222,
+        665,
+        444
+      ],
+      "alphaRange": [
+        0,
+        249
+      ],
+      "visibleBounds": [
+        69,
+        62,
+        192,
+        187
+      ]
+    },
+    {
+      "id": "hint-pulse-frame-03",
+      "path": "assets/ui-kit/effects/hint-pulse/03.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "c66b0a45ee6b8692a18a22df58ab7b1cbc4e28b3155c07b4e41761bd301ba272",
+      "effect": "hint-pulse",
+      "index": 3,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        665,
+        222,
+        887,
+        444
+      ],
+      "alphaRange": [
+        0,
+        252
+      ],
+      "visibleBounds": [
+        41,
+        42,
+        218,
+        211
+      ]
+    },
+    {
+      "id": "hint-pulse-frame-04",
+      "path": "assets/ui-kit/effects/hint-pulse/04.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "a9a7ca7442c28e0f6ac824a03d7a7be8e890616372275460599ebf9acc2c1308",
+      "effect": "hint-pulse",
+      "index": 4,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        887,
+        222,
+        1109,
+        444
+      ],
+      "alphaRange": [
+        0,
+        211
+      ],
+      "visibleBounds": [
+        42,
+        40,
+        223,
+        214
+      ]
+    },
+    {
+      "id": "hint-pulse-frame-05",
+      "path": "assets/ui-kit/effects/hint-pulse/05.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "b64a535f3aa6e95226cb8f4c52df423bf1cdc29d8b8d703f3388f100b816fa33",
+      "effect": "hint-pulse",
+      "index": 5,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1109,
+        222,
+        1330,
+        444
+      ],
+      "alphaRange": [
+        0,
+        126
+      ],
+      "visibleBounds": [
+        45,
+        43,
+        212,
+        209
+      ]
+    },
+    {
+      "id": "hint-pulse-frame-06",
+      "path": "assets/ui-kit/effects/hint-pulse/06.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "f2c720747be35c9e608ccb10512830c866c460a56908b772583639628b51385d",
+      "effect": "hint-pulse",
+      "index": 6,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1330,
+        222,
+        1552,
+        444
+      ],
+      "alphaRange": [
+        0,
+        70
+      ],
+      "visibleBounds": [
+        52,
+        51,
+        70,
+        128
+      ]
+    },
+    {
+      "id": "hint-pulse-frame-07",
+      "path": "assets/ui-kit/effects/hint-pulse/07.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "88a3ef4fb60b2a1ce2202afa730bd085741c89f8252f2130d52edc6fa1e71134",
+      "effect": "hint-pulse",
+      "index": 7,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1552,
+        222,
+        1774,
+        444
+      ],
+      "alphaRange": [
+        0,
+        25
+      ]
+    },
+    {
+      "id": "hint-pulse",
+      "path": "assets/ui-kit/animations/hint-pulse.webp",
+      "category": "animations",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "2626735f787369faf922b6a1366d8f4d0045ae255b756dcbe487e251c8ad2f15",
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": true
+    },
+    {
+      "id": "tile-pop-dust-frame-00",
+      "path": "assets/ui-kit/effects/tile-pop-dust/00.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "31a3892238835e1db133bda3b02d915a6ce7daa881ba55bdb1daa7bc0f5c640b",
+      "effect": "tile-pop-dust",
+      "index": 0,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        0,
+        444,
+        222,
+        665
+      ],
+      "alphaRange": [
+        0,
+        253
+      ],
+      "visibleBounds": [
+        94,
+        89,
+        164,
+        155
+      ]
+    },
+    {
+      "id": "tile-pop-dust-frame-01",
+      "path": "assets/ui-kit/effects/tile-pop-dust/01.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "ac91c9fae94a01cd1d644bffc70f6056382b9dcc8b5da3f7b73668f9f56629f6",
+      "effect": "tile-pop-dust",
+      "index": 1,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        222,
+        444,
+        444,
+        665
+      ],
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        78,
+        77,
+        181,
+        177
+      ]
+    },
+    {
+      "id": "tile-pop-dust-frame-02",
+      "path": "assets/ui-kit/effects/tile-pop-dust/02.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "e5eb7df4846ac31acbec4ba2a47f369cbc13dde0f559ae28f7a7f4f1f6ad5758",
+      "effect": "tile-pop-dust",
+      "index": 2,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        444,
+        444,
+        665,
+        665
+      ],
+      "alphaRange": [
+        0,
+        253
+      ],
+      "visibleBounds": [
+        55,
+        57,
+        202,
+        188
+      ]
+    },
+    {
+      "id": "tile-pop-dust-frame-03",
+      "path": "assets/ui-kit/effects/tile-pop-dust/03.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "63561e5f975c576164d5e3c4ea6042575fba872dc9d35fc7ad58e804acf9b5cc",
+      "effect": "tile-pop-dust",
+      "index": 3,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        665,
+        444,
+        887,
+        665
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        30,
+        31,
+        224,
+        209
+      ]
+    },
+    {
+      "id": "tile-pop-dust-frame-04",
+      "path": "assets/ui-kit/effects/tile-pop-dust/04.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "30731cadee44e30701ffaeb83b85283fecd70d7933c2696ee3337262274184d7",
+      "effect": "tile-pop-dust",
+      "index": 4,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        887,
+        444,
+        1109,
+        665
+      ],
+      "alphaRange": [
+        0,
+        246
+      ],
+      "visibleBounds": [
+        35,
+        29,
+        226,
+        217
+      ]
+    },
+    {
+      "id": "tile-pop-dust-frame-05",
+      "path": "assets/ui-kit/effects/tile-pop-dust/05.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "95990e9543a135152aeb361184dd0b18d1130256e0c840aae366496ede4b0678",
+      "effect": "tile-pop-dust",
+      "index": 5,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1109,
+        444,
+        1330,
+        665
+      ],
+      "alphaRange": [
+        0,
+        196
+      ],
+      "visibleBounds": [
+        44,
+        45,
+        218,
+        209
+      ]
+    },
+    {
+      "id": "tile-pop-dust-frame-06",
+      "path": "assets/ui-kit/effects/tile-pop-dust/06.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "5f590afcc4af080cdffe3c56f0df8eb0cca0f85dabc89c2abf744ec839a9afea",
+      "effect": "tile-pop-dust",
+      "index": 6,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1330,
+        444,
+        1552,
+        665
+      ],
+      "alphaRange": [
+        0,
+        133
+      ],
+      "visibleBounds": [
+        54,
+        58,
+        210,
+        201
+      ]
+    },
+    {
+      "id": "tile-pop-dust-frame-07",
+      "path": "assets/ui-kit/effects/tile-pop-dust/07.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "0b5b64d752ecf3909a5144f23320943f05a523883f8584ea2576f9b054adff6d",
+      "effect": "tile-pop-dust",
+      "index": 7,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1552,
+        444,
+        1774,
+        665
+      ],
+      "alphaRange": [
+        0,
+        89
+      ],
+      "visibleBounds": [
+        62,
+        110,
+        72,
+        127
+      ]
+    },
+    {
+      "id": "tile-pop-dust",
+      "path": "assets/ui-kit/animations/tile-pop-dust.webp",
+      "category": "animations",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "606a6356f88c362ae659868f9e0faaf0506aa7e463e430285c1346121c0f4589",
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": false
+    },
+    {
+      "id": "victory-confetti-frame-00",
+      "path": "assets/ui-kit/effects/victory-confetti/00.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "0e3fd2cdcef39546d4c4faa706ce921a9ede19514a330489b38e246a97f7cac1",
+      "effect": "victory-confetti",
+      "index": 0,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        0,
+        665,
+        222,
+        887
+      ],
+      "alphaRange": [
+        0,
+        249
+      ],
+      "visibleBounds": [
+        97,
+        92,
+        160,
+        152
+      ]
+    },
+    {
+      "id": "victory-confetti-frame-01",
+      "path": "assets/ui-kit/effects/victory-confetti/01.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "80e9f83919ff1966e54c7478f5d06ee3921e516eaf3e1b63f706869714fae766",
+      "effect": "victory-confetti",
+      "index": 1,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        222,
+        665,
+        444,
+        887
+      ],
+      "alphaRange": [
+        0,
+        252
+      ],
+      "visibleBounds": [
+        71,
+        67,
+        185,
+        171
+      ]
+    },
+    {
+      "id": "victory-confetti-frame-02",
+      "path": "assets/ui-kit/effects/victory-confetti/02.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "9519b97eef6d9b06288066a20165fab528076c0e05966e3b563fe9e484a78f0c",
+      "effect": "victory-confetti",
+      "index": 2,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        444,
+        665,
+        665,
+        887
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        43,
+        36,
+        212,
+        203
+      ]
+    },
+    {
+      "id": "victory-confetti-frame-03",
+      "path": "assets/ui-kit/effects/victory-confetti/03.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "d81fb3f94827875d5475eb537bbb32a624014867fb8fceff7abe25c5f6e6399b",
+      "effect": "victory-confetti",
+      "index": 3,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        665,
+        665,
+        887,
+        887
+      ],
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        23,
+        17,
+        229,
+        226
+      ]
+    },
+    {
+      "id": "victory-confetti-frame-04",
+      "path": "assets/ui-kit/effects/victory-confetti/04.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "84fc388851b04cc24540fe4eee1353d7f347bf5e4406e69efe05e24a90f9c98e",
+      "effect": "victory-confetti",
+      "index": 4,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        887,
+        665,
+        1109,
+        887
+      ],
+      "alphaRange": [
+        0,
+        252
+      ],
+      "visibleBounds": [
+        38,
+        17,
+        235,
+        229
+      ]
+    },
+    {
+      "id": "victory-confetti-frame-05",
+      "path": "assets/ui-kit/effects/victory-confetti/05.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "5f97a449e34c4d386fc509ad7b0cf19423323d209404f29bc1a37778311c68d9",
+      "effect": "victory-confetti",
+      "index": 5,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1109,
+        665,
+        1330,
+        887
+      ],
+      "alphaRange": [
+        0,
+        250
+      ],
+      "visibleBounds": [
+        49,
+        35,
+        218,
+        217
+      ]
+    },
+    {
+      "id": "victory-confetti-frame-06",
+      "path": "assets/ui-kit/effects/victory-confetti/06.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "6c761f5491ace12395729b8f39283d3ad36f1e28b79be87b15b9f2f1e8fca885",
+      "effect": "victory-confetti",
+      "index": 6,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1330,
+        665,
+        1552,
+        887
+      ],
+      "alphaRange": [
+        0,
+        218
+      ],
+      "visibleBounds": [
+        55,
+        51,
+        212,
+        216
+      ]
+    },
+    {
+      "id": "victory-confetti-frame-07",
+      "path": "assets/ui-kit/effects/victory-confetti/07.png",
+      "category": "effect-frames",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "41733348abae16144d65b4176f66244c10c23ccdd57adfb061f7a7c08b987827",
+      "effect": "victory-confetti",
+      "index": 7,
+      "source": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sourceRect": [
+        1552,
+        665,
+        1774,
+        887
+      ],
+      "alphaRange": [
+        0,
+        183
+      ],
+      "visibleBounds": [
+        71,
+        76,
+        203,
+        216
+      ]
+    },
+    {
+      "id": "victory-confetti",
+      "path": "assets/ui-kit/animations/victory-confetti.webp",
+      "category": "animations",
+      "dimensions": [
+        256,
+        256
+      ],
+      "sha256": "403f632dc3885f37a51e628b24338cf3ae78b6355377be78232c825f39aeef54",
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": false
+    },
+    {
+      "id": "cozy-room-portrait",
+      "path": "assets/ui-kit/backgrounds/cozy-room-portrait.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "3f16934541ce2600f289cfe2747bbdcef1b84fd2f23fdb02ca0bb0e6d74adafd",
+      "orientation": "portrait 2:3",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    },
+    {
+      "id": "zen-garden-portrait",
+      "path": "assets/ui-kit/backgrounds/zen-garden-portrait.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "f676486ec776d8efe578a857009930a6beaf2aca93b0e9a676347563570df7f9",
+      "orientation": "portrait 2:3",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    },
+    {
+      "id": "decorations-bamboo-corner",
+      "path": "assets/ui-kit/decorations/bamboo-corner.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "bf706b73d9b1dcf38e207d7c54bc49e8be7c2d6071b62d6e9ff5fb05b080f8f6",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        24,
+        26,
+        304,
+        313
+      ],
+      "cell": 0,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        54,
+        48,
+        458,
+        463
+      ]
+    },
+    {
+      "id": "decorations-sakura-branch",
+      "path": "assets/ui-kit/decorations/sakura-branch.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "43f9374a35a0df520012d0011636db9377a8f6c817ce8a90a36197551f4f4566",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        335,
+        29,
+        617,
+        275
+      ],
+      "cell": 1,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        49,
+        76,
+        463,
+        436
+      ]
+    },
+    {
+      "id": "decorations-eucalyptus-edge",
+      "path": "assets/ui-kit/decorations/eucalyptus-edge.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "a477a1b0c9891f108acc15e9d682bbc1c9e6c3df149ddb86dac04b1b86432754",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        656,
+        25,
+        841,
+        314
+      ],
+      "cell": 2,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        124,
+        48,
+        387,
+        464
+      ]
+    },
+    {
+      "id": "decorations-fern-stones",
+      "path": "assets/ui-kit/decorations/fern-stones.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "74ac2df01c03dcc1100a1031c73192c02bb0c0c820380dc0a7e63ce2c663992a",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        960,
+        28,
+        1202,
+        314
+      ],
+      "cell": 3,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        81,
+        48,
+        430,
+        463
+      ]
+    },
+    {
+      "id": "decorations-zen-stones",
+      "path": "assets/ui-kit/decorations/zen-stones.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "1f120734ee81321eb61a72fb05263d49734f61da72d40a2d18e854cb3a0f7a45",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        15,
+        384,
+        288,
+        568
+      ],
+      "cell": 4,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        117,
+        462,
+        394
+      ]
+    },
+    {
+      "id": "decorations-lotus-edge",
+      "path": "assets/ui-kit/decorations/lotus-edge.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "22a7b525bcb5b0d75b75b0c6244d6cb4963e2f81b77ac290879863ca199dfcbf",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        320,
+        424,
+        616,
+        567
+      ],
+      "cell": 5,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        49,
+        157,
+        464,
+        354
+      ]
+    },
+    {
+      "id": "decorations-succulent-cluster",
+      "path": "assets/ui-kit/decorations/succulent-cluster.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "686c755ac938137818b8e544ca636db03ffa3ca0a2e41b2473799a8df9d666ce",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        645,
+        379,
+        909,
+        569
+      ],
+      "cell": 6,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        108,
+        463,
+        403
+      ]
+    },
+    {
+      "id": "decorations-candle-towels",
+      "path": "assets/ui-kit/decorations/candle-towels.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "703b62516a5d3b8040d4450a0bbda9b05ae80508f97c975991d430b903dc41ad",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        940,
+        406,
+        1240,
+        570
+      ],
+      "cell": 7,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        47,
+        145,
+        464,
+        368
+      ]
+    },
+    {
+      "id": "decorations-linen-corner",
+      "path": "assets/ui-kit/decorations/linen-corner.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "e64a7e7a2e4ff059d50bae2c1134ee6676f371ace887d4c84f8c25f13ca1af04",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        21,
+        649,
+        289,
+        932
+      ],
+      "cell": 8,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        61,
+        48,
+        453,
+        464
+      ]
+    },
+    {
+      "id": "decorations-lantern-branch",
+      "path": "assets/ui-kit/decorations/lantern-branch.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "836517e7f591914080691993809cbae667cdd50e4430914016e71a4c0500e279",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        322,
+        649,
+        605,
+        893
+      ],
+      "cell": 9,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        49,
+        77,
+        463,
+        434
+      ]
+    },
+    {
+      "id": "decorations-autumn-edge",
+      "path": "assets/ui-kit/decorations/autumn-edge.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "6d1a822ed55dfb225231f08d1417910a5fb2fea9dde12db8eced0f628407b3b8",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        675,
+        648,
+        904,
+        921
+      ],
+      "cell": 10,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        82,
+        48,
+        430,
+        463
+      ]
+    },
+    {
+      "id": "decorations-frosted-pine",
+      "path": "assets/ui-kit/decorations/frosted-pine.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "88155249cf053f99dac6344c6ffa875afef37882d8ba8f9e3f41f30049f35600",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        964,
+        647,
+        1171,
+        937
+      ],
+      "cell": 11,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        108,
+        48,
+        402,
+        463
+      ]
+    },
+    {
+      "id": "decorations-sand-ripples",
+      "path": "assets/ui-kit/decorations/sand-ripples.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "e6b6b55c6e8aaa8bec47e36ab1cfe805ccc9a168205f83837bd57d5b9c6b5633",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        14,
+        1106,
+        297,
+        1200
+      ],
+      "cell": 12,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        50,
+        189,
+        462,
+        322
+      ]
+    },
+    {
+      "id": "decorations-cloud-wisps",
+      "path": "assets/ui-kit/decorations/cloud-wisps.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "ac44bad1fd429ba1a8266a9dc48d46a499dbf9bb66918ca3ec0827da17485030",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        333,
+        1029,
+        613,
+        1142
+      ],
+      "cell": 13,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        48,
+        174,
+        463,
+        336
+      ]
+    },
+    {
+      "id": "decorations-gold-ribbon",
+      "path": "assets/ui-kit/decorations/gold-ribbon.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "01cd33f7b391ceef91c595882c7f7579ce0cff507dad7f3f87646516a6290854",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        641,
+        962,
+        911,
+        1206
+      ],
+      "cell": 14,
+      "palette": null,
+      "alphaRange": [
+        0,
+        255
+      ],
+      "visibleBounds": [
+        50,
+        68,
+        463,
+        442
+      ]
+    },
+    {
+      "id": "decorations-lavender-corner",
+      "path": "assets/ui-kit/decorations/lavender-corner.webp",
+      "category": "decorations",
+      "dimensions": [
+        512,
+        512
+      ],
+      "sha256": "210f9530db4fed8406f4ba0931b1889f2bb5f3e224177159bb1a240d3dbeffd4",
+      "source": "assets/ui-kit/source-atlases/decorations.png",
+      "sourceRect": [
+        957,
+        958,
+        1228,
+        1224
+      ],
+      "cell": 15,
+      "palette": null,
+      "alphaRange": [
+        0,
+        254
+      ],
+      "visibleBounds": [
+        50,
+        53,
+        462,
+        459
+      ]
+    },
+    {
+      "id": "spa-portrait",
+      "path": "assets/ui-kit/backgrounds/spa-portrait.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "adf953f9f13084ba52d613d70e0e6800cd8a4a065e4cc867ae9faf327df8c69b",
+      "orientation": "portrait 2:3",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    },
+    {
+      "id": "sakura-portrait",
+      "path": "assets/ui-kit/backgrounds/sakura-portrait.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "20c8fd14aa7adc0b1d4be890c844882067e1f863e580297520477298dc977c0b",
+      "orientation": "portrait 2:3",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    },
+    {
+      "id": "lakeside-landscape",
+      "path": "assets/ui-kit/backgrounds/lakeside-landscape.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "c86bebcd9990044fa422a9c0a5f0dffc52480a2cd6d85c430eb14f247bbf2778",
+      "orientation": "landscape 3:2",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    },
+    {
+      "id": "sunset-landscape",
+      "path": "assets/ui-kit/backgrounds/sunset-landscape.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "58d0f26aea41bed037e17d223fb33ead96170866a3720f07678587527277bed9",
+      "orientation": "landscape 3:2",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    },
+    {
+      "id": "night-landscape",
+      "path": "assets/ui-kit/backgrounds/night-landscape.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "b576fc23177c46667cff45d4be5127f02883968655032cba5eede2cab3cb676b",
+      "orientation": "landscape 3:2",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    },
+    {
+      "id": "clouds-landscape",
+      "path": "assets/ui-kit/backgrounds/clouds-landscape.webp",
+      "category": "backgrounds",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "3a95085d0276fdb1a8340044ed5d4e2ee6314f75a62d33ec1a44e220ba36c13d",
+      "orientation": "landscape 3:2",
+      "suggestedPlayArea": [
+        0.18,
+        0.16,
+        0.64,
+        0.68
+      ],
+      "note": "Suggested layout area, not a tested crop guarantee. Background is opaque; overlay tiles in host."
+    }
+  ],
+  "animations": [
+    {
+      "id": "match-burst",
+      "path": "assets/ui-kit/animations/match-burst.webp",
+      "frames": [
+        "assets/ui-kit/effects/match-burst/00.png",
+        "assets/ui-kit/effects/match-burst/01.png",
+        "assets/ui-kit/effects/match-burst/02.png",
+        "assets/ui-kit/effects/match-burst/03.png",
+        "assets/ui-kit/effects/match-burst/04.png",
+        "assets/ui-kit/effects/match-burst/05.png",
+        "assets/ui-kit/effects/match-burst/06.png",
+        "assets/ui-kit/effects/match-burst/07.png"
+      ],
+      "spriteStrip": "assets/ui-kit/effects/match-burst-strip.png",
+      "spriteStripSha256": "256a38ebf213a5b885c9ae07fffa8ce967f8bd3a68222a41f4f02e87a439eb6c",
+      "frameSize": [
+        256,
+        256
+      ],
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": false,
+      "playOnce": true
+    },
+    {
+      "id": "hint-pulse",
+      "path": "assets/ui-kit/animations/hint-pulse.webp",
+      "frames": [
+        "assets/ui-kit/effects/hint-pulse/00.png",
+        "assets/ui-kit/effects/hint-pulse/01.png",
+        "assets/ui-kit/effects/hint-pulse/02.png",
+        "assets/ui-kit/effects/hint-pulse/03.png",
+        "assets/ui-kit/effects/hint-pulse/04.png",
+        "assets/ui-kit/effects/hint-pulse/05.png",
+        "assets/ui-kit/effects/hint-pulse/06.png",
+        "assets/ui-kit/effects/hint-pulse/07.png"
+      ],
+      "spriteStrip": "assets/ui-kit/effects/hint-pulse-strip.png",
+      "spriteStripSha256": "dfb15a94e813b74b2ef17d6dd9bee384cc69c8dd6395e9af15a46501b219a224",
+      "frameSize": [
+        256,
+        256
+      ],
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": true,
+      "playOnce": false
+    },
+    {
+      "id": "tile-pop-dust",
+      "path": "assets/ui-kit/animations/tile-pop-dust.webp",
+      "frames": [
+        "assets/ui-kit/effects/tile-pop-dust/00.png",
+        "assets/ui-kit/effects/tile-pop-dust/01.png",
+        "assets/ui-kit/effects/tile-pop-dust/02.png",
+        "assets/ui-kit/effects/tile-pop-dust/03.png",
+        "assets/ui-kit/effects/tile-pop-dust/04.png",
+        "assets/ui-kit/effects/tile-pop-dust/05.png",
+        "assets/ui-kit/effects/tile-pop-dust/06.png",
+        "assets/ui-kit/effects/tile-pop-dust/07.png"
+      ],
+      "spriteStrip": "assets/ui-kit/effects/tile-pop-dust-strip.png",
+      "spriteStripSha256": "29c7929052ec4fc268ace8e02098bfc51c07d9c12c280f6a83e40d8f9ee33437",
+      "frameSize": [
+        256,
+        256
+      ],
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": false,
+      "playOnce": true
+    },
+    {
+      "id": "victory-confetti",
+      "path": "assets/ui-kit/animations/victory-confetti.webp",
+      "frames": [
+        "assets/ui-kit/effects/victory-confetti/00.png",
+        "assets/ui-kit/effects/victory-confetti/01.png",
+        "assets/ui-kit/effects/victory-confetti/02.png",
+        "assets/ui-kit/effects/victory-confetti/03.png",
+        "assets/ui-kit/effects/victory-confetti/04.png",
+        "assets/ui-kit/effects/victory-confetti/05.png",
+        "assets/ui-kit/effects/victory-confetti/06.png",
+        "assets/ui-kit/effects/victory-confetti/07.png"
+      ],
+      "spriteStrip": "assets/ui-kit/effects/victory-confetti-strip.png",
+      "spriteStripSha256": "c2596235aafac653f95344754ba39e114d68f9a00b0a5eef5c196bddaa9874df",
+      "frameSize": [
+        256,
+        256
+      ],
+      "frameCount": 8,
+      "frameDurationMs": 80,
+      "durationMs": 640,
+      "loop": false,
+      "playOnce": true
+    }
+  ],
+  "sources": [
+    {
+      "id": "tiles-large",
+      "path": "assets/ui-kit/source-atlases/tiles-large.png",
+      "sha256": "ebc39617352566b6f84b420e8a2e4e06b14c245df2d409d11e56073176e88a8b",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas, exactly FOUR columns TWO rows, EIGHT blank large 2x2 SQUARE tile bodies, in order: ivory cream, soft mint, pale peach, light lavender, powder sky blue, dusty rose, warm sand beige, dark slate blue. Larger heavy block-like square ceramic plates with a broad EMPTY smooth top face, subtle inset bevel and short deep lower side showing thickness. No icon, no seams or four-cell grid, no markings. Straight-on slightly above, same perspective. Each isolated square contained in central 72% of each cell, full corners, wide transparent gutters. Real alpha transparency. Landscape 2:1 atlas.",
+      "backgroundCleanup": true
+    },
+    {
+      "id": "tiles-square",
+      "path": "assets/ui-kit/source-atlases/tiles-square.png",
+      "sha256": "c3b3f455ad343b13178ef355e9fcb53e404b4865930bf2868c9d9b9db8d463d2",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas, exactly FOUR columns TWO rows, EIGHT blank 1x1 square tile bodies in order: ivory cream, soft mint, pale peach, light lavender, powder sky blue, dusty rose, warm sand beige, dark slate blue. Each tile is a softly beveled rounded square face with a short visible lower side showing thickness, viewed straight-on from slightly above, perfectly consistent perspective and radius. Entire face EMPTY, no icon, marking or dot. Small attached soft contact shadow only, no haze. Each body occupies central 72% of its cell, all equally large. Real transparent alpha background with wide empty gutters. Preserve every corner. Landscape 2:1 canvas.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "tiles-horizontal",
+      "path": "assets/ui-kit/source-atlases/tiles-horizontal.png",
+      "sha256": "781f7dbcbc89159508909f5d297fc2f89783dba0f9f0a1f239f09c1407fc61a4",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas, exactly FOUR columns TWO rows, EIGHT blank HORIZONTAL DOMINO 2:1 tile bodies, in order: ivory cream, soft mint, pale peach, light lavender, powder sky blue, dusty rose, warm sand beige, dark slate blue. Each tile is twice as wide as tall, with a softly beveled rounded rectangular face and a short visible lower side showing thickness, straight-on slightly above. EMPTY face, no central seam, no icon, no dots. Same perspective and material across all eight. Each body contained in central 72% cell width with wide transparent gutters, intact corners. Real alpha transparency. Landscape 2:1 atlas.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "tiles-vertical",
+      "path": "assets/ui-kit/source-atlases/tiles-vertical.png",
+      "sha256": "ce233187c3805d8043ab1c8381b0d84a75dcbb43fc84955c799f0cf1ee69a786",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas, exactly FOUR columns TWO rows, EIGHT blank VERTICAL DOMINO 1:2 tile bodies, in order: ivory cream, soft mint, pale peach, light lavender, powder sky blue, dusty rose, warm sand beige, dark slate blue. Each body is twice as tall as wide, softly beveled tall rounded rectangle face, short visible lower side showing thickness, straight-on slightly above. EMPTY face, no icon, no markings, no seam. Same perspective. Each body centered with generous real transparent margins, entirely inside its own cell. Real alpha background, no white backing. Landscape 2:1 atlas.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "trays",
+      "path": "assets/ui-kit/source-atlases/trays.png",
+      "sha256": "1fb681a154fcf027ea1e37f32754b6577d5a505b8677a5165e9bf8920c5a1d32",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas, exactly TWO columns FOUR rows, EIGHT wide empty tray bases. In row-major order: ivory cream, soft mint, pale peach, light lavender, powder sky blue, dusty rose, warm sand beige, dark slate blue. Each is a wide horizontal shallow rounded rectangular ceramic trough with softly raised rim and a recessed EMPTY continuous interior. Shape width about 4 times height. No individual slots, no tiles, no feet, no buttons, no icons. Straight-on slightly above. Identical proportions. Center inside each equal cell, at most 78% cell width, generous transparent gutters and no overlapping shadows. Entire atlas true alpha transparency, portrait orientation.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "slots",
+      "path": "assets/ui-kit/source-atlases/slots.png",
+      "sha256": "fb5f77f99562390fc2c588a573834eb29a320cc1659c4a40134443a325d5e18b",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas exactly FOUR columns TWO rows, EIGHT individual EMPTY square tray slot wells, one per palette in order: ivory cream, soft mint, pale peach, light lavender, powder sky blue, dusty rose, warm sand beige, dark slate blue. A softly rounded square recessed ceramic socket with inward shadow and thin softly beveled lip, straight-on slightly above, no tile, no icon or text. A small standalone well, not a whole tray. Consistent size, central 70% of each cell, full transparent margins. True transparent alpha background, no checkerboard, no glow or haze. Landscape 2:1.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "results",
+      "path": "assets/ui-kit/source-atlases/results.png",
+      "sha256": "2ce1bf6c038598b437de5711cbbeff0192dd5c88a28a9602f8fed95811ce0390",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas exactly THREE columns TWO rows, SIX large charming text-free game result illustrations, one small scene per cell. Row-major order: victory trophy made of stacked ivory tiles with gold laurel and tiny pastel confetti; reward gift open with warm star-shaped light and ribbons; time-up sand hourglass with last grains and softly drooping leaves, calm not alarming; tray-full shallow mint tray with a crowded but neat pile of blank pastel square tiles; pause/rest scene with an empty cozy cushion beside a small cup and leafy plant; new-level archway made of blank ceramic tiles with a small sunrise and leaves. These are decorative complete illustrations, not a UI screen. No captions, words, numbers, badges or buttons. Each entire scene confined to central 72% of its equal cell, huge transparent gutters, no cropped ribbons or leaves. Real transparent alpha background. Landscape 3:2.",
+      "backgroundCleanup": true
+    },
+    {
+      "id": "panels",
+      "path": "assets/ui-kit/source-atlases/panels.png",
+      "sha256": "405087fb1f580ee1f9e732335a7f955b5debe0ac8c99e9da050023604abaef62",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas exactly FOUR columns TWO rows, EIGHT EMPTY decorative UI panel backplates. In order: ivory porcelain with thin gold inset line; mint ceramic with soft leaf-relief corners; peach matte with simple double bevel; lavender glass-frost with clear opaque readable center; sky blue soft cloud-shaped rounded rectangle; rose ceramic with very subtle scalloped rim; warm sand carved stone rounded rectangle; slate midnight ceramic with pale thin rim. Every panel is a simple rounded rectangle with LARGE COMPLETELY EMPTY center and no content, no buttons, no letters, no illustrations inside. Restrained decoration confined to corners/rims. All panels fit fully inside central 72% of their equal cells, real transparent exterior. Landscape 2:1.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "effects-sequence",
+      "path": "assets/ui-kit/source-atlases/effects-sequence.png",
+      "sha256": "8c47eecfcdee70e9e57e4dccbfd391788807a31aa9318322b5e2d5468ef8f8a9",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  EXACT sprite animation sheet EIGHT columns FOUR rows. Every row is one animation sampled over EIGHT chronological frames, all frames centered at exactly the same relative position within their equal cells. The gutters are FULLY TRANSPARENT and no effect crosses a cell border. Row 1: MATCH BURST, tiny gold star glint grows into a modest circular sparkle burst then expands and fades to nearly nothing. Row 2: HINT PULSE, a thin mint circular ring with a small golden shimmer expands gently and fades, eight stages. Row 3: TILE POP DUST, soft ivory peach dust puffs expand outward from center and dissolve, eight stages. Row 4: VICTORY CONFETTI, a compact burst of mint lavender peach paper fragments spreads outward and falls, eight stages. NO tile, no object icon, no UI elements, no text, no numbers, no arrows, no frame labels or gridlines. All particles limited to central 70% of each cell, detached specks must stay within that limit. Real transparent alpha outside particles, no black or white plate, no checkerboard, no broad haze. Landscape aspect ratio exactly 2:1.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "bg-cozy-room-portrait",
+      "path": "assets/ui-kit/source-backgrounds/bg-cozy-room-portrait.png",
+      "sha256": "7a9bd01a858d12b49987f636f26863a2545955d971f460af402d23f57426b700",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, portrait 2:3 composition. A warm cozy reading room with soft ivory plaster, a sunlit window and curtain near the upper left edge, one plant and a low wooden shelf at the bottom corners, calm warm morning light. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "bg-zen-garden-portrait",
+      "path": "assets/ui-kit/source-backgrounds/bg-zen-garden-portrait.png",
+      "sha256": "1a6e7779bb0d4e937ff795e6b983856d36e974392443f9f8cf4a15f219abce71",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, portrait 2:3 composition. A tranquil Japanese zen garden with pale raked sand, a few mossy stones and bamboo confined to bottom corners and far left/right edges, pale dawn sky at the top. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "decorations",
+      "path": "assets/ui-kit/source-atlases/decorations.png",
+      "sha256": "fdb962885c941817ec35748d5de0e06f2c68b6ba7d50453f4e212f46181db016",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Transparent sprite atlas exactly FOUR columns FOUR rows, SIXTEEN isolated decorative edge/corner arrangements for a calm puzzle board, NOT tile icons. Order: bamboo stalk corner curving inward; wispy cherry blossom branch along top-left; soft eucalyptus vine along a left edge; fern-and-pebble bottom-left cluster; smooth zen stones with tiny moss bottom-right; lotus leaves and one blossom bottom edge; tiny succulent trio bottom-right; warm candle and folded towel bottom-left; draped linen corner top-right; hanging paper lantern branch top-right; autumn leaf sprig right edge; frosted pine sprig left edge; small curved sand-rake ripples bottom edge; floating cloud wisps top edge; curled gold ribbon corner; lavender stalk bundle corner. Each arrangement is fully visible and isolated inside central 72% of its own square cell. No continuous scene, no UI frames, no letter labels, no separate checker squares or floor rectangles. True transparent exterior. Square canvas.",
+      "backgroundCleanup": true
+    },
+    {
+      "id": "bg-spa-portrait",
+      "path": "assets/ui-kit/source-backgrounds/bg-spa-portrait.png",
+      "sha256": "689d668126e8ce008e2d49a7e6c14d3a05338bac2a634b3906f780c4189b4fa7",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, portrait 2:3 composition. A serene spa alcove, softly mottled mint plaster wall, tiny candles, folded towels, pale stone and a few eucalyptus leaves exclusively near the outside edges, soft diffuse daylight. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "bg-sakura-portrait",
+      "path": "assets/ui-kit/source-backgrounds/bg-sakura-portrait.png",
+      "sha256": "774ea7ca36e0028d65e90d88cd66a2f6e506fd368482963f9e3a143902b43f3f",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, portrait 2:3 composition. A pale blush spring courtyard, cherry blossom branches arching gently across the top corners and a few petals and light stone details along bottom corners, airy spring daylight. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "bg-lakeside-landscape",
+      "path": "assets/ui-kit/source-backgrounds/bg-lakeside-landscape.png",
+      "sha256": "a454990ea3a2cc6aee3e18873d88bd8fae9ba6db933f60b44941868459af29bf",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, landscape 3:2 composition. A tranquil pastel lakeside veranda with a warm pale wooden tabletop across the center, quiet water and blue-green mountains only near the upper border, small plant clusters at far corners. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "bg-sunset-landscape",
+      "path": "assets/ui-kit/source-backgrounds/bg-sunset-landscape.png",
+      "sha256": "7c3b4c097af0eda2121403456947ff2ce0289d2e3a180b447c510b8778ee0c02",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, landscape 3:2 composition. A cozy terracotta courtyard at sunset with pale peach plaster and soft golden lighting, shallow steps and plants tucked into bottom corners, no high-contrast shadows across center. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "bg-night-landscape",
+      "path": "assets/ui-kit/source-backgrounds/bg-night-landscape.png",
+      "sha256": "b1ed8c4bf29b218dbb26cee10272d8ce773d7f1817949bd198801edc6f565bd6",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, landscape 3:2 composition. A peaceful moonlit lavender garden terrace, muted slate and powder-blue central stone surface, sparse fireflies and distant small lanterns restricted to far margins, softly luminous but not busy. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    },
+    {
+      "id": "bg-clouds-landscape",
+      "path": "assets/ui-kit/source-backgrounds/bg-clouds-landscape.png",
+      "sha256": "eff20f17d15a27cdb65d3b2366ebb87092b2b29f478328ab61c644087176f3d1",
+      "generationPrompt": "Premium casual puzzle-game UI art, calm cozy zen aesthetic, softly rounded matte ceramic and clay, gentle warm studio lighting, smooth clean edges, subdued ivory mint peach lavender sky rose sand slate palette. ORIGINAL generic artwork. No text, logos, lettering, digits, watermarks or checkerboard. Clean usable game assets, not an app screenshot.  Full-bleed high quality puzzle game background, landscape 3:2 composition. An airy cream and powder-blue cloud sanctuary with soft misty floating clouds framing the outer edges and a subtle porcelain platform near bottom corners, gentle luminous morning atmosphere. CRITICAL DESIGN: reserve the middle 65 percent of width and 70 percent of height as a very quiet, open, lightly textured, low-detail low-contrast play field where the developer will overlay a board. No board or tiles drawn here. Put decorative elements only near outer borders, keep center visually empty. Soft stylized 3D environment, subtle painterly textures, restrained colors and natural depth. NO text, no UI, no logos, no people, no visible game pieces, no inset border. Opaque finished background.",
+      "backgroundCleanup": false
+    }
+  ]
+}

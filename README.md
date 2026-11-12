@@ -21,6 +21,12 @@ Kumpulan aset gambar dan logic game dari [`arisynn/connectify-new`](https://gith
 
 Pratinjau perbaikan Reward: [latar terang](docs/previews/reward-clean-light.jpg) · [latar gelap](docs/previews/reward-clean-dark.jpg). [Catatan audit seluruh aset](docs/asset-audit.json).
 
+## Paket UI dan visual tambahan
+
+Tersedia **Cozy Ceramic UI Kit**: 122 file siap pakai (termasuk 32 frame), empat strip animasi alternatif, dan sumber atlas. Berisi badan tile empat bentuk × delapan warna, tray/slot, panel kosong, dekorasi, ilustrasi hasil ronde, delapan latar, serta empat animated WebP. Tidak menambahkan ikon objek pasangan atau aplikasi UI.
+
+[Lihat daftar dan cara pakai](docs/ui-kit.md) · [Pratinjau aset](docs/previews/ui-kit-light.jpg) · [Pratinjau latar](docs/previews/ui-kit-backgrounds.jpg) · [Frame efek](docs/previews/ui-kit-effects.jpg).
+
 ## Pemakaian logic
 
 ES modules JavaScript, tanpa dependency runtime, React, DOM, atau request jaringan. Node.js 20+ untuk menjalankan pemeriksaan; modul logic juga dapat digunakan dari bundler browser/game engine.
