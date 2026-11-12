@@ -12,3 +12,7 @@ Sumber: `arisynn/connectify-new`, branch `main`, commit `57160aa2c78fc6ec2fbfbdf
 - 64 tile nontransparan pada empat tema dasar diedit melalui image tool menggunakan atlas 4×4; hasil atlas dipotong deterministik, urutan nomor sama. `transparency.json` membedakan turunan hasil edit dari file asli. Hasil edit bukan jaminan rekonstruksi piksel persis.
 
 Repo baru tidak menyediakan UI/game lengkap. Logiknya dapat dihubungkan ke frontend baru secara bebas dari aplikasi lama. Tidak menambahkan model Match-3 swap/cascade karena sumber tidak memiliki game tersebut.
+
+## Perbaikan aset Reward
+
+Seluruh 297 aset siap pakai ditinjau, mencakup tile, tools, efek dan permukaan. Lima set Reward memiliki checkerboard yang tercetak dalam piksel, backplate sisa dan margin tidak seragam. Seluruh 50 ikon diregenerasi dengan identitas/urutan yang sama, alpha transparan, lalu dipotong dan dipusatkan pada kanvas 512×512. Nomor file tetap 0–9 dan format WebP tetap sama, sehingga ID/path tidak berubah. Masing-masing objek mempunyai minimal 40 piksel ruang tepi pada alpha terlihat. File asli dipindah ke arsip tanpa perubahan byte; checksum sumber tetap dipertahankan. Permukaan tile yang sengaja berbentuk panel dan gambar objek seperti kartu tidak dihapus. Hasil audit dan pratinjau terang/gelap ada di `asset-audit.json` dan `previews/`.

@@ -1,5 +1,5 @@
 {
-  "method": "Image editing tool removes the background from four 4x4 atlases, followed by deterministic cell slicing. Original source files remain unchanged under assets/originals/. These are edited derivatives and are not guaranteed pixel-identical to their sources.",
+  "method": "Image tool background removal/regeneration followed by deterministic atlas slicing. Four base 4x4 sets and five Reward 5x2 sets. Reward sprites are normalized to centered 512x512 canvases with at least 40px visible padding. Original source assets remain unchanged under assets/originals/ or their original ready-use folders. These are edited derivatives, not pixel-identical reconstructions.",
   "tiles": [
     {
       "path": "assets/tiles/forest/0.png",
@@ -512,6 +512,1194 @@
       "cell": 15,
       "sha256": "5e7e31419f8ca1a298d2b7b1cd4117f2e6eb6e9d8d8a7b4a1168b8792f869918",
       "status": "image-tool-transparent-derivative"
+    },
+    {
+      "path": "assets/tiles/reward_sakura/0.webp",
+      "source": "public/art/sakura/0.webp",
+      "original": "assets/originals/public/art/sakura/0.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 0,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "0de7bb7ab5745d324f3b3e5ff6120e0549c78901cfdca8724b5729905c2c3b22",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        58,
+        50,
+        454,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/1.webp",
+      "source": "public/art/sakura/1.webp",
+      "original": "assets/originals/public/art/sakura/1.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 1,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "dcad0d96be5fab302cf649d07919aff9b2f7d3ab7016f95024c057cde8398f2b",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        61,
+        50,
+        451,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/2.webp",
+      "source": "public/art/sakura/2.webp",
+      "original": "assets/originals/public/art/sakura/2.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 2,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "0a41893382706c06cb7e127e03ab90d5970fe35191b5133ccfb21eef3d8d2518",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        52,
+        50,
+        460,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/3.webp",
+      "source": "public/art/sakura/3.webp",
+      "original": "assets/originals/public/art/sakura/3.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 3,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "79c79d0f24d027c66f62bd458c3720a168267dfa3385721747b9b35382e5ac28",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        130,
+        49,
+        381,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/4.webp",
+      "source": "public/art/sakura/4.webp",
+      "original": "assets/originals/public/art/sakura/4.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 4,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "d3f09d771233981db231d80c083a97e9059b678c10284d071bc14a7dda01044d",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        80,
+        462,
+        431
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/5.webp",
+      "source": "public/art/sakura/5.webp",
+      "original": "assets/originals/public/art/sakura/5.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 5,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "6b5ba605e9762c6a493ef4f1cbe07905a841f76a1406e58efa4510f49c99e0f0",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        90,
+        462,
+        421
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/6.webp",
+      "source": "public/art/sakura/6.webp",
+      "original": "assets/originals/public/art/sakura/6.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 6,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "839027e74c10c6a923facec6f6319bb2c4351673289538ed41c60ddf90c93619",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        105,
+        50,
+        407,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/7.webp",
+      "source": "public/art/sakura/7.webp",
+      "original": "assets/originals/public/art/sakura/7.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 7,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "2079d1ecf9fd62d2451a92b50a420cbea212a22c77f74a2deaf9fee57b31b386",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        72,
+        462,
+        440
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/8.webp",
+      "source": "public/art/sakura/8.webp",
+      "original": "assets/originals/public/art/sakura/8.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 8,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "89763f423e5259d5d9062817dafe3de53e6974f4c751458f7e5ade27cb9c027f",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        59,
+        49,
+        453,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/9.webp",
+      "source": "public/art/sakura/9.webp",
+      "original": "assets/originals/public/art/sakura/9.webp",
+      "atlas": "assets/atlases/reward-sakura-transparent.png",
+      "cell": 9,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "7a65ab958637957fd31f8c79f68c8bc94b47403d6fdf621271976c453e4e5187",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        74,
+        462,
+        436
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/0.webp",
+      "source": "public/art/bakery/0.webp",
+      "original": "assets/originals/public/art/bakery/0.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 0,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "8cc07f09c0ddca08b91c1f055f9a15a19aebb6af350f36ce7da4e2aab211113b",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        93,
+        50,
+        419,
+        463
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/1.webp",
+      "source": "public/art/bakery/1.webp",
+      "original": "assets/originals/public/art/bakery/1.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 1,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "de6e87e36d0d934e7ac14cd765fb8f3e47d338feabbe4e736ada0b59ef08ee7a",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        70,
+        463,
+        441
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/2.webp",
+      "source": "public/art/bakery/2.webp",
+      "original": "assets/originals/public/art/bakery/2.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 2,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "19bc51c10c5fb517dc785d71242a850b4e4bf73e748afeef62583e9ba5c820d4",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        116,
+        462,
+        397
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/3.webp",
+      "source": "public/art/bakery/3.webp",
+      "original": "assets/originals/public/art/bakery/3.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 3,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "7486ad01bc373db464b7c6285562f5f58f1648202aaae1df346e63def46543e0",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        52,
+        462,
+        460
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/4.webp",
+      "source": "public/art/bakery/4.webp",
+      "original": "assets/originals/public/art/bakery/4.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 4,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "230f0afd5e01491ec01447e024fcd6d27043a869274f2d46bf6156029b173bb5",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        59,
+        50,
+        454,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/5.webp",
+      "source": "public/art/bakery/5.webp",
+      "original": "assets/originals/public/art/bakery/5.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 5,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "73d07642f29649a73d63458f84f1f62d82dec242cde0615f937687ea6f64b903",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        53,
+        461,
+        459
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/6.webp",
+      "source": "public/art/bakery/6.webp",
+      "original": "assets/originals/public/art/bakery/6.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 6,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "cb371ae5ccf4dc083eb2f1c705c143aa2b224dfaa06d6878a0999b5364d7a708",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        107,
+        49,
+        406,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/7.webp",
+      "source": "public/art/bakery/7.webp",
+      "original": "assets/originals/public/art/bakery/7.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 7,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "e196d19d51dfad088f295d5b1dc116aaa46c6b2e8c85e772ba8bbbd8fd6a648c",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        91,
+        462,
+        421
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/8.webp",
+      "source": "public/art/bakery/8.webp",
+      "original": "assets/originals/public/art/bakery/8.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 8,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "c0294a068d6905629217a85890269b63bb4fb10d44b6b79dbb15f53ed899133b",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        73,
+        50,
+        439,
+        461
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/9.webp",
+      "source": "public/art/bakery/9.webp",
+      "original": "assets/originals/public/art/bakery/9.webp",
+      "atlas": "assets/atlases/reward-bakery-transparent.png",
+      "cell": 9,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "2c03e1a036e4d1943a911d3cc675e7863fec2a34f9615f2f6f9c18e7e179c23c",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        79,
+        463,
+        433
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/0.webp",
+      "source": "public/art/galaxy/0.webp",
+      "original": "assets/originals/public/art/galaxy/0.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 0,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "565c9bbf4be559d8ae14644224ec4c3bb8e5603b851bf84e559474b8c4c72bc0",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        50,
+        461,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/1.webp",
+      "source": "public/art/galaxy/1.webp",
+      "original": "assets/originals/public/art/galaxy/1.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 1,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "fa4e67c7764ae5319828a5d2b5750d104a52b8684a85facf0975d2b291c5b995",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        59,
+        462,
+        452
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/2.webp",
+      "source": "public/art/galaxy/2.webp",
+      "original": "assets/originals/public/art/galaxy/2.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 2,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "2d97a192d30e3d4af1661087d2ca630f2556f760e51c839cf573c1437c052b62",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        81,
+        463,
+        431
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/3.webp",
+      "source": "public/art/galaxy/3.webp",
+      "original": "assets/originals/public/art/galaxy/3.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 3,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "2fe46f90d0ccfaa06e8bfde6e4aa70ddac6c2432c4def39e985a6c433fed1d81",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        93,
+        463,
+        418
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/4.webp",
+      "source": "public/art/galaxy/4.webp",
+      "original": "assets/originals/public/art/galaxy/4.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 4,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "b49fada3c10b7b33e15d1c69ba788c92d6c2469bcbaf230558426f158ade3f61",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        66,
+        463,
+        446
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/5.webp",
+      "source": "public/art/galaxy/5.webp",
+      "original": "assets/originals/public/art/galaxy/5.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 5,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "8c9c49d828831151003a414c403879ba53f03bfb4c9c85085c78958fbaf3b262",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        60,
+        462,
+        451
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/6.webp",
+      "source": "public/art/galaxy/6.webp",
+      "original": "assets/originals/public/art/galaxy/6.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 6,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "13e03f4578ddc6c335e0fd7c69675eb1733082ce553c4e25ea18a2a79e681ab7",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        49,
+        461,
+        461
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/7.webp",
+      "source": "public/art/galaxy/7.webp",
+      "original": "assets/originals/public/art/galaxy/7.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 7,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "8f38698b6613171ad3a09e41ee026a67925b76a52f24c1a276ec0501fdbd3560",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        49,
+        64,
+        462,
+        447
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/8.webp",
+      "source": "public/art/galaxy/8.webp",
+      "original": "assets/originals/public/art/galaxy/8.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 8,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "25a1bbc57e062b1a76988f0d5bd55265538cc71e9d22b9533c5846d4924d26e3",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        54,
+        50,
+        457,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/9.webp",
+      "source": "public/art/galaxy/9.webp",
+      "original": "assets/originals/public/art/galaxy/9.webp",
+      "atlas": "assets/atlases/reward-galaxy-transparent.png",
+      "cell": 9,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "e1c10aaca94491dde52faafda71d90447ea44d2d648a4e0d378ff95f4f2894c5",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        69,
+        463,
+        442
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/0.webp",
+      "source": "public/art/meadow/0.webp",
+      "original": "assets/originals/public/art/meadow/0.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 0,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "37b688565dded7accbc0efa2c9399a38021ea35d3270e0587b3ca54696ea694e",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        100,
+        462,
+        412
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/1.webp",
+      "source": "public/art/meadow/1.webp",
+      "original": "assets/originals/public/art/meadow/1.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 1,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "c2ef085590a11c8931de678aee665aaaf237d52730a3ffe8efb9bfeb44cc7d8e",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        86,
+        463,
+        425
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/2.webp",
+      "source": "public/art/meadow/2.webp",
+      "original": "assets/originals/public/art/meadow/2.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 2,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "022ad0a1fbec4d61be1cc36fae11ede1bf09447e8b014b90d22328978ce84700",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        55,
+        51,
+        457,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/3.webp",
+      "source": "public/art/meadow/3.webp",
+      "original": "assets/originals/public/art/meadow/3.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 3,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "4f608b7a636ca2767880c997edbf8f6f2546e37758dfbd194e2541de5a064943",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        77,
+        50,
+        435,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/4.webp",
+      "source": "public/art/meadow/4.webp",
+      "original": "assets/originals/public/art/meadow/4.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 4,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "e629754e927f0519620b9ffb54e105914c34d94f12578152093b0cc44f7d46b4",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        54,
+        50,
+        456,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/5.webp",
+      "source": "public/art/meadow/5.webp",
+      "original": "assets/originals/public/art/meadow/5.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 5,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "d362246dfa61474dfed3fcfc31c4d856b05b5548521aacddacd14625cdb26cee",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        59,
+        462,
+        453
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/6.webp",
+      "source": "public/art/meadow/6.webp",
+      "original": "assets/originals/public/art/meadow/6.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 6,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "54ea7bef147bff81e906b9db151e3d76b385d73dde3a74dd4359c9cb589b18ec",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        51,
+        81,
+        462,
+        430
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/7.webp",
+      "source": "public/art/meadow/7.webp",
+      "original": "assets/originals/public/art/meadow/7.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 7,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "562fcb19fe5209536ddf09a1d001454ceacac5ad7566d75e4a0852f49c99e0eb",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        64,
+        50,
+        448,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/8.webp",
+      "source": "public/art/meadow/8.webp",
+      "original": "assets/originals/public/art/meadow/8.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 8,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "c584a6aa009a5b49ffafd9dfbe26d8914a54653a0cddd91afe616be0bb3052b1",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        56,
+        462,
+        454
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/9.webp",
+      "source": "public/art/meadow/9.webp",
+      "original": "assets/originals/public/art/meadow/9.webp",
+      "atlas": "assets/atlases/reward-meadow-transparent.png",
+      "cell": 9,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "f11c83a2a138786cd63bd0d155fb1c21cf502197f56f1b06f5159e83a640d21d",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        56,
+        462,
+        456
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/0.webp",
+      "source": "public/art/fruit/0.webp",
+      "original": "assets/originals/public/art/fruit/0.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 0,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "1a02f17ab595f5e318d3bdd82e856f424a7033c096f0d3c9aa2c5f657d130b55",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        50,
+        129,
+        462,
+        384
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/1.webp",
+      "source": "public/art/fruit/1.webp",
+      "original": "assets/originals/public/art/fruit/1.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 1,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "a546b5e5d9f801554dfdf6040599c751586efea434b8edd59e55c9cbc1317202",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        117,
+        50,
+        394,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/2.webp",
+      "source": "public/art/fruit/2.webp",
+      "original": "assets/originals/public/art/fruit/2.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 2,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "bd4f8ff05db55ac9d262ae9e690b4bef9d835d98ba7eefdcfd68343a38b78052",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        89,
+        50,
+        422,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/3.webp",
+      "source": "public/art/fruit/3.webp",
+      "original": "assets/originals/public/art/fruit/3.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 3,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "bd254530357461f3f502cf2495dfdbf705e01f4ccc8548cf1126a268b4aa4ff1",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        77,
+        50,
+        435,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/4.webp",
+      "source": "public/art/fruit/4.webp",
+      "original": "assets/originals/public/art/fruit/4.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 4,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "b0dc68854395b0120814fc2c485c61b2f44b73a9435769ba42177ca37ec1bbb4",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        100,
+        51,
+        412,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/5.webp",
+      "source": "public/art/fruit/5.webp",
+      "original": "assets/originals/public/art/fruit/5.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 5,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "7c0144b02dec5ab35433be0242329887db55f9b00387714dd08739a2814eee54",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        133,
+        50,
+        380,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/6.webp",
+      "source": "public/art/fruit/6.webp",
+      "original": "assets/originals/public/art/fruit/6.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 6,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "d584d99585669c0459fab9bf55d50c1e144c7d58b02d4251dd01d792b31dba53",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        53,
+        50,
+        458,
+        461
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/7.webp",
+      "source": "public/art/fruit/7.webp",
+      "original": "assets/originals/public/art/fruit/7.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 7,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "8a63c204c27dab8274bfafa29fe7261eea0eabffdb1d7240fef1b4768a88268c",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        52,
+        50,
+        459,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/8.webp",
+      "source": "public/art/fruit/8.webp",
+      "original": "assets/originals/public/art/fruit/8.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 8,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "6cb7191fff07003e8070ea16a24eb5f466f1ea04f694386c7bfe8f2970c80d17",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        100,
+        49,
+        411,
+        462
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/9.webp",
+      "source": "public/art/fruit/9.webp",
+      "original": "assets/originals/public/art/fruit/9.webp",
+      "atlas": "assets/atlases/reward-fruit-transparent.png",
+      "cell": 9,
+      "grid": [
+        5,
+        2
+      ],
+      "sha256": "7cf17dc0ce74a0853720c9ee226797eaaa606644199dd361fa316f600ee915a1",
+      "status": "image-tool-regenerated-transparent-derivative",
+      "canvas": [
+        512,
+        512
+      ],
+      "visibleBounds": [
+        104,
+        49,
+        408,
+        463
+      ]
+    }
+  ],
+  "atlases": [
+    {
+      "path": "assets/atlases/candy-transparent.png",
+      "sha256": "93a9edaa12b56cacc26f5eff220bd0bb6e32f91b8a281461535dbd81c33ad42f"
+    },
+    {
+      "path": "assets/atlases/forest-transparent.png",
+      "sha256": "3852c84c7f605804e07ee1cc0713f26ebe47ca20c265497adf9fb73b59f12de2"
+    },
+    {
+      "path": "assets/atlases/ocean-transparent.png",
+      "sha256": "a7053f9f417e1556b8e9987b026a4e3bcb83bd00530fd48e622ed23fa6c8f57e"
+    },
+    {
+      "path": "assets/atlases/reward-bakery-transparent.png",
+      "sha256": "95c83f4704e024ece01cb05e114bb369bb50df1dc5e1f9b91ce3cf0a9604e65a"
+    },
+    {
+      "path": "assets/atlases/reward-fruit-transparent.png",
+      "sha256": "2de9302b34881e2f0357b3fabecbe8d0fc0301f12735e27d73fb2eeeb5a88653"
+    },
+    {
+      "path": "assets/atlases/reward-galaxy-transparent.png",
+      "sha256": "c1624bc21a69ef897e849ede15296f48027b5f0875267da5477e246b775c8511"
+    },
+    {
+      "path": "assets/atlases/reward-meadow-transparent.png",
+      "sha256": "a17ee60e4e2a4d49c3aa1905c7e8173634f407c84607a6dc0d1359c8d5c8b2a5"
+    },
+    {
+      "path": "assets/atlases/reward-sakura-transparent.png",
+      "sha256": "3c9ce5e99acaea71e9673b1fcef3efc1bc9c167d9341c2939ced5378f9dfb7ab"
+    },
+    {
+      "path": "assets/atlases/space-transparent.png",
+      "sha256": "beaa39b2805362de8626ce3bf887710a7d9fbae2be6a277ebcff09a0a2d00827"
     }
   ]
 }

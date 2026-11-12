@@ -1,0 +1,3284 @@
+{
+  "readyAssetsInspected": 297,
+  "method": "Visual contact-sheet review of every ready-use asset, neutral-background candidate analysis, alpha-range/file inspection, and visible-bound/padding validation for all regenerated Reward sprites. Not a formal guarantee that every artistic detail is defect-free.",
+  "regeneratedRewardTiles": 50,
+  "unchangedReadyAssets": 247,
+  "findings": [
+    "Five Reward themes contain baked checkerboards, leftover panels/shadows and uneven crop margins. All ten icons in each set were regenerated.",
+    "Other tile themes, tools and effects were reviewed; no comparable baked checkerboards were found in their contact sheets.",
+    "Surface textures and intentional object graphics such as tarot cards remain intact. Original source sheets/old sprites are archived, not used as the corrected rendering assets."
+  ],
+  "previews": [
+    "docs/previews/reward-clean-light.jpg",
+    "docs/previews/reward-clean-dark.jpg"
+  ],
+  "assets": [
+    {
+      "path": "assets/tiles/alpine_winter/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/alpine_winter/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/autumn_harvest/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/bakery/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/beach_ball.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/beach_hat.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/camera.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/coconut.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/crab.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/ice_cream.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/sandal.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/seagull.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/seashell.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/summer_shirt.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/summer_shorts.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/sunglasses.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/swim_ring.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/tropical_fish.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/beach/tropical_juice.png",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/0.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/1.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/10.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/11.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/12.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/13.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/14.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/15.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/2.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/3.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/4.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/5.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/6.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/7.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/8.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/candy/9.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/0.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/1.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/10.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/11.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/12.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/13.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/14.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/15.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/2.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/3.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/4.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/5.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/6.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/7.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/8.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/forest/9.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/fruit/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/galaxy/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/magic_atelier/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/meadow/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/0.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/1.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/10.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/11.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/12.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/13.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/14.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/15.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/2.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/3.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/4.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/5.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/6.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/7.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/8.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/ocean/9.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/retro_arcade/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/0.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/1.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/2.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/3.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/4.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/5.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/6.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/7.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/8.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_bakery/9.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/0.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/1.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/2.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/3.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/4.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/5.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/6.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/7.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/8.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_fruit/9.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/0.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/1.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/2.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/3.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/4.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/5.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/6.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/7.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/8.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_galaxy/9.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/0.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/1.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/2.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/3.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/4.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/5.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/6.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/7.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/8.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_meadow/9.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/0.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/1.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/2.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/3.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/4.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/5.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/6.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/7.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/8.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/reward_sakura/9.webp",
+      "size": [
+        512,
+        512
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/0.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/1.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/10.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/11.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/12.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/13.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/14.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/15.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/2.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/3.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/4.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/5.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/6.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/7.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/8.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/sakura/9.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/0.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/1.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/10.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/11.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/12.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/13.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/14.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/15.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/2.png",
+      "size": [
+        313,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/3.png",
+      "size": [
+        314,
+        314
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/4.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/5.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/6.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/7.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/8.png",
+      "size": [
+        314,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tiles/space/9.png",
+      "size": [
+        313,
+        313
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/amber.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/candy.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/cloud.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/cream.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/enchanted.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/frost.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/jelly.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/mint.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/night.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/opal.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/pixel.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/sunset.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/surfaces/wood.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/effects/autumn.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/effects/blossom.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/effects/confetti.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/effects/magic.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/effects/pixel.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/effects/snow.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/effects/stars.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tools/hint.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tools/onet.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tools/shuffle.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "assets/tools/triple.webp",
+      "size": [
+        256,
+        256
+      ],
+      "alphaRange": [
+        0,
+        255
+      ]
+    }
+  ]
+}

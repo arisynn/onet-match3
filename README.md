@@ -11,13 +11,15 @@ Kumpulan aset gambar dan logic game dari [`arisynn/connectify-new`](https://gith
 | `src/onet/` | Papan, jalur maksimal dua belokan, arah panah, tile pecah, hint, shuffle, kesulitan, skor/combo, timer dan transisi ronde |
 | `src/match3/` | Generator tumpukan, tray, pencocokan trio, skor, undo satu kali, pause dan timer |
 | `src/shared/` | ID tile, pemetaan gambar, ukuran papan dan seeded random |
-| `assets/tiles/` | 273 tile siap dipakai, termasuk 64 PNG hasil penghapusan latar |
-| `assets/atlases/` | Empat atlas transparan hasil edit sebelum dipotong per tile |
+| `assets/tiles/` | 273 tile siap dipakai, termasuk 64 PNG dasar dan 50 WebP Reward hasil perbaikan transparansi |
+| `assets/atlases/` | Sembilan atlas transparan hasil edit sebelum dipotong per tile |
 | `assets/originals/` | Tile/atlas lama dan source sheet asli yang dipertahankan tanpa perubahan |
 | `assets/surfaces/`, `assets/effects/`, `assets/tools/` | Aset permukaan tile, efek, ikon Onet/Triple, hint dan shuffle |
 | `docs/` | Asal file, checksum, catatan ekstraksi dan perubahan gambar |
 
-316 file gambar asli dipertahankan byte-for-byte, termasuk aset yang sudah transparan. File yang sudah transparan ditempatkan langsung pada folder aset terkait. Empat set lama (`candy`, `ocean`, `forest`, `space`) mendapat **64 PNG turunan transparan** melalui image editing; mentahan aslinya tetap di `assets/originals/public/art/`. Hasil edit dapat memiliki perbedaan detail dibanding sumber dan tidak diklaim identik piksel. Source sheet sengaja tetap berisi latar asli; gunakan `assets/tiles/` saat merender game.
+316 file gambar asli dipertahankan byte-for-byte, termasuk aset yang sudah transparan. File yang sudah transparan ditempatkan langsung pada folder aset terkait. Empat set lama (`candy`, `ocean`, `forest`, `space`) mendapat **64 PNG turunan transparan** melalui image editing; mentahan aslinya tetap di `assets/originals/public/art/`. Seluruh 297 aset siap pakai juga ditinjau. Lima set Reward (Sakura/Bakery/Galaxy/Meadow/Fruit) mendapat 50 WebP hasil regenerasi untuk menghilangkan checkerboard yang tercetak, backplate, dan sisa potongan. Nomor file/ID tetap sama; ukuran 512×512, objek terpusat dengan ruang tepi yang seragam. File Reward lama dipindah ke `assets/originals/public/art/`. Hasil edit dapat memiliki perbedaan detail dibanding sumber dan tidak diklaim identik piksel. Source sheet sengaja tetap berisi latar asli; gunakan `assets/tiles/` saat merender game.
+
+Pratinjau perbaikan Reward: [latar terang](docs/previews/reward-clean-light.jpg) · [latar gelap](docs/previews/reward-clean-dark.jpg). [Catatan audit seluruh aset](docs/asset-audit.json).
 
 ## Pemakaian logic
 
