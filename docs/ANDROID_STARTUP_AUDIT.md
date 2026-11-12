@@ -14,12 +14,12 @@
 - Preserved paused screen instances through nested animated modals, restored gameplay on resume, kept retries in the selected mode, and fixed fade overlay projection and viewport.
 - Replaced unvalidated placeholder reward credits with completion-checked service calls. Disabled the placeholder shop and fake purchase path; no real billing is configured. Free Candy/Ocean selection no longer changes to an unowned WebP theme.
 - Moved generated native libraries into `android/build/`, ignored Kotlin build state, and increased Android version to `1.0.2` / code `3`.
-- Added navigation regression tests and an Android instrumentation test that checks actual screenshot content, asset packaging, menu navigation, Onet/Triple rendering, nested pause/settings/resume, Triple restart, and background/foreground.
+- Added navigation regression tests including a boot-to-menu / one-time XP regression, and an Android instrumentation test that checks actual screenshot content, asset packaging, menu navigation, Onet/Triple rendering, nested pause/settings/resume, Triple restart, and background/foreground.
 - Fixed the headless test so assertions on the application thread propagate to the test runner.
 
 ## Validation
 
-Locally: 66 core Kotlin tests and 2 headless tests passed; 9 JavaScript tests passed. Asset integrity verified 316 originals, 114 transparent derivatives, 9 atlases, 273 tile IDs, 122 UI assets and 4 animations. Debug APK and instrumentation APK build successfully with JDK 21 and Android SDK 35.
+Locally: 67 core Kotlin tests and 2 headless tests passed; 9 JavaScript tests passed. Asset integrity verified 316 originals, 114 transparent derivatives, 9 atlases, 273 tile IDs, 122 UI assets and 4 animations. Debug APK and instrumentation APK build successfully with JDK 21 and Android SDK 35.
 
 The included example `docs/android-smoke-workflow.yml` can retain screenshots and reports as `android-startup-smoke-evidence` when installed. The supplied token lacks workflow write permission, so the active build workflow is unchanged. Consult the release notes for device test results for the published build; compiling and headless tests alone do not establish that an Android surface rendered correctly.
 

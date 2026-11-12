@@ -63,6 +63,24 @@ class ScreenNavigationRegressionTest {
         manager.dispose()
     }
 
+    @Test fun `boot transitions reach the menu and a win grants XP once`() {
+        val game = OnetMatch3Game()
+        game.create()
+        try {
+            repeat(40) { game.screenManager.render(0.1f) }
+            assertEquals(ScreenType.MAIN_MENU, game.screenManager.currentScreenType)
+            game.screenManager.setScreen(ScreenType.ONET_GAME)
+            val screen = game.screenManager.currentScreen as OnetGameScreen
+            screen.roundState = screen.roundState.copy(phase = "won")
+            game.screenManager.render(0.1f)
+            val xpAfterWin = game.playerProfile.currentXp
+            repeat(10) { game.screenManager.render(0.1f) }
+            assertEquals(ScreenType.VICTORY, game.screenManager.currentScreenType)
+            assertEquals(xpAfterWin, game.playerProfile.currentXp)
+            assertEquals(1, game.playerProfile.stats.totalOnetRoundsWon)
+        } finally { game.dispose() }
+    }
+
     @Test fun `gameplay resumes after platform or modal pause`() {
         val game = OnetMatch3Game()
         val onet = OnetGameScreen(game)
