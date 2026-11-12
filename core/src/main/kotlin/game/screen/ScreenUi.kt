@@ -64,9 +64,20 @@ class ScreenUi : Disposable {
         box(x, y - 3f, width, height, Color.valueOf("142A30"))
         box(x, y, width, height, if (selected) Color.valueOf("FFD27D") else cream)
         val path = TileAssetResolver.tileAssetFor(id)
-        // libGDX Pixmap supports PNG/JPEG. The playable themes use the original PNGs.
-        val texture = if (path != null && path.endsWith(".png")) textures.getOrPut(path) {
-            Texture(Gdx.files.internal(path)).apply { setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear) }
+        // libGDX Pixmap supports PNG/JPEG. Resolve companion PNG if WebP is referenced.
+        val resolvedPath = when {
+            path == null -> null
+            path.endsWith(".png") -> path
+            path.endsWith(".webp") -> {
+                val pngCandidate = path.removeSuffix(".webp") + ".png"
+                if (Gdx.files != null && Gdx.files.internal(pngCandidate).exists()) pngCandidate else path
+            }
+            else -> path
+        }
+        val texture = if (resolvedPath != null && resolvedPath.endsWith(".png") && Gdx.files != null && Gdx.files.internal(resolvedPath).exists()) {
+            textures.getOrPut(resolvedPath) {
+                Texture(Gdx.files.internal(resolvedPath)).apply { setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear) }
+            }
         } else null
         if (texture != null) {
             val scale = minOf((width - 10f) / texture.width, (height - 10f) / texture.height)

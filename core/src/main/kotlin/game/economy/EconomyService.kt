@@ -5,9 +5,14 @@ package game.economy
  * Strictly enforces all 10 Non-Negotiable Currency Rules.
  */
 class EconomyService(
-    val ledger: TransactionLedger = TransactionLedger(),
-    val wallet: Wallet = Wallet(ledger)
+    var ledger: TransactionLedger = TransactionLedger(),
+    var wallet: Wallet = Wallet(ledger)
 ) {
+    fun replaceLedger(newLedger: TransactionLedger) {
+        require(newLedger.verifyIntegrity()) { "Cannot replace ledger with invalid cryptographic chain" }
+        this.ledger = newLedger
+        this.wallet = Wallet(newLedger)
+    }
 
     @get:JvmName("gemBalanceValue")
     val gemBalance: Int

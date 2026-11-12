@@ -11,6 +11,7 @@ import game.OnetMatch3Game
 import game.assets.TileAssetResolver
 import game.cosmetics.CosmeticCatalog
 import game.cosmetics.CosmeticType
+import game.cosmetics.PurchaseResult
 import game.missions.MissionStatus
 import game.missions.MissionObjective
 import game.gameplay.onet.*
@@ -110,6 +111,10 @@ class MainMenuScreen(game: OnetMatch3Game) : BaseScreen(game) {
         })
     }
 
+    override fun onScreenShown() {
+        game.soundService.playMusic("audio/bgm.ogg")
+    }
+
     override fun update(delta: Float) {}
     override fun draw(delta: Float) { ui {
         title("ONET + TRIPLE", "Find your moment of calm")
@@ -120,7 +125,7 @@ class MainMenuScreen(game: OnetMatch3Game) : BaseScreen(game) {
         button("Collection shop", 120f, 280f, 300f, 70f)
         button("Profile", 120f, 180f, 140f, 70f)
         button("Settings", 280f, 180f, 140f, 70f)
-        text("Onet + Triple Match 1.0.2", 20f, 85f, 1.1f, width = 500f)
+        text("Onet + Triple Match 1.0.3", 20f, 85f, 1.1f, width = 500f)
     } }
 }
 
@@ -599,6 +604,7 @@ class MissionCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 if (x in 360f..480f && y in 660f..710f) {
                     game.missionService.getActiveMissions().getOrNull(0)?.takeIf { it.isClaimable }?.let {
                         game.missionService.claimMission(it.id, game.economyService)
+                        game.saveState()
                     }
                     game.soundService.playSound("assets/audio/claim.ogg")
                     return true
@@ -607,6 +613,7 @@ class MissionCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 if (x in 360f..480f && y in 540f..590f) {
                     game.missionService.getActiveMissions().getOrNull(1)?.takeIf { it.isClaimable }?.let {
                         game.missionService.claimMission(it.id, game.economyService)
+                        game.saveState()
                     }
                     game.soundService.playSound("assets/audio/claim.ogg")
                     return true
@@ -615,6 +622,7 @@ class MissionCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 if (x in 360f..480f && y in 420f..470f) {
                     game.missionService.getActiveMissions().getOrNull(2)?.takeIf { it.isClaimable }?.let {
                         game.missionService.claimMission(it.id, game.economyService)
+                        game.saveState()
                     }
                     game.soundService.playSound("assets/audio/claim.ogg")
                     return true
@@ -668,6 +676,7 @@ class AchievementCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
                     game.achievementService.getAchievement("onet_master")?.let { achievement ->
                         achievement.tiers.firstOrNull { achievement.isTierClaimable(it.tierIndex) }?.let { tier ->
                             game.achievementService.claimTier(achievement.id, tier.tierIndex, game.economyService)
+                            game.saveState()
                         }
                     }
                     game.soundService.playSound("assets/audio/claim.ogg")
@@ -745,6 +754,19 @@ class PlayerProfileScreen(game: OnetMatch3Game) : BaseScreen(game) {
 // 14. COSMETIC COLLECTION SCREEN
 // =============================================================================
 class CosmeticCollectionScreen(game: OnetMatch3Game) : BaseScreen(game) {
+    private val themeList = listOf(
+        Triple("Candy", "candy", "theme_candy"),
+        Triple("Ocean", "ocean", "theme_ocean"),
+        Triple("Forest", "forest", "theme_forest"),
+        Triple("Space", "space", "theme_space"),
+        Triple("Beach", "beach", "theme_beach"),
+        Triple("Bakery", "reward_bakery", "theme_reward_bakery"),
+        Triple("Fruit", "reward_fruit", "theme_reward_fruit"),
+        Triple("Galaxy", "reward_galaxy", "theme_reward_galaxy"),
+        Triple("Meadow", "reward_meadow", "theme_reward_meadow"),
+        Triple("Sakura", "reward_sakura", "theme_reward_sakura")
+    )
+
     init {
         backgroundColor = Color(0.15f, 0.18f, 0.24f, 1f)
         addInputProcessor(object : InputAdapter() {
@@ -753,22 +775,30 @@ class CosmeticCollectionScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 val x = touch.x
                 val y = touch.y
 
-                // Equip Theme Sakura
-                if (x in 60f..240f && y in 560f..660f) {
-                    game.selectedTheme = "candy"
-                    game.cosmeticService.inventory.equip("theme_candy")
-                    return true
-                }
-                // Preview Theme Sakura
-                if (x in 260f..440f && y in 560f..660f) {
-                    game.selectedTheme = "ocean"
-                    game.cosmeticService.inventory.equip("theme_ocean")
-                    return true
-                }
                 // Back
                 if (x in 40f..140f && y in 880f..930f) {
                     game.screenManager.setScreen(ScreenType.PLAYER_PROFILE, FadeTransition(0.25f))
                     return true
+                }
+
+                // Theme buttons in 2 columns
+                themeList.forEachIndexed { i, (label, key, id) ->
+                    val col = i % 2
+                    val row = i / 2
+                    val bx = if (col == 0) 40f else 280f
+                    val by = 580f - row * 70f
+                    if (x in bx..(bx + 220f) && y in by..(by + 58f)) {
+                        val isOwned = game.cosmeticService.inventory.isOwned(id)
+                        if (isOwned) {
+                            game.selectedTheme = key
+                            game.cosmeticService.inventory.equip(id)
+                            game.saveState()
+                            game.soundService.playSound("audio/pick.ogg")
+                        } else {
+                            game.screenManager.setScreen(ScreenType.COSMETIC_SHOP, FadeTransition(0.25f))
+                        }
+                        return true
+                    }
                 }
                 return false
             }
@@ -778,10 +808,24 @@ class CosmeticCollectionScreen(game: OnetMatch3Game) : BaseScreen(game) {
     override fun update(delta: Float) {}
     override fun draw(delta: Float) { ui {
         back()
-        title("Tile collection", "Choose your favorite free theme")
-        button("Candy", 60f, 560f, 180f, 100f)
-        button("Ocean", 260f, 560f, 180f, 100f)
-        text("Selected: ${game.selectedTheme}", 20f, 470f, 1.5f, width = 500f)
+        title("Tile collection", "Equip your favorite ceramic theme")
+        tile("${game.selectedTheme}_0", 225f, 690f, 90f, 90f)
+        text("Equipped: ${game.selectedTheme.replace('_', ' ').uppercase()}", 20f, 665f, 1.25f, width = 500f)
+
+        themeList.forEachIndexed { i, (label, key, id) ->
+            val col = i % 2
+            val row = i / 2
+            val bx = if (col == 0) 40f else 280f
+            val by = 580f - row * 70f
+            val isOwned = game.cosmeticService.inventory.isOwned(id)
+            val isSelected = game.selectedTheme == key
+            val text = when {
+                isSelected -> "$label (Active)"
+                isOwned -> label
+                else -> "$label (Shop)"
+            }
+            button(text, bx, by, 220f, 58f, enabled = isOwned)
+        }
     } }
 }
 
@@ -789,6 +833,13 @@ class CosmeticCollectionScreen(game: OnetMatch3Game) : BaseScreen(game) {
 // 15. COSMETIC SHOP SCREEN
 // =============================================================================
 class CosmeticShopScreen(game: OnetMatch3Game) : BaseScreen(game) {
+    private val shopItems = listOf(
+        Triple(CosmeticCatalog.THEME_REWARD_BAKERY, "reward_bakery_0", 200),
+        Triple(CosmeticCatalog.THEME_REWARD_FRUIT, "reward_fruit_0", 200),
+        Triple(CosmeticCatalog.THEME_REWARD_GALAXY, "reward_galaxy_0", 250),
+        Triple(CosmeticCatalog.THEME_REWARD_SAKURA, "reward_sakura_0", 250)
+    )
+
     init {
         backgroundColor = Color(0.16f, 0.18f, 0.25f, 1f)
         addInputProcessor(object : InputAdapter() {
@@ -802,6 +853,24 @@ class CosmeticShopScreen(game: OnetMatch3Game) : BaseScreen(game) {
                     game.screenManager.setScreen(ScreenType.MAIN_MENU, FadeTransition(0.25f))
                     return true
                 }
+
+                // Buy buttons
+                shopItems.forEachIndexed { i, (item, _, cost) ->
+                    val by = 630f - i * 95f
+                    if (x in 320f..490f && y in by..(by + 60f)) {
+                        val isOwned = game.cosmeticService.inventory.isOwned(item.id)
+                        if (!isOwned && game.economyService.gemBalance >= cost) {
+                            val res = game.cosmeticService.purchaseEarnable(item.id, game.economyService)
+                            if (res is PurchaseResult.Success) {
+                                game.saveState()
+                                game.soundService.playSound("audio/claim.ogg")
+                            }
+                        } else if (!isOwned) {
+                            game.soundService.playSound("audio/invalid.ogg")
+                        }
+                        return true
+                    }
+                }
                 return false
             }
         })
@@ -810,11 +879,25 @@ class CosmeticShopScreen(game: OnetMatch3Game) : BaseScreen(game) {
     override fun update(delta: Float) {}
     override fun draw(delta: Float) { ui {
         back()
-        title("Collection shop", "More styles are on the way")
-        tile("candy_1", 155f, 540f, 100f, 110f)
-        tile("ocean_1", 285f, 540f, 100f, 110f)
-        text("Purchases are not available in this build.", 20f, 430f, 1.15f, width = 500f)
-        text("Enjoy Candy and Ocean in your collection.", 20f, 385f, 1.1f, width = 500f)
+        title("Collection shop", "Handcrafted ceramic styles")
+        text("Gems: ${game.economyService.gemBalance}", 20f, 755f, 1.6f, width = 500f)
+
+        shopItems.forEachIndexed { i, (item, previewTile, cost) ->
+            val by = 630f - i * 95f
+            tile(previewTile, 40f, by, 70f, 70f)
+            text(item.name, 125f, by + 45f, 1.25f)
+            text("${cost} gems", 125f, by + 15f, 1.05f)
+
+            val isOwned = game.cosmeticService.inventory.isOwned(item.id)
+            val canAfford = game.economyService.gemBalance >= cost
+            val btnText = when {
+                isOwned -> "Owned"
+                canAfford -> "Buy ($cost G)"
+                else -> "Need $cost G"
+            }
+            button(btnText, 320f, by, 170f, 60f, enabled = !isOwned && canAfford)
+        }
+        text("Earn gems by completing daily missions & milestones", 20f, 210f, 1.15f, width = 500f)
     } }
 }
 
@@ -833,15 +916,25 @@ class SettingsScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 // SFX Mute Toggle
                 if (x in 360f..460f && y in 660f..710f) {
                     game.soundService.isSfxMuted = !game.soundService.isSfxMuted
+                    game.saveState()
+                    game.soundService.playSound("audio/click.ogg")
                     return true
                 }
                 // Music Mute Toggle
                 if (x in 360f..460f && y in 560f..610f) {
                     game.soundService.isMusicMuted = !game.soundService.isMusicMuted
+                    game.saveState()
+                    if (game.soundService.isMusicMuted) {
+                        game.soundService.pauseMusic()
+                    } else {
+                        game.soundService.playMusic("audio/bgm.ogg")
+                    }
+                    game.soundService.playSound("audio/click.ogg")
                     return true
                 }
                 // Back
                 if (x in 40f..140f && y in 880f..930f) {
+                    game.soundService.playSound("audio/click.ogg")
                     if (!game.screenManager.popScreen(FadeTransition(0.2f))) {
                         game.screenManager.setScreen(ScreenType.MAIN_MENU, FadeTransition(0.25f))
                     }
@@ -860,7 +953,7 @@ class SettingsScreen(game: OnetMatch3Game) : BaseScreen(game) {
         button(if (game.soundService.isSfxMuted) "Off" else "On", 360f, 660f, 100f, 50f)
         text("Music", 60f, 600f, 1.5f)
         button(if (game.soundService.isMusicMuted) "Off" else "On", 360f, 560f, 100f, 50f)
-        text("Audio tracks are not bundled yet.", 60f, 450f, 1.15f)
+        text("Tactile sound effects & cozy music active.", 20f, 450f, 1.15f, width = 500f)
     } }
 }
 

@@ -18,10 +18,8 @@ import game.screen.*
  */
 class OnetMatch3Game : Game() {
 
-    lateinit var assetService: AssetService
-        private set
-    lateinit var soundService: SoundService
-        private set
+    val assetService: AssetService = AssetService()
+    val soundService: SoundService = SoundService(assetService)
     lateinit var screenManager: ScreenManager
         private set
 
@@ -33,6 +31,7 @@ class OnetMatch3Game : Game() {
     val achievementService: AchievementService = AchievementService()
     val cosmeticService: CosmeticService = CosmeticService()
     val billingService: BillingService = BillingService(game.billing.FakeBillingProvider(), cosmeticService)
+    val storage: game.persistence.GameStorage = game.persistence.GameStorage()
 
     // Current session context
     var selectedLevel: Int = 1
@@ -42,11 +41,14 @@ class OnetMatch3Game : Game() {
     var lastStars: Int = 3
     var lastResultReason: String = ""
 
+    fun saveState() {
+        storage.save(this)
+    }
+
     override fun create() {
-        assetService = AssetService()
-        soundService = SoundService(assetService)
         screenManager = ScreenManager(this)
 
+        storage.load(this)
         missionService.refreshMissions(System.currentTimeMillis())
         registerAllScreens()
 
@@ -101,6 +103,7 @@ class OnetMatch3Game : Game() {
         missionService.recordProgress(game.missions.MissionObjective.MATCH_TILES, matchedTiles)
         missionService.recordProgress(game.missions.MissionObjective.PLAY_THEME, theme = selectedTheme)
         achievementService.syncStats(playerProfile.stats, cosmeticService.inventory.getUnlockedCount())
+        saveState()
     }
 
     override fun render() {
@@ -113,6 +116,7 @@ class OnetMatch3Game : Game() {
     }
 
     override fun pause() {
+        saveState()
         screenManager.pause()
         soundService.pauseMusic()
     }
@@ -123,8 +127,9 @@ class OnetMatch3Game : Game() {
     }
 
     override fun dispose() {
+        saveState()
         screenManager.dispose()
-        soundService.stopMusic()
+        soundService.dispose()
         assetService.dispose()
     }
 }
