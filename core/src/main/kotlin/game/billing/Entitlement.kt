@@ -11,7 +11,7 @@ data class Entitlement(
     val description: String,
     val unlockedCosmeticIds: List<String>,
     val removesAds: Boolean = true,
-    val priceDisplay: String = "$2.99"
+    val priceDisplay: String = ""
 )
 
 /**
@@ -24,7 +24,7 @@ object EntitlementCatalog {
         description = "Permanently removes all interstitial and banner advertisements.",
         unlockedCosmeticIds = emptyList(),
         removesAds = true,
-        priceDisplay = "$1.99"
+        priceDisplay = ""
     )
 
     val ENTITLEMENT_AUTUMN_HARVEST = Entitlement(
@@ -33,7 +33,7 @@ object EntitlementCatalog {
         description = "Unlocks the complete Autumn Harvest theme plus permanent Ad-Free play.",
         unlockedCosmeticIds = listOf("theme_autumn_harvest"),
         removesAds = true,
-        priceDisplay = "$2.99"
+        priceDisplay = ""
     )
 
     val ENTITLEMENT_MAGIC_ATELIER = Entitlement(
@@ -42,7 +42,7 @@ object EntitlementCatalog {
         description = "Unlocks the complete Magic Atelier theme plus permanent Ad-Free play.",
         unlockedCosmeticIds = listOf("theme_magic_atelier"),
         removesAds = true,
-        priceDisplay = "$2.99"
+        priceDisplay = ""
     )
 
     val ENTITLEMENT_RETRO_ARCADE = Entitlement(
@@ -51,7 +51,7 @@ object EntitlementCatalog {
         description = "Unlocks the complete Retro Arcade theme plus permanent Ad-Free play.",
         unlockedCosmeticIds = listOf("theme_retro_arcade"),
         removesAds = true,
-        priceDisplay = "$2.99"
+        priceDisplay = ""
     )
 
     val ENTITLEMENT_ALPINE_WINTER = Entitlement(
@@ -60,7 +60,7 @@ object EntitlementCatalog {
         description = "Unlocks the complete Alpine Winter theme plus permanent Ad-Free play.",
         unlockedCosmeticIds = listOf("theme_alpine_winter"),
         removesAds = true,
-        priceDisplay = "$2.99"
+        priceDisplay = ""
     )
 
     val ENTITLEMENT_COLLECTOR_BUNDLE = Entitlement(
@@ -74,11 +74,10 @@ object EntitlementCatalog {
             "theme_alpine_winter"
         ),
         removesAds = true,
-        priceDisplay = "$7.99"
+        priceDisplay = ""
     )
 
     val ALL_ENTITLEMENTS = listOf(
-        ENTITLEMENT_AD_FREE,
         ENTITLEMENT_AUTUMN_HARVEST,
         ENTITLEMENT_MAGIC_ATELIER,
         ENTITLEMENT_RETRO_ARCADE,

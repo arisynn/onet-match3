@@ -1,0 +1,14 @@
+Original procedural audio — arisynn/onet-match3
+
+All WAV files in this directory were generated from the original mathematical
+synthesis and note patterns in scripts/generate-original-audio.py, authored for
+this project by the Codex development agent on 2026-11-12. No recordings, sample
+libraries, external compositions, or third-party melodies were used.
+
+The contributors dedicate these generated audio files to the public domain under
+CC0 1.0 Universal (SPDX: CC0-1.0), to the extent they hold rights in them.
+https://creativecommons.org/publicdomain/zero/1.0/
+
+This dedication applies only to the original audio in this directory. It does not
+make any claim about ownership or commercial rights in other repository artwork.
+See manifest.json for exact files, checksums and synthesis parameters.

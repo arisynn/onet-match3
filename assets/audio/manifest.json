@@ -1,0 +1,111 @@
+{
+  "provenance": "Original mathematical synthesis; no recordings or third-party musical work used.",
+  "generator": "scripts/generate-original-audio.py",
+  "license": "CC0-1.0",
+  "assets": [
+    {
+      "path": "assets/audio/select.wav",
+      "sha256": "b215324ca169cbcc3c0e9cb0257f4589b5c736f883c9bf78460591974f5003f1",
+      "frames": 5292,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.16359553304252394
+    },
+    {
+      "path": "assets/audio/match.wav",
+      "sha256": "03d7b013000617ba92d7148d533169df75f350f9887a2849b13dff9f7e2bf019",
+      "frames": 13010,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.2523443504032785
+    },
+    {
+      "path": "assets/audio/invalid.wav",
+      "sha256": "36493171711bd57012a6bc05594395ac09683cb258f3511f443ee71578204236",
+      "frames": 7497,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.12367192371398296
+    },
+    {
+      "path": "assets/audio/combo.wav",
+      "sha256": "00ccefcb03697c104d7ded77580339aa322df1b57d3a505b7ab3a32a52da0233",
+      "frames": 15656,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.25898893201147155
+    },
+    {
+      "path": "assets/audio/victory.wav",
+      "sha256": "02fe006d256b5f232e72b284ca5894025143d4c3ab791621208bfc0a0b1deb4f",
+      "frames": 32634,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.2374018348636931
+    },
+    {
+      "path": "assets/audio/defeat.wav",
+      "sha256": "4cdb8ee9dbed901b18aeadaeefb0dae6f15c7c52eadca642802d7195d93479f7",
+      "frames": 22050,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.19826756588676622
+    },
+    {
+      "path": "assets/audio/claim.wav",
+      "sha256": "41eb748b47283354cd259e49d3a0bc0dca0862f4f3ba38d62d8db3c722da7339",
+      "frames": 14332,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.19005468732064557
+    },
+    {
+      "path": "assets/audio/achievement.wav",
+      "sha256": "a3182a396cd0e678efbe8ae694d3dfc3d47e657dce56acd7084c7b43783834b0",
+      "frames": 24255,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.23563319753272488
+    },
+    {
+      "path": "assets/audio/preview.wav",
+      "sha256": "d7e385cb8f9bbe73b9747a24ed36a121fd6065875a0a5c312d20f74d8fda438c",
+      "frames": 14994,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.1563541754827233
+    },
+    {
+      "path": "assets/audio/level-up.wav",
+      "sha256": "32be855263d38acfb1bd722c29098ae551a98866f197bae12ea65460a198e329",
+      "frames": 25578,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.21857284733611
+    },
+    {
+      "path": "assets/audio/undo.wav",
+      "sha256": "3673c5c4a99779213e483724a03f8969db670ab343926a500d9be424b9ef6a32",
+      "frames": 10804,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.15690340035574188
+    },
+    {
+      "path": "assets/audio/shuffle.wav",
+      "sha256": "2dcb56528b075beec0113fa9db18794dd5751483b894a4b5f80f84c1172fce62",
+      "frames": 11466,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.16479192118170954
+    },
+    {
+      "path": "assets/audio/garden-loop.wav",
+      "sha256": "9f1330630d47af8c5b8e1d95620e89d2bc3fb6a9910767cc7610b476f2d91a79",
+      "frames": 705600,
+      "rate": 22050,
+      "channels": 1,
+      "peak": 0.09975787426690913
+    }
+  ]
+}

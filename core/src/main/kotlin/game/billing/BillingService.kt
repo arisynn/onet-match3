@@ -3,68 +3,54 @@ package game.billing
 import game.cosmetics.CosmeticService
 import game.economy.CurrencyRuleViolationException
 
-/**
- * Service coordinating in-app billing entitlements with cosmetic unlocks.
- * Enforces Rule 3: Zero real-money currency purchases.
- */
-class BillingService(
-    private val provider: BillingProvider,
-    private val cosmeticService: CosmeticService
-) {
-
+/** Fail-closed cosmetic entitlements: pending, cancelled and unverified results never unlock. */
+class BillingService(private val provider: BillingProvider, private val cosmeticService: CosmeticService) {
     private val ownedEntitlements = mutableSetOf<String>()
+    init { restorePurchases() }
 
-    init {
-        restorePurchases()
-    }
-
-    /**
-     * Checks if the player owns the Ad-Free entitlement.
-     */
+    fun isAvailable(): Boolean = provider.isConnected()
+    fun availableEntitlements(): List<Entitlement> = if (isAvailable()) provider.getAvailableEntitlements() else emptyList()
     fun isAdFree(): Boolean = synchronized(ownedEntitlements) {
-        ownedEntitlements.any { sku ->
-            EntitlementCatalog.getEntitlement(sku)?.removesAds == true
-        }
+        ownedEntitlements.any { EntitlementCatalog.getEntitlement(it)?.removesAds == true }
     }
 
-    /**
-     * Queries and restores all previously purchased entitlements from Google Play.
-     */
-    fun restorePurchases(): Set<String> {
-        val purchasedSkus = provider.queryPurchasedSkus()
-        synchronized(ownedEntitlements) {
-            ownedEntitlements.clear()
-            for (sku in purchasedSkus) {
-                ownedEntitlements.add(sku)
-                cosmeticService.unlockFromEntitlement(sku)
-            }
-            return HashSet(ownedEntitlements)
-        }
+    fun restorePurchases(): Set<String> = synchronized(ownedEntitlements) {
+        if (!provider.isConnected()) return@synchronized ownedEntitlements.toSet()
+        val restored = provider.queryPurchases().filter(::verified).map { it.skuId }.toSet()
+        ownedEntitlements.clear()
+        ownedEntitlements.addAll(restored)
+        restored.forEach(cosmeticService::unlockFromEntitlement)
+        ownedEntitlements.toSet()
     }
 
-    /**
-     * Initiates purchase flow for a non-consumable entitlement.
-     */
     fun purchaseEntitlement(skuId: String): BillingResult {
-        // Enforce Rule 3: Reject any attempt to sell consumable currency
-        if (skuId.contains("gem", ignoreCase = true) || skuId.contains("coin", ignoreCase = true)) {
-            throw CurrencyRuleViolationException(
-                ruleNumber = 3,
-                message = "Prohibited real-money currency purchase attempt: SKU '$skuId'."
-            )
+        if (skuId.contains("gem", true) || skuId.contains("coin", true)) {
+            throw CurrencyRuleViolationException(3, "Real-money currency purchases are prohibited")
         }
-
-        val result = provider.launchPurchaseFlow(skuId)
-        if (result is BillingResult.Success) {
-            synchronized(ownedEntitlements) {
-                ownedEntitlements.add(skuId)
+        if (EntitlementCatalog.getEntitlement(skuId) == null) return BillingResult.Error(404, "Unknown cosmetic product")
+        if (!provider.isConnected()) return BillingResult.Error(-1, "Purchases are unavailable")
+        return when (val result = provider.launchPurchaseFlow(skuId)) {
+            is BillingResult.Success -> {
+                if (result.purchase.skuId != skuId || !verified(result.purchase)) {
+                    BillingResult.Error(403, "Purchase verification is unavailable or failed")
+                } else {
+                    synchronized(ownedEntitlements) { ownedEntitlements.add(skuId) }
+                    cosmeticService.unlockFromEntitlement(skuId)
+                    result
+                }
             }
-            cosmeticService.unlockFromEntitlement(skuId)
+            // AlreadyOwned is a request to reconcile, never proof of ownership by itself.
+            is BillingResult.ItemAlreadyOwned -> {
+                restorePurchases()
+                if (isEntitlementOwned(skuId)) result else BillingResult.Error(403, "Ownership could not be verified")
+            }
+            else -> result
         }
-        return result
     }
 
-    fun isEntitlementOwned(skuId: String): Boolean = synchronized(ownedEntitlements) {
-        ownedEntitlements.contains(skuId)
-    }
+    private fun verified(record: PurchaseRecord): Boolean =
+        record.purchaseToken.isNotBlank() && EntitlementCatalog.getEntitlement(record.skuId) != null &&
+            provider.verifyPurchase(record) && (record.isAcknowledged || provider.acknowledgePurchase(record.purchaseToken))
+
+    fun isEntitlementOwned(skuId: String): Boolean = synchronized(ownedEntitlements) { skuId in ownedEntitlements }
 }

@@ -21,6 +21,6 @@ class AndroidLauncher : AndroidApplication() {
             useAccelerometer = false
         }
 
-        initialize(OnetMatch3Game(), config)
+        initialize(OnetMatch3Game(platform = AndroidGamePlatform(this)), config)
     }
 }
