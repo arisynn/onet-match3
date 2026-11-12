@@ -1,6 +1,6 @@
 # Onet + Triple Match
 
-Game Android/desktop berbasis Kotlin + libGDX, beserta aset gambar dan logic JavaScript dari [`arisynn/connectify-new`](https://github.com/arisynn/connectify-new), untuk dasar game baru. Repo ini **bukan salinan aplikasi Connectify** dan tidak memuat UI, login, server, toko, ekonomi/reward, database, multiplayer, atau game lainnya.
+Game Android/desktop berbasis Kotlin + libGDX, beserta aset gambar dan logic JavaScript dari [`arisynn/connectify-new`](https://github.com/arisynn/connectify-new), untuk dasar game baru. Repo ini **bukan salinan aplikasi Connectify**: UI, login, server, database, multiplayer, dan game lain dari sumber tidak disertakan. Aplikasi Kotlin di repo ini memiliki menu dan layar game sendiri; lihat bagian Android/desktop di bawah.
 
 **Match 3 di sumber adalah Triple Match berbasis tray:** ambil tile teratas dari 12 tumpukan, kumpulkan tiga gambar sama, dan hindari memenuhi tujuh slot tray. Bukan model swap/cascade ala Candy Crush.
 
