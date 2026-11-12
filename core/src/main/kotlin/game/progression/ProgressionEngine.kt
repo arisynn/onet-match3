@@ -40,11 +40,13 @@ class ProgressionEngine {
      */
     fun calculateLevelForXp(totalXp: Long): Int {
         require(totalXp >= 0) { "XP cannot be negative" }
-        var lvl = 1
-        while (xpRequiredForLevel(lvl + 1) <= totalXp) {
-            lvl++
+        var low = 1
+        var high = Int.MAX_VALUE
+        while (low < high) {
+            val middle = low + ((high.toLong() - low + 1) / 2).toInt()
+            if (xpRequiredForLevel(middle) <= totalXp) low = middle else high = middle - 1
         }
-        return lvl
+        return low
     }
 
     /**
@@ -88,13 +90,13 @@ class ProgressionEngine {
      */
     fun applyXp(profile: PlayerProfile, xpEarned: Long): Pair<PlayerProfile, ProgressionUpdate> {
         require(xpEarned >= 0) { "Earned XP must be >= 0" }
-        val newTotalXp = profile.currentXp + xpEarned
+        val newTotalXp = Math.addExact(profile.currentXp, xpEarned)
         val newLevel = calculateLevelForXp(newTotalXp)
         val xpForNext = xpRequiredForLevel(newLevel + 1)
 
         val unlockedTitles = mutableListOf<String>()
         if (newLevel > profile.level) {
-            for (lvl in (profile.level + 1)..newLevel) {
+            for (lvl in listOf(5, 10, 25, 50, 100).filter { it > profile.level && it <= newLevel }) {
                 getTitleForLevel(lvl)?.let { unlockedTitles.add(it) }
             }
         }
