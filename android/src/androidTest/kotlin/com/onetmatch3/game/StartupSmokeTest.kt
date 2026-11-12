@@ -51,25 +51,42 @@ class StartupSmokeTest {
     }
 
     private fun screenshot(name: String) {
-        Thread.sleep(250)
         val instrumentation = InstrumentationRegistry.getInstrumentation()
-        val bitmap = instrumentation.uiAutomation.takeScreenshot()
-        assertNotNull("Cannot capture Android surface", bitmap)
-        val colors = HashSet<Int>()
+        val deadline = System.currentTimeMillis() + 20000
+        var colors = 0
         var lightPixels = 0
-        for (y in 0 until bitmap.height step 3) for (x in 0 until bitmap.width step 3) {
-            val c = bitmap.getPixel(x, y)
-            colors.add(c)
-            if (android.graphics.Color.red(c) > 145 && android.graphics.Color.green(c) > 145) lightPixels++
-        }
-        assertTrue("$name has no rendered content (${colors.size} colors)", colors.size > 32)
+        var buttonPixels = 0
+        // A resumed Activity may precede the first SurfaceView buffer reaching the
+        // compositor. Wait for actual visible content, with a bounded failure time.
+        do {
+            val bitmap = instrumentation.uiAutomation.takeScreenshot()
+            assertNotNull("Cannot capture Android surface", bitmap)
+            val distinct = HashSet<Int>()
+            lightPixels = 0
+            buttonPixels = 0
+            for (y in 0 until bitmap.height step 3) for (x in 0 until bitmap.width step 3) {
+                val c = bitmap.getPixel(x, y)
+                distinct.add(c)
+                if (android.graphics.Color.red(c) in 155..180 &&
+                    android.graphics.Color.green(c) in 205..235 &&
+                    android.graphics.Color.blue(c) in 180..210) buttonPixels++
+                if (android.graphics.Color.red(c) > 145 && android.graphics.Color.green(c) > 145) lightPixels++
+            }
+            colors = distinct.size
+            val output = File(instrumentation.targetContext.getExternalFilesDir("smoke"), "$name.png")
+            output.outputStream().use { bitmap.compress(Bitmap.CompressFormat.PNG, 100, it) }
+            bitmap.recycle()
+            if (colors > 32 && lightPixels > 500 && buttonPixels > 200) return
+            Thread.sleep(200)
+        } while (System.currentTimeMillis() < deadline)
+        assertTrue("$name has no app buttons ($buttonPixels pixels)", buttonPixels > 200)
+        assertTrue("$name has no rendered content ($colors colors)", colors > 32)
         assertTrue("$name has no visible UI ($lightPixels light pixels)", lightPixels > 500)
-        val output = File(instrumentation.targetContext.getExternalFilesDir("smoke"), "$name.png")
-        output.outputStream().use { bitmap.compress(Bitmap.CompressFormat.PNG, 100, it) }
-        bitmap.recycle()
     }
 
     @Test fun startupAndBothGamesRenderAndResume() {
+        InstrumentationRegistry.getInstrumentation().uiAutomation
+            .executeShellCommand("settings put secure immersive_mode_confirmations confirmed").close()
         ActivityScenario.launch(AndroidLauncher::class.java).use { scenario ->
             scenario.onActivity { activity = it; game = it.applicationListener as OnetMatch3Game }
             awaitScreen(ScreenType.MAIN_MENU)

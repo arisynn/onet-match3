@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Pixmap
 import com.badlogic.gdx.graphics.Texture
+import com.badlogic.gdx.graphics.glutils.PixmapTextureData
 import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.GlyphLayout
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
@@ -16,10 +17,12 @@ class ScreenUi : Disposable {
     private val batch = SpriteBatch()
     private val font = BitmapFont().apply { region.texture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear) }
     private val layout = GlyphLayout()
-    private val pixel = Pixmap(1, 1, Pixmap.Format.RGBA8888).let {
-        it.setColor(Color.WHITE); it.fill()
-        Texture(it).also { _ -> it.dispose() }
+    // Keep the source pixmap until disposal so libGDX can reload this managed texture
+    // when Android recreates the EGL context after backgrounding the application.
+    private val pixelPixmap = Pixmap(1, 1, Pixmap.Format.RGBA8888).apply {
+        setColor(Color.WHITE); fill()
     }
+    private val pixel = Texture(PixmapTextureData(pixelPixmap, Pixmap.Format.RGBA8888, false, false, true))
     private val textures = mutableMapOf<String, Texture>()
     private val cream = Color.valueOf("FFF5E6")
     private val ink = Color.valueOf("263B41")
@@ -87,6 +90,7 @@ class ScreenUi : Disposable {
         textures.clear()
         font.dispose()
         pixel.dispose()
+        pixelPixmap.dispose()
         batch.dispose()
     }
 }

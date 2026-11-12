@@ -11,6 +11,7 @@
 ## Changes
 
 - Added a real libGDX renderer with readable text, visible buttons, PNG tile art, selection/hint highlighting, Onet paths/directional markers, Triple Match stacks/tray, loading feedback, and result screens. Screen resources are allocated only with GL and disposed with their owner.
+- Made the UI pixel texture managed and retained its source pixmap so Android EGL context recreation can restore button/panel rendering.
 - Preserved paused screen instances through nested animated modals, restored gameplay on resume, kept retries in the selected mode, and fixed fade overlay projection and viewport.
 - Replaced unvalidated placeholder reward credits with completion-checked service calls. Disabled the placeholder shop and fake purchase path; no real billing is configured. Free Candy/Ocean selection no longer changes to an unowned WebP theme.
 - Moved generated native libraries into `android/build/`, ignored Kotlin build state, and increased Android version to `1.0.2` / code `3`.
