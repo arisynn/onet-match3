@@ -1,4 +1,5 @@
 plugins {
+    `java-library`
     kotlin("jvm")
 }
 
@@ -18,7 +19,7 @@ kotlin {
 
 dependencies {
     // libGDX core
-    implementation("com.badlogicgames.gdx:gdx:$gdxVersion")
+    api("com.badlogicgames.gdx:gdx:$gdxVersion")
 
     // Kotlin Coroutines & Serialization
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
