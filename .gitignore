@@ -4,3 +4,21 @@ node_modules/
 .env.*
 *.log
 coverage/
+
+# Gradle & Android ignores
+.gradle/
+build/
+*/build/
+local.properties
+.idea/
+*.iml
+
+# Keystores and signing credentials
+*.jks
+*.keystore
+*.key
+keystore.properties
+signing.properties
+credentials.txt
+release.jks
+debug.keystore
