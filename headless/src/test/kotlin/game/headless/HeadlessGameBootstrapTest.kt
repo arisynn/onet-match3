@@ -18,19 +18,19 @@ class HeadlessGameBootstrapTest {
         val candyTiles = TileAssetResolver.tileIdsFor("candy")
         assertEquals(16, candyTiles.size)
         assertEquals("candy_0", candyTiles[0])
-        assertEquals("assets/tiles/candy/0.png", TileAssetResolver.tileAssetFor("candy_0"))
+        assertEquals("tiles/candy/0.png", TileAssetResolver.tileAssetFor("candy_0"))
 
         // Verify reward themes exist
         val rewardSakura = TileAssetResolver.tileIdsFor("reward_sakura")
         assertEquals(10, rewardSakura.size)
         assertEquals("reward_sakura_0", rewardSakura[0])
-        assertEquals("assets/tiles/reward_sakura/0.webp", TileAssetResolver.tileAssetFor("reward_sakura_0"))
+        assertEquals("tiles/reward_sakura/0.webp", TileAssetResolver.tileAssetFor("reward_sakura_0"))
 
         // Verify beach tiles
         val sweetsTiles = TileAssetResolver.tileIdsFor("sweets")
         assertEquals(15, sweetsTiles.size)
         assertEquals("beach_ball", sweetsTiles[0])
-        assertEquals("assets/tiles/beach/beach_ball.png", TileAssetResolver.tileAssetFor("beach_ball"))
+        assertEquals("tiles/beach/beach_ball.png", TileAssetResolver.tileAssetFor("beach_ball"))
     }
 
     @Test
@@ -39,6 +39,7 @@ class HeadlessGameBootstrapTest {
         val game = OnetMatch3Game()
         val config = HeadlessApplicationConfiguration()
         val latch = CountDownLatch(1)
+        val failure = java.util.concurrent.atomic.AtomicReference<Throwable?>()
 
         val app = HeadlessApplication(game, config)
         try {
@@ -68,6 +69,8 @@ class HeadlessGameBootstrapTest {
                     val popped = game.screenManager.popScreen()
                     assertTrue(popped)
                     assertEquals(ScreenType.ONET_GAME, game.screenManager.currentScreenType)
+                } catch (t: Throwable) {
+                    failure.set(t)
                 } finally {
                     latch.countDown()
                 }
@@ -75,6 +78,7 @@ class HeadlessGameBootstrapTest {
 
             val completed = latch.await(5, TimeUnit.SECONDS)
             assertTrue(completed, "Headless application test timed out")
+            failure.get()?.let { throw AssertionError("Headless bootstrap failed", it) }
         } finally {
             app.exit()
         }

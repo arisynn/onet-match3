@@ -22,3 +22,7 @@ signing.properties
 credentials.txt
 release.jks
 debug.keystore
+.kotlin/
+# Native binaries are generated under android/build/.
+android/libs/
+smoke-screenshots/

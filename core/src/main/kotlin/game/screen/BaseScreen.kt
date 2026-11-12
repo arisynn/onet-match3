@@ -68,7 +68,19 @@ abstract class BaseScreen(
         inputMultiplexer.removeProcessor(processor)
     }
 
-    override fun render(delta: Float) {
+    private var screenUi: ScreenUi? = null
+
+    protected fun ui(draw: ScreenUi.() -> Unit) {
+        if (Gdx.gl == null) return
+        val renderer = screenUi ?: ScreenUi().also { screenUi = it }
+        renderer.render(camera.combined, draw)
+    }
+
+    fun renderStatic() { renderFrame(0f, false) }
+
+    override fun render(delta: Float) { renderFrame(delta, true) }
+
+    private fun renderFrame(delta: Float, advance: Boolean) {
         // Clamp delta time to avoid physics/animation explosions on frame hitch
         val clampedDelta = delta.coerceIn(0f, 0.1f)
 
@@ -86,7 +98,7 @@ abstract class BaseScreen(
             viewport.apply()
         }
 
-        update(clampedDelta)
+        if (advance) update(clampedDelta)
         draw(clampedDelta)
     }
 
@@ -130,6 +142,8 @@ abstract class BaseScreen(
         if (!isDisposed) {
             isDisposed = true
             inputMultiplexer.clear()
+            screenUi?.dispose()
+            screenUi = null
             onDispose()
         }
     }

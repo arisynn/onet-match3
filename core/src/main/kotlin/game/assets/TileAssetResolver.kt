@@ -44,7 +44,7 @@ object TileAssetResolver {
      */
     fun tileAssetFor(id: String): String? {
         if (BEACH_TILES.contains(id)) {
-            return "assets/tiles/beach/$id.png"
+            return "tiles/beach/$id.png"
         }
 
         val allThemes = BASE_THEMES + PREMIUM_THEMES + REWARD_THEMES
@@ -53,7 +53,7 @@ object TileAssetResolver {
             val index = list.indexOf(id)
             if (index >= 0) {
                 val ext = if (BASE_THEMES.contains(theme)) "png" else "webp"
-                return "assets/tiles/$theme/$index.$ext"
+                return "tiles/$theme/$index.$ext"
             }
         }
         return null

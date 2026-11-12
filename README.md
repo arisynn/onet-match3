@@ -1,8 +1,27 @@
-# Onet + Triple Match — mentahan
+# Onet + Triple Match
 
-Kumpulan aset gambar dan logic game dari [`arisynn/connectify-new`](https://github.com/arisynn/connectify-new), untuk dasar game baru. Repo ini **bukan salinan aplikasi Connectify** dan tidak memuat UI, login, server, toko, ekonomi/reward, database, multiplayer, atau game lainnya.
+Game Android/desktop berbasis Kotlin + libGDX, beserta aset gambar dan logic JavaScript dari [`arisynn/connectify-new`](https://github.com/arisynn/connectify-new), untuk dasar game baru. Repo ini **bukan salinan aplikasi Connectify** dan tidak memuat UI, login, server, toko, ekonomi/reward, database, multiplayer, atau game lainnya.
 
 **Match 3 di sumber adalah Triple Match berbasis tray:** ambil tile teratas dari 12 tumpukan, kumpulkan tiga gambar sama, dan hindari memenuhi tujuh slot tray. Bukan model swap/cascade ala Candy Crush.
+
+
+## Aplikasi Android dan desktop
+
+JDK 21 dan Android SDK 35 diperlukan untuk build Gradle. Android minimum API 24. Tambahkan `sdk.dir=/path/to/android-sdk` ke `local.properties` atau set `ANDROID_HOME`.
+
+```sh
+./gradlew :core:test :headless:test
+./gradlew :android:assembleDebug
+./gradlew :desktop:run
+# Dengan emulator/perangkat terhubung:
+./gradlew :android:connectedDebugAndroidTest
+```
+
+APK debug: `android/build/outputs/apk/debug/android-debug.apk`. Build release bertanda tangan menggunakan keystore dan empat variabel `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` melalui workflow yang sudah ada. Jangan commit keystore atau token.
+
+Menu, level, papan Onet, Triple Match, pause, dan pengaturan dirender pada Android maupun desktop. Candy dan Ocean dapat dipilih di koleksi. Audio dan pembelian belum tersedia; progres sesi belum disimpan ke disk. Detail audit dan batas pengujian: [audit startup Android](docs/ANDROID_STARTUP_AUDIT.md).
+
+Contoh workflow di `docs/android-smoke-workflow.yml` dapat dipasang sebagai `.github/workflows/android-smoke.yml` untuk menjalankan APK pada emulator API 29, memeriksa konten visual, kedua mode, pause/pengaturan/resume, restart, dan background/foreground. Jika workflow itu diaktifkan, screenshot dan laporan tersedia sebagai artifact `android-startup-smoke-evidence`.
 
 ## Isi
 
@@ -64,7 +83,7 @@ npm test
 npm run check:assets
 ```
 
-Tes memeriksa aturan inti dan transisi hasil ekstraksi. Pemeriksaan aset memvalidasi checksum semua gambar asli/turunan dan memastikan setiap ID memiliki file. Tidak ada aplikasi/demo UI atau QA HP dalam repo ini.
+Tes memeriksa aturan inti dan transisi hasil ekstraksi. Pemeriksaan aset memvalidasi checksum semua gambar asli/turunan dan memastikan setiap ID memiliki file. Aplikasi native tersedia di modul Kotlin; pengujian Android ada di `android/src/androidTest/`.
 
 ## Sumber
 

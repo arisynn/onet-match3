@@ -11,6 +11,8 @@ import game.OnetMatch3Game
 import game.assets.TileAssetResolver
 import game.cosmetics.CosmeticCatalog
 import game.cosmetics.CosmeticType
+import game.missions.MissionStatus
+import game.missions.MissionObjective
 import game.gameplay.onet.*
 import game.gameplay.shared.SeededRandom
 import game.gameplay.triplematch.*
@@ -34,7 +36,12 @@ class BootScreen(game: OnetMatch3Game) : BaseScreen(game) {
         }
     }
 
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        title("ONET + TRIPLE", "A little pause. A perfect match.")
+        tile("candy_0", 156f, 490f, 100f, 110f)
+        tile("candy_0", 282f, 490f, 100f, 110f)
+        text("Starting...", 20f, 340f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -54,7 +61,11 @@ class LoadingScreen(game: OnetMatch3Game) : BaseScreen(game) {
         }
     }
 
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        title("Getting ready", "Preparing your next puzzle")
+        box(80f, 480f, 380f, 18f, Color.DARK_GRAY)
+        box(80f, 480f, 380f * simulatedProgress, 18f, Color.valueOf("A7DCC2"))
+    } }
 }
 
 // =============================================================================
@@ -100,7 +111,17 @@ class MainMenuScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        title("ONET + TRIPLE", "Find your moment of calm")
+        tile("candy_2", 160f, 595f, 95f, 100f)
+        tile("candy_4", 285f, 595f, 95f, 100f)
+        button("Play", 120f, 480f, 300f, 80f)
+        button("Missions", 120f, 380f, 300f, 70f)
+        button("Collection shop", 120f, 280f, 300f, 70f)
+        button("Profile", 120f, 180f, 140f, 70f)
+        button("Settings", 280f, 180f, 140f, 70f)
+        text("Onet + Triple Match 1.0.2", 20f, 85f, 1.1f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -136,7 +157,14 @@ class ModeSelectScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        title("Choose your puzzle", "Two ways to make a match")
+        button("Onet Connect", 80f, 520f, 380f, 160f)
+        text("Connect pairs with up to two turns", 20f, 505f, 1.1f, width = 500f)
+        button("Triple Match", 80f, 320f, 380f, 160f)
+        text("Collect triples. Keep your tray clear.", 20f, 300f, 1.1f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -171,7 +199,14 @@ class LevelSelectScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        text("Choose a level", 20f, 835f, 2.2f, width = 500f)
+        for (i in 0 until 20) {
+            button("${i + 1}", 54f + (i % 4) * 110f, 654f - (i / 4) * 100f, 102f, 88f)
+        }
+        text("Match every pair before time runs out", 20f, 190f, 1.1f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -187,6 +222,8 @@ class OnetGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
     private var pathTimer = 0f
     private var timeAccumulator = 0f
     private var highlightedHint: Hint? = null
+    private var hintsUsed = 0
+    private var shufflesUsed = 0
 
     init {
         backgroundColor = Color(0.15f, 0.18f, 0.23f, 1f)
@@ -205,11 +242,13 @@ class OnetGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 // Hint button
                 if (x in 60f..180f && y in 80f..140f) {
                     highlightedHint = hintFor(roundState)
+                    if (highlightedHint != null) hintsUsed++
                     return true
                 }
                 // Shuffle button
                 if (x in 360f..480f && y in 80f..140f) {
                     roundState = shuffleRound(roundState, SeededRandom(System.currentTimeMillis()))
+                    shufflesUsed++
                     highlightedHint = null
                     return true
                 }
@@ -240,6 +279,10 @@ class OnetGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
         }
     }
 
+    override fun onScreenShown() { game.activeGameType = ScreenType.ONET_GAME }
+    override fun pause() { roundState = pauseOnetRound(roundState, true) }
+    override fun resume() { roundState = pauseOnetRound(roundState, false) }
+
     override fun update(delta: Float) {
         if (roundState.paused) return
 
@@ -265,6 +308,10 @@ class OnetGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
             game.lastScore = roundState.score
             game.lastStars = if (roundState.mistakes == 0) 3 else if (roundState.mistakes <= 2) 2 else 1
             game.lastResultReason = "Board Cleared!"
+            game.playerProfile = game.playerProfile.copy(stats = game.playerProfile.stats.recordOnetRound(
+                true, roundState.matches * 2, roundState.highestCombo, hintsUsed, shufflesUsed,
+                roundState.time.toFloat() / roundState.duration, game.selectedTheme))
+            game.recordWin(MissionObjective.WIN_ONET_ROUNDS, roundState.matches * 2)
             game.playerProfile = game.progressionEngine.applyXp(game.playerProfile, 100L).first
             game.screenManager.setScreen(ScreenType.VICTORY, FadeTransition(0.4f))
         } else if (roundState.phase == "lost") {
@@ -274,7 +321,32 @@ class OnetGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
         }
     }
 
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        text("ONET  /  LEVEL ${game.selectedLevel}", 40f, 930f, 1.5f)
+        button("Pause", 440f, 880f, 70f, 60f)
+        text("Score ${roundState.score}    Time ${roundState.time}s", 45f, 860f, 1.4f)
+        for (r in 1..10) for (c in 1..6) {
+            val cell = roundState.board[r][c] ?: continue
+            if (cell.isSlave) continue
+            val size = groupSize(cell)
+            val selected = roundState.selected == Point(r, c) ||
+                highlightedHint?.let { it.p1 == Point(r, c) || it.p2 == Point(r, c) } == true
+            val x = 45f + (c - 1) * 75f
+            val y = 820f - (r - 1 + size.rows) * 64f
+            tile(cell.id, x + 3f, y + 3f, size.cols * 75f - 6f, size.rows * 64f - 6f, selected)
+            cell.openSide?.let { direction ->
+                val arrow = when (direction) { "up" -> "^"; "down" -> "v"; "left" -> "<"; else -> ">" }
+                text(arrow, x + 7f, y + 20f, 1.1f, Color.valueOf("263B41"))
+            }
+        }
+        activePath?.zipWithNext()?.forEach { (a, b) ->
+            line(45f + (a.c - 0.5f) * 75f, 820f - (a.r - 0.5f) * 64f,
+                 45f + (b.c - 0.5f) * 75f, 820f - (b.r - 0.5f) * 64f)
+        }
+        button("Hint", 60f, 80f, 120f, 60f)
+        button("Shuffle", 360f, 80f, 120f, 60f)
+        text("Tap two matching tiles", 20f, 45f, 1.1f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -328,6 +400,10 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
         })
     }
 
+    override fun onScreenShown() { game.activeGameType = ScreenType.TRIPLE_MATCH_GAME }
+    override fun pause() { roundState = pauseTripleRound(roundState, true) }
+    override fun resume() { roundState = pauseTripleRound(roundState, false) }
+
     override fun update(delta: Float) {
         if (roundState.paused) return
 
@@ -342,6 +418,10 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
             game.lastScore = tripleScore(roundState)
             game.lastStars = if (!roundState.undoUsed) 3 else 2
             game.lastResultReason = "All Triples Matched!"
+            game.playerProfile = game.playerProfile.copy(stats = game.playerProfile.stats.recordTripleMatchRound(
+                true, roundState.cleared, if (roundState.undoUsed) 1 else 0,
+                roundState.time.toFloat() / roundState.duration, game.selectedTheme))
+            game.recordWin(MissionObjective.WIN_TRIPLE_MATCH_ROUNDS, roundState.cleared * 3)
             game.playerProfile = game.progressionEngine.applyXp(game.playerProfile, 120L).first
             game.screenManager.setScreen(ScreenType.VICTORY, FadeTransition(0.4f))
         } else if (roundState.phase == "lost") {
@@ -351,7 +431,27 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : BaseScreen(game) {
         }
     }
 
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        text("TRIPLE MATCH", 40f, 930f, 1.7f)
+        button("Pause", 440f, 880f, 70f, 60f)
+        text("Score ${tripleScore(roundState)}    Time ${roundState.time}s", 50f, 850f, 1.4f)
+        roundState.stacks.forEachIndexed { i, stack ->
+            if (stack.isNotEmpty()) {
+                val x = 55f + (i % 4) * 110f
+                val y = 650f - (i / 4) * 150f
+                tile(stack.last(), x, y, 96f, 115f)
+                text("${stack.size} left", x, y - 10f, 1.1f)
+            }
+        }
+        text("TRAY  ${roundState.tray.size} / 7", 50f, 285f, 1.4f)
+        for (i in 0 until 7) {
+            val x = 40f + i * 66f
+            val id = roundState.tray.getOrNull(i)
+            if (id != null) tile(id, x, 185f, 60f, 72f) else box(x, 185f, 60f, 72f, Color.valueOf("324B53"))
+        }
+        button(if (roundState.undoUsed) "Used" else "Undo", 60f, 60f, 120f, 60f, !roundState.undoUsed && roundState.undo != null)
+        text("Match three. Avoid a full tray.", 200f, 95f, 1.05f)
+    } }
 }
 
 // =============================================================================
@@ -369,12 +469,12 @@ class VictoryScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 // Next Level
                 if (x in 120f..420f && y in 380f..450f) {
                     game.selectedLevel += 1
-                    game.screenManager.setScreen(ScreenType.ONET_GAME, FadeTransition(0.3f))
+                    game.screenManager.setScreen(game.activeGameType, FadeTransition(0.3f))
                     return true
                 }
                 // Replay
                 if (x in 120f..420f && y in 290f..360f) {
-                    game.screenManager.setScreen(ScreenType.ONET_GAME, FadeTransition(0.3f))
+                    game.screenManager.setScreen(game.activeGameType, FadeTransition(0.3f))
                     return true
                 }
                 // Main Menu
@@ -388,7 +488,14 @@ class VictoryScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        title("Beautifully matched!", game.lastResultReason)
+        text("Score ${game.lastScore}", 20f, 620f, 2.2f, width = 500f)
+        text("${game.lastStars} / 3 stars", 20f, 550f, 1.7f, width = 500f)
+        button("Next puzzle", 120f, 380f, 300f, 70f)
+        button("Play again", 120f, 290f, 300f, 70f)
+        button("Main menu", 120f, 200f, 300f, 70f)
+    } }
 }
 
 // =============================================================================
@@ -405,7 +512,7 @@ class DefeatScreen(game: OnetMatch3Game) : BaseScreen(game) {
 
                 // Retry
                 if (x in 120f..420f && y in 340f..420f) {
-                    game.screenManager.setScreen(ScreenType.ONET_GAME, FadeTransition(0.3f))
+                    game.screenManager.setScreen(game.activeGameType, FadeTransition(0.3f))
                     return true
                 }
                 // Main Menu
@@ -419,7 +526,12 @@ class DefeatScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        title("Try a fresh start", game.lastResultReason)
+        text("Score ${game.lastScore}", 20f, 600f, 2.2f, width = 500f)
+        button("Try again", 120f, 340f, 300f, 80f)
+        button("Main menu", 120f, 240f, 300f, 80f)
+    } }
 }
 
 // =============================================================================
@@ -442,7 +554,7 @@ class PauseScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 // Restart
                 if (x in 120f..420f && y in 430f..500f) {
                     game.screenManager.popScreen(InstantTransition)
-                    game.screenManager.setScreen(ScreenType.ONET_GAME, FadeTransition(0.25f))
+                    game.screenManager.setScreen(game.activeGameType, FadeTransition(0.25f))
                     return true
                 }
                 // Settings
@@ -462,7 +574,13 @@ class PauseScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        title("Take a breather", "Your puzzle is waiting")
+        button("Resume", 120f, 520f, 300f, 70f)
+        button("Restart", 120f, 430f, 300f, 70f)
+        button("Settings", 120f, 340f, 300f, 70f)
+        button("Main menu", 120f, 250f, 300f, 70f)
+    } }
 }
 
 // =============================================================================
@@ -479,19 +597,25 @@ class MissionCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
 
                 // Claim Mission 1
                 if (x in 360f..480f && y in 660f..710f) {
-                    game.economyService.claimMissionReward("daily_easy_1", 20)
+                    game.missionService.getActiveMissions().getOrNull(0)?.takeIf { it.isClaimable }?.let {
+                        game.missionService.claimMission(it.id, game.economyService)
+                    }
                     game.soundService.playSound("assets/audio/claim.ogg")
                     return true
                 }
                 // Claim Mission 2
                 if (x in 360f..480f && y in 540f..590f) {
-                    game.economyService.claimMissionReward("daily_med_1", 30)
+                    game.missionService.getActiveMissions().getOrNull(1)?.takeIf { it.isClaimable }?.let {
+                        game.missionService.claimMission(it.id, game.economyService)
+                    }
                     game.soundService.playSound("assets/audio/claim.ogg")
                     return true
                 }
                 // Claim Mission 3
                 if (x in 360f..480f && y in 420f..470f) {
-                    game.economyService.claimMissionReward("daily_hard_1", 50)
+                    game.missionService.getActiveMissions().getOrNull(2)?.takeIf { it.isClaimable }?.let {
+                        game.missionService.claimMission(it.id, game.economyService)
+                    }
                     game.soundService.playSound("assets/audio/claim.ogg")
                     return true
                 }
@@ -510,8 +634,21 @@ class MissionCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
         })
     }
 
+    override fun onScreenShown() { game.missionService.refreshMissions(System.currentTimeMillis()) }
+
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        text("Missions", 180f, 920f, 2f)
+        button("Achievements", 280f, 820f, 200f, 50f)
+        game.missionService.getActiveMissions().take(3).forEachIndexed { i, mission ->
+            val y = 710f - i * 120f
+            text(mission.title, 50f, y + 35f, 1.25f)
+            text("${mission.currentCount} / ${mission.targetCount}    ${mission.gemReward} gems", 50f, y - 2f, 1.1f)
+            button(if (mission.status == MissionStatus.CLAIMED) "Claimed" else "Claim", 360f, y - 50f, 120f, 50f, mission.isClaimable)
+        }
+        text("Complete goals to claim gems", 20f, 230f, 1.25f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -528,7 +665,11 @@ class AchievementCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
 
                 // Claim Achievement Reward
                 if (x in 360f..480f && y in 600f..660f) {
-                    game.economyService.claimAchievementReward("first_win", 0, 100)
+                    game.achievementService.getAchievement("onet_master")?.let { achievement ->
+                        achievement.tiers.firstOrNull { achievement.isTierClaimable(it.tierIndex) }?.let { tier ->
+                            game.achievementService.claimTier(achievement.id, tier.tierIndex, game.economyService)
+                        }
+                    }
                     game.soundService.playSound("assets/audio/claim.ogg")
                     return true
                 }
@@ -548,7 +689,18 @@ class AchievementCenterScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        text("Achievements", 180f, 920f, 1.8f)
+        button("Missions", 60f, 820f, 200f, 50f)
+        text("Milestones", 50f, 730f, 1.8f)
+        text("Keep matching to build your collection.", 50f, 670f, 1.1f)
+        game.achievementService.getAchievement("onet_master")?.let { achievement ->
+            text("Onet wins: ${achievement.currentValue}", 50f, 610f, 1.4f)
+            val claimable = achievement.tiers.any { achievement.isTierClaimable(it.tierIndex) }
+            button("Claim", 360f, 600f, 120f, 60f, claimable)
+        }
+    } }
 }
 
 // =============================================================================
@@ -579,7 +731,14 @@ class PlayerProfileScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        title("Your journey", "One puzzle at a time")
+        text("Level ${game.playerProfile.level}", 20f, 650f, 2f, width = 500f)
+        text("XP ${game.playerProfile.currentXp}", 20f, 580f, 1.7f, width = 500f)
+        text("Gems ${game.economyService.wallet.gemBalance}", 20f, 510f, 1.7f, width = 500f)
+        button("Tile collection", 120f, 220f, 300f, 70f)
+    } }
 }
 
 // =============================================================================
@@ -596,13 +755,14 @@ class CosmeticCollectionScreen(game: OnetMatch3Game) : BaseScreen(game) {
 
                 // Equip Theme Sakura
                 if (x in 60f..240f && y in 560f..660f) {
-                    game.selectedTheme = "sakura"
-                    game.cosmeticService.inventory.equip("theme_sakura")
+                    game.selectedTheme = "candy"
+                    game.cosmeticService.inventory.equip("theme_candy")
                     return true
                 }
                 // Preview Theme Sakura
                 if (x in 260f..440f && y in 560f..660f) {
-                    game.screenManager.pushScreen(ScreenType.COSMETIC_PREVIEW, FadeTransition(0.2f))
+                    game.selectedTheme = "ocean"
+                    game.cosmeticService.inventory.equip("theme_ocean")
                     return true
                 }
                 // Back
@@ -616,7 +776,13 @@ class CosmeticCollectionScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        title("Tile collection", "Choose your favorite free theme")
+        button("Candy", 60f, 560f, 180f, 100f)
+        button("Ocean", 260f, 560f, 180f, 100f)
+        text("Selected: ${game.selectedTheme}", 20f, 470f, 1.5f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -631,20 +797,6 @@ class CosmeticShopScreen(game: OnetMatch3Game) : BaseScreen(game) {
                 val x = touch.x
                 val y = touch.y
 
-                // Buy Bakery Theme (400 Gems)
-                if (x in 320f..460f && y in 620f..670f) {
-                    if (game.economyService.wallet.hasSufficientGems(400)) {
-                        game.economyService.purchaseCosmetic("theme_reward_bakery", 400)
-                        game.cosmeticService.inventory.unlock("theme_reward_bakery")
-                        game.soundService.playSound("assets/audio/buy.ogg")
-                    }
-                    return true
-                }
-                // Buy Supporter Pack (IAP Billing)
-                if (x in 320f..460f && y in 480f..530f) {
-                    game.billingService.purchaseEntitlement("bundle_sakura_supporter")
-                    return true
-                }
                 // Back
                 if (x in 40f..140f && y in 880f..930f) {
                     game.screenManager.setScreen(ScreenType.MAIN_MENU, FadeTransition(0.25f))
@@ -656,7 +808,14 @@ class CosmeticShopScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        title("Collection shop", "More styles are on the way")
+        tile("candy_1", 155f, 540f, 100f, 110f)
+        tile("ocean_1", 285f, 540f, 100f, 110f)
+        text("Purchases are not available in this build.", 20f, 430f, 1.15f, width = 500f)
+        text("Enjoy Candy and Ocean in your collection.", 20f, 385f, 1.1f, width = 500f)
+    } }
 }
 
 // =============================================================================
@@ -694,7 +853,15 @@ class SettingsScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        back()
+        title("Settings", "Make yourself comfortable")
+        text("Sound effects", 60f, 700f, 1.5f)
+        button(if (game.soundService.isSfxMuted) "Off" else "On", 360f, 660f, 100f, 50f)
+        text("Music", 60f, 600f, 1.5f)
+        button(if (game.soundService.isMusicMuted) "Off" else "On", 360f, 560f, 100f, 50f)
+        text("Audio tracks are not bundled yet.", 60f, 450f, 1.15f)
+    } }
 }
 
 // =============================================================================
@@ -711,7 +878,8 @@ class CosmeticPreviewScreen(game: OnetMatch3Game) : BaseScreen(game) {
 
                 // Equip Selected Style
                 if (x in 120f..420f && y in 240f..310f) {
-                    game.cosmeticService.inventory.equip("theme_sakura")
+                    game.cosmeticService.inventory.equip("theme_candy")
+                    game.selectedTheme = "candy"
                     game.screenManager.popScreen(FadeTransition(0.2f))
                     return true
                 }
@@ -726,5 +894,11 @@ class CosmeticPreviewScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
 
     override fun update(delta: Float) {}
-    override fun draw(delta: Float) {}
+    override fun draw(delta: Float) { ui {
+        button("Close", 440f, 880f, 60f, 60f)
+        title("Candy tiles", "A sweet little collection")
+        tile("candy_0", 145f, 500f, 110f, 120f)
+        tile("candy_3", 285f, 500f, 110f, 120f)
+        button("Use Candy", 120f, 240f, 300f, 70f)
+    } }
 }

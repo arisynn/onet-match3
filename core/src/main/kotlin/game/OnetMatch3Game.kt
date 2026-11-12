@@ -37,6 +37,7 @@ class OnetMatch3Game : Game() {
     // Current session context
     var selectedLevel: Int = 1
     var selectedTheme: String = "candy"
+    var activeGameType: ScreenType = ScreenType.ONET_GAME
     var lastScore: Int = 0
     var lastStars: Int = 3
     var lastResultReason: String = ""
@@ -46,6 +47,7 @@ class OnetMatch3Game : Game() {
         soundService = SoundService(assetService)
         screenManager = ScreenManager(this)
 
+        missionService.refreshMissions(System.currentTimeMillis())
         registerAllScreens()
 
         // Kick off with boot screen
@@ -92,6 +94,13 @@ class OnetMatch3Game : Game() {
         screenManager.registerScreen(ScreenType.ROUND_RESULT) { VictoryScreen(this) }
         screenManager.registerScreen(ScreenType.SHOP_COSMETICS) { CosmeticShopScreen(this) }
         screenManager.registerScreen(ScreenType.MISSIONS_ACHIEVEMENTS) { MissionCenterScreen(this) }
+    }
+
+    fun recordWin(objective: game.missions.MissionObjective, matchedTiles: Int) {
+        missionService.recordProgress(objective)
+        missionService.recordProgress(game.missions.MissionObjective.MATCH_TILES, matchedTiles)
+        missionService.recordProgress(game.missions.MissionObjective.PLAY_THEME, theme = selectedTheme)
+        achievementService.syncStats(playerProfile.stats, cosmeticService.inventory.getUnlockedCount())
     }
 
     override fun render() {

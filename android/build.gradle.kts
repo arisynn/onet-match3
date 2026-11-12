@@ -14,15 +14,15 @@ android {
         applicationId = "com.onetmatch3.game"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 3
+        versionName = "1.0.2"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     sourceSets {
         getByName("main") {
             assets.srcDirs(files("../assets"))
-            jniLibs.srcDirs(files("libs"))
+            jniLibs.srcDirs(layout.buildDirectory.dir("generated/jniLibs"))
         }
     }
 
@@ -73,23 +73,27 @@ dependencies {
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86")
     natives("com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64")
 
+    androidTestImplementation("androidx.test:runner:1.6.2")
+    androidTestImplementation("androidx.test.ext:junit:1.2.1")
+    androidTestImplementation("androidx.test:core:1.6.1")
+
     implementation("androidx.core:core-ktx:1.15.0")
     implementation("androidx.appcompat:appcompat:1.7.0")
 }
 
 tasks.register("copyAndroidNatives") {
     doFirst {
-        file("libs/armeabi-v7a").mkdirs()
-        file("libs/arm64-v8a").mkdirs()
-        file("libs/x86").mkdirs()
-        file("libs/x86_64").mkdirs()
+        layout.buildDirectory.dir("generated/jniLibs/armeabi-v7a").get().asFile.mkdirs()
+        layout.buildDirectory.dir("generated/jniLibs/arm64-v8a").get().asFile.mkdirs()
+        layout.buildDirectory.dir("generated/jniLibs/x86").get().asFile.mkdirs()
+        layout.buildDirectory.dir("generated/jniLibs/x86_64").get().asFile.mkdirs()
 
         natives.files.forEach { jar ->
             var outputDir: File? = null
-            if (jar.name.endsWith("natives-arm64-v8a.jar")) outputDir = file("libs/arm64-v8a")
-            if (jar.name.endsWith("natives-armeabi-v7a.jar")) outputDir = file("libs/armeabi-v7a")
-            if (jar.name.endsWith("natives-x86_64.jar")) outputDir = file("libs/x86_64")
-            if (jar.name.endsWith("natives-x86.jar")) outputDir = file("libs/x86")
+            if (jar.name.endsWith("natives-arm64-v8a.jar")) outputDir = layout.buildDirectory.dir("generated/jniLibs/arm64-v8a").get().asFile
+            if (jar.name.endsWith("natives-armeabi-v7a.jar")) outputDir = layout.buildDirectory.dir("generated/jniLibs/armeabi-v7a").get().asFile
+            if (jar.name.endsWith("natives-x86_64.jar")) outputDir = layout.buildDirectory.dir("generated/jniLibs/x86_64").get().asFile
+            if (jar.name.endsWith("natives-x86.jar")) outputDir = layout.buildDirectory.dir("generated/jniLibs/x86").get().asFile
             outputDir?.let { dest ->
                 copy {
                     from(zipTree(jar))
