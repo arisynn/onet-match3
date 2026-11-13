@@ -19,7 +19,9 @@ JDK 21 dan Android SDK 35 diperlukan untuk build Gradle. Android minimum API 24.
 
 APK debug: `android/build/outputs/apk/debug/android-debug.apk`. Build release bertanda tangan menggunakan keystore dan empat variabel `ANDROID_KEYSTORE_FILE`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, `ANDROID_KEY_PASSWORD` melalui workflow yang sudah ada. Jangan commit keystore atau token.
 
-Menu, level, papan Onet, Triple Match, pause, dan pengaturan dirender pada Android maupun desktop. Candy dan Ocean dapat dipilih di koleksi. Audio dan pembelian belum tersedia; progres sesi belum disimpan ke disk. Detail audit dan batas pengujian: [audit startup Android](docs/ANDROID_STARTUP_AUDIT.md).
+Implementasi native sekarang memuat 17 layar keramik responsif, tutorial/campaign Onet dan Triple, progres level independen, personal record dan EXP replay-aware. Save lokal versioned mencakup ronde aktif, wallet/ledger, misi, achievement, inventori dan pengaturan; penulisan atomik serta backup memulihkan save korup. Musik/SFX orisinal, haptics, reduced motion/effects, toko Gems dan preview/equip kosmetik sudah disambungkan.
+
+**Rilis publik masih diblokir:** `:android:verifyCommercialAssetRights` wajib lolos sebelum build release karena hak komersial sebagian artwork belum dikonfirmasi. Billing nyata tetap unavailable sampai konfigurasi produk Play dan verifikasi entitlement tersedia; produksi tidak memakai penyedia pembelian palsu. APK debug untuk review internal dapat dibangun. Lihat [hasil tes](docs/TEST_REPORT.md), [roadmap](docs/IMPLEMENTATION_ROADMAP.md), dan [checklist rilis](docs/RELEASE_CHECKLIST.md).
 
 Contoh workflow di `docs/android-smoke-workflow.yml` dapat dipasang sebagai `.github/workflows/android-smoke.yml` untuk menjalankan APK pada emulator API 29, memeriksa konten visual, kedua mode, pause/pengaturan/resume, restart, dan background/foreground. Jika workflow itu diaktifkan, screenshot dan laporan tersedia sebagai artifact `android-startup-smoke-evidence`.
 

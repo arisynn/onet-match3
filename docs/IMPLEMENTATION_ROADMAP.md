@@ -10,3 +10,9 @@ Current coordinated work starts from `6720f88`. Old roadmap “complete” label
 6. **Public release readiness — blocked.** Resolve commercial-use permissions per hash, verify approved-only packaging, sign/verify actual outputs, physical-device/performance coverage and Play-console/backend purchase configuration. No Play publication without explicit authorization.
 
 The user-supplied text stops mid-sentence in currency-ledger/offline limitations. This roadmap follows the supplied requirements and does not fabricate missing sections or silently weaken explicit restrictions.
+
+## Lead integration update — 2026-11-13
+
+Gameplay, economy, platform audio/haptics, atomic session persistence and all17 native ceramic screens are integrated on `feature/premium-native`. Core/headless tests have been executed successfully (98 core +2headless); Node12 tests and source asset integrity passed. Save semantic fallback and interruption tests are included. UI uses Scene2D touch focus, shared drawing/hit rectangles and Android safe-area offsets. Font weight600 static OFL derivative replaces the variable font's thin defaultweight200.
+
+Android debug/instrumentation APKs have been generated. Native emulator acceptance is in progress: the first attempt was obstructed by an emulator SystemUI ANR, so it is not a pass. Final results belong in TEST_REPORT. Public rights, real Play products/server verification, physical ARM/device performance, production R8/store delivery remain gates; no commercial clearance is claimed.

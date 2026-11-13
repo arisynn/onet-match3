@@ -51,9 +51,9 @@ class StartupSmokeTest {
         val instrumentation = InstrumentationRegistry.getInstrumentation()
         val now = android.os.SystemClock.uptimeMillis()
         val down = android.view.MotionEvent.obtain(now, now, android.view.MotionEvent.ACTION_DOWN, screenX, screenY, 0)
-        instrumentation.sendPointerSync(down); down.recycle()
+        assertTrue(instrumentation.uiAutomation.injectInputEvent(down, true)); down.recycle()
         val up = android.view.MotionEvent.obtain(now, now + 60, android.view.MotionEvent.ACTION_UP, screenX, screenY, 0)
-        instrumentation.sendPointerSync(up); up.recycle()
+        assertTrue(instrumentation.uiAutomation.injectInputEvent(up, true)); up.recycle()
     }
 
     private fun tap(id: String) {
@@ -103,6 +103,8 @@ class StartupSmokeTest {
     @Test fun startupAndBothGamesRenderAndResume() {
         InstrumentationRegistry.getInstrumentation().uiAutomation
             .executeShellCommand("settings put secure immersive_mode_confirmations confirmed").close()
+        InstrumentationRegistry.getInstrumentation().targetContext.getExternalFilesDir("smoke")
+            ?.listFiles()?.filter { it.extension == "png" }?.forEach { it.delete() }
         ActivityScenario.launch(AndroidLauncher::class.java).use { scenario ->
             scenario.onActivity { activity = it; game = it.applicationListener as OnetMatch3Game }
             awaitScreen(ScreenType.MAIN_MENU)
