@@ -37,6 +37,10 @@ class OnetMatch3Game(
     lateinit var screenManager: ScreenManager
         private set
 
+    private var uiTypefaceInstance: UiTypeface? = null
+    val uiTypeface: UiTypeface
+        get() = uiTypefaceInstance ?: UiTypeface().also { uiTypefaceInstance = it }
+
     // Domain Services
     var economyService: EconomyService = EconomyService()
     val progressionEngine: ProgressionEngine = ProgressionEngine()
@@ -332,6 +336,8 @@ class OnetMatch3Game(
     override fun dispose() {
         persistLifecycle()
         screenManager.dispose()
+        uiTypefaceInstance?.dispose()
+        uiTypefaceInstance = null
         soundService.stopMusic()
         assetService.dispose()
     }

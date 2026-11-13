@@ -4,12 +4,10 @@ import com.badlogic.gdx.Gdx
 import com.badlogic.gdx.graphics.Color
 import com.badlogic.gdx.graphics.Pixmap
 import com.badlogic.gdx.graphics.Texture
-import com.badlogic.gdx.graphics.g2d.BitmapFont
 import com.badlogic.gdx.graphics.g2d.GlyphLayout
 import com.badlogic.gdx.graphics.g2d.NinePatch
 import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.graphics.g2d.TextureRegion
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData
 import com.badlogic.gdx.math.Matrix4
 import com.badlogic.gdx.math.Rectangle
@@ -20,15 +18,15 @@ import game.assets.TileAssetResolver
 import kotlin.math.min
 
 /** Ceramic artwork, crisp scalable typography, and consistent controls for native screens. */
-class ScreenUi : Disposable {
+class ScreenUi(typeface: UiTypeface) : Disposable {
     val ink = Color.valueOf("344F45")
     val muted = Color.valueOf("7D8B7D")
     val sage = Color.valueOf("62876D")
     val cream = Color.valueOf("FFFDF5")
     private val batch = SpriteBatch()
     private val glyphs = GlyphLayout()
-    private val bodyFont = createFont("PuzzleSans-SemiBold.ttf")
-    private val displayFont = createFont("DMSerifDisplay.ttf")
+    private val bodyFont = typeface.body
+    private val displayFont = typeface.display
     private val sourcePixmaps = mutableListOf<Pixmap>()
     private val pixel = managedPixmap(1) { it.setColor(Color.WHITE); it.fill() }
     private val circle = managedPixmap(128) {
@@ -67,19 +65,6 @@ class ScreenUi : Disposable {
         private set
     var height = 960f
         private set
-
-    private fun createFont(file: String): BitmapFont {
-        val generator = FreeTypeFontGenerator(Gdx.files.internal("fonts/$file"))
-        return try {
-            generator.generateFont(FreeTypeFontGenerator.FreeTypeFontParameter().apply {
-                size = 64
-                characters = FreeTypeFontGenerator.DEFAULT_CHARS + "•…"
-                genMipMaps = true
-                minFilter = Texture.TextureFilter.MipMapLinearLinear
-                magFilter = Texture.TextureFilter.Linear
-            })
-        } finally { generator.dispose() }
-    }
 
     private fun managedPixmap(size: Int, draw: (Pixmap) -> Unit): Texture {
         val pixmap = Pixmap(size, size, Pixmap.Format.RGBA8888)
@@ -276,7 +261,6 @@ class ScreenUi : Disposable {
     override fun dispose() {
         textures.values.forEach { it.dispose() }
         textures.clear()
-        bodyFont.dispose(); displayFont.dispose()
         pixel.dispose(); circle.dispose()
         sourcePixmaps.forEach { it.dispose() }
         batch.dispose()

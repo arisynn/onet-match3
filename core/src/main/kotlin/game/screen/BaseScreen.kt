@@ -87,7 +87,7 @@ abstract class BaseScreen(
 
     protected fun ui(draw: ScreenUi.() -> Unit) {
         if (Gdx.gl == null) return
-        val renderer = screenUi ?: ScreenUi().also { screenUi = it }
+        val renderer = screenUi ?: ScreenUi(game.uiTypeface).also { screenUi = it }
         val bodyId=game.cosmeticService.inventory.getEquipped(CosmeticType.TILE_BODY)
         val paletteId=game.cosmeticService.inventory.getEquipped(CosmeticType.UI_PALETTE)
         renderer.bodyTone=CosmeticCatalog.getItem(bodyId ?: "")?.assetPath?.substringAfterLast('/')?.removeSuffix(".webp")?.substringAfterLast('-') ?: "ivory"
