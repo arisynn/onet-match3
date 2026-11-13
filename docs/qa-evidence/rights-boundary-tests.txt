@@ -1,0 +1,11 @@
+✔ public gate accepts only matching asset and explicit local license evidence (41.390468ms)
+✔ public gate blocks unknown and newly bundled files (5.238923ms)
+✔ public gate blocks changed asset and missing or changed license evidence (9.924851ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 308.3145

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "scope": "all files currently bundled from assets/",
+  "checked": 824,
+  "confirmed": 19,
+  "blocked": 805,
+  "failures": [
+    {
+      "path": "assets/atlases/candy-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/forest-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/ocean-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/reward-bakery-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/reward-fruit-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/reward-galaxy-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/reward-meadow-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/reward-sakura-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/atlases/space-transparent.png",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/effects/autumn.webp",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/effects/blossom.webp",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/effects/confetti.webp",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/effects/magic.webp",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/effects/pixel.webp",
+      "reason": "commercial rights not confirmed"
+    },
+    {
+      "path": "assets/effects/snow.webp",
+      "reason": "commercial rights not confirmed"
+    }
+  ]
+}
+PUBLIC RELEASE BLOCKED: 805 bundled files lack matching commercial-use evidence. Originals are preserved. Internal debug validation is separate.

@@ -1,0 +1,54 @@
+{
+  "reviewedAtCommit": "1093892",
+  "files": 824,
+  "imageFilesDecoded": 802,
+  "imageFramesDecoded": 830,
+  "decodeFailures": [],
+  "bytes": 110446245,
+  "categories": {
+    "atlases": 9,
+    "audio": 15,
+    "effects": 7,
+    "fonts": 4,
+    "originals": 133,
+    "surfaces": 13,
+    "tiles": 273,
+    "tiles-native": 195,
+    "tools": 4,
+    "ui-kit": 145,
+    "ui-native": 26
+  },
+  "extensions": {
+    ".jpg": 15,
+    ".json": 4,
+    ".png": 361,
+    ".ttf": 2,
+    ".txt": 3,
+    ".wav": 13,
+    ".webp": 426
+  },
+  "duplicateHashGroups": 0,
+  "duplicateExtraFiles": 0,
+  "themes": {
+    "alpine_winter": 16,
+    "autumn_harvest": 16,
+    "bakery": 16,
+    "beach": 15,
+    "candy": 16,
+    "forest": 16,
+    "fruit": 16,
+    "galaxy": 16,
+    "magic_atelier": 16,
+    "meadow": 16,
+    "ocean": 16,
+    "retro_arcade": 16,
+    "reward_bakery": 10,
+    "reward_fruit": 10,
+    "reward_galaxy": 10,
+    "reward_meadow": 10,
+    "reward_sakura": 10,
+    "sakura": 16,
+    "space": 16
+  }
+}
+Confirmed 19

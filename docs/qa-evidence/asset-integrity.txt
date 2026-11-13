@@ -1,0 +1,5 @@
+
+> onet-match3@0.2.0 check:assets
+> node scripts/check-assets.mjs
+
+{"originalAssetsVerified":316,"transparentDerivatives":114,"atlasesVerified":9,"tileIdsResolved":273,"uiAssetsVerified":122,"uiAnimations":4}

@@ -1,0 +1,24 @@
+
+> onet-match3@0.2.0 test
+> node --test tests/*.test.js
+
+✔ public gate accepts only matching asset and explicit local license evidence (52.653766ms)
+✔ public gate blocks unknown and newly bundled files (5.08268ms)
+✔ public gate blocks changed asset and missing or changed license evidence (5.826815ms)
+✔ Onet generation is deterministic, paired, and solvable at representative levels (444.107044ms)
+✔ Onet routes use at most two turns; wrong IDs and blocked endpoints fail (3.2826ms)
+✔ Onet split preserves footprints, sibling distinction, and counterpart pairing (53.869814ms)
+✔ Onet matching locks during animation and resolves without mutating previous state (0.845989ms)
+✔ Onet pause stops timer; timeout is terminal; shuffle retains a legal move (143.543833ms)
+✔ Triple generator preserves source 12x3 stack layout and multiples of three (1.370751ms)
+✔ Triple third tile clears immediately, scores 150, and wins with empty tray (0.461738ms)
+✔ Triple seventh unmatched tile loses; a trio on seventh pick frees the tray first (0.499395ms)
+✔ Triple undo is single-use and does not refund elapsed time; pause blocks picks (0.947402ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 967.12043
