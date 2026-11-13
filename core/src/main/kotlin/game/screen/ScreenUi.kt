@@ -19,9 +19,9 @@ import kotlin.math.min
 
 /** Ceramic artwork, crisp scalable typography, and consistent controls for native screens. */
 class ScreenUi(typeface: UiTypeface) : Disposable {
-    val ink = Color.valueOf("344F45")
-    val muted = Color.valueOf("7D8B7D")
-    val sage = Color.valueOf("62876D")
+    val ink = Color.valueOf("28483D")
+    val muted = Color.valueOf("718276")
+    val sage = Color.valueOf("37785D")
     val cream = Color.valueOf("FFFDF5")
     private val batch = SpriteBatch()
     private val glyphs = GlyphLayout()
@@ -108,12 +108,13 @@ class ScreenUi(typeface: UiTypeface) : Disposable {
     }
 
     private fun background() {
-        fillRect(0f, 0f, width, height, paletteColor(palettePath))
+        fillRect(0f, 0f, width, height, paletteColor(palettePath).cpy().lerp(Color.valueOf("FFF9EF"), .43f))
+        // Decorative art stays quiet so the puzzle, controls and text carry the contrast.
         val source = region("spa")
         val scale = maxOf(width / source.regionWidth, height / source.regionHeight)
-        batch.setColor(1f, 1f, 1f, 0.24f)
-        batch.draw(source, (width - source.regionWidth * scale) / 2f,
-            (height - source.regionHeight * scale) / 2f, source.regionWidth * scale, source.regionHeight * scale)
+        batch.setColor(1f, 1f, 1f, .045f)
+        batch.draw(source,(width-source.regionWidth*scale)/2f,(height-source.regionHeight*scale)/2f,
+            source.regionWidth*scale,source.regionHeight*scale)
         batch.color = Color.WHITE
     }
 
@@ -123,25 +124,43 @@ class ScreenUi(typeface: UiTypeface) : Disposable {
         batch.color = Color.WHITE
     }
 
+    private val outerX=FloatArray(28)
+    private val outerY=FloatArray(28)
+    private val innerX=FloatArray(28)
+    private val innerY=FloatArray(28)
+    private val shapeVertices=FloatArray(20)
+    private val arcCos=FloatArray(28){i->kotlin.math.cos((i/7*90.0+i%7*15.0)*Math.PI/180.0).toFloat()}
+    private val arcSin=FloatArray(28){i->kotlin.math.sin((i/7*90.0+i%7*15.0)*Math.PI/180.0).toFloat()}
+    private fun quad(x1:Float,y1:Float,c1:Float,x2:Float,y2:Float,c2:Float,x3:Float,y3:Float,c3:Float,x4:Float,y4:Float,c4:Float){
+        shapeVertices[0]=x1+originX;shapeVertices[1]=y1+originY;shapeVertices[2]=c1
+        shapeVertices[5]=x2+originX;shapeVertices[6]=y2+originY;shapeVertices[7]=c2
+        shapeVertices[10]=x3+originX;shapeVertices[11]=y3+originY;shapeVertices[12]=c3
+        shapeVertices[15]=x4+originX;shapeVertices[16]=y4+originY;shapeVertices[17]=c4
+        batch.draw(pixel,shapeVertices,0,20)
+    }
     fun rounded(x: Float, y: Float, w: Float, h: Float, radius: Float = 18f, color: Color = cream) {
-        if (w <= 0f || h <= 0f) return
-        val r = min(radius, min(w, h) / 2f)
-        batch.color = color
-        val ox = x + originX; val oy = y + originY
-        batch.draw(circle, ox, oy, r * 2f, r * 2f)
-        batch.draw(circle, ox + w - r * 2f, oy, r * 2f, r * 2f)
-        batch.draw(circle, ox, oy + h - r * 2f, r * 2f, r * 2f)
-        batch.draw(circle, ox + w - r * 2f, oy + h - r * 2f, r * 2f, r * 2f)
-        batch.draw(pixel, ox + r, oy, w - r * 2f, h)
-        batch.draw(pixel, ox, oy + r, w, h - r * 2f)
-        batch.color = Color.WHITE
+        if(w<=0f||h<=0f||color.a<=0f)return
+        val r=min(radius,min(w,h)/2f);val inset=min(.7f,r*.3f)
+        for(i in 0 until 28){
+            val corner=i/7
+            val cx=if(corner==0||corner==3)x+w-r else x+r
+            val cy=if(corner<=1)y+h-r else y+r
+            outerX[i]=cx+arcCos[i]*r;outerY[i]=cy+arcSin[i]*r
+            innerX[i]=cx+arcCos[i]*(r-inset);innerY[i]=cy+arcSin[i]*(r-inset)
+        }
+        val packed=color.toFloatBits();val clear=Color.toFloatBits(color.r,color.g,color.b,0f)
+        val cx=x+w/2f;val cy=y+h/2f
+        for(i in 0 until 28){val j=(i+1)%28
+            quad(cx,cy,packed,innerX[i],innerY[i],packed,innerX[j],innerY[j],packed,innerX[j],innerY[j],packed)
+            quad(innerX[i],innerY[i],packed,outerX[i],outerY[i],clear,outerX[j],outerY[j],clear,innerX[j],innerY[j],packed)
+        }
     }
 
     fun box(x: Float, y: Float, width: Float, height: Float, color: Color = cream) =
         rounded(x, y, width, height, min(16f, height / 2f), color)
 
     fun panel(rect: Rectangle, color: Color = cream) {
-        rounded(rect.x, rect.y - 3f, rect.width, rect.height, 24f, Color.valueOf("D8DFCD"))
+        rounded(rect.x, rect.y - 3f, rect.width, rect.height, 24f, Color.valueOf("DCE1D3"))
         rounded(rect.x, rect.y, rect.width, rect.height, 24f, color)
     }
 
@@ -160,6 +179,10 @@ class ScreenUi(typeface: UiTypeface) : Disposable {
         font.data.setScale(points / 64f)
         font.color = color
         glyphs.setText(font, value)
+        if (width > 0f && glyphs.width > width) {
+            font.data.setScale(font.data.scaleX * width / glyphs.width)
+            glyphs.setText(font,value)
+        }
         val left = if (width > 0f) x + (width - glyphs.width) / 2f else x
         font.draw(batch, glyphs, left + originX, y + originY + if (centeredVertically) glyphs.height / 2f else 0f)
     }
@@ -168,7 +191,7 @@ class ScreenUi(typeface: UiTypeface) : Disposable {
         label(value, x, y, size * 18f, color, width)
 
     fun heading(value: String, x: Float, y: Float, points: Float = 36f, width: Float = 0f) =
-        label(value, x, y, points, ink, width, display = true)
+        label(value, x, y, points, ink, width)
 
     fun title(value: String, subtitle: String = "") {
         heading(value, 20f, 812f, 40f, 500f)
@@ -179,13 +202,12 @@ class ScreenUi(typeface: UiTypeface) : Disposable {
                enabled: Boolean = true, primary: Boolean = value in setOf("Play", "Resume", "Next puzzle", "Play again")) {
         val pressed = enabled && pointer?.let { Rectangle(x, y, width, height).contains(it) } == true
         val dy = if (pressed) -2f else 0f
-        if (primary) {
-            rounded(x, y - 4f, width, height, 20f, Color.valueOf("385F46"))
-            rounded(x, y + dy, width, height, 20f, if (pressed) Color.valueOf("54795E") else sage)
-        } else {
-            batch.color = if (enabled) Color.WHITE else Color(1f, 1f, 1f, 0.55f)
-            patch("button-mint").draw(batch, x + originX, y + originY + dy - 2f, width, height + 4f)
-            batch.color = Color.WHITE
+        val face = if (primary) sage else cream
+        val shadow = if (primary) Color.valueOf("285B47") else Color.valueOf("D2DCCF")
+        rounded(x,y-4f,width,height,18f,shadow)
+        rounded(x,y+dy,width,height,18f,if (enabled) face else Color.valueOf("E5E8DE"))
+        if (!primary && enabled) {
+            rounded(x+1f,y+dy+1f,width-2f,height-2f,17f,Color.valueOf("FFFDF8"))
         }
         label(value, x, y + height / 2f + dy, min(24f, width / (value.length.coerceAtLeast(1) * 0.54f)),
             if (primary) cream else if (enabled) ink else muted, width, centeredVertically = true)
@@ -222,20 +244,77 @@ class ScreenUi(typeface: UiTypeface) : Disposable {
         }
     }
 
+    fun imageTile(id: String,x:Float,y:Float,w:Float,h:Float) {
+        val original=TileAssetResolver.tileAssetFor(id) ?: return
+        val path=if(original.endsWith(".webp")) original.replace("tiles/","tiles-native/").removeSuffix(".webp")+".png" else original
+        if(!Gdx.files.internal(path).exists())return
+        val icon=texture(path);val scale=min(w/icon.width,h/icon.height)
+        batch.draw(icon,x+originX+(w-icon.width*scale)/2f,y+originY+(h-icon.height*scale)/2f,icon.width*scale,icon.height*scale)
+    }
+
+    fun wallet(amount:Int,rect:Rectangle) {
+        rounded(rect.x,rect.y-2f,rect.width,rect.height,24f,Color.valueOf("D5DFD0"))
+        rounded(rect.x,rect.y,rect.width,rect.height,24f,cream)
+        val size=min(42f,rect.height-6f)
+        imageTile("candy_3",rect.x+6f,rect.y+(rect.height-size)/2f,size,size)
+        label(amount.toString(),rect.x+size+10f,rect.y+rect.height/2f,min(22f,rect.height*.5f),ink,rect.width-size-18f,centeredVertically=true)
+    }
+
+    fun star(cx:Float,cy:Float,r:Float,filled:Boolean) {
+        val color=if(filled)Color.valueOf("E8AD45") else Color.valueOf("DADFD3")
+        val packed=color.toFloatBits()
+        for(i in 0 until 10) {
+            val a=(90.0+i*36.0)*Math.PI/180.0
+            val b=a+Math.PI/5.0
+            val ra=if(i%2==0)r else r*.47f
+            val rb=if(i%2==0)r*.47f else r
+            val px=cx+kotlin.math.cos(a).toFloat()*ra
+            val py=cy+kotlin.math.sin(a).toFloat()*ra
+            val qx=cx+kotlin.math.cos(b).toFloat()*rb
+            val qy=cy+kotlin.math.sin(b).toFloat()*rb
+            quad(cx,cy,packed,px,py,packed,qx,qy,packed,qx,qy,packed)
+        }
+    }
+
+    fun navButton(rect:Rectangle,icon:String,title:String) {
+        if (icon == "settings") {
+            val cx=rect.x+rect.width/2f;val cy=rect.y+52f
+            rounded(cx-22f,cy-22f,44f,44f,22f,Color.valueOf("DFEBDB"))
+            val packed=sage.toFloatBits()
+            for(i in 0 until 32) {
+                val a=i*Math.PI/16.0;val b=(i+1)*Math.PI/16.0
+                val ra=if(i%4 in 1..2)18f else 14f
+                val rb=if((i+1)%4 in 1..2)18f else 14f
+                val px=cx+kotlin.math.cos(a).toFloat()*ra;val py=cy+kotlin.math.sin(a).toFloat()*ra
+                val qx=cx+kotlin.math.cos(b).toFloat()*rb;val qy=cy+kotlin.math.sin(b).toFloat()*rb
+                quad(cx,cy,packed,px,py,packed,qx,qy,packed,qx,qy,packed)
+            }
+            rounded(cx-6f,cy-6f,12f,12f,6f,cream)
+        } else art(icon,rect.x+rect.width/2f-22f,rect.y+30f,44f,44f)
+        text(title,rect.x,rect.y+19f,.82f,ink,rect.width)
+    }
+
+    fun toggle(rect:Rectangle,on:Boolean) {
+        val trackW=70f;val trackH=36f
+        val x=rect.x+(rect.width-trackW)/2f;val y=rect.y+(rect.height-trackH)/2f
+        rounded(x,y,trackW,trackH,18f,if(on)sage else Color.valueOf("D4DCD0"))
+        rounded(x+(if(on)37f else 4f),y+4f,29f,28f,14f,cream)
+    }
+
     fun gameHeader(title: String, subtitle: String, score: Int, seconds: Int, duration: Int, layout: PuzzleLayout) {
         iconButton(layout.back, "back"); iconButton(layout.pause, "pause")
         heading(title, 80f, height - 40f, 32f, width - 160f)
         text(subtitle, 80f, height - 75f, 0.78f, muted, width - 160f)
         panel(Rectangle(28f, height - 152f, width - 56f, 60f))
-        text("SCORE", 48f, height - 108f, 0.61f, muted)
-        text(score.toString().padStart(3, '0'), 48f, height - 125f, 1.18f, ink)
+        text("SCORE", 48f, height - 104f, 0.61f, muted)
+        text(score.toString().padStart(3, '0'), 48f, height - 120f, 1.18f, ink)
         val minutes = seconds / 60; val remainder = seconds % 60
         val time = "$minutes:${remainder.toString().padStart(2, '0')}"
-        text("TIME LEFT", width - 150f, height - 108f, 0.61f, muted)
-        text(time, width - 150f, height - 125f, 1.18f, if (seconds < 20) Color.valueOf("BE745C") else ink)
-        val barX = 160f; val barWidth = width - 320f
-        rounded(barX, height - 129f, barWidth, 6f, 3f, Color.valueOf("E4E8DC"))
-        rounded(barX, height - 129f, barWidth * (seconds.toFloat() / duration).coerceIn(0f, 1f), 6f, 3f, sage)
+        text("TIME LEFT", width - 150f, height - 104f, 0.61f, muted)
+        text(time, width - 150f, height - 120f, 1.18f, if (seconds < 20) Color.valueOf("BE745C") else ink)
+        val barX = 46f; val barWidth = width - 92f
+        rounded(barX, height - 146f, barWidth, 5f, 3f, Color.valueOf("E4E8DC"))
+        rounded(barX, height - 146f, barWidth * (seconds.toFloat() / duration).coerceIn(0f, 1f), 5f, 3f, sage)
     }
 
     fun tool(rect: Rectangle, icon: String, title: String, enabled: Boolean = true) {

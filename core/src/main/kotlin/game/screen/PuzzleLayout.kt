@@ -19,10 +19,12 @@ class PuzzleLayout(val width: Float, val height: Float) {
     val boardLeft = (width - boardWidth) / 2f
     val boardTop = (height - 190f + 176f + boardHeight) / 2f
     val board = Rectangle(boardLeft, boardTop - boardHeight, boardWidth, boardHeight)
-    val tray = Rectangle(24f, 155f, width - 48f, 102f)
-    private val stackColumnWidth = (width - 56f) / 4f
-    private val stackHeight = min(140f, (height - 465f) / 3f)
-    private val stackTop = (height - 180f + 285f + stackHeight * 3f) / 2f
+    val playfield = Rectangle(20f,144f,width-40f,height-326f)
+    val tray = Rectangle(playfield.x+12f,playfield.y+16f,playfield.width-24f,102f)
+    private val stackColumnWidth = (playfield.width - 24f) / 4f
+    private val stackAreaTop = playfield.y+playfield.height-28f
+    private val stackAreaBottom = tray.y+tray.height+24f
+    private val stackHeight = (stackAreaTop-stackAreaBottom)/3f
 
     fun onetCell(row: Int, col: Int, rows: Int = 1, cols: Int = 1) = Rectangle(
         boardLeft + (col - 1) * cellWidth + 3f,
@@ -42,12 +44,10 @@ class PuzzleLayout(val width: Float, val height: Float) {
     }
 
     fun stack(index: Int): Rectangle {
-        val size = min(stackColumnWidth - 18f, stackHeight - 30f)
-        return Rectangle(
-            28f + (index % 4) * stackColumnWidth + (stackColumnWidth - size) / 2f,
-            stackTop - (index / 4 + 1) * stackHeight + 18f,
-            size, size
-        )
+        val tileWidth = stackColumnWidth-14f
+        val tileHeight = min(tileWidth*1.22f,stackHeight-24f)
+        return Rectangle(playfield.x+12f+(index%4)*stackColumnWidth+7f,
+            stackAreaTop-(index/4+.5f)*stackHeight-tileHeight/2f,tileWidth,tileHeight)
     }
 
     fun stackHit(x: Float, y: Float): Int? = (0 until 12).firstOrNull { stack(it).contains(x, y) }

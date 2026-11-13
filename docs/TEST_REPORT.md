@@ -37,3 +37,15 @@ The integrated implementation built successfully with JDK21/AndroidSDK35. Latest
 Native end-to-end input acceptance is **not passed**: software-emulator attempts were interrupted by a SystemUI ANR overlay, subsequent ADB reconnection/install instability, and MAIN_MENU/MODE_SELECT deadlines. This is not counted as an application test pass. A separate17-screen native framebuffer-review test is included but has not been executed successfully. User requested stopping emulator work and supplying the APK for device testing. Screenshots from interrupted attempts are diagnostic only, not clean acceptance evidence.
 
 The local asset policy now lists825files:20font/audio/evidence files confirmed and805artwork files unresolved. Both Node gate and actual Gradle verification task failed closed as expected. No public productionAPK/AAB is cleared. ARMphysical hardware, cutouts/gesture-navigation and60FPS/device-memory targets still require device testing. UIgeometry tests cover four aspect ratios, but those are not physical-device tests.
+
+
+## Solo UI beta 1.0.4 — 2026-11-13
+
+Owner limited this pass to visuals and requested no swarm. No gameplay/economy/save-domain files changed.
+
+- Executed Gradle `:core:test :headless:test :android:assembleDebug`: **101 core + 2 headless tests passed**, zero failures, errors or skipped tests. Three new layout regressions cover result-section overlap, menu actions/navigation and mission claim-row clearance at four sizes.
+- Executed `:desktop:previewUi` at **540×960, 540×1200, 540×1440 and 720×960** using the actual native libGDX/OpenGL renderer with Xorg dummy display and software GL. **72 PNGs generated**: 17 screen types plus a saved-game menu at each size. Reviewed result, gameplay, main menu, shop, missions, profile and settings compositions. This supersedes the earlier unexecuted desktop screenshot-review status; it does not pass Android input/lifecycle acceptance.
+- Android debug APK generated with package `com.onetmatch3.game`, versionName `1.0.4`, versionCode `5`, minSDK24/targetSDK35 and arm64-v8a/armeabi-v7a/x86/x86_64 libraries. `apksigner verify` passed APK signature v2 and ZIP integrity passed.
+- Existing JS/gameplay and original artwork files were not modified. No new Node result, Android device result, FPS target, commercial licensing clearance or Play purchase acceptance is asserted for this pass.
+
+Reproduction and UI scope: `UI_POLISH_1_0_4.md`. Native captures and Gradle test/build logs accompany the internal testing artifact.

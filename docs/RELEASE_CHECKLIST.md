@@ -28,3 +28,13 @@ A checklist item is complete only with an executed result and artifact/commit ev
 - [ ] Public distribution is authorized and all blocking issues resolved.
 
 Google Play publication additionally requires explicit user authorization. An artifact successfully uploaded to GitHub Actions or a signed APK is not legal clearance or Play submission readiness.
+
+
+## UI beta 1.0.4 follow-up
+
+- [x] Solo UI pass with preserved gameplay/economy/save interfaces.
+- [x] 101 core and 2 headless tests passed, including three new overlap regressions.
+- [x] Native desktop renderer captured all 17 screens plus saved-menu state at four viewport sizes (72 PNGs).
+- [x] 1.0.4/code5 debug APK generated; package, SDK levels, four ABIs, ZIP and APK signature verified.
+- [ ] Android physical-device input, lifecycle, cutouts, audio/haptics and performance acceptance remains with owner testing.
+- [ ] Existing commercial artwork licensing/public production gate remains unresolved. Internal draft distribution only.

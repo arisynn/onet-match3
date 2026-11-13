@@ -36,3 +36,14 @@ sourceSets {
 tasks.named<JavaExec>("run") {
     workingDir = rootDir
 }
+
+tasks.register<JavaExec>("previewUi") {
+    group = "verification"
+    description = "Capture all native UI screens using isolated fixture data."
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("game.desktop.UiPreviewLauncherKt")
+    workingDir = rootDir
+    args(providers.gradleProperty("previewOutput").orElse("build/ui-preview").get(),
+        providers.gradleProperty("previewWidth").orElse("540").get(),
+        providers.gradleProperty("previewHeight").orElse("1200").get())
+}

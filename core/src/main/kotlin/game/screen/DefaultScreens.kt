@@ -72,7 +72,7 @@ abstract class CeramicScreen(game: OnetMatch3Game) : BaseScreen(game) {
     protected fun attempt(success: String, action: () -> Unit) {
         try { action(); toast(success) } catch (_: IOException) { toast("Unable to save. Please check storage.") } catch (_: IllegalArgumentException) { toast("Not available yet") }
         catch (_: IllegalStateException) { toast("Complete the goal first") }
-        catch (_: game.economy.InsufficientFundsException) { toast("Earn more Gems through your goals") }
+        catch (_: game.economy.InsufficientFundsException) { toast("Earn more Permen through your goals") }
     }
     protected fun go(type: ScreenType) { game.screenManager.setScreen(type, FadeTransition(if (game.settings.reducedMotion) 0f else 0.22f, .91f, .94f, .88f)) }
     protected fun ScreenUi.top(title: String, subtitle: String = "", back: Boolean = true) {
@@ -119,42 +119,62 @@ class LoadingScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     } }
 }
 class MainMenuScreen(game: OnetMatch3Game) : CeramicScreen(game) {
-    override fun actionBounds(id: String): Rectangle? = when(id) {
-        "play" -> playBounds; "resume_game" -> resumeBounds; "missions" -> mission; "collection" -> collection; "profile" -> profile; "settings" -> settings; else -> super.actionBounds(id)
+    private fun hasSavedRound() = game.resumedOnet()!=null || game.resumedTriple()!=null
+    val homeLayout get() = HomeLayout(worldWidth,worldHeight,hasSavedRound())
+    val playBounds get() = homeLayout.play
+    val resumeBounds get() = homeLayout.continueGame
+    override fun actionBounds(id:String):Rectangle? = when(id) {
+        "play"->homeLayout.play; "resume_game"->homeLayout.continueGame; "onet"->homeLayout.onet; "triple"->homeLayout.triple
+        "missions"->homeLayout.missions; "collection"->homeLayout.collection; "profile"->homeLayout.profile; "settings"->homeLayout.settings
+        else->super.actionBounds(id)
     }
-
-    private fun hasSavedRound() = game.resumedOnet() != null || game.resumedTriple() != null
-    val resumeBounds get() = Rectangle(64f, worldHeight * .43f + 82f, worldWidth - 128f, 54f)
-    val playBounds get() = mainButton(worldHeight * .43f)
-    private val mission get() = mainButton(worldHeight * .43f - 84f)
-    private val collection get() = mainButton(worldHeight * .43f - 168f)
-    private val profile get() = Rectangle(64f, 66f, (worldWidth - 144f) / 2f, 58f)
-    private val settings get() = Rectangle(worldWidth / 2f + 8f, 66f, (worldWidth - 144f) / 2f, 58f)
-    override fun tapped(x: Float, y: Float): Boolean {
+    override fun tapped(x:Float,y:Float):Boolean {
+        val l=homeLayout
         when {
-            resumeBounds.contains(x,y) && hasSavedRound() -> go(game.activeGameType)
-            playBounds.contains(x,y) -> go(ScreenType.MODE_SELECT)
-            mission.contains(x,y) -> go(ScreenType.MISSION_CENTER)
-            collection.contains(x,y) -> go(ScreenType.COSMETIC_COLLECTION)
-            profile.contains(x,y) -> go(ScreenType.PLAYER_PROFILE)
-            settings.contains(x,y) -> go(ScreenType.SETTINGS)
-            else -> return false
-        }; return true
+            hasSavedRound() && l.continueGame.contains(x,y)->go(game.activeGameType)
+            l.play.contains(x,y)->go(ScreenType.MODE_SELECT)
+            l.onet.contains(x,y)->{ selectedMode=ScreenType.ONET_GAME;go(ScreenType.LEVEL_SELECT) }
+            l.triple.contains(x,y)->{ selectedMode=ScreenType.TRIPLE_MATCH_GAME;go(ScreenType.LEVEL_SELECT) }
+            l.missions.contains(x,y)->go(ScreenType.MISSION_CENTER)
+            l.collection.contains(x,y)->go(ScreenType.COSMETIC_COLLECTION)
+            l.profile.contains(x,y)->go(ScreenType.PLAYER_PROFILE)
+            l.settings.contains(x,y)->go(ScreenType.SETTINGS)
+            else->return false
+        };return true
     }
-    override fun draw(delta: Float) { ui {
-        text("YOUR DAILY LITTLE ESCAPE", 20f, height - 66f, .75f, muted, width - 40f)
-        heading("Onet & Triple", 20f, height - 135f, 52f, width - 40f)
-        text("Little tiles. Lovely moments.", 20f, height - 186f, 1f, muted, width - 40f)
-        val center = (height - 220f + playBounds.y + playBounds.height) / 2f
-        tile("candy_2", width / 2f - 108f, center - 45f, 100f, 106f)
-        tile("ocean_0", width / 2f + 8f, center - 30f, 100f, 106f)
-        if (hasSavedRound()) control("Continue your puzzle", resumeBounds)
-        control("Let's play", playBounds, primary = true)
-        control("Missions & achievements", mission)
-        control("Tile collection", collection)
-        control("My journey", profile); control("Settings", settings)
-        text("${game.economyService.gemBalance} Gems  •  Level ${game.playerProfile.level}", 20f, 36f, .8f, muted, width - 40f)
-    } }
+    override fun draw(delta:Float){ui{
+        val l=homeLayout
+        rounded(l.profile.x,l.profile.y,l.profile.width,l.profile.height,24f,Color.valueOf("DFEBDB"))
+        text("${game.playerProfile.level}",l.profile.x,l.profile.y+43f,1.48f,ink,l.profile.width)
+        text("LEVEL",l.profile.x,l.profile.y+19f,.56f,sage,l.profile.width)
+        wallet(game.economyService.gemBalance,l.wallet)
+        heading("Onet & Triple",28f,height-111f,32f)
+        text("YOUR NEXT MATCH STARTS HERE",28f,height-151f,.70f,muted)
+        panel(l.hero,Color.valueOf("E4EEDF"))
+        val tileSize=min(l.hero.width*.28f,l.hero.height*.45f)
+        val cy=l.hero.y+l.hero.height*.49f
+        tile("candy_3",width/2f-tileSize*1.35f,cy-tileSize*.45f,tileSize,tileSize)
+        tile("ocean_0",width/2f-tileSize*.48f,cy-tileSize*.22f,tileSize,tileSize)
+        tile("candy_0",width/2f+tileSize*.39f,cy-tileSize*.45f,tileSize,tileSize)
+        star(width*.18f,l.hero.y+l.hero.height*.80f,12f,true)
+        star(width*.81f,l.hero.y+l.hero.height*.70f,9f,true)
+        text("Two games. One more good match.",l.hero.x+12f,l.hero.y+26f,.9f,ink,l.hero.width-24f)
+        for((r,title,icon,level) in listOf(
+            ModeCard(l.onet,"Onet Connect","onet",game.unlockedLevel(ScreenType.ONET_GAME)),
+            ModeCard(l.triple,"Triple Match","triple",game.unlockedLevel(ScreenType.TRIPLE_MATCH_GAME)))) {
+            panel(r,cream)
+            art(icon,r.x+r.width/2f-43f,r.y+r.height-101f,86f,86f)
+            heading(title,r.x+12f,r.y+67f,24f,r.width-24f)
+            text("Level $level",r.x+12f,r.y+34f,.85f,sage,r.width-24f)
+        }
+        control("Play",l.play,primary=true)
+        if(hasSavedRound()) control("Continue saved game",l.continueGame)
+        rounded(16f,16f,width-32f,100f,26f,cream)
+        navButton(l.missions,"reward","Goals")
+        navButton(l.collection,"new-level","Collection")
+        navButton(l.settings,"settings","Settings")
+    }}
+    private data class ModeCard(val rect:Rectangle,val title:String,val icon:String,val level:Int)
 }
 private var selectedMode = ScreenType.ONET_GAME
 
@@ -169,7 +189,7 @@ class ModeSelectScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         selectedMode = mode; go(ScreenType.LEVEL_SELECT); return true
     }
     override fun draw(delta: Float) { ui {
-        top("Choose your calm", "Two puzzles, one lovely collection")
+        top("Choose a game", "Pick your mode")
         for ((rect, title, subtitle, artId) in listOf(
             listOf(onetBounds,"Onet Connect","Find the path between matching pairs","onet"),
             listOf(tripleBounds,"Triple Match","Collect three. Keep your tray clear.","triple"))) {
@@ -205,7 +225,7 @@ class LevelSelectScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         return false
     }
     override fun draw(delta: Float) { ui {
-        top(if (selectedMode == ScreenType.ONET_GAME) "Onet journey" else "Triple journey", "A little progress, one puzzle at a time")
+        top(if (selectedMode == ScreenType.ONET_GAME) "Onet levels" else "Triple levels", "Choose your next level")
         for (i in 0 until 20) {
             val level = page * 20 + i + 1; val unlocked = level <= game.unlockedLevel(selectedMode)
             control(if (unlocked) "$level" else "·", levelBounds(i), unlocked, level == game.unlockedLevel(selectedMode))
@@ -354,15 +374,19 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     }
     override fun draw(delta:Float){ui{
         val layout=puzzleLayout
-        gameHeader("Triple Match","LEVEL ${game.selectedLevel}  •  Collect a little joy",tripleScore(roundState),roundState.time,roundState.duration,layout)
+        gameHeader("Triple Match","LEVEL ${game.selectedLevel}",tripleScore(roundState),roundState.time,roundState.duration,layout)
+        panel(layout.playfield,Color.valueOf("FAFBF3"))
         roundState.stacks.forEachIndexed { i,stack -> if(stack.isNotEmpty()){
             val r=layout.stack(i)
             if(stack.size>1)rounded(r.x+6f,r.y+7f,r.width,r.height,15f,Color.valueOf("CFD8C4"))
             tile(stack.last(),r)
-            text("${stack.size} left",r.x,r.y-8f,.65f,muted,r.width)
+            if(stack.size>1){
+                rounded(r.x+r.width-23f,r.y+r.height-19f,28f,28f,14f,sage)
+                text("${stack.size}",r.x+r.width-23f,r.y+r.height+1f,.77f,cream,28f)
+            }
         }}
         panel(layout.tray,Color.valueOf("E4ECDB"))
-        text("YOUR TRAY",layout.tray.x+16f,layout.tray.y+87f,.62f,muted)
+        text("MATCH 3",layout.tray.x+16f,layout.tray.y+87f,.62f,muted)
         text("${roundState.tray.size} / 7",layout.tray.x+layout.tray.width-70f,layout.tray.y+87f,.62f,muted)
         for(i in 0 until 7){val rect=layout.traySlot(i);slot(rect);roundState.tray.getOrNull(i)?.let{id->tile(id,rect)}}
         flightId?.let{id->val t=(flightTime/.19f).coerceIn(0f,1f);val eased=1f-(1f-t)*(1f-t);tile(id,Rectangle(flightFrom.x+(flightTo.x-flightFrom.x)*eased,flightFrom.y+(flightTo.y-flightFrom.y)*eased,flightFrom.width+(flightTo.width-flightFrom.width)*eased,flightFrom.height+(flightTo.height-flightFrom.height)*eased))}
@@ -371,10 +395,10 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
                 ?.assetPath?.substringAfterLast('/')?.removeSuffix(".webp") ?: "match-burst"
             clearEffects.forEach { rect->effect(chosen,clearEffectTime,rect.x-13f,rect.y-13f,rect.width+26f,rect.height+26f) }
         }
-        tool(layout.undo,"shuffle",if(roundState.undoUsed)"Undo used"else"Undo",!roundState.undoUsed&&roundState.undo!=null)
-        text("Three alike make a match.",layout.shuffle.x,layout.shuffle.y+45f,.84f,muted,layout.shuffle.width)
-        text("Keep a little space in your tray.",layout.shuffle.x,layout.shuffle.y+21f,.68f,muted,layout.shuffle.width)
-        text("Tap the top tile of any stack",20f,29f,.78f,muted,width-40f)
+        tool(layout.undo,"shuffle",if(roundState.undoUsed)"Used"else"Undo",!roundState.undoUsed&&roundState.undo!=null)
+        for(i in 0..2) imageTile("candy_3",layout.shuffle.x+24f+i*45f,layout.shuffle.y+23f,42f,42f)
+        text("3 identical tiles",layout.shuffle.x,layout.shuffle.y+15f,.68f,muted,layout.shuffle.width)
+        text("Tap a stack. Collect three.",20f,29f,.78f,muted,width-40f)
     }}
 }
 
@@ -394,16 +418,17 @@ class PauseScreen(game:OnetMatch3Game):CeramicScreen(game){
     };return true}
     override fun draw(delta:Float){ui{
         art("pause",width/2f-105f,height/2f+110f,210f,180f)
-        heading("Take a breather",20f,height/2f+76f,40f,width-40f)
-        text("Your puzzle will be right here.",20f,height/2f+32f,.94f,muted,width-40f)
-        control("Resume",resumeBounds,primary=true);control("Fresh start",restartBounds);control("Settings",settingsBounds);control("Save & main menu",quitBounds)
+        heading("Paused",20f,height/2f+76f,40f,width-40f)
+        text("Ready when you are.",20f,height/2f+32f,.94f,muted,width-40f)
+        control("Resume",resumeBounds,primary=true);control("Restart",restartBounds);control("Settings",settingsBounds);control("Save & exit",quitBounds)
     }}
 }
 abstract class ResultScreen(game:OnetMatch3Game,private val won:Boolean):CeramicScreen(game){
+    val resultLayout get()=ResultLayout(worldWidth,worldHeight,won)
+    val nextBounds get()=resultLayout.primary
+    val replayBounds get()=if(won)resultLayout.replay else resultLayout.primary
+    val menuBounds get()=resultLayout.menu
     override fun actionBounds(id:String):Rectangle?=when(id){"next"->if(won)nextBounds else null;"replay"->replayBounds;"menu"->menuBounds;else->super.actionBounds(id)}
-    val nextBounds get()=mainButton(worldHeight/2f-120f)
-    val replayBounds get()=mainButton(worldHeight/2f-202f)
-    val menuBounds get()=mainButton(worldHeight/2f-284f)
     override fun tapped(x:Float,y:Float):Boolean {when{
         won&&nextBounds.contains(x,y)->start(game.activeGameType,game.selectedLevel+1)
         replayBounds.contains(x,y)->start(game.activeGameType)
@@ -411,29 +436,38 @@ abstract class ResultScreen(game:OnetMatch3Game,private val won:Boolean):Ceramic
         else->return false
     };return true}
     override fun draw(delta:Float){ui{
-        art(if(won)"victory"else"time-up",width/2f-120f,height/2f+160f,240f,220f)
-        heading(if(won)"Beautifully matched!"else"A fresh start awaits",20f,height/2f+120f,37f,width-40f)
-        text(game.lastResultReason,20f,height/2f+76f,.95f,muted,width-40f)
-        panel(Rectangle(84f,height/2f-20f,width-168f,70f))
-        val progress=if(game.settings.reducedMotion)1f else (elapsed/.85f).coerceIn(0f,1f).let { it*it*(3f-2f*it) }
-        text("SCORE  ${(game.lastScore*progress).toInt()}",84f,height/2f+25f,1.3f,ink,width-168f)
+        val l=resultLayout
+        panel(Rectangle(16f,l.menu.y-24f,width-32f,l.illustration.y+l.illustration.height-l.menu.y+40f))
+        val image=if(won)"victory" else if(game.lastResultReason.contains("tray",true))"tray-full"else"time-up"
+        art(image,l.illustration.x,l.illustration.y,l.illustration.width,l.illustration.height)
+        heading(if(won)"Level complete!"else"Try again",30f,l.titleY,34f,width-60f)
+        text(if(won)"${if(game.activeGameType==ScreenType.ONET_GAME)"Onet Connect"else"Triple Match"}  •  Level ${game.selectedLevel}"else game.lastResultReason,
+            30f,l.subtitleY,.92f,muted,width-60f)
+        if(won) for(i in 0..2) star(width/2f+(i-1)*59f,l.stars.y+23f,22f,i<game.lastStars)
+        else text("Your best move is still ahead.",l.stars.x,l.stars.y+26f,.81f,muted,l.stars.width)
+        rounded(l.stats.x,l.stats.y,l.stats.width,l.stats.height,20f,Color.valueOf("EDF3E8"))
+        val progress=if(game.settings.reducedMotion)1f else (elapsed/.85f).coerceIn(0f,1f).let{it*it*(3f-2f*it)}
+        text("SCORE",l.stats.x+20f,l.stats.y+l.stats.height-18f,.65f,muted)
+        heading("${(game.lastScore*progress).toInt()}",l.stats.x+20f,l.stats.y+83f,36f)
         if(won){
-            val previousXp=(game.playerProfile.currentXp-game.lastRoundXp).coerceAtLeast(0)
-            val displayedXp=previousXp+(game.lastRoundXp*progress).toLong()
-            val displayedLevel=game.progressionEngine.calculateLevelForXp(displayedXp)
-            val levelFloor=game.progressionEngine.xpRequiredForLevel(displayedLevel)
-            val levelTarget=game.progressionEngine.xpRequiredForLevel(displayedLevel+1)
-            val xpRatio=((displayedXp-levelFloor).toFloat()/(levelTarget-levelFloor)).coerceIn(0f,1f)
-            text("+${game.lastRoundXp} EXP",84f,height/2f+2f,.65f,sage,width-168f)
-            rounded(102f,height/2f-14f,width-204f,5f,3f,Color.valueOf("E0E7D8"))
-            rounded(102f,height/2f-14f,(width-204f)*xpRatio,5f,3f,sage)
-            val leveledUp=game.progressionEngine.calculateLevelForXp(previousXp)<game.playerProfile.level
-            text(if(leveledUp)"Level ${game.playerProfile.level} reached  •  ${game.lastStars}/3 stars"else"${game.lastStars} / 3 stars",20f,height/2f-52f,.9f,sage,width-40f)
-            if(leveledUp&&!game.settings.reducedMotion&&!game.settings.reducedEffects&&elapsed<.64f)
-                effect("victory-confetti",elapsed,width/2f-150f,height/2f+100f,300f,270f)
-            control("Next puzzle",nextBounds,primary=true)
+            text("+${game.lastRoundXp} EXP",l.stats.x+l.stats.width-144f,l.stats.y+83f,1.1f,sage,124f)
+            val oldXp=(game.playerProfile.currentXp-game.lastRoundXp).coerceAtLeast(0)
+            val xp=oldXp+(game.lastRoundXp*progress).toLong()
+            val level=game.progressionEngine.calculateLevelForXp(xp)
+            val floor=game.progressionEngine.xpRequiredForLevel(level)
+            val target=game.progressionEngine.xpRequiredForLevel(level+1)
+            val ratio=((xp-floor).toFloat()/(target-floor)).coerceIn(0f,1f)
+            text("Level $level",l.stats.x+20f,l.stats.y+49f,.74f,muted)
+            text("$xp / $target EXP",l.stats.x+l.stats.width-176f,l.stats.y+49f,.74f,muted,156f)
+            rounded(l.stats.x+20f,l.stats.y+20f,l.stats.width-40f,9f,4f,Color.valueOf("D5DFCF"))
+            rounded(l.stats.x+20f,l.stats.y+20f,(l.stats.width-40f)*ratio,9f,4f,sage)
+            control("Next level",l.primary,primary=true)
+            control("Replay",l.replay);control("Home",l.menu)
+        }else{
+            text("A new attempt, a fresh board.",l.stats.x+20f,l.stats.y+36f,.84f,muted,l.stats.width-40f)
+            control("Try again",l.primary,primary=true)
+            control("Home",l.menu)
         }
-        control("Play again",replayBounds,primary=!won);control("Main menu",menuBounds)
     }}
 }
 class VictoryScreen(game:OnetMatch3Game):ResultScreen(game,true)
@@ -442,91 +476,123 @@ class DefeatScreen(game:OnetMatch3Game):ResultScreen(game,false)
 class MissionCenterScreen(game:OnetMatch3Game):CeramicScreen(game){
     override fun actionBounds(id:String):Rectangle?=when(id){"achievements"->achievementsBounds;else->super.actionBounds(id)}
 
+    val listLayout get()=ListLayout(worldWidth,worldHeight)
     var page=0
     val achievementsBounds get()=Rectangle(worldWidth-204f,worldHeight-150f,172f,48f)
     private val previous get()=Rectangle(32f,55f,132f,55f)
     private val next get()=Rectangle(worldWidth-164f,55f,132f,55f)
-    private fun missions()=game.missionService.getActiveMissions().drop(page*3).take(3)
-    fun claimBounds(index:Int)=Rectangle(worldWidth-166f,worldHeight-294f-index*166f,112f,48f)
+    private fun missions()=game.missionService.getActiveMissions().drop(page*listLayout.count).take(listLayout.count)
+    fun claimBounds(index:Int)=listLayout.claim(index)
     override fun onScreenShown(){game.refreshMissions()}
     override fun tapped(x:Float,y:Float):Boolean{
-        when{backBounds.contains(x,y)->go(ScreenType.MAIN_MENU);achievementsBounds.contains(x,y)->go(ScreenType.ACHIEVEMENT_CENTER);previous.contains(x,y)&&page>0->page--;next.contains(x,y)&&(page+1)*3<game.missionService.getActiveMissions().size->page++;else->{missions().forEachIndexed{i,m->if(claimBounds(i).contains(x,y)){if(m.isClaimable)attempt("A little reward, well earned"){game.claimMission(m.id);game.soundService.feedback(SoundCue.MISSION_CLAIM)};return true}};return false}}
+        when{backBounds.contains(x,y)->go(ScreenType.MAIN_MENU);achievementsBounds.contains(x,y)->go(ScreenType.ACHIEVEMENT_CENTER);previous.contains(x,y)&&page>0->page--;next.contains(x,y)&&(page+1)*listLayout.count<game.missionService.getActiveMissions().size->page++;else->{missions().forEachIndexed{i,m->if(claimBounds(i).contains(x,y)){if(m.isClaimable)attempt("A little reward, well earned"){game.claimMission(m.id);game.soundService.feedback(SoundCue.MISSION_CLAIM)};return true}};return false}}
         return true
     }
     override fun draw(delta:Float){ui{
-        top("Little goals","Play, improve, collect something lovely")
-        text("${game.economyService.gemBalance} Gems",32f,height-130f,1.1f,sage)
+        top("Missions","Complete goals. Collect rewards.")
+        wallet(game.economyService.gemBalance,Rectangle(28f,height-153f,170f,48f))
         control("Achievements",achievementsBounds)
-        missions().forEachIndexed{i,m->val y=height-320f-i*166f;panel(Rectangle(32f,y,width-64f,142f));text(m.title,50f,y+114f,1.05f);text(m.description.take(49),50f,y+83f,.75f,muted);rounded(50f,y+39f,width-245f,7f,4f,Color.valueOf("E1E6D9"));rounded(50f,y+39f,(width-245f)*m.progressRatio,7f,4f,sage);text("${m.currentCount.coerceAtMost(m.targetCount)} / ${m.targetCount}  •  ${m.gemReward} Gems",50f,y+22f,.7f,muted);control(if(m.status==MissionStatus.CLAIMED)"Claimed"else"Claim",claimBounds(i),m.isClaimable)}
-        control("Previous",previous,page>0);control("Next",next,(page+1)*3<game.missionService.getActiveMissions().size);notifications()
+        missions().forEachIndexed{i,m->val r=listLayout.card(i)
+            panel(r);text(m.title,r.x+18f,r.y+r.height-23f,1.05f,ink,r.width-152f)
+            wallet(m.gemReward,Rectangle(r.x+r.width-116f,r.y+r.height-47f,100f,34f))
+            text(m.description.take(58),r.x+18f,r.y+r.height-60f,.76f,muted,r.width-36f)
+            rounded(r.x+18f,r.y+47f,r.width-180f,7f,4f,Color.valueOf("E1E6D9"))
+            rounded(r.x+18f,r.y+47f,(r.width-180f)*m.progressRatio,7f,4f,sage)
+            text("${m.currentCount.coerceAtMost(m.targetCount)} / ${m.targetCount}",r.x+18f,r.y+30f,.72f,muted)
+            control(if(m.status==MissionStatus.CLAIMED)"Claimed"else"Claim",claimBounds(i),m.isClaimable)
+        }
+        control("Previous",previous,page>0);control("Next",next,(page+1)*listLayout.count<game.missionService.getActiveMissions().size);notifications()
     }}
 }
 class AchievementCenterScreen(game:OnetMatch3Game):CeramicScreen(game){
+    val listLayout get()=ListLayout(worldWidth,worldHeight)
     var page=0
     private val previous get()=Rectangle(32f,55f,132f,55f)
     private val next get()=Rectangle(worldWidth-164f,55f,132f,55f)
-    private fun entries()=game.achievementService.getAchievements().drop(page*3).take(3)
-    fun claimBounds(index:Int)=Rectangle(worldWidth-166f,worldHeight-294f-index*166f,112f,48f)
+    private fun entries()=game.achievementService.getAchievements().drop(page*listLayout.count).take(listLayout.count)
+    fun claimBounds(index:Int)=listLayout.claim(index)
     override fun tapped(x:Float,y:Float):Boolean{
-        when{backBounds.contains(x,y)->go(ScreenType.MISSION_CENTER);previous.contains(x,y)&&page>0->page--;next.contains(x,y)&&(page+1)*3<game.achievementService.getAchievements().size->page++;else->{entries().forEachIndexed{i,a->if(claimBounds(i).contains(x,y)){a.tiers.firstOrNull{a.isTierClaimable(it.tierIndex)}?.let{tier->attempt("A new milestone to remember"){game.claimAchievement(a.id,tier.tierIndex);game.soundService.feedback(SoundCue.ACHIEVEMENT)}};return true}};return false}}
+        when{backBounds.contains(x,y)->go(ScreenType.MISSION_CENTER);previous.contains(x,y)&&page>0->page--;next.contains(x,y)&&(page+1)*listLayout.count<game.achievementService.getAchievements().size->page++;else->{entries().forEachIndexed{i,a->if(claimBounds(i).contains(x,y)){a.tiers.firstOrNull{a.isTierClaimable(it.tierIndex)}?.let{tier->attempt("A new milestone to remember"){game.claimAchievement(a.id,tier.tierIndex);game.soundService.feedback(SoundCue.ACHIEVEMENT)}};return true}};return false}}
         return true
     }
     override fun draw(delta:Float){ui{
-        top("Your milestones","Small steps become a lovely journey")
-        text("${game.economyService.gemBalance} Gems",32f,height-130f,1.1f,sage)
-        entries().forEachIndexed{i,a->val y=height-320f-i*166f;val tier=a.tiers.firstOrNull{!it.isClaimed}?:a.tiers.last();panel(Rectangle(32f,y,width-64f,142f));text(a.title,50f,y+113f,1.05f);text("${tier.tierName}  •  ${tier.gemReward} Gems",50f,y+82f,.82f,muted);val ratio=(a.currentValue.toFloat()/tier.requiredValue).coerceIn(0f,1f);rounded(50f,y+39f,width-245f,7f,4f,Color.valueOf("E1E6D9"));rounded(50f,y+39f,(width-245f)*ratio,7f,4f,sage);text("${a.currentValue} / ${tier.requiredValue}",50f,y+22f,.7f,muted);control(if(tier.isClaimed)"Claimed"else"Claim",claimBounds(i),a.hasAnyClaimableTier())}
-        control("Previous",previous,page>0);control("Next",next,(page+1)*3<game.achievementService.getAchievements().size);notifications()
+        top("Achievements","Your progress, rewarded.")
+        wallet(game.economyService.gemBalance,Rectangle(28f,height-153f,170f,48f))
+        entries().forEachIndexed{i,a->val r=listLayout.card(i);val tier=a.tiers.firstOrNull{!it.isClaimed}?:a.tiers.last()
+            panel(r);text(a.title,r.x+18f,r.y+r.height-23f,1.05f,ink,r.width-152f)
+            wallet(tier.gemReward,Rectangle(r.x+r.width-116f,r.y+r.height-47f,100f,34f))
+            text(tier.tierName,r.x+18f,r.y+r.height-60f,.82f,muted)
+            val ratio=(a.currentValue.toFloat()/tier.requiredValue).coerceIn(0f,1f)
+            rounded(r.x+18f,r.y+47f,r.width-180f,7f,4f,Color.valueOf("E1E6D9"))
+            rounded(r.x+18f,r.y+47f,(r.width-180f)*ratio,7f,4f,sage)
+            text("${a.currentValue} / ${tier.requiredValue}",r.x+18f,r.y+30f,.72f,muted)
+            control(if(tier.isClaimed)"Claimed"else"Claim",claimBounds(i),a.hasAnyClaimableTier())
+        }
+        control("Previous",previous,page>0);control("Next",next,(page+1)*listLayout.count<game.achievementService.getAchievements().size);notifications()
     }}
 }
 class PlayerProfileScreen(game:OnetMatch3Game):CeramicScreen(game){
     override fun actionBounds(id:String):Rectangle?=when(id){"collection"->collectionBounds;else->super.actionBounds(id)}
 
-    val collectionBounds get()=mainButton(85f)
+    val collectionBounds get()=mainButton((worldHeight-940f)/2f+86f)
     override fun tapped(x:Float,y:Float):Boolean{when{backBounds.contains(x,y)->go(ScreenType.MAIN_MENU);collectionBounds.contains(x,y)->go(ScreenType.COSMETIC_COLLECTION);else->return false};return true}
     override fun draw(delta:Float){ui{
-        top("Your little journey")
-        art("new-level",width/2f-100f,height-360f,200f,190f)
-        heading("Level ${game.playerProfile.level}",20f,height-410f,40f,width-40f)
+        top("Your profile")
+        art("new-level",width/2f-80f,height-275f,160f,150f)
+        heading("Level ${game.playerProfile.level}",20f,height-310f,36f,width-40f)
         val total=game.playerProfile.currentXp;val floor=game.progressionEngine.xpRequiredForLevel(game.playerProfile.level);val target=game.progressionEngine.xpRequiredForLevel(game.playerProfile.level+1)
         val reveal=if(game.settings.reducedMotion)1f else (elapsed/.7f).coerceIn(0f,1f).let { it*it*(3f-2f*it) }
         val ratio=((total-floor).toFloat()/(target-floor)).coerceIn(0f,1f)*reveal
-        rounded(66f,height-458f,width-132f,12f,6f,Color.valueOf("DDE5D5"));rounded(66f,height-458f,(width-132f)*ratio,12f,6f,sage)
-        text("$total / $target EXP",20f,height-487f,.85f,muted,width-40f)
-        panel(Rectangle(40f,230f,width-80f,170f))
-        text("Onet journey",62f,365f,1f);text("Level ${game.unlockedLevel(ScreenType.ONET_GAME)}",width-200f,365f,1f,sage)
-        text("Triple journey",62f,312f,1f);text("Level ${game.unlockedLevel(ScreenType.TRIPLE_MATCH_GAME)}",width-200f,312f,1f,sage)
-        text("${game.cosmeticService.inventory.getUnlockedCount()} collected  •  ${game.economyService.gemBalance} Gems",62f,258f,.85f,muted)
+        rounded(66f,height-357f,width-132f,12f,6f,Color.valueOf("DDE5D5"));rounded(66f,height-357f,(width-132f)*ratio,12f,6f,sage)
+        text("$total / $target EXP",20f,height-386f,.85f,muted,width-40f)
+        panel(Rectangle(28f,height-610f,width-56f,174f))
+        text("Onet Connect",48f,height-472f,1f);text("Level ${game.unlockedLevel(ScreenType.ONET_GAME)}",width-180f,height-472f,1f,sage)
+        text("Triple Match",48f,height-525f,1f);text("Level ${game.unlockedLevel(ScreenType.TRIPLE_MATCH_GAME)}",width-180f,height-525f,1f,sage)
+        text("${game.cosmeticService.inventory.getUnlockedCount()} cosmetics collected",48f,height-579f,.85f,muted)
+        wallet(game.economyService.gemBalance,Rectangle(width/2f-90f,height-696f,180f,48f))
         control("My collection",collectionBounds,primary=true)
     }}
 }
 
 private var previewItemId = CosmeticCatalog.THEME_CANDY.id
 abstract class CatalogScreen(game:OnetMatch3Game,private val shop:Boolean):CeramicScreen(game){
-    override fun actionBounds(id:String):Rectangle?=when(id){"shop","collection"->switchBounds;else->if(id.startsWith("card_")) id.substringAfter('_').toIntOrNull()?.takeIf { it in 0..3 }?.let(::cardBounds) else super.actionBounds(id)}
+    override fun actionBounds(id:String):Rectangle?=when(id){"shop","collection"->switchBounds;else->if(id.startsWith("card_")) id.substringAfter('_').toIntOrNull()?.takeIf { it in 0 until pageSize }?.let(::cardBounds) else super.actionBounds(id)}
 
+    private val rowCount get()=if(worldHeight>=1120f)3 else 2
+    private val pageSize get()=rowCount*2
     var page=0
     val switchBounds get()=Rectangle(worldWidth-180f,worldHeight-150f,148f,48f)
     private val previous get()=Rectangle(32f,54f,132f,54f)
     private val next get()=Rectangle(worldWidth-164f,54f,132f,54f)
     private fun catalog()=CosmeticCatalog.ALL_ITEMS.filter{if(shop)it.acquisitionType==CosmeticAcquisitionType.EARNABLE else game.cosmeticService.inventory.isOwned(it.id)}
-    fun cardBounds(index:Int):Rectangle {val step=(worldWidth-76f)/2f;return Rectangle(30f+(index%2)*(step+16f),worldHeight-408f-(index/2)*238f,step,216f)}
+    fun cardBounds(index:Int):Rectangle {
+        val column=(worldWidth-72f)/2f;val step=(worldHeight-300f)/rowCount
+        return Rectangle(28f+(index%2)*(column+16f),worldHeight-182f-(index/2+1)*step+16f,column,step-16f)
+    }
+
     override fun tapped(x:Float,y:Float):Boolean{
-        when{backBounds.contains(x,y)->go(ScreenType.MAIN_MENU);switchBounds.contains(x,y)->go(if(shop)ScreenType.COSMETIC_COLLECTION else ScreenType.COSMETIC_SHOP);previous.contains(x,y)&&page>0->page--;next.contains(x,y)&&(page+1)*4<catalog().size->page++;else->{catalog().drop(page*4).take(4).forEachIndexed{i,item->if(cardBounds(i).contains(x,y)){previewItemId=item.id;game.soundService.feedback(SoundCue.COSMETIC_PREVIEW);game.screenManager.pushScreen(ScreenType.COSMETIC_PREVIEW,FadeTransition(.2f,.91f,.94f,.88f));return true}};return false}};return true
+        when{backBounds.contains(x,y)->go(ScreenType.MAIN_MENU);switchBounds.contains(x,y)->go(if(shop)ScreenType.COSMETIC_COLLECTION else ScreenType.COSMETIC_SHOP);previous.contains(x,y)&&page>0->page--;next.contains(x,y)&&(page+1)*pageSize<catalog().size->page++;else->{catalog().drop(page*pageSize).take(pageSize).forEachIndexed{i,item->if(cardBounds(i).contains(x,y)){previewItemId=item.id;game.soundService.feedback(SoundCue.COSMETIC_PREVIEW);game.screenManager.pushScreen(ScreenType.COSMETIC_PREVIEW,FadeTransition(.2f,.91f,.94f,.88f));return true}};return false}};return true
     }
     protected fun ScreenUi.preview(item:CosmeticItem,rect:Rectangle){
         when(item.type){
-            CosmeticType.TILE_SET->{val theme=item.assetPath.substringAfterLast('/');tile(TileAssetResolver.tileIdsFor(theme).first(),rect.x+rect.width/2f-42f,rect.y+85f,84f,86f)}
-            CosmeticType.TILE_BODY->bodyPreview(item.assetPath,rect.x+rect.width/2f-42f,rect.y+85f,84f,86f)
-            CosmeticType.UI_PALETTE->rounded(rect.x+rect.width/2f-42f,rect.y+90f,84f,75f,18f,paletteColor(item.assetPath))
-            CosmeticType.EFFECT->effect(item.assetPath.substringAfterLast('/').removeSuffix(".webp"),elapsed,rect.x+rect.width/2f-50f,rect.y+85f,100f,100f)
-            else->art("succulent",rect.x+rect.width/2f-47f,rect.y+85f,94f,94f)
+            CosmeticType.TILE_SET->{val theme=item.assetPath.substringAfterLast('/');tile(TileAssetResolver.tileIdsFor(theme).first(),rect.x+rect.width/2f-42f,rect.y+rect.height/2f-14f,84f,86f)}
+            CosmeticType.TILE_BODY->bodyPreview(item.assetPath,rect.x+rect.width/2f-42f,rect.y+rect.height/2f-14f,84f,86f)
+            CosmeticType.UI_PALETTE->rounded(rect.x+rect.width/2f-42f,rect.y+rect.height/2f-14f,84f,75f,18f,paletteColor(item.assetPath))
+            CosmeticType.EFFECT->effect(item.assetPath.substringAfterLast('/').removeSuffix(".webp"),elapsed,rect.x+rect.width/2f-50f,rect.y+rect.height/2f-14f,100f,100f)
+            else->art("succulent",rect.x+rect.width/2f-47f,rect.y+rect.height/2f-14f,94f,94f)
         }
     }
     override fun draw(delta:Float){ui{
-        top(if(shop)"Something lovely"else"Your collection",if(shop)"Cosmetics earned through your little goals"else"A look that feels like you")
-        text("${game.economyService.gemBalance} Gems",32f,height-129f,1f,sage);control(if(shop)"Collection"else"Gem shop",switchBounds)
-        catalog().drop(page*4).take(4).forEachIndexed{i,item->val rect=cardBounds(i);panel(rect);preview(item,rect);text(item.name.take(23),rect.x+6f,rect.y+64f,.9f,ink,rect.width-12f);text(if(shop)"${item.gemPrice} Gems"else if(game.cosmeticService.inventory.getEquipped(item.type)==item.id)"Equipped"else"Preview & equip",rect.x+6f,rect.y+30f,.77f,sage,rect.width-12f)}
-        control("Previous",previous,page>0);control("Next",next,(page+1)*4<catalog().size);notifications()
+        top(if(shop)"Candy shop"else"Collection",if(shop)"Unlock your next favorite"else"Your tiles, your style")
+        wallet(game.economyService.gemBalance,Rectangle(28f,height-153f,170f,48f));control(if(shop)"Collection"else"Candy shop",switchBounds)
+        catalog().drop(page*pageSize).take(pageSize).forEachIndexed{i,item->val rect=cardBounds(i)
+            panel(rect);preview(item,rect)
+            text(item.rarity.name.lowercase().replaceFirstChar{it.uppercase()},rect.x+12f,rect.y+rect.height-19f,.65f,muted,rect.width-24f)
+            text(item.name,rect.x+12f,rect.y+76f,.96f,ink,rect.width-24f)
+            if(shop)wallet(item.gemPrice,Rectangle(rect.x+rect.width/2f-55f,rect.y+18f,110f,36f))
+            else text(if(game.cosmeticService.inventory.getEquipped(item.type)==item.id)"Equipped"else"Preview",rect.x+12f,rect.y+33f,.80f,sage,rect.width-24f)
+        }
+        control("Previous",previous,page>0);control("Next",next,(page+1)*pageSize<catalog().size);notifications()
     }}
 }
 class CosmeticCollectionScreen(game:OnetMatch3Game):CatalogScreen(game,false)
@@ -545,7 +611,7 @@ class CosmeticPreviewScreen(game:OnetMatch3Game):CeramicScreen(game){
         };else->return false};return true
     }
     override fun draw(delta:Float){ui{
-        top("A closer look",item.rarity.name.lowercase().replaceFirstChar{it.uppercase()})
+        top("Preview",item.rarity.name.lowercase().replaceFirstChar{it.uppercase()})
         heading(item.name,24f,height-185f,34f,width-48f)
         panel(Rectangle(54f,height/2f-80f,width-108f,300f))
         when(item.type){
@@ -557,13 +623,13 @@ class CosmeticPreviewScreen(game:OnetMatch3Game):CeramicScreen(game){
         }
         text("A fresh look. The same fair puzzle.",44f,height/2f-110f,.88f,muted,width-88f)
         val owned=game.cosmeticService.inventory.isOwned(item.id)
-        control(if(owned)"Equip"else if(item.acquisitionType==CosmeticAcquisitionType.EARNABLE)"Collect for ${item.gemPrice} Gems"else"Coming soon",actionBounds,owned||item.acquisitionType==CosmeticAcquisitionType.EARNABLE,primary=true)
+        control(if(owned)"Equip"else if(item.acquisitionType==CosmeticAcquisitionType.EARNABLE)"Collect for ${item.gemPrice} Permen"else"Coming soon",actionBounds,owned||item.acquisitionType==CosmeticAcquisitionType.EARNABLE,primary=true)
         control("Back to collection",closeBounds);notifications()
     }}
 }
 class SettingsScreen(game:OnetMatch3Game):CeramicScreen(game){
     override fun actionBounds(id:String):Rectangle? = if(id.startsWith("toggle_")) id.substringAfter('_').toIntOrNull()?.takeIf { it in 0..4 }?.let(::toggleBounds) else super.actionBounds(id)
-    fun toggleBounds(index:Int)=Rectangle(worldWidth-151f,worldHeight-244f-index*112f,109f,53f)
+    fun toggleBounds(index:Int)=Rectangle(worldWidth-138f,worldHeight/2f+154f-index*88f,96f,56f)
     override fun tapped(x:Float,y:Float):Boolean{
         if(backBounds.contains(x,y)){game.saveNow();if(!game.screenManager.popScreen(FadeTransition(.18f,.91f,.94f,.88f)))go(ScreenType.MAIN_MENU);return true}
         for(i in 0..4)if(toggleBounds(i).contains(x,y)){
@@ -573,8 +639,15 @@ class SettingsScreen(game:OnetMatch3Game):CeramicScreen(game){
         };return false
     }
     override fun draw(delta:Float){ui{
-        top("Make yourself at home","A little comfort, your way")
-        val entries=listOf(Triple("Sound effects","Soft feedback for each little match",game.settings.soundEnabled),Triple("Music","A calm background for your puzzle",game.settings.musicEnabled),Triple("Haptics","Gentle touch feedback",game.settings.hapticsEnabled),Triple("Reduced motion","Keep movement to a minimum",game.settings.reducedMotion),Triple("Reduced effects","A quieter, lighter experience",game.settings.reducedEffects))
-        entries.forEachIndexed{i,(title,subtitle,on)->val rect=toggleBounds(i);panel(Rectangle(28f,rect.y-17f,width-56f,91f));text(title,47f,rect.y+42f,1.03f);text(subtitle,47f,rect.y+10f,.68f,muted);control(if(on)"On"else"Off",rect,primary=on)}
+        top("Settings","Sound, music & accessibility")
+        panel(Rectangle(24f,height/2f-244f,width-48f,500f))
+        val entries=listOf(Triple("Sound effects","Match and button sounds",game.settings.soundEnabled),Triple("Music","Background music",game.settings.musicEnabled),Triple("Haptics","Touch feedback",game.settings.hapticsEnabled),Triple("Reduced motion","Simpler animations",game.settings.reducedMotion),Triple("Reduced effects","Fewer visual effects",game.settings.reducedEffects))
+        entries.forEachIndexed{i,(title,subtitle,on)->val rect=toggleBounds(i)
+            text(title,44f,rect.y+44f,1.05f)
+            text(subtitle,44f,rect.y+16f,.76f,muted)
+            toggle(rect,on)
+            if(i<4)rounded(44f,rect.y-14f,width-88f,1f,.5f,Color.valueOf("E4E9DE"))
+        }
+        text("Changes are saved automatically",32f,height/2f-218f,.72f,muted,width-64f)
     }}
 }
