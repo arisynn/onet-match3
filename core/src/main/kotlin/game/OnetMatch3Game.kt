@@ -184,15 +184,17 @@ class OnetMatch3Game(
         }
     }
 
-    fun resumedOnet(): OnetRoundState? = onetSnapshot?.takeIf { activeGameType == ScreenType.ONET_GAME && it.phase == "playing" }?.copy(paused = false)
-    fun resumedTriple(): TripleRoundState? = tripleSnapshot?.takeIf { activeGameType == ScreenType.TRIPLE_MATCH_GAME && it.phase == "playing" }?.copy(paused = false)
+    fun resumedOnet(): OnetRoundState? = onetSnapshot?.takeIf { roundId !in completedRounds && activeGameType == ScreenType.ONET_GAME && it.phase == "playing" }?.copy(paused = false)
+    fun resumedTriple(): TripleRoundState? = tripleSnapshot?.takeIf { roundId !in completedRounds && activeGameType == ScreenType.TRIPLE_MATCH_GAME && it.phase == "playing" }?.copy(paused = false)
     fun captureOnet(state: OnetRoundState, hints: Int = 0, shuffles: Int = 0) {
+        if (roundId in completedRounds) return
         if (roundId.isBlank()) roundId = UUID.randomUUID().toString()
         onetSnapshot = state; tripleSnapshot = null; activeGameType = ScreenType.ONET_GAME
         savedHints = hints; savedShuffles = shuffles
         saveNow()
     }
     fun captureTriple(state: TripleRoundState) {
+        if (roundId in completedRounds) return
         if (roundId.isBlank()) roundId = UUID.randomUUID().toString()
         tripleSnapshot = state; onetSnapshot = null; activeGameType = ScreenType.TRIPLE_MATCH_GAME
         saveNow()
@@ -286,14 +288,14 @@ class OnetMatch3Game(
         settings = settings.copy(), tutorialModes = tutorialModes.toSet(), roundId = roundId,
         roundMode = activeGameType.name, roundLevel = selectedLevel, roundTheme = selectedTheme,
         onet = onetSnapshot, triple = tripleSnapshot, roundHints = savedHints, roundShuffles = savedShuffles,
-        completedRoundIds = completedRounds.toSet(), missionTimeHighWater = missionClock
+        completedRoundIds = completedRounds.toSet(), missionTimeHighWater = maxOf(missionClock, missionService.lastRefreshTimeMs)
     )
 
     private fun restore(s: SaveState) {
         SaveCodec.validate(s)
         playerProfile = s.profile.copy(level = progressionEngine.calculateLevelForXp(s.profile.currentXp))
         economyService = EconomyService(game.economy.TransactionLedger(s.transactions))
-        missionService = MissionService(initialMissions = s.missions)
+        missionService = MissionService(initialMissions = s.missions, initialLastRefreshMs = s.missionTimeHighWater)
         achievementService = AchievementService(if (s.achievements.isEmpty()) AchievementCatalog.createInitialCatalog() else s.achievements)
         cosmeticService = CosmeticService(CosmeticInventory(s.unlocked, s.equipped))
         billingService = BillingService(platform.billingProvider, cosmeticService)

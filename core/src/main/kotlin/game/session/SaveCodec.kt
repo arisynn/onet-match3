@@ -40,6 +40,35 @@ object SaveCodec {
         require(s.unlocked.all { CosmeticCatalog.getItem(it) != null })
         require(s.equipped.all { (type, id) -> id in s.unlocked && CosmeticCatalog.getItem(id)?.type == type })
         require(s.missionTimeHighWater >= 0)
+        // Validate the same domain constructors restore() will use before a file is
+        // selected. A checksum alone cannot make an internally corrupt save usable.
+        MissionService(initialMissions = s.missions, initialLastRefreshMs = s.missionTimeHighWater)
+        val achievements = if (s.achievements.isEmpty()) AchievementCatalog.createInitialCatalog() else s.achievements
+        require(achievements.map { it.id }.toSet() == AchievementCatalog.createInitialCatalog().map { it.id }.toSet())
+        AchievementService(achievements)
+        CosmeticInventory(s.unlocked, s.equipped)
+        s.missions.filter { it.status == MissionStatus.CLAIMED }.forEach { mission ->
+            val tx = ledger.findByIdempotencyKey("CLAIM_MISSION_${mission.id}")
+            require(tx?.source == TransactionSource.MISSION_CLAIM && tx.amount == mission.gemReward && tx.sourceId == mission.id) {
+                "Claimed mission is missing its matching ledger transaction"
+            }
+        }
+        achievements.forEach { achievement -> achievement.tiers.filter { it.isClaimed }.forEach { tier ->
+            val tx = ledger.findByIdempotencyKey("CLAIM_ACH_${achievement.id}_TIER_${tier.tierIndex}")
+            require(tx?.source == TransactionSource.ACHIEVEMENT_CLAIM && tx.amount == tier.gemReward &&
+                tx.sourceId == "${achievement.id}_tier_${tier.tierIndex}") { "Claimed achievement has no matching ledger transaction" }
+        } }
+        require(s.profile.playerId.isNotBlank())
+        val stats = s.profile.stats
+        require(listOf(stats.totalOnetRoundsPlayed, stats.totalOnetRoundsWon, stats.totalTripleMatchRoundsPlayed,
+            stats.totalTripleMatchRoundsWon, stats.highestComboStreak, stats.flawlessRoundsCount, stats.fastRoundsCount,
+            stats.shufflesUsed, stats.hintsUsed, stats.undosUsed).all { it >= 0 })
+        require(stats.totalTilesMatched >= 0 && stats.totalOnetRoundsWon <= stats.totalOnetRoundsPlayed &&
+            stats.totalTripleMatchRoundsWon <= stats.totalTripleMatchRoundsPlayed && stats.themePlays.values.all { it >= 0 })
+        require(s.tutorialModes.all { it in setOf("ONET_GAME", "TRIPLE_MATCH_GAME") })
+        require(s.records.keys.all { Regex("(ONET_GAME|TRIPLE_MATCH_GAME):[1-9][0-9]{0,5}").matches(it) })
+        require(s.roundTheme in TileAssetResolver.TILE_SETS || s.roundTheme == "beach")
+        require(s.completedRoundIds.none { it.isBlank() })
         require(s.roundMode in setOf("ONET_GAME", "TRIPLE_MATCH_GAME"))
         require(s.onet == null || s.triple == null)
         require(s.roundHints >= 0 && s.roundShuffles >= 0)
@@ -48,16 +77,55 @@ object SaveCodec {
         s.onet?.let { round ->
             require(round.board.size == 12 && round.board.all { it.size == 8 })
             require(round.phase in setOf("playing", "won", "lost") && round.time in 0..round.duration && round.duration > 0)
+            require(s.roundMode == "ONET_GAME")
+            require(round.level == s.roundLevel && round.theme == s.roundTheme)
+            require(listOf(round.score, round.combo, round.highestCombo, round.matches, round.mistakes, round.splits).all { it >= 0 })
+            require(round.combo <= 1000 && round.highestCombo <= 1000)
             require(round.board.flatten().filterNotNull().all { TileAssetResolver.tileAssetFor(it.id) != null })
             round.board.forEachIndexed { r, row -> row.forEachIndexed { c, tile ->
                 if (tile?.isSlave == true) require(tile.masterR in 1..10 && tile.masterC in 1..6 && round.board[tile.masterR][tile.masterC]?.isSlave == false)
                 if (r == 0 || r == 11 || c == 0 || c == 7) require(tile == null)
+                if (tile != null && !tile.isSlave) {
+                    val size = groupSize(tile)
+                    require(size.rows in 1..2 && size.cols in 1..2)
+                    require(r + size.rows <= 11 && c + size.cols <= 7)
+                    for (cell in getTileCells(r, c, tile)) {
+                        val member = round.board[cell.r][cell.c]
+                        require(member != null && member.id == tile.id)
+                        if (cell.r != r || cell.c != c) require(member.isSlave && member.masterR == r && member.masterC == c)
+                    }
+                }
+                if (tile?.isSlave == true) {
+                    val master = round.board[tile.masterR][tile.masterC]!!
+                    require(Point(r, c) in getTileCells(tile.masterR, tile.masterC, master))
+                }
             } }
+            fun validSelected(point: Point) = point.r in 1..10 && point.c in 1..6 &&
+                round.board[point.r][point.c]?.let { !it.isSlave } == true
+            round.selected?.let { require(validSelected(it)) }
+            round.pending?.let { pending ->
+                require(round.phase == "playing" && round.combo >= 1 && validSelected(pending.a) && validSelected(pending.b))
+                val route = getPath(round.board, pending.a.r, pending.a.c, pending.b.r, pending.b.c)
+                require(route?.path != null && pending.path == route.path)
+                require(pending.action == getMatchAction(round.board, pending.a, pending.b))
+                val base = when (pending.action) { "split_to_1x2" -> 200; "split_to_1x1" -> 150; else -> 100 }
+                require(pending.points == base + (round.combo - 1) * 10)
+                require(round.event?.type == "match" && round.event.path == pending.path)
+            }
         }
         s.triple?.let { round ->
+            require(s.roundMode == "TRIPLE_MATCH_GAME")
             require(round.stacks.size == 12 && round.tray.size <= 7 && round.cleared >= 0)
             require(round.time in 0..round.duration && round.duration > 0 && round.phase in setOf("ready", "playing", "won", "lost"))
+            require(round.stacks.sumOf { it.size } <= 10000)
             require((round.stacks.flatten() + round.tray).all { TileAssetResolver.tileAssetFor(it) != null })
+            round.undo?.let { undo ->
+                require(undo.stacks.size == 12 && undo.tray.size <= 7 && undo.cleared >= 0)
+                require((undo.stacks.flatten() + undo.tray).all { TileAssetResolver.tileAssetFor(it) != null })
+                require(undo.stacks.sumOf { it.size } - round.stacks.sumOf { it.size } in if (round.undoUsed) 0..1 else 1..1)
+                require(undo.stacks.sumOf { it.size } + undo.tray.size + undo.cleared * 3L ==
+                    round.stacks.sumOf { it.size } + round.tray.size + round.cleared * 3L)
+            }
         }
     }
 
