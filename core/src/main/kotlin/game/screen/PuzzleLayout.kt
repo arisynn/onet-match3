@@ -12,12 +12,12 @@ class PuzzleLayout(val width: Float, val height: Float) {
     val hint = Rectangle(28f, 52f, toolWidth, 68f)
     val shuffle = Rectangle(width - 28f - toolWidth, 52f, toolWidth, 68f)
     val undo = hint
-    val boardWidth = min(width - 56f, 480f)
+    val boardWidth = min(width - 96f, 480f)
     val cellWidth = boardWidth / 6f
-    val cellHeight = min(cellWidth, (height - 314f) / 10f)
+    val cellHeight = min(cellWidth, (height - 366f) / 10f)
     val boardHeight = cellHeight * 10f
     val boardLeft = (width - boardWidth) / 2f
-    val boardTop = (height - 170f + 144f + boardHeight) / 2f
+    val boardTop = (height - 190f + 176f + boardHeight) / 2f
     val board = Rectangle(boardLeft, boardTop - boardHeight, boardWidth, boardHeight)
     val tray = Rectangle(24f, 155f, width - 48f, 102f)
     private val stackColumnWidth = (width - 56f) / 4f
