@@ -189,8 +189,9 @@ class ScreenUi : Disposable {
     fun tile(id: String, x: Float, y: Float, width: Float, height: Float, selected: Boolean = false) {
         if (selected) rounded(x - 2f, y - 2f, width + 4f, height + 4f, 15f, sage)
         patch(if (selected) "tile-mint" else "tile-ivory").draw(batch, x + originX, y + originY, width, height)
-        val path = TileAssetResolver.tileAssetFor(id)
-        val icon = if (path?.endsWith(".png") == true) texture(path) else null
+        val original = TileAssetResolver.tileAssetFor(id)
+        val path = original?.let { if (it.endsWith(".webp")) it.replace("tiles/", "tiles-native/").removeSuffix(".webp") + ".png" else it }
+        val icon = if (path != null && Gdx.files.internal(path).exists()) texture(path) else null
         if (icon != null) {
             val scale = min((width - 12f) / icon.width, (height - 12f) / icon.height) * 0.90f
             val w = icon.width * scale; val h = icon.height * scale

@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.GL20
 import com.badlogic.gdx.graphics.OrthographicCamera
 import com.badlogic.gdx.utils.viewport.ExtendViewport
 import com.badlogic.gdx.math.Vector2
+import com.badlogic.gdx.math.Rectangle
 import com.badlogic.gdx.utils.viewport.Viewport
 import game.OnetMatch3Game
 
@@ -68,6 +69,8 @@ abstract class BaseScreen(
     fun removeInputProcessor(processor: InputProcessor) {
         inputMultiplexer.removeProcessor(processor)
     }
+
+    open fun actionBounds(id: String): Rectangle? = null
 
     protected open val responsiveLayout: Boolean = false
     private val contentOffsetX: Float get() = if (responsiveLayout) 0f else (viewport.worldWidth - virtualWidth) / 2f
