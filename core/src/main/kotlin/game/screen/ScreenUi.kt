@@ -41,6 +41,28 @@ class ScreenUi : Disposable {
     private var originX = 0f
     private var originY = 0f
     private var pointer: Vector2? = null
+    var bodyTone = "ivory"
+    var palettePath = "ivory"
+    var effectsEnabled = true
+
+    fun paletteColor(path: String): Color = Color.valueOf(when(path.substringAfterLast('/').removeSuffix(".webp")) {
+        "mint" -> "E3EDDF"; "peach" -> "F6E4D9"; "lavender" -> "EBE5F2"
+        "sky" -> "E2EDF3"; "rose" -> "F3E1E4"; "sand" -> "F2E7D7"
+        "slate" -> "DCE2E5"; else -> "F2F4EA"
+    })
+
+    fun bodyPreview(path: String, x: Float, y: Float, w: Float, h: Float) {
+        val tone=path.substringAfterLast('/').removeSuffix(".webp").substringAfterLast('-')
+        val name=if (manifest.has("tile-$tone")) "tile-$tone" else "tile-ivory"
+        patch(name).draw(batch,x+originX,y+originY,w,h)
+    }
+
+    fun effect(name:String,elapsed:Float,x:Float,y:Float,w:Float,h:Float) {
+        val frame=if(effectsEnabled) ((elapsed/.08f).toInt()%8).coerceIn(0,7) else 3
+        val path="ui-kit/effects/$name/${frame.toString().padStart(2,'0')}.png"
+        if (Gdx.files.internal(path).exists()) batch.draw(texture(path),x+originX,y+originY,w,h)
+        else art("reward",x,y,w,h)
+    }
     var width = 540f
         private set
     var height = 960f
@@ -101,7 +123,7 @@ class ScreenUi : Disposable {
     }
 
     private fun background() {
-        fillRect(0f, 0f, width, height, Color.valueOf("F2F4EA"))
+        fillRect(0f, 0f, width, height, paletteColor(palettePath))
         val source = region("spa")
         val scale = maxOf(width / source.regionWidth, height / source.regionHeight)
         batch.setColor(1f, 1f, 1f, 0.24f)
@@ -188,7 +210,7 @@ class ScreenUi : Disposable {
 
     fun tile(id: String, x: Float, y: Float, width: Float, height: Float, selected: Boolean = false) {
         if (selected) rounded(x - 2f, y - 2f, width + 4f, height + 4f, 15f, sage)
-        patch(if (selected) "tile-mint" else "tile-ivory").draw(batch, x + originX, y + originY, width, height)
+        patch(if (selected) "tile-mint" else if(manifest.has("tile-$bodyTone")) "tile-$bodyTone" else "tile-ivory").draw(batch, x + originX, y + originY, width, height)
         val original = TileAssetResolver.tileAssetFor(id)
         val path = original?.let { if (it.endsWith(".webp")) it.replace("tiles/", "tiles-native/").removeSuffix(".webp") + ".png" else it }
         val icon = if (path != null && Gdx.files.internal(path).exists()) texture(path) else null

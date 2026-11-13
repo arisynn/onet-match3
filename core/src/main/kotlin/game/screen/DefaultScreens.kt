@@ -44,7 +44,7 @@ abstract class CeramicScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
     protected fun toast(value: String) { notice = value; noticeTime = 2.5f }
     protected fun attempt(success: String, action: () -> Unit) {
-        try { action(); toast(success) } catch (_: IllegalArgumentException) { toast("Not available yet") }
+        try { action(); toast(success) } catch (_: IOException) { toast("Unable to save. Please check storage.") } catch (_: IllegalArgumentException) { toast("Not available yet") }
         catch (_: IllegalStateException) { toast("Complete the goal first") }
         catch (_: game.economy.InsufficientFundsException) { toast("Earn more Gems through your goals") }
     }
@@ -200,6 +200,7 @@ class OnetGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     private var hintsUsed = if (game.resumedOnet() != null) game.snapshot().roundHints else 0
     private var shufflesUsed = if (game.resumedOnet() != null) game.snapshot().roundShuffles else 0
     private var finished = false
+    private var settlementRetry = 0f
     private var invalidFlash = 0f
     override fun onScreenShown() { game.activeGameType = ScreenType.ONET_GAME }
     override fun pause() { roundState = pauseOnetRound(roundState,true); persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) } }
@@ -225,7 +226,7 @@ class OnetGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) }; return true
     }
     override fun update(delta: Float) {
-        super.update(delta); invalidFlash=(invalidFlash-delta).coerceAtLeast(0f)
+        super.update(delta); settlementRetry=(settlementRetry-delta).coerceAtLeast(0f); invalidFlash=(invalidFlash-delta).coerceAtLeast(0f)
         if (roundState.paused || finished) return
         if (roundState.pending != null) {
             pathTimer-=delta
@@ -233,10 +234,13 @@ class OnetGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         }
         accumulator+=delta
         if (accumulator>=1f) { val seconds=accumulator.toInt(); accumulator-=seconds; roundState=tickOnetRound(roundState,seconds); persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) } }
-        if (roundState.phase in listOf("won","lost")) {
-            finished=true; game.completeOnet(roundState,hintsUsed,shufflesUsed)
-            game.soundService.feedback(if (roundState.phase=="won") SoundCue.VICTORY else SoundCue.DEFEAT)
-            go(if (roundState.phase=="won") ScreenType.VICTORY else ScreenType.DEFEAT)
+        if (roundState.phase in listOf("won","lost") && settlementRetry <= 0f) {
+            try {
+                game.completeOnet(roundState,hintsUsed,shufflesUsed)
+                finished=true
+                game.soundService.feedback(if (roundState.phase=="won") SoundCue.VICTORY else SoundCue.DEFEAT)
+                go(if (roundState.phase=="won") ScreenType.VICTORY else ScreenType.DEFEAT)
+            } catch (_: IOException) { settlementRetry=2f; toast("Unable to save your result. Please check storage.") }
         }
     }
     override fun draw(delta: Float) { ui {
@@ -248,6 +252,12 @@ class OnetGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
             val size=groupSize(cell)
             val selected=roundState.selected==Point(r,c) || hint?.let { it.p1==Point(r,c)||it.p2==Point(r,c) }==true
             val rect=layout.onetCell(r,c,size.rows,size.cols)
+            val matching=roundState.pending?.let { it.a==Point(r,c)||it.b==Point(r,c) }==true
+            if (!game.settings.reducedMotion && matching) {
+                val scale=.82f+.18f*(pathTimer/.36f).coerceIn(0f,1f)
+                val oldW=rect.width;val oldH=rect.height;rect.width*=scale;rect.height*=scale
+                rect.x+=(oldW-rect.width)/2f;rect.y+=(oldH-rect.height)/2f
+            } else if (!game.settings.reducedMotion && selected) rect.y+=sin(elapsed*7f)*1.5f
             tile(cell.id,rect,selected)
             cell.openSide?.let { side ->
                 val arrow=when(side){"up"->"^";"down"->"v";"left"->"<";else->">"}
@@ -268,6 +278,7 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     var roundState=game.resumedTriple() ?: startTripleRound(createTripleLevelRound(TileAssetResolver.tileIdsFor(game.selectedTheme),game.selectedLevel,SeededRandom("triple_${game.selectedLevel}")))
     private var accumulator=0f
     private var finished=false
+    private var settlementRetry=0f
     private var flightId: String?=null
     private var flightFrom=Rectangle()
     private var flightTo=Rectangle()
@@ -290,12 +301,15 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         persist { game.captureTriple(roundState) };return true
     }
     override fun update(delta:Float){
-        super.update(delta)
+        super.update(delta); settlementRetry=(settlementRetry-delta).coerceAtLeast(0f)
         if(roundState.paused||finished)return
         if(flightId!=null){flightTime+=delta;if(flightTime>=.19f)flightId=null}
         accumulator+=delta
         if(accumulator>=1f){val seconds=accumulator.toInt();accumulator-=seconds;roundState=tickTripleRound(roundState,seconds);persist { game.captureTriple(roundState) }}
-        if(roundState.phase in listOf("won","lost")&&flightId==null){finished=true;game.completeTriple(roundState);game.soundService.feedback(if(roundState.phase=="won")SoundCue.VICTORY else SoundCue.DEFEAT);go(if(roundState.phase=="won")ScreenType.VICTORY else ScreenType.DEFEAT)}
+        if(roundState.phase in listOf("won","lost")&&flightId==null&&settlementRetry<=0f){
+            try {game.completeTriple(roundState);finished=true;game.soundService.feedback(if(roundState.phase=="won")SoundCue.VICTORY else SoundCue.DEFEAT);go(if(roundState.phase=="won")ScreenType.VICTORY else ScreenType.DEFEAT)}
+            catch (_: IOException) {settlementRetry=2f;toast("Unable to save your result. Please check storage.")}
+        }
     }
     override fun draw(delta:Float){ui{
         val layout=puzzleLayout
@@ -437,7 +451,13 @@ abstract class CatalogScreen(game:OnetMatch3Game,private val shop:Boolean):Ceram
         when{backBounds.contains(x,y)->go(ScreenType.MAIN_MENU);switchBounds.contains(x,y)->go(if(shop)ScreenType.COSMETIC_COLLECTION else ScreenType.COSMETIC_SHOP);previous.contains(x,y)&&page>0->page--;next.contains(x,y)&&(page+1)*4<catalog().size->page++;else->{catalog().drop(page*4).take(4).forEachIndexed{i,item->if(cardBounds(i).contains(x,y)){previewItemId=item.id;game.soundService.feedback(SoundCue.COSMETIC_PREVIEW);game.screenManager.pushScreen(ScreenType.COSMETIC_PREVIEW,FadeTransition(.2f,.91f,.94f,.88f));return true}};return false}};return true
     }
     protected fun ScreenUi.preview(item:CosmeticItem,rect:Rectangle){
-        if(item.type==CosmeticType.TILE_SET){val theme=item.assetPath.substringAfterLast('/');val id=TileAssetResolver.tileIdsFor(theme).first();tile(id,rect.x+rect.width/2f-42f,rect.y+85f,84f,86f)}else art(if(item.type==CosmeticType.EFFECT)"reward"else"succulent",rect.x+rect.width/2f-47f,rect.y+85f,94f,94f)
+        when(item.type){
+            CosmeticType.TILE_SET->{val theme=item.assetPath.substringAfterLast('/');tile(TileAssetResolver.tileIdsFor(theme).first(),rect.x+rect.width/2f-42f,rect.y+85f,84f,86f)}
+            CosmeticType.TILE_BODY->bodyPreview(item.assetPath,rect.x+rect.width/2f-42f,rect.y+85f,84f,86f)
+            CosmeticType.UI_PALETTE->rounded(rect.x+rect.width/2f-42f,rect.y+90f,84f,75f,18f,paletteColor(item.assetPath))
+            CosmeticType.EFFECT->effect(item.assetPath.substringAfterLast('/').removeSuffix(".webp"),elapsed,rect.x+rect.width/2f-50f,rect.y+85f,100f,100f)
+            else->art("succulent",rect.x+rect.width/2f-47f,rect.y+85f,94f,94f)
+        }
     }
     override fun draw(delta:Float){ui{
         top(if(shop)"Something lovely"else"Your collection",if(shop)"Cosmetics earned through your little goals"else"A look that feels like you")
@@ -465,7 +485,13 @@ class CosmeticPreviewScreen(game:OnetMatch3Game):CeramicScreen(game){
         top("A closer look",item.rarity.name.lowercase().replaceFirstChar{it.uppercase()})
         heading(item.name,24f,height-185f,34f,width-48f)
         panel(Rectangle(54f,height/2f-80f,width-108f,300f))
-        if(item.type==CosmeticType.TILE_SET){val theme=item.assetPath.substringAfterLast('/');val ids=TileAssetResolver.tileIdsFor(theme);for(i in 0..2)tile(ids[i],width/2f-144f+i*99f,height/2f+12f,90f,98f)}else art(if(item.type==CosmeticType.EFFECT)"reward"else"succulent",width/2f-100f,height/2f-20f,200f,190f)
+        when(item.type){
+            CosmeticType.TILE_SET->{val theme=item.assetPath.substringAfterLast('/');val ids=TileAssetResolver.tileIdsFor(theme);for(i in 0..2)tile(ids[i],width/2f-144f+i*99f,height/2f+12f,90f,98f)}
+            CosmeticType.TILE_BODY->{for(i in 0..2)bodyPreview(item.assetPath,width/2f-144f+i*99f,height/2f+12f,90f,98f)}
+            CosmeticType.UI_PALETTE->rounded(width/2f-120f,height/2f-15f,240f,145f,24f,paletteColor(item.assetPath))
+            CosmeticType.EFFECT->effect(item.assetPath.substringAfterLast('/').removeSuffix(".webp"),elapsed,width/2f-110f,height/2f-40f,220f,220f)
+            else->art("succulent",width/2f-100f,height/2f-20f,200f,190f)
+        }
         text("A fresh look. The same fair puzzle.",44f,height/2f-110f,.88f,muted,width-88f)
         val owned=game.cosmeticService.inventory.isOwned(item.id)
         control(if(owned)"Equip"else if(item.acquisitionType==CosmeticAcquisitionType.EARNABLE)"Collect for ${item.gemPrice} Gems"else"Coming soon",actionBounds,owned||item.acquisitionType==CosmeticAcquisitionType.EARNABLE,primary=true)

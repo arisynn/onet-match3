@@ -12,6 +12,8 @@ import com.badlogic.gdx.math.Vector2
 import com.badlogic.gdx.math.Rectangle
 import com.badlogic.gdx.utils.viewport.Viewport
 import game.OnetMatch3Game
+import game.cosmetics.CosmeticType
+import game.cosmetics.CosmeticCatalog
 
 /**
  * Base abstract screen providing lifecycle management, virtual portrait viewport,
@@ -86,6 +88,11 @@ abstract class BaseScreen(
     protected fun ui(draw: ScreenUi.() -> Unit) {
         if (Gdx.gl == null) return
         val renderer = screenUi ?: ScreenUi().also { screenUi = it }
+        val bodyId=game.cosmeticService.inventory.getEquipped(CosmeticType.TILE_BODY)
+        val paletteId=game.cosmeticService.inventory.getEquipped(CosmeticType.UI_PALETTE)
+        renderer.bodyTone=CosmeticCatalog.getItem(bodyId ?: "")?.assetPath?.substringAfterLast('/')?.removeSuffix(".webp")?.substringAfterLast('-') ?: "ivory"
+        renderer.palettePath=CosmeticCatalog.getItem(paletteId ?: "")?.assetPath ?: "ivory"
+        renderer.effectsEnabled=!game.settings.reducedEffects
         val pointer = if (Gdx.input?.isTouched == true) inputPoint(Gdx.input.x, Gdx.input.y) else null
         renderer.render(camera.combined, viewport.worldWidth, viewport.worldHeight,
             contentOffsetX, contentOffsetY, pointer, draw)
