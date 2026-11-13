@@ -82,8 +82,11 @@ abstract class CeramicScreen(game: OnetMatch3Game) : BaseScreen(game) {
     }
     protected fun ScreenUi.notifications() {
         if (noticeTime > 0f) {
-            panel(Rectangle(28f, 128f, width - 56f, 52f))
-            text(notice, 40f, 161f, .88f, ink, width - 80f)
+            val visibility = if (game.settings.reducedMotion) 1f else
+                min(((2.5f-noticeTime)/.18f).coerceIn(0f,1f),(noticeTime/.25f).coerceIn(0f,1f))
+            val y=128f+(1f-visibility)*12f
+            rounded(28f,y,width-56f,52f,18f,Color(cream).also { it.a=visibility })
+            text(notice,40f,y+33f,.88f,Color(ink).also { it.a=visibility },width-80f)
         }
     }
     protected fun mainButton(y: Float) = Rectangle(64f, y, worldWidth - 128f, 66f)
@@ -312,6 +315,8 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     private var flightFrom=Rectangle()
     private var flightTo=Rectangle()
     private var flightTime=0f
+    private var clearEffects=emptyList<Rectangle>()
+    private var clearEffectTime=0f
     private fun checkpoint(){if(roundState.phase=="playing")persist { game.captureTriple(roundState) }}
     override fun onScreenShown(){game.activeGameType=ScreenType.TRIPLE_MATCH_GAME}
     override fun pause(){roundState=pauseTripleRound(roundState,true);checkpoint()}
@@ -319,13 +324,18 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     override fun tapped(x:Float,y:Float):Boolean {
         val layout=puzzleLayout
         if(layout.pause.contains(x,y)||layout.back.contains(x,y)){pause();game.screenManager.pushScreen(ScreenType.PAUSE,FadeTransition(.18f,.91f,.94f,.88f));return true}
-        if(layout.undo.contains(x,y)) {if(!roundState.undoUsed&&roundState.undo!=null){roundState=undoPick(roundState);flightId=null;game.soundService.feedback(SoundCue.UNDO);checkpoint()};return true}
+        if(layout.undo.contains(x,y)) {if(!roundState.undoUsed&&roundState.undo!=null){roundState=undoPick(roundState);flightId=null;clearEffects=emptyList();game.soundService.feedback(SoundCue.UNDO);checkpoint()};return true}
         if(flightId!=null||roundState.phase!="playing")return false
         val index=layout.stackHit(x,y)?:return false
         val id=roundState.stacks[index].lastOrNull()?:return false
         flightFrom=layout.stack(index);flightTo=layout.traySlot(roundState.tray.size.coerceAtMost(6));flightTime=0f
         val previousCleared=roundState.cleared
+        val matchedPositions=roundState.tray.mapIndexedNotNull { i,tileId -> if(tileId==id)layout.traySlot(i) else null }
         roundState=pickTile(roundState,index)
+        if (roundState.cleared>previousCleared && !game.settings.reducedMotion && !game.settings.reducedEffects) {
+            clearEffects=matchedPositions+Rectangle(flightTo)
+            clearEffectTime=0f
+        }
         flightId=if(game.settings.reducedMotion)null else id
         game.soundService.feedback(if(roundState.cleared>previousCleared)SoundCue.MATCH else SoundCue.SELECT)
         checkpoint();return true
@@ -333,6 +343,7 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     override fun update(delta:Float){
         super.update(delta); settlementRetry=(settlementRetry-delta).coerceAtLeast(0f)
         if(roundState.paused||finished)return
+        if(clearEffects.isNotEmpty()){clearEffectTime+=delta;if(clearEffectTime>=.64f)clearEffects=emptyList()}
         if(flightId!=null){flightTime+=delta;if(flightTime>=.19f)flightId=null}
         accumulator+=delta
         if(accumulator>=1f){val seconds=accumulator.toInt();accumulator-=seconds;roundState=tickTripleRound(roundState,seconds);checkpoint()}
@@ -355,6 +366,11 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         text("${roundState.tray.size} / 7",layout.tray.x+layout.tray.width-70f,layout.tray.y+87f,.62f,muted)
         for(i in 0 until 7){val rect=layout.traySlot(i);slot(rect);roundState.tray.getOrNull(i)?.let{id->tile(id,rect)}}
         flightId?.let{id->val t=(flightTime/.19f).coerceIn(0f,1f);val eased=1f-(1f-t)*(1f-t);tile(id,Rectangle(flightFrom.x+(flightTo.x-flightFrom.x)*eased,flightFrom.y+(flightTo.y-flightFrom.y)*eased,flightFrom.width+(flightTo.width-flightFrom.width)*eased,flightFrom.height+(flightTo.height-flightFrom.height)*eased))}
+        if(!game.settings.reducedMotion&&!game.settings.reducedEffects){
+            val chosen=game.cosmeticService.inventory.getEquipped(CosmeticType.EFFECT)?.let(CosmeticCatalog::getItem)
+                ?.assetPath?.substringAfterLast('/')?.removeSuffix(".webp") ?: "match-burst"
+            clearEffects.forEach { rect->effect(chosen,clearEffectTime,rect.x-13f,rect.y-13f,rect.width+26f,rect.height+26f) }
+        }
         tool(layout.undo,"shuffle",if(roundState.undoUsed)"Undo used"else"Undo",!roundState.undoUsed&&roundState.undo!=null)
         text("Three alike make a match.",layout.shuffle.x,layout.shuffle.y+45f,.84f,muted,layout.shuffle.width)
         text("Keep a little space in your tray.",layout.shuffle.x,layout.shuffle.y+21f,.68f,muted,layout.shuffle.width)
@@ -399,8 +415,24 @@ abstract class ResultScreen(game:OnetMatch3Game,private val won:Boolean):Ceramic
         heading(if(won)"Beautifully matched!"else"A fresh start awaits",20f,height/2f+120f,37f,width-40f)
         text(game.lastResultReason,20f,height/2f+76f,.95f,muted,width-40f)
         panel(Rectangle(84f,height/2f-20f,width-168f,70f))
-        text("SCORE  ${game.lastScore}",84f,height/2f+25f,1.3f,ink,width-168f)
-        if(won){text("${game.lastStars} / 3 stars",20f,height/2f-52f,.9f,sage,width-40f);control("Next puzzle",nextBounds,primary=true)}
+        val progress=if(game.settings.reducedMotion)1f else (elapsed/.85f).coerceIn(0f,1f).let { it*it*(3f-2f*it) }
+        text("SCORE  ${(game.lastScore*progress).toInt()}",84f,height/2f+25f,1.3f,ink,width-168f)
+        if(won){
+            val previousXp=(game.playerProfile.currentXp-game.lastRoundXp).coerceAtLeast(0)
+            val displayedXp=previousXp+(game.lastRoundXp*progress).toLong()
+            val displayedLevel=game.progressionEngine.calculateLevelForXp(displayedXp)
+            val levelFloor=game.progressionEngine.xpRequiredForLevel(displayedLevel)
+            val levelTarget=game.progressionEngine.xpRequiredForLevel(displayedLevel+1)
+            val xpRatio=((displayedXp-levelFloor).toFloat()/(levelTarget-levelFloor)).coerceIn(0f,1f)
+            text("+${game.lastRoundXp} EXP",84f,height/2f+2f,.65f,sage,width-168f)
+            rounded(102f,height/2f-14f,width-204f,5f,3f,Color.valueOf("E0E7D8"))
+            rounded(102f,height/2f-14f,(width-204f)*xpRatio,5f,3f,sage)
+            val leveledUp=game.progressionEngine.calculateLevelForXp(previousXp)<game.playerProfile.level
+            text(if(leveledUp)"Level ${game.playerProfile.level} reached  •  ${game.lastStars}/3 stars"else"${game.lastStars} / 3 stars",20f,height/2f-52f,.9f,sage,width-40f)
+            if(leveledUp&&!game.settings.reducedMotion&&!game.settings.reducedEffects&&elapsed<.64f)
+                effect("victory-confetti",elapsed,width/2f-150f,height/2f+100f,300f,270f)
+            control("Next puzzle",nextBounds,primary=true)
+        }
         control("Play again",replayBounds,primary=!won);control("Main menu",menuBounds)
     }}
 }
@@ -456,7 +488,8 @@ class PlayerProfileScreen(game:OnetMatch3Game):CeramicScreen(game){
         art("new-level",width/2f-100f,height-360f,200f,190f)
         heading("Level ${game.playerProfile.level}",20f,height-410f,40f,width-40f)
         val total=game.playerProfile.currentXp;val floor=game.progressionEngine.xpRequiredForLevel(game.playerProfile.level);val target=game.progressionEngine.xpRequiredForLevel(game.playerProfile.level+1)
-        val ratio=((total-floor).toFloat()/(target-floor)).coerceIn(0f,1f)
+        val reveal=if(game.settings.reducedMotion)1f else (elapsed/.7f).coerceIn(0f,1f).let { it*it*(3f-2f*it) }
+        val ratio=((total-floor).toFloat()/(target-floor)).coerceIn(0f,1f)*reveal
         rounded(66f,height-458f,width-132f,12f,6f,Color.valueOf("DDE5D5"));rounded(66f,height-458f,(width-132f)*ratio,12f,6f,sage)
         text("$total / $target EXP",20f,height-487f,.85f,muted,width-40f)
         panel(Rectangle(40f,230f,width-80f,170f))
