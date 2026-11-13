@@ -28,12 +28,12 @@ class StartupSmokeTest {
         activity.postRunnable {
             try { action() } catch (t: Throwable) { failure.set(t) } finally { done.countDown() }
         }
-        assertTrue("GL thread did not respond", done.await(15, TimeUnit.SECONDS))
+        assertTrue("GL thread did not respond", done.await(45, TimeUnit.SECONDS))
         failure.get()?.let { throw AssertionError("GL assertion failed", it) }
     }
 
     private fun awaitScreen(type: ScreenType) {
-        val deadline = System.currentTimeMillis() + 15000
+        val deadline = System.currentTimeMillis() + 45000
         var ready = false
         while (!ready && System.currentTimeMillis() < deadline) {
             onGl { ready = game.screenManager.currentScreenType == type && !game.screenManager.isTransitioning }
@@ -166,4 +166,32 @@ class StartupSmokeTest {
             tap("card_0"); awaitScreen(ScreenType.COSMETIC_PREVIEW); screenshot("14-cosmetic-preview")
         }
     }
+    /** Direct native framebuffer evidence remains distinct from end-to-end input acceptance. */
+    @Test fun renderAllNativeScreensForReview() {
+        val instrumentation = InstrumentationRegistry.getInstrumentation()
+        ActivityScenario.launch(AndroidLauncher::class.java).use { scenario ->
+            scenario.onActivity { activity = it; game = it.applicationListener as OnetMatch3Game }
+            awaitScreen(ScreenType.MAIN_MENU)
+            val types = listOf(ScreenType.MAIN_MENU, ScreenType.MODE_SELECT, ScreenType.LEVEL_SELECT,
+                ScreenType.ONET_GAME, ScreenType.TRIPLE_MATCH_GAME, ScreenType.VICTORY, ScreenType.DEFEAT,
+                ScreenType.PAUSE, ScreenType.MISSION_CENTER, ScreenType.ACHIEVEMENT_CENTER,
+                ScreenType.PLAYER_PROFILE, ScreenType.COSMETIC_COLLECTION, ScreenType.COSMETIC_SHOP,
+                ScreenType.SETTINGS, ScreenType.COSMETIC_PREVIEW, ScreenType.BOOT, ScreenType.LOADING)
+            for ((index, type) in types.withIndex()) onGl {
+                game.screenManager.setScreen(type)
+                game.screenManager.render(0.016f)
+                val pixmap = com.badlogic.gdx.graphics.Pixmap.createFromFrameBuffer(0, 0,
+                    Gdx.graphics.backBufferWidth, Gdx.graphics.backBufferHeight)
+                try {
+                    val colors = HashSet<Int>()
+                    for (y in 0 until pixmap.height step 8) for (x in 0 until pixmap.width step 8) colors.add(pixmap.getPixel(x, y))
+                    assertTrue("$type framebuffer is empty", colors.size > 64)
+                    val output = File(instrumentation.targetContext.getExternalFilesDir("render-review"),
+                        "${(index + 1).toString().padStart(2, '0')}-$type.png")
+                    com.badlogic.gdx.graphics.PixmapIO.writePNG(Gdx.files.absolute(output.absolutePath), pixmap, -1, true)
+                } finally { pixmap.dispose() }
+            }
+        }
+    }
+
 }

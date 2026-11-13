@@ -29,3 +29,11 @@ Lead must append actual specialist commit IDs and executed results after cherry-
 ## First consolidated Kotlin run — failed, not a pass
 
 Observed `/tmp/premium-integrated-tests.log` on the integrated tree: `:core:compileKotlin FAILED` because ledger restore used Kotlin membership against `ConcurrentHashMap` (`TransactionLedger.kt:28`), which requires explicit `containsKey`. This result was reported to the lead for correction. Tests were not reached; no test counts or simulation numbers are attributed to this failed run. The lead must append the subsequent executed result after fixing and integrating session/UI follow-ups.
+
+## Lead integration result — 2026-11-13
+
+The integrated implementation built successfully with JDK21/AndroidSDK35. Latest full Gradle invocation passed98core tests and2headless tests with0failures/errors/skips, and generated both debugAPK and instrumentationAPK. The new shared font atlas lifetime is included in that build. Node12tests and original asset integrity checks passed. Actual25-cohort economy simulation output is retained in `qa-evidence/economy-simulation-integrated.md`.
+
+Native end-to-end input acceptance is **not passed**: software-emulator attempts were interrupted by a SystemUI ANR overlay, subsequent ADB reconnection/install instability, and MAIN_MENU/MODE_SELECT deadlines. This is not counted as an application test pass. A separate17-screen native framebuffer-review test is included but has not been executed successfully. User requested stopping emulator work and supplying the APK for device testing. Screenshots from interrupted attempts are diagnostic only, not clean acceptance evidence.
+
+The local asset policy now lists825files:20font/audio/evidence files confirmed and805artwork files unresolved. Both Node gate and actual Gradle verification task failed closed as expected. No public productionAPK/AAB is cleared. ARMphysical hardware, cutouts/gesture-navigation and60FPS/device-memory targets still require device testing. UIgeometry tests cover four aspect ratios, but those are not physical-device tests.

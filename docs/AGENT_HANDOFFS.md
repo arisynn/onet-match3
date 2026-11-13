@@ -22,3 +22,7 @@ Gameplay remains independent from libGDX/Android and animation timing. The `core
 ## Acceptance protocol
 
 A handoff means code is available for review, not that a production feature passed. The lead cherry-picks sequentially, records compilation/test results and visual evidence, and fixes failures. The 79-test historical release result does not certify this implementation. Missing commercial rights or configured Play verification cannot be waived by a unit test or a signed artifact.
+
+## Final integrated handoff to owner device testing
+
+Lead integrated the six specialist streams and resumedUI/session/audit agents after the interrupted execution. Branch `feature/premium-native` contains actual17-screen ceramicUI, transactional versioned local state, independent campaigns, records/replay-awareXP, validated Gems claims/purchases, originalaudio/haptics, accessibility settings and unavailable-by-default real-money billing. Font generation is app-owned and reused between screens. Nativefixture review and input smoke harnesses are included. Latest executed results:98core +2headless pass,12Node pass; emulator input acceptance incomplete/failed as recorded in TEST_REPORT. Production licensing and Play verification gates remain closed. Owner explicitly requested APK handoff for testing rather than more emulator retries.
