@@ -202,8 +202,11 @@ class OnetGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     private var finished = false
     private var settlementRetry = 0f
     private var invalidFlash = 0f
+    // Terminal outcomes are committed only by completeOnet's atomic transaction.
+    // Leaving the last playable snapshot lets an interrupted settlement replay safely.
+    private fun checkpoint() { if (roundState.phase == "playing") persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) } }
     override fun onScreenShown() { game.activeGameType = ScreenType.ONET_GAME }
-    override fun pause() { roundState = pauseOnetRound(roundState,true); persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) } }
+    override fun pause() { roundState = pauseOnetRound(roundState,true); checkpoint() }
     override fun resume() { roundState = pauseOnetRound(roundState,false) }
     override fun tapped(x: Float, y: Float): Boolean {
         val layout = puzzleLayout
@@ -213,7 +216,7 @@ class OnetGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         if (roundState.pending != null || roundState.phase != "playing") return false
         when {
             layout.hint.contains(x,y) -> { hint=hintFor(roundState); if (hint != null) hintsUsed++; return true }
-            layout.shuffle.contains(x,y) -> { roundState=shuffleRound(roundState,SeededRandom(System.nanoTime())); shufflesUsed++; hint=null; game.soundService.feedback(SoundCue.SHUFFLE); persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) }; return true }
+            layout.shuffle.contains(x,y) -> { roundState=shuffleRound(roundState,SeededRandom(System.nanoTime())); shufflesUsed++; hint=null; game.soundService.feedback(SoundCue.SHUFFLE); checkpoint(); return true }
         }
         val (r,c) = layout.onetHit(x,y) ?: return false
         val previous = roundState
@@ -223,17 +226,17 @@ class OnetGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
             game.soundService.feedback(if (roundState.combo > 1) SoundCue.COMBO else SoundCue.MATCH)
         } else if (roundState.event?.type == "blocked") { invalidFlash=.3f; game.soundService.feedback(SoundCue.INVALID) }
         else game.soundService.feedback(SoundCue.SELECT)
-        persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) }; return true
+        checkpoint(); return true
     }
     override fun update(delta: Float) {
         super.update(delta); settlementRetry=(settlementRetry-delta).coerceAtLeast(0f); invalidFlash=(invalidFlash-delta).coerceAtLeast(0f)
         if (roundState.paused || finished) return
         if (roundState.pending != null) {
             pathTimer-=delta
-            if (pathTimer<=0f) { roundState=resolveMatch(roundState); activePath=null; if (needsShuffle(roundState)) { roundState=shuffleRound(roundState); toast("A fresh arrangement for your next match") }; persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) } }
+            if (pathTimer<=0f) { roundState=resolveMatch(roundState); activePath=null; if (needsShuffle(roundState)) { roundState=shuffleRound(roundState); toast("A fresh arrangement for your next match") }; checkpoint() }
         }
         accumulator+=delta
-        if (accumulator>=1f) { val seconds=accumulator.toInt(); accumulator-=seconds; roundState=tickOnetRound(roundState,seconds); persist { game.captureOnet(roundState,hintsUsed,shufflesUsed) } }
+        if (accumulator>=1f) { val seconds=accumulator.toInt(); accumulator-=seconds; roundState=tickOnetRound(roundState,seconds); checkpoint() }
         if (roundState.phase in listOf("won","lost") && settlementRetry <= 0f) {
             try {
                 game.completeOnet(roundState,hintsUsed,shufflesUsed)
@@ -283,13 +286,14 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
     private var flightFrom=Rectangle()
     private var flightTo=Rectangle()
     private var flightTime=0f
+    private fun checkpoint(){if(roundState.phase=="playing")persist { game.captureTriple(roundState) }}
     override fun onScreenShown(){game.activeGameType=ScreenType.TRIPLE_MATCH_GAME}
-    override fun pause(){roundState=pauseTripleRound(roundState,true);persist { game.captureTriple(roundState) }}
+    override fun pause(){roundState=pauseTripleRound(roundState,true);checkpoint()}
     override fun resume(){roundState=pauseTripleRound(roundState,false)}
     override fun tapped(x:Float,y:Float):Boolean {
         val layout=puzzleLayout
         if(layout.pause.contains(x,y)||layout.back.contains(x,y)){pause();game.screenManager.pushScreen(ScreenType.PAUSE,FadeTransition(.18f,.91f,.94f,.88f));return true}
-        if(layout.undo.contains(x,y)) {if(!roundState.undoUsed&&roundState.undo!=null){roundState=undoPick(roundState);flightId=null;game.soundService.feedback(SoundCue.UNDO);persist { game.captureTriple(roundState) }};return true}
+        if(layout.undo.contains(x,y)) {if(!roundState.undoUsed&&roundState.undo!=null){roundState=undoPick(roundState);flightId=null;game.soundService.feedback(SoundCue.UNDO);checkpoint()};return true}
         if(flightId!=null||roundState.phase!="playing")return false
         val index=layout.stackHit(x,y)?:return false
         val id=roundState.stacks[index].lastOrNull()?:return false
@@ -298,14 +302,14 @@ class TripleMatchGameScreen(game: OnetMatch3Game) : CeramicScreen(game) {
         roundState=pickTile(roundState,index)
         flightId=if(game.settings.reducedMotion)null else id
         game.soundService.feedback(if(roundState.cleared>previousCleared)SoundCue.MATCH else SoundCue.SELECT)
-        persist { game.captureTriple(roundState) };return true
+        checkpoint();return true
     }
     override fun update(delta:Float){
         super.update(delta); settlementRetry=(settlementRetry-delta).coerceAtLeast(0f)
         if(roundState.paused||finished)return
         if(flightId!=null){flightTime+=delta;if(flightTime>=.19f)flightId=null}
         accumulator+=delta
-        if(accumulator>=1f){val seconds=accumulator.toInt();accumulator-=seconds;roundState=tickTripleRound(roundState,seconds);persist { game.captureTriple(roundState) }}
+        if(accumulator>=1f){val seconds=accumulator.toInt();accumulator-=seconds;roundState=tickTripleRound(roundState,seconds);checkpoint()}
         if(roundState.phase in listOf("won","lost")&&flightId==null&&settlementRetry<=0f){
             try {game.completeTriple(roundState);finished=true;game.soundService.feedback(if(roundState.phase=="won")SoundCue.VICTORY else SoundCue.DEFEAT);go(if(roundState.phase=="won")ScreenType.VICTORY else ScreenType.DEFEAT)}
             catch (_: IOException) {settlementRetry=2f;toast("Unable to save your result. Please check storage.")}
