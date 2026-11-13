@@ -5018,6 +5018,15 @@
       "status": "unknown",
       "commercialUseAllowed": false,
       "source": "Repository provenance describes origin; commercial permission not independently documented."
+    },
+    "assets/fonts/PuzzleSans-SemiBold.ttf": {
+      "sha256": "ab842f7c4c4fad5081d4d1fc1fbd2ad4b2aa21b7ee7d3909d1a1967e60943602",
+      "status": "confirmed",
+      "commercialUseAllowed": true,
+      "source": "Static weight-600 OFL derivative of bundled Nunito.ttf, renamed Puzzle Sans; reproducible with scripts/prepare-native-font.py. Original font and OFL text preserved.",
+      "license": "OFL-1.1",
+      "evidencePath": "assets/fonts/Nunito-OFL.txt",
+      "evidenceSha256": "580df76c95a1ec5ab878ceb25bb3d85c6a076804e9c970c8c6972aea775fdf65"
     }
   }
 }

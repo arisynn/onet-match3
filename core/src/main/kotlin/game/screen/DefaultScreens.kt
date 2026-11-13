@@ -36,6 +36,32 @@ abstract class CeramicScreen(game: OnetMatch3Game) : BaseScreen(game) {
             }
         })
     }
+    private var inputStage: com.badlogic.gdx.scenes.scene2d.Stage? = null
+    private var touchSurface: com.badlogic.gdx.scenes.scene2d.Actor? = null
+    override fun show() {
+        super.show()
+        // Scene2D owns touch focus: a release belongs to the actor that received its press.
+        // The shared renderer draws ceramic controls using the same world coordinates.
+        if (Gdx.gl != null && inputStage == null) {
+            val stage = com.badlogic.gdx.scenes.scene2d.Stage(viewport)
+            val surface = com.badlogic.gdx.scenes.scene2d.Actor()
+            surface.setBounds(0f, 0f, worldWidth, worldHeight)
+            surface.addListener(object : com.badlogic.gdx.scenes.scene2d.InputListener() {
+                override fun touchDown(event: com.badlogic.gdx.scenes.scene2d.InputEvent, x: Float, y: Float, pointer: Int, button: Int): Boolean = pointer == 0
+                override fun touchUp(event: com.badlogic.gdx.scenes.scene2d.InputEvent, x: Float, y: Float, pointer: Int, button: Int) {
+                    if (pointer == 0 && x in 0f..worldWidth && y in 0f..worldHeight) tapped(x, y)
+                }
+            })
+            stage.addActor(surface)
+            inputStage = stage; touchSurface = surface
+            inputMultiplexer.addProcessor(0, stage)
+        }
+    }
+    override fun resize(width: Int, height: Int) {
+        super.resize(width, height)
+        touchSurface?.setBounds(0f, 0f, worldWidth, worldHeight)
+    }
+    override fun onDispose() { inputStage?.dispose(); inputStage = null; touchSurface = null }
     override fun actionBounds(id: String): Rectangle? = if (id == "back") backBounds else null
     protected open fun tapped(x: Float, y: Float): Boolean = false
     override fun update(delta: Float) { elapsed += delta; noticeTime = (noticeTime - delta).coerceAtLeast(0f) }

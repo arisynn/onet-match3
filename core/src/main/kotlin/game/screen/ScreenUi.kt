@@ -27,7 +27,7 @@ class ScreenUi : Disposable {
     val cream = Color.valueOf("FFFDF5")
     private val batch = SpriteBatch()
     private val glyphs = GlyphLayout()
-    private val bodyFont = createFont("Nunito.ttf")
+    private val bodyFont = createFont("PuzzleSans-SemiBold.ttf")
     private val displayFont = createFont("DMSerifDisplay.ttf")
     private val sourcePixmaps = mutableListOf<Pixmap>()
     private val pixel = managedPixmap(1) { it.setColor(Color.WHITE); it.fill() }
