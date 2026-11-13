@@ -120,7 +120,7 @@ abstract class BaseScreen(
             viewport.apply()
         }
 
-        if (advance) update(clampedDelta)
+        if (advance) update(delta.coerceIn(0f, 10f))
         draw(clampedDelta)
     }
 
@@ -136,7 +136,12 @@ abstract class BaseScreen(
 
     override fun resize(width: Int, height: Int) {
         if (Gdx.gl != null) {
-            viewport.update(width, height, true)
+            val safe = game.platform.safeInsets
+            val left = safe.left.coerceIn(0, (width - 1).coerceAtLeast(0))
+            val bottom = safe.bottom.coerceIn(0, (height - 1).coerceAtLeast(0))
+            viewport.update((width - left - safe.right).coerceAtLeast(1),
+                (height - bottom - safe.top).coerceAtLeast(1), true)
+            viewport.setScreenPosition(left, bottom)
         }
     }
 

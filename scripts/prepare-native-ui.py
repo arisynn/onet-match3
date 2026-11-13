@@ -15,6 +15,13 @@ OUTPUT = ROOT / 'assets' / 'ui-native'
 SOURCES = {
     'tile-ivory': 'ui-kit/tile-bodies/square-ivory.webp',
     'tile-mint': 'ui-kit/tile-bodies/square-mint.webp',
+    'tile-peach': 'ui-kit/tile-bodies/square-peach.webp',
+    'tile-rose': 'ui-kit/tile-bodies/square-rose.webp',
+    'tile-sky': 'ui-kit/tile-bodies/square-sky.webp',
+    'tile-lavender': 'ui-kit/tile-bodies/square-lavender.webp',
+    'tile-slate': 'ui-kit/tile-bodies/square-slate.webp',
+    'tile-sand': 'ui-kit/tile-bodies/square-sand.webp',
+
     'button-mint': 'ui-kit/tile-bodies/horizontal-mint.webp',
     'panel-ivory': 'ui-kit/panels/ivory.webp',
     'panel-mint': 'ui-kit/panels/mint.webp',

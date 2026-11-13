@@ -23,6 +23,78 @@
       422
     ]
   },
+  "tile-peach": {
+    "path": "ui-native/tile-peach.png",
+    "source": "assets/ui-kit/tile-bodies/square-peach.webp",
+    "sourceSha256": "67e2123cd1050e9863c19d9d851b87ac8df42a96cd92260704fdf0ce8f2c9f46",
+    "sha256": "26343de2677ee6289b42d9206e6449975b1ca92c0c68663ffc20b8fa85d117fe",
+    "bounds": [
+      44,
+      44,
+      424,
+      423
+    ]
+  },
+  "tile-rose": {
+    "path": "ui-native/tile-rose.png",
+    "source": "assets/ui-kit/tile-bodies/square-rose.webp",
+    "sourceSha256": "151422d42fe58107dbfeb31e7e62c82c83aa4fc05ee1233d3d832bf1bda886a1",
+    "sha256": "ea770f2a0ef79f58e95e992ced6a27e34f168ef12ae523196a29f1ddd7e5e08f",
+    "bounds": [
+      44,
+      44,
+      424,
+      423
+    ]
+  },
+  "tile-sky": {
+    "path": "ui-native/tile-sky.png",
+    "source": "assets/ui-kit/tile-bodies/square-sky.webp",
+    "sourceSha256": "d5b1177b7c7fb94e08a2da690d4bec85fee37f4fd656d7f25d50fd0ab4ac4e11",
+    "sha256": "991cfc1c29d15b50d328731bd14b9db70942c9112b5d73641398342b24281725",
+    "bounds": [
+      44,
+      44,
+      424,
+      423
+    ]
+  },
+  "tile-lavender": {
+    "path": "ui-native/tile-lavender.png",
+    "source": "assets/ui-kit/tile-bodies/square-lavender.webp",
+    "sourceSha256": "f25bcca602d886dd4d92eebca033f4a69bde4be25288062b9084c60c0b108ada",
+    "sha256": "1927acc52581832ca6a89ffab85f0096febd155db64cf7bd76cf5f039c78b350",
+    "bounds": [
+      44,
+      46,
+      424,
+      420
+    ]
+  },
+  "tile-slate": {
+    "path": "ui-native/tile-slate.png",
+    "source": "assets/ui-kit/tile-bodies/square-slate.webp",
+    "sourceSha256": "9b81ed580a1daf4c2ecce2dbd08a7a49dfc2b6c62d056739c92ab4865b62eacd",
+    "sha256": "b09785c66ad6175c853b1de9dc3dd3c4acee0b83b8f2005f734aace8b21ebebf",
+    "bounds": [
+      44,
+      45,
+      424,
+      422
+    ]
+  },
+  "tile-sand": {
+    "path": "ui-native/tile-sand.png",
+    "source": "assets/ui-kit/tile-bodies/square-sand.webp",
+    "sourceSha256": "3d3dc31a6d038f64e41681e97d4aede987bfc124e85afbc6e001cf8f47ba27ee",
+    "sha256": "53b66d7beee475c18405a836ef5d678105dabf8bc0857b7a7b9fd37140f9d2a8",
+    "bounds": [
+      44,
+      44,
+      424,
+      423
+    ]
+  },
   "button-mint": {
     "path": "ui-native/button-mint.png",
     "source": "assets/ui-kit/tile-bodies/horizontal-mint.webp",

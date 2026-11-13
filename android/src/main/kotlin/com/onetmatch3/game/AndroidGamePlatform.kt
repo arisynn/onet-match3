@@ -10,6 +10,7 @@ import game.platform.HapticEffect
 
 /** Uses the declared VIBRATE permission; gracefully handles devices without a vibrator. */
 class AndroidGamePlatform(context: Context) : GamePlatform {
+    @Volatile override var safeInsets = game.platform.SafeInsets()
     private val vibrator = context.applicationContext.getSystemService(Context.VIBRATOR_SERVICE) as? Vibrator
     override fun monotonicTimeMillis(): Long = SystemClock.elapsedRealtime()
     override fun haptic(effect: HapticEffect) {

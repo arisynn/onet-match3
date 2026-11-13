@@ -21,6 +21,16 @@ class AndroidLauncher : AndroidApplication() {
             useAccelerometer = false
         }
 
-        initialize(OnetMatch3Game(platform = AndroidGamePlatform(this)), config)
+        val device = AndroidGamePlatform(this)
+        val appGame = OnetMatch3Game(platform = device)
+        initialize(appGame, config)
+        androidx.core.view.ViewCompat.setOnApplyWindowInsetsListener(graphics.view) { _, insets ->
+            val safe = insets.getInsets(androidx.core.view.WindowInsetsCompat.Type.systemBars() or
+                androidx.core.view.WindowInsetsCompat.Type.displayCutout())
+            device.safeInsets = game.platform.SafeInsets(safe.left, safe.top, safe.right, safe.bottom)
+            postRunnable { appGame.resize(graphics.width, graphics.height) }
+            insets
+        }
+        androidx.core.view.ViewCompat.requestApplyInsets(graphics.view)
     }
 }

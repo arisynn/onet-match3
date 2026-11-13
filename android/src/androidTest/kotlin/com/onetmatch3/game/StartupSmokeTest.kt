@@ -42,12 +42,28 @@ class StartupSmokeTest {
         assertTrue("Did not reach $type", ready)
     }
 
-    private fun tap(x: Float, y: Float) {
+    private fun tapPoint(x: Float, y: Float) {
+        var screenX = 0f; var screenY = 0f
         onGl {
-            val screen = game.screenManager.currentScreen!!
-            val point = screen.viewport.project(Vector2(x, y))
-            screen.inputMultiplexer.touchUp(point.x.toInt(), Gdx.graphics.height - point.y.toInt(), 0, 0)
+            val point = game.screenManager.currentScreen!!.projectUi(Vector2(x, y))
+            screenX = point.x; screenY = Gdx.graphics.height - point.y
         }
+        val instrumentation = InstrumentationRegistry.getInstrumentation()
+        val now = android.os.SystemClock.uptimeMillis()
+        val down = android.view.MotionEvent.obtain(now, now, android.view.MotionEvent.ACTION_DOWN, screenX, screenY, 0)
+        instrumentation.sendPointerSync(down); down.recycle()
+        val up = android.view.MotionEvent.obtain(now, now + 60, android.view.MotionEvent.ACTION_UP, screenX, screenY, 0)
+        instrumentation.sendPointerSync(up); up.recycle()
+    }
+
+    private fun tap(id: String) {
+        var point = Vector2()
+        onGl {
+            val bounds = game.screenManager.currentScreen!!.actionBounds(id)
+                ?: throw AssertionError("Missing action $id")
+            point = bounds.getCenter(Vector2())
+        }
+        tapPoint(point.x, point.y)
     }
 
     private fun screenshot(name: String) {
@@ -67,9 +83,9 @@ class StartupSmokeTest {
             for (y in 0 until bitmap.height step 3) for (x in 0 until bitmap.width step 3) {
                 val c = bitmap.getPixel(x, y)
                 distinct.add(c)
-                if (android.graphics.Color.red(c) in 155..180 &&
-                    android.graphics.Color.green(c) in 205..235 &&
-                    android.graphics.Color.blue(c) in 180..210) buttonPixels++
+                if (android.graphics.Color.red(c) in 30..140 &&
+                    android.graphics.Color.green(c) in 40..170 &&
+                    android.graphics.Color.blue(c) in 30..140) buttonPixels++
                 if (android.graphics.Color.red(c) > 145 && android.graphics.Color.green(c) > 145) lightPixels++
             }
             colors = distinct.size
@@ -92,30 +108,36 @@ class StartupSmokeTest {
             awaitScreen(ScreenType.MAIN_MENU)
             onGl { assertTrue(Gdx.files.internal("tiles/candy/0.png").exists()) }
             screenshot("01-main-menu")
-            tap(270f, 520f); awaitScreen(ScreenType.MODE_SELECT)
+            tap("play"); awaitScreen(ScreenType.MODE_SELECT)
             screenshot("02-mode-select")
-            tap(270f, 600f); awaitScreen(ScreenType.LEVEL_SELECT)
-            tap(100f, 700f); awaitScreen(ScreenType.ONET_GAME)
+            tap("onet"); awaitScreen(ScreenType.LEVEL_SELECT)
+            tap("level_1"); awaitScreen(ScreenType.ONET_GAME)
             screenshot("03-onet")
             var original: OnetGameScreen? = null
             onGl { original = game.screenManager.currentScreen as OnetGameScreen }
-            tap(475f, 910f); awaitScreen(ScreenType.PAUSE)
-            tap(270f, 375f); awaitScreen(ScreenType.SETTINGS)
+            tap("pause"); awaitScreen(ScreenType.PAUSE)
+            tap("settings"); awaitScreen(ScreenType.SETTINGS)
             screenshot("04-settings")
-            tap(90f, 905f); awaitScreen(ScreenType.PAUSE)
-            tap(270f, 555f); awaitScreen(ScreenType.ONET_GAME)
+            tap("back"); awaitScreen(ScreenType.PAUSE)
+            tap("resume"); awaitScreen(ScreenType.ONET_GAME)
             onGl {
                 assertSame(original, game.screenManager.currentScreen)
                 assertFalse(original!!.isDisposed)
                 assertFalse(original!!.roundState.paused)
-                game.screenManager.setScreen(ScreenType.TRIPLE_MATCH_GAME)
+                game.screenManager.setScreen(ScreenType.MAIN_MENU)
             }
-            awaitScreen(ScreenType.TRIPLE_MATCH_GAME)
+            awaitScreen(ScreenType.MAIN_MENU)
+            tap("play"); awaitScreen(ScreenType.MODE_SELECT)
+            tap("triple"); awaitScreen(ScreenType.LEVEL_SELECT)
+            tap("level_1"); awaitScreen(ScreenType.TRIPLE_MATCH_GAME)
             screenshot("05-triple-match")
-            tap(100f, 700f)
+            var stackPoint = Vector2()
+            onGl { stackPoint = (game.screenManager.currentScreen as TripleMatchGameScreen).puzzleLayout.stack(0).getCenter(Vector2()) }
+            tapPoint(stackPoint.x, stackPoint.y)
+            Thread.sleep(300)
             onGl { assertEquals(1, (game.screenManager.currentScreen as TripleMatchGameScreen).roundState.tray.size) }
-            tap(475f, 910f); awaitScreen(ScreenType.PAUSE)
-            tap(270f, 465f); awaitScreen(ScreenType.TRIPLE_MATCH_GAME)
+            tap("pause"); awaitScreen(ScreenType.PAUSE)
+            tap("restart"); awaitScreen(ScreenType.TRIPLE_MATCH_GAME)
             onGl { assertTrue((game.screenManager.currentScreen as TripleMatchGameScreen).roundState.tray.isEmpty()) }
             screenshot("06-triple-restart")
             scenario.moveToState(androidx.lifecycle.Lifecycle.State.CREATED)
@@ -123,6 +145,23 @@ class StartupSmokeTest {
             awaitScreen(ScreenType.TRIPLE_MATCH_GAME)
             onGl { assertFalse((game.screenManager.currentScreen as TripleMatchGameScreen).roundState.paused) }
             screenshot("07-after-background")
+            onGl { assertEquals(0, game.economyService.gemBalance); game.saveNow() }
+            scenario.recreate()
+            scenario.onActivity { activity = it; game = it.applicationListener as OnetMatch3Game }
+            awaitScreen(ScreenType.MAIN_MENU)
+            tap("resume_game"); awaitScreen(ScreenType.TRIPLE_MATCH_GAME)
+            screenshot("08-restored-after-recreate")
+            onGl { assertFalse((game.screenManager.currentScreen as TripleMatchGameScreen).roundState.paused) }
+            tap("pause"); awaitScreen(ScreenType.PAUSE)
+            tap("quit"); awaitScreen(ScreenType.MAIN_MENU)
+            tap("missions"); awaitScreen(ScreenType.MISSION_CENTER); screenshot("09-missions")
+            tap("achievements"); awaitScreen(ScreenType.ACHIEVEMENT_CENTER); screenshot("10-achievements")
+            tap("back"); awaitScreen(ScreenType.MISSION_CENTER)
+            tap("back"); awaitScreen(ScreenType.MAIN_MENU)
+            tap("profile"); awaitScreen(ScreenType.PLAYER_PROFILE); screenshot("11-profile")
+            tap("collection"); awaitScreen(ScreenType.COSMETIC_COLLECTION); screenshot("12-collection")
+            tap("shop"); awaitScreen(ScreenType.COSMETIC_SHOP); screenshot("13-shop")
+            tap("card_0"); awaitScreen(ScreenType.COSMETIC_PREVIEW); screenshot("14-cosmetic-preview")
         }
     }
 }

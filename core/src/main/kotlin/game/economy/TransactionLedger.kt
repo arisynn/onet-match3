@@ -25,7 +25,7 @@ class TransactionLedger(initialTransactions: List<Transaction> = emptyList()) {
         initialTransactions.forEach { tx ->
             validateRuleInvariants(tx.type, tx.currency, tx.amount, tx.source)
             require(tx.id.isNotBlank() && tx.sourceId.isNotBlank() && tx.idempotencyKey.isNotBlank() && tx.timestampMs >= 0) { "Invalid transaction identity or timestamp" }
-            require(tx.id !in transactionIds && tx.idempotencyKey !in idempotencyIndex) { "Duplicate restored transaction" }
+            require(tx.id !in transactionIds && !idempotencyIndex.containsKey(tx.idempotencyKey)) { "Duplicate restored transaction" }
             require(tx.previousHash == (transactions.lastOrNull()?.hash ?: "GENESIS")) { "Broken ledger chain" }
             require(tx.hash == Transaction.computeHash(tx.id, tx.timestampMs, tx.type, tx.currency,
                 tx.amount, tx.source, tx.sourceId, tx.idempotencyKey, tx.previousHash)) { "Corrupt transaction payload" }
